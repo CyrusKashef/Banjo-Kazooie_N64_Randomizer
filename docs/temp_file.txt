@@ -1,0 +1,1 @@
+Used to allow docs folder to be pushed to GitHub.
