@@ -1,3 +1,4 @@
 mmap
 setuptools
 tkinter
+pytest

@@ -36,6 +36,16 @@ class Generic_Bin_File_Class():
         if(int_val > (max_val / 2)):
             int_val -= max_val
         return int_val
+    
+    def _possible_neg_to_pos(self, int_val:int, byte_count:int):
+        '''
+        Pass
+        '''
+        if(int_val > 0):
+            return int_val
+        max_val = 0x1 << (byte_count * 8)
+        int_val += max_val
+        return int_val
 
     ### INTEGERS
 
@@ -52,9 +62,8 @@ class Generic_Bin_File_Class():
         '''
         Pass
         '''
-        self._file_content.seek(index_start)
-        these_bytes = int_val.to_bytes(byte_count)
-        self._file_content.write(these_bytes)
+        int_val:int = self._possible_neg_to_pos(int_val, byte_count)
+        self._file_content[index_start:index_start+byte_count] = int_val.to_bytes(byte_count)
     
     ### FLOATS
 
@@ -70,7 +79,7 @@ class Generic_Bin_File_Class():
         '''
         Pass
         '''
-        pass
+        self._file_content[index_start:index_start+4] = struct.pack('!f', float_val)
 
     ### BITS
     
@@ -94,20 +103,21 @@ class Generic_Bin_File_Class():
         Turns a byte or set of bytes into a hexadecimal string.
         '''
         hex_str_bytes:bytes = self._file_content[index_start:index_start+byte_count]
-        hex_str:str = self._leading_zeros(str(bytes(hex_str_bytes).hex()), byte_count)
-        return hex_str
+        hex_str_val:str = self._leading_zeros(str(bytes(hex_str_bytes).hex()), byte_count)
+        return hex_str_val
     
-    def _write_bytes_from_hex_str(self, index_start:int, byte_count:int):
+    def _write_bytes_from_hex_str(self, index_start:int, hex_str_val:str):
         '''
         Pass
         '''
-        pass
+        byte_count:int = len(hex_str_val) // 2
+        self._file_content[index_start:index_start+byte_count] = bytearray.fromhex(hex_str_val)
     
     ### LATIN STRINGS
 
     def _read_bytes_as_str(self, index_start:int, byte_count:int):
         '''
-        Pass
+        Turns a byte or set of bytes into a latin-decoded string.
         '''
         string_bytes:bytes = self._file_content[index_start:index_start+byte_count]
         this_str:str = str(string_bytes, encoding="latin-1")
@@ -117,7 +127,8 @@ class Generic_Bin_File_Class():
         '''
         Pass
         '''
-        pass
+        byte_count:int = len(str_val)
+        self._file_content[index_start:index_start+byte_count] = bytes(str_val, 'latin-1')
 
     #######################
     ##### CONVERSIONS #####
@@ -138,11 +149,18 @@ class Generic_Bin_File_Class():
         Pass
         '''
         with open(self._file_path, "rb+") as bin_file:
-            self._file_content = bin_file.read()
+            self._file_content = bytearray(bin_file.read())
     
-    def _save_changes(self):
+    def _save_changes(self, file_path:str|None=None):
         '''
         Pass
         '''
-        with open(self._file_path, "wb+") as bin_file:
+        if(file_path is None):
+            file_path = self._file_path
+        with open(file_path, "wb+") as bin_file:
             bin_file.write(self._file_content)
+
+if __name__ == '__main__':
+    temp_obj = Generic_Bin_File_Class("tests/test_files/original_generic_bin_file.bin")
+    temp_obj._write_bytes_from_int(0x00, 0x69, 1)
+    temp_obj._save_changes("tests/test_files/test_generic_bin_file.bin")

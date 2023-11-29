@@ -12,7 +12,7 @@ from setuptools import find_packages, setup
 ##### WORKFLOW #####
 ####################
 
-packages = find_packages(exclude=["BK_Rando.egg-info", "build", "dist", "do_not_commit", "docs"])
+packages = find_packages(exclude=["BK_Rando.egg-info", "build", "dist", "do_not_commit", "docs", "tests"])
 
 setup(
     name="BK_Rando",
