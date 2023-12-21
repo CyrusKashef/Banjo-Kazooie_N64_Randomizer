@@ -52,6 +52,7 @@ class Generic_Bin_File_Class():
     def _read_bytes_as_int(self, index_start:int, byte_count:int, check_for_negative:bool=False):
         '''
         Turns a byte or set of bytes into an integer.
+        Revisit this, might be able to say signed=check_for_negative?
         '''
         this_int:int = int.from_bytes(self._file_content[index_start:index_start+byte_count])
         if(check_for_negative):

@@ -161,3 +161,4 @@ cython_debug/
 
 # Custom Do Not Commit
 do_not_commit
+randomizer/extracted_files/*
