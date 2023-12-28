@@ -31,7 +31,7 @@ from randomizer.patching.compression_class import COMPRESSION_CLASS
 from randomizer.contants.variables.patching_variables import \
     ASSET_TABLE_START_INDEX, ASSET_TABLE_END_INDEX, ASSET_TABLE_OFFSET, \
     ROM_END_INDEX, CIC, CRC1_INDEX_START, CRC2_INDEX_START, \
-    CHECK_ROM_START_INDEX, CHECK_ROM_END_INDEX, \
+    CHECK_ROM_START_INDEX, CHECK_ROM_END_INDEX, BIN_EXTENSION, \
     EXTRACTED_FILES_DIR, COMPRESSED_BIN_EXTENSION, RAW_BIN_EXTENSION, \
     DECOMPRESSED_STR, COMPRESSED_STR, RAW_STR, \
     ASSEMBLY_POINTER_DICT, START_UPPER_STR, \
@@ -202,7 +202,7 @@ class BK_ROM_CLASS(Generic_Bin_File_Class):
         bin_files_list = os.listdir(EXTRACTED_FILES_DIR)
         for pointer_count, pointer_index_start in enumerate(range(
                 ASSET_TABLE_START_INDEX, ASSET_TABLE_END_INDEX, 0x8)):
-            if(pointer_count % 20 == 0):
+            if(pointer_count % 100 == 0):
                 pointer_hex_str:str = self._convert_int_to_hex_str(pointer_index_start, byte_count=4)
                 print(f"DEBUG: append_asset_table_pointers: Current pointer {pointer_hex_str}")
             file_name:str = self._convert_int_to_hex_str(pointer_index_start)
@@ -403,4 +403,4 @@ if __name__ == '__main__':
     bk_rom.rename_bk_rom()
     bk_rom.calculate_new_crc()
     bk_rom.save_as_new_rom(new_file_path)
-    bk_rom.clear_extracted_files_dir(bk_rom._BIN_EXTENSION)
+    bk_rom.clear_extracted_files_dir(BIN_EXTENSION)
