@@ -41,7 +41,7 @@ class Generic_Bin_File_Class():
         '''
         Returns an integer as a value that can be inserted for a byte array.
         '''
-        if(int_val > 0):
+        if(int_val >= 0):
             return int_val
         max_val = 0x1 << (byte_count * 8)
         int_val += max_val
