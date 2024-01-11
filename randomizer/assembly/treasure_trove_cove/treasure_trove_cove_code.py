@@ -1,6 +1,6 @@
 '''
 Purpose:
-*
+* Modifies code written for Treasure Trove Cove
 '''
 
 ###################
@@ -18,7 +18,7 @@ from randomizer.contants.variables.assembly_variables import \
 
 class TREASURE_TROVE_COVE_CODE_CLASS(Generic_Bin_File_Class):
     '''
-    Pass
+    Class for modifying code written for Treasure Trove Cove
     '''
     def __init__(self, file_name:str):
         '''
@@ -37,9 +37,10 @@ class TREASURE_TROVE_COVE_CODE_CLASS(Generic_Bin_File_Class):
     def patch_yum_yum_crash_fix(self):
         '''
         Fixes a vanilla bug: 
-        When a yumyum in TTC tries to eat a sprite in a cube,
+        When a yum-yum in TTC tries to eat a sprite in a cube,
         the game treats it as an actor, derefs an invalid pointer,
         and segfaults.
         Thank You, Wedarobi! <3
         '''
+        # Set hook in Yum-Yum eat update function
         self._write_bytes_from_int(0xC90, 0x08096C05, byte_count=4)

@@ -49,7 +49,7 @@ class ASSEMBLY_CLASS():
     '''
     def __init__(self):
         '''
-        Pass
+        Constructor
         '''
         self._create_assembly_file_objects()
 
@@ -59,7 +59,8 @@ class ASSEMBLY_CLASS():
 
     def _create_assembly_file_objects(self):
         '''
-        Pass
+        Creates object files for all of the assembly code and data.
+        ToDo: Automate the file names
         '''
         self._c_libraries_code_obj = C_LIBRARIES_CODE_CLASS(file_name="F19250")
         self._c_libraries_data_obj = C_LIBRARIES_DATA_CLASS(file_name="F362EB")
@@ -94,20 +95,21 @@ class ASSEMBLY_CLASS():
 
     def disable_anti_tamper(self):
         '''
-        Pass
+        Disables all known anti-tampering code.
+        Thank you, Wedarobi! <3
         '''
         self._c_libraries_code_obj.disable_anti_tamper()
-    
-    def patch_yum_yum_crash_fix(self):
-        '''
-        Pass
-        '''
-        self._c_libraries_code_obj.patch_yum_yum_crash_fix()
-        self._treasure_trove_cove_code_obj.patch_yum_yum_crash_fix()
+        self._spiral_mountain_code_obj.disable_anti_tamper()
+        self._mumbos_mountain_code_obj.disable_anti_tamper()
+        self._treasure_trove_cove_code_obj.disable_anti_tamper()
+        self._clankers_cavern_code_obj.disable_anti_tamper()
+        self._bubblegloop_swamp_code_obj.disable_anti_tamper()
+        self._gobis_valley_code_obj.disable_anti_tamper()
+        self._mad_monster_mansion_code_obj.disable_anti_tamper()
     
     def save_all_assembly_changes(self):
         '''
-        Pass
+        Saves the files with their respective changes.
         '''
         self._c_libraries_code_obj._save_changes()
         self._c_libraries_data_obj._save_changes()
@@ -139,15 +141,306 @@ class ASSEMBLY_CLASS():
         self._final_battle_data_obj._save_changes()
         self._cutscenes_code_obj._save_changes()
         self._cutscenes_data_obj._save_changes()
+    
+    #####################
+    ##### BUG FIXES #####
+    #####################
+    
+    def patch_yum_yum_crash_fix(self):
+        '''
+        Fixes a bug where Yum-Yums touching non-eggs/feathers will
+        cause the game to crash.
+        '''
+        self._c_libraries_code_obj.patch_yum_yum_crash_fix()
+        self._treasure_trove_cove_code_obj.patch_yum_yum_crash_fix()
+    
+    def mumbos_mountain_honeycomb_flags(self):
+        '''
+        Pass
+        '''
+        pass
 
-    #############################
-    ##### FEATURE FUNCTIONS #####
-    #############################
+    ####################################
+    ##### QUALITY OF LIFE FEATURES #####
+    ####################################
     
     def boot_to_file_select(self):
         '''
-        Pass
+        Upon powering the game or saving & quitting,
+        the player will skip the RARE & concert cutscenes.
         '''
         file_select_map_id:int = 0x91
         self._c_libraries_code_obj.booting_up_map(file_select_map_id)
         self._game_engine_code_obj.booting_up_map(file_select_map_id)
+    
+    def skippable_cutscenes(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.skippable_cutscenes()
+
+    def new_game_start_area(self, map_id:int, entry_id:int):
+        '''
+        Pass
+        '''
+        pass
+    
+    def enable_exit_to_witchs_lair(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def remove_tutorial_option(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def enable_fallproof(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.enable_fallproof()
+
+    def mr_vile_only_one_round(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def rusty_bucket_bay_forgiving_engine_room(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def unlimited_illegal_cheat_codes(self):
+        '''
+        Pass
+        '''
+        pass
+    
+    ######################
+    ##### DIFFICULTY #####
+    ######################
+
+    def starting_inventory_counts(self,
+            blue_egg_count:int=0,
+            red_feather_count:int=0,
+            gold_feather_count:int=0):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.starting_inventory_counts(
+            blue_egg_count,
+            red_feather_count,
+            gold_feather_count,
+        )
+
+    def carrying_capacity(self, carrying_capacity:dict):
+        '''
+        Pass
+        '''
+        pass
+
+    def starting_lives(self, starting_life_count:int):
+        '''
+        Pass
+        '''
+        pass
+
+    def starting_max_health(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def empty_honeycombs_for_extra_health(self, empty_honeycomb_count:int):
+        '''
+        Pass
+        '''
+        pass
+
+    def modify_collision_markers(self, collision_marker_dict:dict):
+        '''
+        Pass
+        '''
+        pass
+
+    def gobis_valley_randomize_matching_puzzle(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def mad_monster_mansion_randomize_motzands_song(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def mad_monster_mansion_shuffle_tumblars_tiles(self):
+        '''
+        Pass
+        '''
+        pass
+
+    ##############################
+    ##### COSMETICS & SOUNDS #####
+    ##############################
+
+    def replace_game_engine_models_with_assets(self, asset_id_dict:dict):
+        '''
+        Pass
+        '''
+        for model_id in asset_id_dict:
+            asset_id:int = asset_id_dict[model_id]
+            # Replace Model
+
+    def set_skybox_and_clouds(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def randomize_skybox_and_clouds(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def randomize_music(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def mute_all_music(self):
+        '''
+        Pass
+        '''
+        pass
+
+    #################
+    ##### LOGIC #####
+    #################
+    
+    def bottles_tutorial_moves(self,
+            ability_enum_list:list,
+            blue_egg_count:int=50,
+            red_feather_count:int=25,
+            gold_feather_count:int=5,
+            mumbo_token_count:int=0,
+            ):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.spiral_mountain_auto_complete_bridge()
+        self._spiral_mountain_code_obj.bottles_tutorial_moves(ability_enum_list)
+        self._spiral_mountain_code_obj.bottles_tutorial_items(
+            blue_egg_count, red_feather_count,
+            gold_feather_count, mumbo_token_count
+        )
+
+    def new_game_moves(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def adjust_kill_drops(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def increase_note_pickup_count(self, note_pickup_count:int):
+        '''
+        Pass
+        '''
+        pass
+
+    def set_note_door_criteria(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def set_jigsaw_puzzle_criteria(self):
+        '''
+        Pass
+        '''
+        pass
+        
+    def set_transformation_criteria(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def set_jiggy_win_condition(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def set_note_win_condition(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def scale_banjo_walking_speed(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def scale_talon_trot_speed(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def scale_swimming_speeds(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def scale_transformation_speeds(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def remove_slope_slide_timer(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def mad_monster_mansion_anyones_honeycomb(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def replace_moves_cheat_codes(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def gruntildas_lair_set_water_level(self, water_level:int=0):
+        '''
+        Pass
+        '''
+        pass
+
+    def treasure_trove_cove_raise_sharkfood_island(self):
+        '''
+        Pass
+        '''
+        pass

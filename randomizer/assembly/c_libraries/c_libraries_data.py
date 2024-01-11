@@ -1,6 +1,6 @@
 '''
 Purpose:
-*
+* Modifies data written for the c libraries
 '''
 
 ###################
@@ -18,7 +18,7 @@ from randomizer.contants.variables.assembly_variables import \
 
 class C_LIBRARIES_DATA_CLASS(Generic_Bin_File_Class):
     '''
-    Pass
+    Class for modifying data written for the c libraries
     '''
     def __init__(self, file_name:str):
         '''
