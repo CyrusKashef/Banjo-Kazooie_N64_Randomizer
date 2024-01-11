@@ -13,10 +13,10 @@ from randomizer.contants.variables.assembly_variables import \
     EXTRACTED_FILES_DIR, DECOMPRESSED_BIN_EXTENSION
 
 ######################################
-##### CLANKERS CAVERN CODE CLASS #####
+##### MUMBOS MOUNTAIN CODE CLASS #####
 ######################################
 
-class CLANKERS_CAVERN_CODE_CLASS(Generic_Bin_File_Class):
+class MUMBOS_MOUNTAIN_CODE_CLASS(Generic_Bin_File_Class):
     '''
     Pass
     '''
@@ -29,7 +29,7 @@ class CLANKERS_CAVERN_CODE_CLASS(Generic_Bin_File_Class):
     
     def disable_anti_tamper(self):
         '''
-        Disables the anti-tampering functions for Clanker's Cavern assembly
+        Disables the anti-tampering functions for Mumbo's Mountain assembly
         Thank You, Wedarobi! <3
         '''
-        self._write_bytes_from_int(0x1984, 0x1000, byte_count=2)
+        self._write_bytes_from_int(0x1B7C, 0x1000, byte_count=2)

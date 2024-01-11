@@ -1,6 +1,6 @@
 '''
 Purpose:
-*
+* Modifies data written for the c libraries
 '''
 
 ###################
@@ -12,13 +12,13 @@ from randomizer.generic_bin_file_class import Generic_Bin_File_Class
 from randomizer.contants.variables.assembly_variables import \
     EXTRACTED_FILES_DIR, DECOMPRESSED_BIN_EXTENSION
 
-#####################################
-##### FREEZEEZY PEAK CODE CLASS #####
-#####################################
+##################################
+##### C LIBRARIES DATA CLASS #####
+##################################
 
-class FREEZEEZY_PEAK_CODE_CLASS(Generic_Bin_File_Class):
+class C_LIBRARIES_DATA_CLASS(Generic_Bin_File_Class):
     '''
-    Pass
+    Class for modifying data written for the c libraries
     '''
     def __init__(self, file_name:str):
         '''
