@@ -22,8 +22,9 @@ class Test_Generic_Bin_File_Class():
 
     def setup_method(self):
         print("Setup Method")
-        self.original_test_file_path:str = "tests/test_files/original_generic_bin_file.bin"
-        self.duplicate_test_file_path:str = "tests/test_files/test_generic_bin_file.bin"
+        test_folder:str = "tests/test_files/"
+        self.original_test_file_path:str = f"{test_folder}original_generic_bin_file.bin"
+        self.duplicate_test_file_path:str = f"{test_folder}test_generic_bin_file.bin"
 
     ### READ ###
 
