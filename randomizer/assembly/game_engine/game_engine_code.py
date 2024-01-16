@@ -59,6 +59,17 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         # Always Set fileProgressFlag_set(0xE1, 1);
         self._write_bytes_from_int(0x95770, 0x00000000, byte_count=4)
     
+    def skip_jiggy_jig(self):
+        '''
+        Pass
+        '''
+        # Skips Triggers For Jiggy Count < 3
+        self._write_bytes_from_int(0x5780, 0x24010000, byte_count=4)
+        # Skips Triggers For Collecting All Jinjos
+        self._write_bytes_from_int(0x579C, 0x10000004, byte_count=4)
+        # Always Runs Jiggy Jig Function For Transformations/Flying/Swimming
+        self._write_bytes_from_int(0xF020, 0x00000000, byte_count=4)
+    
     ###############################
     ##### CARRYING CAPACITIES #####
     ###############################
@@ -404,3 +415,12 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         Decomp: ch/mole.c#L47
         '''
         pass
+
+    def shock_jump_pad_anywhere(self):
+        '''
+        Pass
+        '''
+        # 8037C1D2 0001
+        # miscflag_isTrue(0x2) -> Always 1
+        self._write_bytes_from_int(0x2A1B0, 0x24020001, byte_count=4)
+        self._write_bytes_from_int(0x2A1B4, 0x24020001, byte_count=4)

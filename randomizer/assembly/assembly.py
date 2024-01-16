@@ -220,6 +220,12 @@ class ASSEMBLY_CLASS():
         Pass
         '''
         pass
+
+    def skip_jiggy_jig(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.skip_jiggy_jig()
     
     ######################
     ##### DIFFICULTY #####
@@ -444,3 +450,9 @@ class ASSEMBLY_CLASS():
         Pass
         '''
         pass
+
+    def shock_jump_pad_anywhere(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.shock_jump_pad_anywhere()
