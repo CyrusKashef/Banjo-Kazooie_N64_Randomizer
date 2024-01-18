@@ -32,3 +32,6 @@ TURBO_TALON_TROT_STR:str = "Turbo Talon Trot"
 WONDERWING_STR:str = "Wonderwing"
 NOTE_DOOR_STR:str = "Note Door"
 SHOCK_JUMP_PAD_ANYWHERE_STR:str = "Shock Jump Pad Anywhere"
+# COSMETICS & SOUNDS
+LOW_POLY_MODEL_STR:str = "Low Poly Model"
+HIGH_POLY_MODEL_STR:str = "High Poly Model"

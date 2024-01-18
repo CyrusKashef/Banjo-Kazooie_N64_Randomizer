@@ -210,17 +210,50 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
     ##### MODELS #####
     ##################
     
+    # 8037D234 0001
+    # 8037D236 0001
+    # 8037D238 0001
+    # 812986BA 035D
+    # 812986BE 035D
+    # 8129DD86 035D
+    
     def replace_banjo_kazooie_models(self,
-            low_poly_model:int=0x34D, high_poly_model:int=0x34E):
+            low_poly_model:int=0x34D,
+            high_poly_model:int=0x34E):
         '''
         Replaces the Banjo-Kazooie low and high poly models with
         another asset.
         '''
-        # Low Poly Model
+        # core2/ba/model.c#L302
+        # self._write_bytes_from_int(0xB336, 0x8000 - low_poly_model, byte_count=2)
+        # core2/code_11660.c#L29
         self._write_bytes_from_int(0x11722, low_poly_model, byte_count=2)
         self._write_bytes_from_int(0x1172A, low_poly_model, byte_count=2)
-        # High Poly Model
         self._write_bytes_from_int(0x1172E, high_poly_model, byte_count=2)
+        # core2/code_16C60.c#L30
+        # self._write_bytes_from_int(0x16C72, 0x8000 - low_poly_model, byte_count=2)
+        # core2/code_16C60.c#L65
+        # self._write_bytes_from_int(0x16DF6, low_poly_model, byte_count=2)
+        # self._write_bytes_from_int(0x16E02, high_poly_model, byte_count=2)
+        # core2/code_16C60.c#L140
+        # 8037D234 & 8037D238
+        # self._write_bytes_from_int(0x17074, 0x24040001, byte_count=4)
+        # 8037D236
+        # self._write_bytes_from_int(0x1707C, 0x24040001, byte_count=4)
+        # 8037D235
+        # self._write_bytes_from_int(0x17084, 0x24040001, byte_count=4)
+        # 8037D23C
+        # self._write_bytes_from_int(0x17088, 0x44817000, byte_count=4)
+        # self._write_bytes_from_int(0x17090, 0x3C064100, byte_count=4)
+        # 8037D240
+        # self._write_bytes_from_int(0x17094, 0x44817000, byte_count=4)
+        # self._write_bytes_from_int(0x1709C, 0x3C064100, byte_count=4)
+        # 8037D237
+        # self._write_bytes_from_int(0x170A4, 0x24040001, byte_count=4)
+        # 8037D239
+        # self._write_bytes_from_int(0x170AC, 0x24040001, byte_count=4)
+        # 8037D23A
+        # self._write_bytes_from_int(0x170B4, 0x24040001, byte_count=4)
     
     def replace_game_engine_models_with_assets(self, index_list:list, new_asset_id:list):
         '''

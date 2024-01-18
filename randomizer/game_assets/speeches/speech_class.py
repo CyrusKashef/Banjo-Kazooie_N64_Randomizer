@@ -1,6 +1,6 @@
 '''
 Purpose:
-*
+* lass for reading and modifying speech files.
 '''
 
 ###################
@@ -24,15 +24,14 @@ from randomizer.contants.variables.speech_variables import \
 
 class Speech_Class(Generic_Bin_File_Class):
     '''
-    Pass
+    Class for reading and modifying speech files.
     '''
     def __init__(self, file_path:str):
         '''
         Constructor
         '''
-        super().__init__(file_path)
-        self._speech_type:str = self._determine_speech_type()
-        self._speech_dict:dict = {}
+        self._file_path = file_path
+        self._file_content = None
         self.read_speech_file()
 
     #################################
@@ -41,7 +40,9 @@ class Speech_Class(Generic_Bin_File_Class):
 
     def _determine_speech_type(self):
         '''
-        Pass
+        Checks the first few bytes of the file to determine
+        whether the speech is a Furnace Fun Gruntilda question,
+        Furnace Fun Generic question, or Generic speech file.
         '''
         first_five_bytes:int = self._read_bytes_as_int(index_start=0, byte_count=5)
         first_three_bytes:int = self._read_bytes_as_int(index_start=0, byte_count=3)
@@ -59,7 +60,8 @@ class Speech_Class(Generic_Bin_File_Class):
 
     def _translate_action(self, start_index:int, speech_length:int):
         '''
-        Pass
+        Attempts to give a description of what
+        the action function does.
         '''
         if(speech_length != 0x2):
             raise Exception("ERROR: _translate_action: Action not length of 2")
@@ -73,7 +75,8 @@ class Speech_Class(Generic_Bin_File_Class):
 
     def _translate_speech(self, start_index:int, speech_length:int):
         '''
-        Pass
+        Translates the speech string from
+        bytes to latin.
         '''
         speech:str = ""
         while(len(speech) < (speech_length - 1)):
@@ -83,7 +86,9 @@ class Speech_Class(Generic_Bin_File_Class):
 
     def _parse_speech_section(self, section_name:str, num_of_speeches:int, start_index:int):
         '''
-        Pass
+        Reads a speech section and translates the
+        actions and the strings and places them
+        into a dictionary.
         '''
         self._speech_dict[section_name] = {}
         for speech_num in range(num_of_speeches):
@@ -103,7 +108,7 @@ class Speech_Class(Generic_Bin_File_Class):
 
     def _parse_furance_fun_speech(self):
         '''
-        Pass
+        Reads a furnace fun speech file.
         '''
         section_name:str = FULL_SCREEN_STR
         start_index:int = 5
@@ -113,7 +118,7 @@ class Speech_Class(Generic_Bin_File_Class):
 
     def _parse_generic_speech(self):
         '''
-        Pass
+        Reads a generic speech file.
         '''
         start_index:int = 3
         # Bottom Speeches
@@ -133,7 +138,7 @@ class Speech_Class(Generic_Bin_File_Class):
     
     def _translate_fancy_font(self, speech:str):
         '''
-        Pass
+        Translates the fancy font options.
         '''
         for fancy_font in FANCY_FONT_DICT:
             speech = speech.replace(fancy_font, FANCY_FONT_DICT[fancy_font])
@@ -141,7 +146,7 @@ class Speech_Class(Generic_Bin_File_Class):
 
     def _print_furnace_fun_speech(self):
         '''
-        Pass
+        Prints the Furnace Fun speech to the console.
         '''
         speech_count:int = len(self._speech_dict[FULL_SCREEN_STR])
         for curr_speech_count in range(speech_count):
@@ -153,7 +158,7 @@ class Speech_Class(Generic_Bin_File_Class):
 
     def _print_generic_speech(self):
         '''
-        Pass
+        Prints the generic speech to the console.
         '''
         curr_section:str = TOP_SECTION_STR
         section_count:dict = {
@@ -186,7 +191,8 @@ class Speech_Class(Generic_Bin_File_Class):
     def find_speech_line(self,
             sprite_id:int=None, speech_str:str=None):
         '''
-        Pass
+        Finds all instances of a sprite/speech combo
+        and returns a list of the findings.
         '''
         found_speech_list:list = []
         for curr_section in self._speech_dict:
@@ -207,7 +213,9 @@ class Speech_Class(Generic_Bin_File_Class):
     
     def verify_speech_functionality(self):
         '''
-        Pass
+        Verifies that the speech dict is allowed.
+        ToDo:
+          * Character Limit
         '''
         for curr_section in self._speech_dict:
             for curr_section_count in self._speech_dict[curr_section]:
@@ -224,7 +232,8 @@ class Speech_Class(Generic_Bin_File_Class):
             section:str, section_count:int,
             new_sprite:int, new_speech:str):
         '''
-        Pass
+        Replaces a speech line with a new sprite
+        and speech string.
         '''
         self._speech_dict[section][section_count][SPRITE_STR] = new_sprite
         self._speech_dict[section][section_count][SPEECH_STR] = new_speech
@@ -233,7 +242,7 @@ class Speech_Class(Generic_Bin_File_Class):
             section:str,
             new_sprite:int, new_speech:str):
         '''
-        Pass
+        Adds a speech line to the end of a section.
         '''
         section_count = len(self._speech_dict[section])
         self._speech_dict[section][section_count] = {
@@ -245,7 +254,8 @@ class Speech_Class(Generic_Bin_File_Class):
             section:str, section_count:int,
             new_sprite:int, new_speech:str):
         '''
-        Pass
+        Injects a speech line into a section, shifting
+        everything after it backward by one.
         '''
         curr_section_count:int = len(self._speech_dict[section])
         while(curr_section_count > section_count):
@@ -257,7 +267,8 @@ class Speech_Class(Generic_Bin_File_Class):
     def delete_speech_line(self,
             section:str, section_count:int):
         '''
-        Pass
+        Removes a speech line from a section, shifting
+        everything after it forward by one.
         '''
         last_section_count:int = len(self._speech_dict[section]) - 1
         while(section_count < last_section_count):
@@ -267,9 +278,45 @@ class Speech_Class(Generic_Bin_File_Class):
     
     def replace_entire_speech_dict(self, new_speech_dict:dict):
         '''
-        Pass
+        Replaces the speech dict with a custom one.
         '''
         self._speech_dict = new_speech_dict
+    
+    #################
+    ##### WRITE #####
+    #################
+    
+    def _write_furnace_fun_speech_file(self, new_content:bytearray):
+        '''
+        Writes a furnace fun speech in byte format.
+        '''
+        print(self._speech_dict)
+        for curr_section_count in sorted(self._speech_dict[FULL_SCREEN_STR]):
+            curr_sprite:int = self._speech_dict[FULL_SCREEN_STR][curr_section_count][SPRITE_STR]
+            curr_speech:str = self._speech_dict[FULL_SCREEN_STR][curr_section_count][SPEECH_STR]
+            speech_length:int = len(curr_speech) + 1
+            new_content += \
+                curr_sprite.to_bytes(1, 'big') + \
+                speech_length.to_bytes(1, 'big') + \
+                curr_speech.encode("latin-1") + b"\x00"
+        return new_content
+
+    def _write_generic_speech_file(self, new_content:bytearray):
+        '''
+        Writes a generic speech in byte format.
+        '''
+        for curr_section in [BOTTOM_SECTION_STR, TOP_SECTION_STR]:
+            curr_section_length:int = len(self._speech_dict[curr_section])
+            new_content += curr_section_length.to_bytes(1, 'big')
+            for curr_section_count in sorted(self._speech_dict[curr_section]):
+                curr_sprite:int = self._speech_dict[curr_section][curr_section_count][SPRITE_STR]
+                curr_speech:str = self._speech_dict[curr_section][curr_section_count][SPEECH_STR]
+                speech_length:int = len(curr_speech) + 1
+                new_content += \
+                    curr_sprite.to_bytes(1, 'big') + \
+                    speech_length.to_bytes(1, 'big') + \
+                    curr_speech.encode("latin-1") + b"\x00"
+        return new_content
 
     ##########################
     ##### MAIN FUNCTIONS #####
@@ -277,8 +324,12 @@ class Speech_Class(Generic_Bin_File_Class):
 
     def read_speech_file(self):
         '''
-        Pass
+        Reads the speech file and places contents
+        in a dictionary.
         '''
+        super()._read_file()
+        self._speech_type:str = self._determine_speech_type()
+        self._speech_dict:dict = {}
         if(self._speech_type in [FURNACE_FUN_GRUNTILDA_QUESTION_STR,
                                  FURNACE_FUN_OTHER_QUESTION_STR]):
             self._parse_furance_fun_speech()
@@ -287,13 +338,34 @@ class Speech_Class(Generic_Bin_File_Class):
     
     def print_speech_file(self):
         '''
-        Pass
+        Prints the speech file to the console.
+        Attempts to display generic speeches
+        in game-presenting order.
         '''
         if(self._speech_type in [FURNACE_FUN_GRUNTILDA_QUESTION_STR,
                                  FURNACE_FUN_OTHER_QUESTION_STR]):
             self._print_furnace_fun_speech()
         elif(self._speech_type == GENERIC_SPEECH_STR):
             self._print_generic_speech()
+    
+    def save_speech_file(self, file_path:str|None=None):
+        '''
+        Writes the speech file in binary mode.
+        '''
+        if(self._speech_type == FURNACE_FUN_GRUNTILDA_QUESTION_STR):
+            header:int = 0x0103000500
+            new_content:bytearray = header.to_bytes(5, 'big')
+            new_content = self._write_furnace_fun_speech_file(new_content)
+        if(self._speech_type == FURNACE_FUN_OTHER_QUESTION_STR):
+            header:int = 0x0101020500
+            new_content:bytearray = header.to_bytes(5, 'big')
+            new_content = self._write_furnace_fun_speech_file(new_content)
+        elif(self._speech_type == GENERIC_SPEECH_STR):
+            header:int = 0x010300
+            new_content:bytearray = header.to_bytes(3, 'big')
+            new_content = self._write_generic_speech_file(new_content)
+        self._file_content = new_content
+        super()._save_changes(file_path)
 
 ################
 ##### MAIN #####
@@ -301,6 +373,7 @@ class Speech_Class(Generic_Bin_File_Class):
 
 if __name__ == '__main__':
     file_dir:str = "C:/Users/Cyrus/Desktop/N64/ROMs/GEDecompressor_Files/test2/"
+    save_file_dir:str = "C:/Users/Cyrus/Documents/VS_Code/Banjo-Kazooie_Randomizer/Banjo-Kazooie_N64_Randomizer/randomizer/extracted_files/"
     # Generic
     print("Generic:")
     file_path:str = f"{file_dir}5C21F8.bin"
@@ -317,6 +390,7 @@ if __name__ == '__main__':
     for (section, section_count) in found_speech_list:
         speech_obj.delete_speech_line(section, section_count)
     speech_obj.print_speech_file()
+    speech_obj.save_speech_file(f"{save_file_dir}5C21F8.bin")
     # # Brentilda
     # print("\nBrentilda:")
     # file_path:str = f"{file_dir}5CFDC0.bin"
@@ -337,18 +411,21 @@ if __name__ == '__main__':
     # file_path:str = f"{file_dir}5C22E0.bin"
     # speech_obj = Speech_Class(file_path)
     # speech_obj.print_speech_file()
-    # # Special Action
+    # Special Action
     # print("\nSpecial Action:")
     # file_path:str = f"{file_dir}5C50B0.bin"
     # speech_obj = Speech_Class(file_path)
     # speech_obj.print_speech_file()
+    # speech_obj.save_speech_file(f"{save_file_dir}5C50B0.bin")
     # # Furnace Fun Gruntilda Question
     # print("\nFurnace Fun Gruntilda Question:")
     # file_path:str = f"{file_dir}5D3228.bin"
     # speech_obj = Speech_Class(file_path)
     # speech_obj.print_speech_file()
+    # speech_obj.save_speech_file(f"{save_file_dir}5D3228.bin")
     # # Furnace Fun Other Question
     # print("\nFurnace Fun Other Question:")
     # file_path:str = f"{file_dir}5D9348.bin"
     # speech_obj = Speech_Class(file_path)
     # speech_obj.print_speech_file()
+    # speech_obj.save_speech_file(f"{save_file_dir}5D9348.bin")

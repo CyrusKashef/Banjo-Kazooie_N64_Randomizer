@@ -296,6 +296,16 @@ class ASSEMBLY_CLASS():
     ##### COSMETICS & SOUNDS #####
     ##############################
 
+    def replace_banjo_kazooie_models(self,
+            low_poly_model:int=0x34D,
+            high_poly_model:int=0x34E):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.replace_banjo_kazooie_models(
+            low_poly_model,
+            high_poly_model)
+
     def replace_game_engine_models_with_assets(self, asset_id_dict:dict):
         '''
         Pass

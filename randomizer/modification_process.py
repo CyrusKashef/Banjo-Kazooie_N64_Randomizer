@@ -34,7 +34,8 @@ from randomizer.contants.variables.gui_variables import \
     ROLL_STR, SHOCK_JUMP_STR, STILT_STRIDE_STR, \
     DIVE_STR, TALON_TROT_STR, TURBO_TALON_TROT_STR, \
     WONDERWING_STR, NOTE_DOOR_STR, \
-    SHOCK_JUMP_PAD_ANYWHERE_STR
+    SHOCK_JUMP_PAD_ANYWHERE_STR, \
+    LOW_POLY_MODEL_STR, HIGH_POLY_MODEL_STR
 
 ######################################
 ##### MODIFICATION PROCESS CLASS #####
@@ -88,6 +89,9 @@ class MODIFICATION_PROCESS_CLASS():
             WONDERWING_STR: 1,
             NOTE_DOOR_STR: 1,
             SHOCK_JUMP_PAD_ANYWHERE_STR: 0,
+            # COSMETICS & SOUNDS
+            LOW_POLY_MODEL_STR: 0x34D,
+            HIGH_POLY_MODEL_STR: 0x34E,
         }
 
     def _modification_setup(self):
