@@ -220,6 +220,12 @@ class ASSEMBLY_CLASS():
         Pass
         '''
         pass
+
+    def skip_jiggy_jig(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.skip_jiggy_jig()
     
     ######################
     ##### DIFFICULTY #####
@@ -289,6 +295,16 @@ class ASSEMBLY_CLASS():
     ##############################
     ##### COSMETICS & SOUNDS #####
     ##############################
+
+    def replace_banjo_kazooie_models(self,
+            low_poly_model:int=0x34D,
+            high_poly_model:int=0x34E):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.replace_banjo_kazooie_models(
+            low_poly_model,
+            high_poly_model)
 
     def replace_game_engine_models_with_assets(self, asset_id_dict:dict):
         '''
@@ -444,3 +460,9 @@ class ASSEMBLY_CLASS():
         Pass
         '''
         pass
+
+    def shock_jump_pad_anywhere(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.shock_jump_pad_anywhere()

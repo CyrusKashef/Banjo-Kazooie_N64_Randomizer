@@ -14,6 +14,7 @@ from randomizer.patching.bk_rom_class import BK_ROM_CLASS
 from randomizer.assembly.assembly import ASSEMBLY_CLASS
 from randomizer.contants.variables.patching_variables import BIN_EXTENSION
 from randomizer.contants.enums.ability_enums import ABILITY_ENUMS
+from randomizer.contants.dicts.gui_move_dict import GUI_MOVE_ENUM_DICT
 
 #####################
 ##### CONSTANTS #####
@@ -22,10 +23,19 @@ from randomizer.contants.enums.ability_enums import ABILITY_ENUMS
 from randomizer.contants.variables.gui_variables import \
     ORIGINAL_ROM_PATH_STR, NEW_ROM_PATH_STR, \
     BOOT_TO_FILE_SELECT_STR, SKIPPABLE_CUTSCENES_STR, \
+    SKIP_JIGGY_JIG_STR, \
     STARTING_BLUE_EGG_COUNT_STR, STARTING_RED_FEATHER_COUNT_STR, \
     STARTING_GOLD_FEATHER_COUNT_STR, STARTING_MUMBO_TOKEN_COUNT_STR, \
     ENABLE_FALLPROOF_STR, \
-    START_WITH_ALL_MOVES_STR
+    SELECT_STARTING_MOVES_STR, BEAK_BARGE_STR, BEAK_BOMB_STR, \
+    BEAK_BUSTER_STR, CLAW_SWIPE_STR, CLIMB_STR, \
+    EGG_FIRING_STR, FEATHERY_FLAP_STR, FLAP_FLIP_STR, \
+    FLIGHT_STR, HIGH_JUMP_STR, RAT_A_TAP_RAP_STR, \
+    ROLL_STR, SHOCK_JUMP_STR, STILT_STRIDE_STR, \
+    DIVE_STR, TALON_TROT_STR, TURBO_TALON_TROT_STR, \
+    WONDERWING_STR, NOTE_DOOR_STR, \
+    SHOCK_JUMP_PAD_ANYWHERE_STR, \
+    LOW_POLY_MODEL_STR, HIGH_POLY_MODEL_STR
 
 ######################################
 ##### MODIFICATION PROCESS CLASS #####
@@ -49,14 +59,39 @@ class MODIFICATION_PROCESS_CLASS():
             # Quality Of Life
             BOOT_TO_FILE_SELECT_STR: 1,
             SKIPPABLE_CUTSCENES_STR: 1,
+            SKIP_JIGGY_JIG_STR: 1,
             # Difficulty
-            STARTING_BLUE_EGG_COUNT_STR: 69,
-            STARTING_RED_FEATHER_COUNT_STR: 27,
-            STARTING_GOLD_FEATHER_COUNT_STR: 4,
-            STARTING_MUMBO_TOKEN_COUNT_STR: 5,
-            ENABLE_FALLPROOF_STR: 1,
+            STARTING_BLUE_EGG_COUNT_STR: 0,
+            STARTING_RED_FEATHER_COUNT_STR: 0,
+            STARTING_GOLD_FEATHER_COUNT_STR: 0,
+            STARTING_MUMBO_TOKEN_COUNT_STR: 0,
+            ENABLE_FALLPROOF_STR: 0,
             # Logic
-            START_WITH_ALL_MOVES_STR: 1,
+            SELECT_STARTING_MOVES_STR: 0,
+            BEAK_BARGE_STR: 1,
+            BEAK_BARGE_STR: 1,
+            BEAK_BOMB_STR: 1,
+            BEAK_BUSTER_STR: 1,
+            CLAW_SWIPE_STR: 1,
+            CLIMB_STR: 1,
+            EGG_FIRING_STR: 1,
+            FEATHERY_FLAP_STR: 1,
+            FLAP_FLIP_STR: 1,
+            FLIGHT_STR: 1,
+            HIGH_JUMP_STR: 1,
+            RAT_A_TAP_RAP_STR: 1,
+            ROLL_STR: 1,
+            SHOCK_JUMP_STR: 1,
+            STILT_STRIDE_STR: 1,
+            DIVE_STR: 1,
+            TALON_TROT_STR: 1,
+            TURBO_TALON_TROT_STR: 1,
+            WONDERWING_STR: 1,
+            NOTE_DOOR_STR: 1,
+            SHOCK_JUMP_PAD_ANYWHERE_STR: 0,
+            # COSMETICS & SOUNDS
+            LOW_POLY_MODEL_STR: 0x34D,
+            HIGH_POLY_MODEL_STR: 0x34E,
         }
 
     def _modification_setup(self):
@@ -86,20 +121,21 @@ class MODIFICATION_PROCESS_CLASS():
         asm_obj = ASSEMBLY_CLASS()
         asm_obj.disable_anti_tamper()
         asm_obj.patch_yum_yum_crash_fix()
+        # Boot To File Select
         if(self._settings_dict[BOOT_TO_FILE_SELECT_STR]):
             asm_obj.boot_to_file_select()
+        # Skippable Cutscenes
         if(self._settings_dict[SKIPPABLE_CUTSCENES_STR]):
             asm_obj.skippable_cutscenes()
-        if(self._settings_dict[START_WITH_ALL_MOVES_STR]):
-            ability_enum_list:list = [
-                ABILITY_ENUMS.beak_barge,
-                ABILITY_ENUMS.climb,
-                ABILITY_ENUMS.flap_flip,
-                ABILITY_ENUMS.talon_trot,
-                ABILITY_ENUMS.egg_firing,
-                ABILITY_ENUMS.flight,
-                ABILITY_ENUMS.wonderwing,
-                ]
+        # Skip Jiggy Jig
+        if(self._settings_dict[SKIP_JIGGY_JIG_STR]):
+            asm_obj.skip_jiggy_jig()
+        # Starting Moves/Inventory
+        if(self._settings_dict[SELECT_STARTING_MOVES_STR]):
+            ability_enum_list:list = [ABILITY_ENUMS.camera_control]
+            for move_variable in GUI_MOVE_ENUM_DICT:
+                if(self._settings_dict[move_variable]):
+                    ability_enum_list.append(GUI_MOVE_ENUM_DICT[move_variable])
             asm_obj.bottles_tutorial_moves(
                 ability_enum_list,
                 self._settings_dict[STARTING_BLUE_EGG_COUNT_STR],
@@ -113,6 +149,10 @@ class MODIFICATION_PROCESS_CLASS():
                 self._settings_dict[STARTING_RED_FEATHER_COUNT_STR],
                 self._settings_dict[STARTING_GOLD_FEATHER_COUNT_STR]
                 )
+        # Shock Jump Pad Anywhere
+        if(self._settings_dict[SHOCK_JUMP_PAD_ANYWHERE_STR]):
+            asm_obj.shock_jump_pad_anywhere()
+        # Fallproof
         if(self._settings_dict[ENABLE_FALLPROOF_STR]):
             asm_obj.enable_fallproof()
         asm_obj.save_all_assembly_changes()
