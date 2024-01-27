@@ -38,6 +38,12 @@ from randomizer.assembly.final_battle.final_battle_data import FINAL_BATTLE_DATA
 from randomizer.assembly.cutscenes.cutscenes_code import CUTSCENES_CODE_CLASS
 from randomizer.assembly.cutscenes.cutscenes_data import CUTSCENES_DATA_CLASS
 
+from randomizer.contants.enums.jiggy_enums import JIGGY_ENUMS
+from randomizer.contants.enums.empty_honeycomb_enums import EMPTY_HONEYCOMB_ENUMS
+from randomizer.contants.variables.win_condition_variables import \
+    LEVEL_COUNT_STR, TOTAL_COUNT_STR, ITEM_ENUM_STR
+from randomizer.contants.dicts.win_condition_dict import \
+    WIN_CONDITION_FUNCTION_DICT, WIN_CONDITION_COMMANDS_DICT
 
 ####################
 ##### ASSEMBLY #####
@@ -358,6 +364,59 @@ class ASSEMBLY_CLASS():
             blue_egg_count, red_feather_count,
             gold_feather_count, mumbo_token_count
         )
+
+    def set_alternate_win_conditions(self,
+            possible_win_condition_list:list):
+        '''
+        Pass
+        '''
+        # random.seed(a=seed_val)
+        # random.shuffle(possible_win_condition_list)
+        win_condition_list:list = []
+        branch_count:int = 4
+        for item_enum, level_enum, item_val in possible_win_condition_list:
+            if(level_enum is not None):
+                command_function = WIN_CONDITION_FUNCTION_DICT[LEVEL_COUNT_STR][item_enum]
+                command_list:list = \
+                    WIN_CONDITION_COMMANDS_DICT[LEVEL_COUNT_STR](command_function, level_enum, item_val, branch_count)
+                branch_count += 5
+            elif((type(item_val) == JIGGY_ENUMS) or
+                 (type(item_val) == EMPTY_HONEYCOMB_ENUMS)):
+                command_function = WIN_CONDITION_FUNCTION_DICT[ITEM_ENUM_STR][item_enum]
+                command_list:list = \
+                    WIN_CONDITION_COMMANDS_DICT[ITEM_ENUM_STR](command_function, item_val, branch_count)
+                branch_count += 4
+            else:
+                command_function = WIN_CONDITION_FUNCTION_DICT[TOTAL_COUNT_STR][item_enum]
+                command_list:list = \
+                    WIN_CONDITION_COMMANDS_DICT[TOTAL_COUNT_STR](command_function, item_val, branch_count)
+                branch_count += 5
+            if(branch_count > 0x98):
+                break
+            else:
+                win_condition_list.insert(0, command_list)
+        for command_list in win_condition_list:
+            for line in command_list:
+                print(hex(line))
+        self._game_engine_code_obj.set_alternate_win_conditions(win_condition_list)
+
+    def set_note_door_values(self,
+            note_door_list:list=[
+                50, 180, 260, 350, 450, 640,
+                765, 810, 828, 846, 864, 882]):
+        '''
+        Pass
+        '''
+        self._gruntildas_lair_data_obj.set_note_door_values(note_door_list)
+
+    def set_jigsaw_puzzle_costs(self,
+            jigsaw_puzzle_list:list=[
+                1, 2, 5, 7, 8, 9,
+                10, 12, 15, 25, 4]):
+        '''
+        Pass
+        '''
+        self._gruntildas_lair_data_obj.set_jigsaw_puzzle_costs(jigsaw_puzzle_list)
 
     def new_game_moves(self):
         '''

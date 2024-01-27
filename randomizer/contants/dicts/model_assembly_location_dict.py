@@ -7,7 +7,7 @@ Purpose:
 ##### IMPORTS #####
 ###################
 
-from randomizer.contants.enums.assets_enums import ASSET_ID_ENUMS
+from randomizer.contants.enums.object_model_asset_ids import OBJECT_MODEL_ASSET_ID
 from randomizer.contants.enums.assembly_file_enums import ASSEMBLY_FILE_ENUMS
 
 ########################################
@@ -15,22 +15,25 @@ from randomizer.contants.enums.assembly_file_enums import ASSEMBLY_FILE_ENUMS
 ########################################
 
 MODEL_ASSEMBLY_LOCATION_DICT = {
-    ASSET_ID_ENUMS.bk_termite: {
+    OBJECT_MODEL_ASSET_ID.bk_termite: {
         ASSEMBLY_FILE_ENUMS.game_engine_code: [0x1169A],
     },
-    ASSET_ID_ENUMS.bk_wishywashy: {
+    OBJECT_MODEL_ASSET_ID.bk_wishywashy: {
         ASSEMBLY_FILE_ENUMS.game_engine_code: [0x116C2],
     },
-    ASSET_ID_ENUMS.bk_walrus: {
+    OBJECT_MODEL_ASSET_ID.bk_walrus: {
         ASSEMBLY_FILE_ENUMS.game_engine_code: [0x116B2],
     },
-    ASSET_ID_ENUMS.bk_bee: {
+    OBJECT_MODEL_ASSET_ID.bk_bee: {
         ASSEMBLY_FILE_ENUMS.game_engine_code: [0x116BA],
     },
-    ASSET_ID_ENUMS.bk_pumpkin: {
+    OBJECT_MODEL_ASSET_ID.bk_pumpkin: {
         ASSEMBLY_FILE_ENUMS.game_engine_code: [0x116A2],
     },
-    ASSET_ID_ENUMS.bk_crocodile: {
+    OBJECT_MODEL_ASSET_ID.bk_crocodile: {
         ASSEMBLY_FILE_ENUMS.game_engine_code: [0x116AA],
+    },
+    0x7DC: { # Empty Honeycomb 2D
+        ASSEMBLY_FILE_ENUMS.game_engine_code: [0x77A62],
     },
 }

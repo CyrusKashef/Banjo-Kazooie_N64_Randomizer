@@ -1,6 +1,6 @@
 '''
 Purpose:
-* lass for reading and modifying speech files.
+* Class for reading and modifying speech files.
 '''
 
 ###################

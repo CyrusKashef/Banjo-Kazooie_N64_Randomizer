@@ -93,6 +93,8 @@ class SPIRAL_MOUNTAIN_CODE_CLASS(Generic_Bin_File_Class):
         # Return Null
         # self._write_bytes_from_int(0x2AB8, 0x03E00008, byte_count=4)
         # self._write_bytes_from_int(0x2ABC, 0x00000000, byte_count=4)
+        # Remove Instances Of Calling
+        self._write_bytes_from_int(0x3390, 0x00000000, byte_count=4)
 
     def bottles_tutorial_moves(self, ability_enum_list:list):
         '''
@@ -128,7 +130,7 @@ class SPIRAL_MOUNTAIN_CODE_CLASS(Generic_Bin_File_Class):
         self._write_bytes_from_int(0x2AF8, 0x0C0A561C, byte_count=4)
         self._write_bytes_from_int(0x2AFC, 0x2404FFFF, byte_count=4)
         # Give Items To Player
-        self._write_bytes_from_int(0x2B00, 0x0C0E2392, byte_count=4)
+        self._write_bytes_from_int(0x2B00, 0x0C0E2392, byte_count=4) # func_80388E48()
         self._write_bytes_from_int(0x2B04, 0x00000000, byte_count=4)
         # Nice
         self._write_bytes_from_int(0x2B08, 0x24040045, byte_count=4)

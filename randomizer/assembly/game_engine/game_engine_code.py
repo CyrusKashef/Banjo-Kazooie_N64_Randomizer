@@ -64,7 +64,7 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         Pass
         '''
         # Skips Triggers For Jiggy Count < 3
-        self._write_bytes_from_int(0x5780, 0x24010000, byte_count=4)
+        self._write_bytes_from_int(0x5780, 0x28410000, byte_count=4)
         # Skips Triggers For Collecting All Jinjos
         self._write_bytes_from_int(0x579C, 0x10000004, byte_count=4)
         # Always Runs Jiggy Jig Function For Transformations/Flying/Swimming
@@ -193,7 +193,8 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         '''
         # Removes the life count decrease function upon death
         if(infinite_lives):
-            self._write_bytes_from_int(0xBF72C, 0x0000000000000000, byte_count=8)
+            self._write_bytes_from_int(0xBF72C, 0x00000000, byte_count=4)
+            self._write_bytes_from_int(0xBF730, 0x00000000, byte_count=4)
             return
         # Modifies the player's starting life count,
         # and lives upon re-entering the game
@@ -280,151 +281,93 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
     ####################################
     ##### ALTERNATE WIN CONDITIONS #####
     ####################################
-    
-    def remove_defeating_gruntilda_check(self):
-        '''
-        Removes all instance of requiring the player to beat
-        gruntilda to warp to the beach cutscene. 
-        '''
-        # fileProgressFlag_get(FILEPROG_FC_DEFEAT_GRUNTY)
-        # Instance
-        self._write_bytes_from_int(0x15C94, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0x15C98, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0x15C9C, 0x00000000, byte_count=4)
-        # Instance
-        self._write_bytes_from_int(0x15D00, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0x15D04, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0x15D08, 0x00000000, byte_count=4)
-        # Instance
-        self._write_bytes_from_int(0x15DB0, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0x15DB4, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0x15DB8, 0x00000000, byte_count=4)
-        # Instance
-        self._write_bytes_from_int(0x29E28, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0x29E2C, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0x29E30, 0x00000000, byte_count=4)
-        # Instance
-        self._write_bytes_from_int(0x29FB8, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0x29FBC, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0x29FC0, 0x00000000, byte_count=4)
-        # Instance
-        self._write_bytes_from_int(0x98B34, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0x98B38, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0x98B3C, 0x00000000, byte_count=4)
 
-    def jiggy_count_win_condition(self, item_count:int):
+    def _link_jiggy_increment(self):
         '''
-        Modifies the number of Jiggies required to warp the player to the
-        Beach 100 Jiggies cutscene. Typically used with 'Remove Defeated
-        Gruntilda Check' function.
+        Pass
         '''
-        # jiggyscore_total() == 100
-        # Instance
-        self._write_bytes_from_int(0x15C8B, item_count, byte_count=1)
-        # Instance
-        self._write_bytes_from_int(0x15CF7, item_count, byte_count=1)
-        # Instance
-        self._write_bytes_from_int(0x15DA7, item_count, byte_count=1)
-        # Instance
-        self._write_bytes_from_int(0x29E1F, item_count, byte_count=1)
-        # Instance
-        self._write_bytes_from_int(0x29FAF, item_count, byte_count=1)
-        # Instance
-        self._write_bytes_from_int(0x98B4F, item_count, byte_count=1)
+        # 15D94 \\ 0C0D17C9 \\ JAL D17C9 // item_inc()
+        # 15D98 \\ 2404000E \\ ADDIU 4, 0, E // ITEM_E_JIGGY
+        self._write_bytes_from_int(0x15D94, 0x0C0B64FB, byte_count=4) # func_802D93EC()
+        # 15E18 \\ 0C0D17C9 \\ JAL D17C9 // item_inc()
+        # 15E1C \\ 2404000E \\ ADDIU 4, 0, E // ITEM_E_JIGGY
+        self._write_bytes_from_int(0x15E18, 0x0C0B64FB, byte_count=4) # func_802D93EC()
+        # 29DC8 \\ 0C0D17C9 \\ JAL D17C9 // item_inc()
+        # 29DCC \\ 2404000E \\ ADDIU 4, 0, E // ITEM_E_JIGGY
+        self._write_bytes_from_int(0x29DC8, 0x0C0B64FB, byte_count=4) # func_802D93EC()
     
-    def note_count_win_condition(self, item_count):
+    def _link_note_increment(self):
         '''
-        Replaces the Jiggy count that warps the player to the Beach 100
-        Jiggies cutscene with a Note count.
-        Decomp: code_BEF20.c#L388
+        Pass
         '''
-        ########################
-        ### Note Requirement ###
-        ########################
-        ### (level_get() == LEVEL_1_MUMBOS_MOUNTAIN) && (note_count == 50)
-        ### ->
-        ### itemscore_noteScores_getTotal() == item_count
-        # itemscore_noteScores_getTotal()
-        self._write_bytes_from_int(0xBFE70, 0x0C0D1BBB, byte_count=4)
-         # item_count
-        self._write_bytes_from_int(0xBFE78, 0x2401, byte_count=2)
-        self._write_bytes_from_int(0xBFE7A, item_count, byte_count=2)
-        # BNE
-        # self._write_bytes_from_int(0xBFE7C, 0x1441000A, byte_count=4)
-        # note_count == 50 -> Removed
-        self._write_bytes_from_int(0xBFE80, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0xBFE84, 0x00000000, byte_count=4)
-        self._write_bytes_from_int(0xBFE88, 0x00000000, byte_count=4)
-        ################
-        ### Cutscene ###
-        ################
-        ### func_80311480(0xF74, 4, NULL, NULL, NULL, NULL);
-        ### ->
-        ### func_802E4078(MAP_95_CS_END_ALL_100, 0, 1);
-        # 2 (Might not be needed? Idk...)
-        self._write_bytes_from_int(0xBFE8C, 0x24040002, byte_count=4)
-        # MAP_95_CS_END_ALL_100
-        self._write_bytes_from_int(0xBFE90, 0x24040095, byte_count=4)
-        # 0
-        self._write_bytes_from_int(0xBFE94, 0x00002825, byte_count=4)
-        # func_802E4078()
-        self._write_bytes_from_int(0xBFE98, 0x0C0B901E, byte_count=4)
-        # 1
-        self._write_bytes_from_int(0xBFE9C, 0x24060001, byte_count=4)
-        # Is This Needed? func_8029CBC4
-        self._write_bytes_from_int(0xBFEA0, 0x0C0A6299, byte_count=4)
+        # 4AB4 \\ 2404000C \\ ADDIU 4, 0, C // ITEM_C_NOTE
+        # 4AB8 \\ 0C0D17C9 \\ JAL D17C9 // item_inc()
+        # 4ABC \\ 2404000C \\ ADDIU 4, 0, C // ITEM_C_NOTE
+        self._write_bytes_from_int(0x4AB4, 0x2404000C, byte_count=4) # ITEM_C_NOTE
+        self._write_bytes_from_int(0x4AB8, 0x0C0B64FB, byte_count=4) # func_802D93EC()
+        self._write_bytes_from_int(0x4ABC, 0x2404000C, byte_count=4) # ITEM_C_NOTE
+        # 4AC0 \\ 10000003 \\ BEQ 0, 0, 3
+        # 4AC4 \\ 00000000 \\ SLL 0, 0, 0
+        # 4AC8 \\ 0C0D18FD \\ JAL D18FD // func_803463F4 (Diff Function, No Hub)
+        # 4ACC \\ 24050001 \\ ADDIU 5, 0, 1 // 1
+        self._write_bytes_from_int(0x4AC8, 0x0C0B64FB, byte_count=4) # func_802D93EC()
+        self._write_bytes_from_int(0x4ACC, 0x2404000C, byte_count=4) # ITEM_C_NOTE
     
-    def collectathon_win_condition(self,
-            jiggy_score:int=0x7FFF,
-            note_score:int=0x7FFF,
-            empty_honeycomb_score:int=0x7FFF,
-            mumbo_token_score:int=0x7FFF):
+    def _link_empty_honeycomb_increment(self):
         '''
-        ACCIDENTALLY WROTE THIS IN SPIRAL MOUNTAIN CODE
-        GOTTA FIGURE OUT A PLACE FOR GAME ENGINE/C LIBRARIES
+        Pass
         '''
-        # 0C0D17E8 -> item_getCount()
-        # 0C0C848F -> jiggyscore_total()
-        # 0C0D1BBB -> itemscore_noteScores_getTotal()
-        # 0C0C8527 -> honeycombscore_get_total()
-        # 0C0C8599 -> mumboscore_get_total()
-        # Jiggies
-        self._write_bytes_from_int(0x0, 0x0C0C848F, byte_count=4) # jiggyscore_total()
-        self._write_bytes_from_int(0x0, 0x00000000, byte_count=4) # null
-        self._write_bytes_from_int(0x0, 0x2404,     byte_count=2) # ADDIU 4, 0, jiggy_score
-        self._write_bytes_from_int(0x0, jiggy_score, byte_count=2)
-        self._write_bytes_from_int(0x0, 0x2C830001, byte_count=4) # SLTI 3, 2, 4
-        self._write_bytes_from_int(0x0, 0x50600011, byte_count=4) # BEQL 3, 0, 11
-        # Notes
-        self._write_bytes_from_int(0x0, 0x0C0D1BBB, byte_count=4) # itemscore_noteScores_getTotal()
-        self._write_bytes_from_int(0x0, 0x00000000, byte_count=4) # null
-        self._write_bytes_from_int(0x0, 0x2404,     byte_count=2) # ADDIU 4, 0, note_score
-        self._write_bytes_from_int(0x0, note_score, byte_count=2)
-        self._write_bytes_from_int(0x0, 0x2C830001, byte_count=4) # SLTI 3, 2, 4
-        self._write_bytes_from_int(0x0, 0x5060000C, byte_count=4) # BEQL 3, 0, C
-        # Empty Honeycombs
-        self._write_bytes_from_int(0x0, 0x0C0C8527, byte_count=4) # honeycombscore_get_total()
-        self._write_bytes_from_int(0x0, 0x00000000, byte_count=4) # null
-        self._write_bytes_from_int(0x0, 0x2404,     byte_count=2) # ADDIU 4, 0, empty_honeycomb_score
-        self._write_bytes_from_int(0x0, empty_honeycomb_score, byte_count=2)
-        self._write_bytes_from_int(0x0, 0x2C830001, byte_count=4) # SLTI 3, 2, 4
-        self._write_bytes_from_int(0x0, 0x50600007, byte_count=4) # BEQL 3, 0, 7
-        # Mumbo Tokens
-        self._write_bytes_from_int(0x0, 0x0C0C8599, byte_count=4) # mumboscore_get_total()
-        self._write_bytes_from_int(0x0, 0x00000000, byte_count=4) # null
-        self._write_bytes_from_int(0x0, 0x2404,     byte_count=2) # ADDIU 4, 0, mumbo_token_score
-        self._write_bytes_from_int(0x0, mumbo_token_score, byte_count=2)
-        self._write_bytes_from_int(0x0, 0x2C830001, byte_count=4) # SLTI 3, 2, 4
-        self._write_bytes_from_int(0x0, 0x50600002, byte_count=4) # BEQL 3, 0, 2
-        # Return True
-        self._write_bytes_from_int(0x0, 0x03E00008, byte_count=4) # return
-        self._write_bytes_from_int(0x0, 0x24020001, byte_count=4) # 1
-        # Return False
-        self._write_bytes_from_int(0x0, 0x03E00008, byte_count=4) # return
-        self._write_bytes_from_int(0x0, 0x00001025, byte_count=4) # 0
-        # Return Null (Shouldn't Ever Happen)
-        # self._write_bytes_from_int(0x2AB8, 0x03E00008, byte_count=4) # return
-        # self._write_bytes_from_int(0x2ABC, 0x00000000, byte_count=4) # null
+        # 5850 \\ 0C0D17C9 \\ JAL D17C9 // item_inc()
+        # 5854 \\ 24040013 \\ ADDIU 4, 0, 13 // ITEM_13_EMPTY_HONEYCOMB
+        self._write_bytes_from_int(0x5850, 0x0C0B64FB, byte_count=4) # func_802D93EC()
+
+    def _link_mumbo_token_increment(self):
+        '''
+        Pass
+        '''
+        # 59AE0 \\ 0C0D17C9 \\ JAL D17C9 // item_inc()
+        # 59AE4 \\ 2404001C \\ ADDIU 4, 0, 1C // ITEM_1C_MUMBO_TOKEN
+        self._write_bytes_from_int(0x59AE0, 0x0C0B64FB, byte_count=4) # func_802D93EC()
+
+    def set_alternate_win_conditions(self, win_condition_list:list):
+        '''
+        Pass
+        '''
+        # Ask For Memory
+        self._write_bytes_from_int(0x5245C, 0x27BDFFE8, byte_count=4) # ADDIU 1D, 1D, 7FE8
+        self._write_bytes_from_int(0x52460, 0xAFBF0014, byte_count=4) # SW 1F, 14(1D)
+        # Increase Item Count For Enum
+        self._write_bytes_from_int(0x52464, 0x0C0D18F5, byte_count=4) # JAL D18F5 // func_803463D4(item_id, item_diff)
+        self._write_bytes_from_int(0x52468, 0x24050001, byte_count=4) # ADDIU 5, 0, 1
+        # Check Each Item
+        curr_index:int = 0x5246C
+        for win_condition_item in win_condition_list:
+            for win_condition_line in win_condition_item:
+                self._write_bytes_from_int(curr_index, win_condition_line, byte_count=4)
+                curr_index += 0x4
+        # Verify
+        if(curr_index > 0x52504):
+            error_message:str = f"ERROR: set_alternate_win_conditions: Function surpassed allowed index 0x{self._convert_int_to_hex_str(curr_index, 3)}"
+            print(error_message)
+            raise Exception(error_message)
+        # Send Player To Beach Credits
+        self._write_bytes_from_int(curr_index + 0x00, 0x24040096, byte_count=4) # MAP_96_CS_END_BEACH_1
+        self._write_bytes_from_int(curr_index + 0x04, 0x00002825, byte_count=4) # OR A, 0, 0
+        self._write_bytes_from_int(curr_index + 0x08, 0x0C0B901E, byte_count=4) # func_802E4078() // Warp To Map
+        self._write_bytes_from_int(curr_index + 0x0C, 0x24060001, byte_count=4) # ADDIU 6, 0, 1
+        # Return Memory
+        self._write_bytes_from_int(curr_index + 0x10, 0x8FBF0014, byte_count=4) # LW 1F, 14(1D)
+        self._write_bytes_from_int(curr_index + 0x14, 0x27BD0018, byte_count=4) # ADDIU 1D, 1D, 18
+        # Return Null
+        self._write_bytes_from_int(curr_index + 0x18, 0x03E00008, byte_count=4) # JR 1F
+        self._write_bytes_from_int(curr_index + 0x1C, 0x00000000, byte_count=4) # SLL 0, 0, 0
+        # Replace func_802D93EC() -> Set to False
+        self._write_bytes_from_int(0x527DC, 0x24030000, byte_count=4) # Set To False
+        # Link Increment Functions
+        self._link_jiggy_increment()
+        self._link_note_increment()
+        self._link_empty_honeycomb_increment()
+        self._link_mumbo_token_increment()
 
     #####################
     ##### ABILITIES #####

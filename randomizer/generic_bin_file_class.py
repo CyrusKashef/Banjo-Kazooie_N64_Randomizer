@@ -139,7 +139,25 @@ class Generic_Bin_File_Class():
         '''
         Turns an integer into a hexadecimal string.
         '''
+        if(int_val < 0):
+            max_val:int = 0x1 << (byte_count * 8)
+            int_val += max_val
         str_val:str = self._leading_zeros(str(hex(int_val))[2:], byte_count)
+        return str_val
+
+    def _convert_int_to_bin_str(self, int_val:int, bit_count:int=0):
+        '''
+        Pass
+        '''
+        str_val:str = (str(bin(int_val))[2:]).zfill(bit_count)
+        return str_val
+
+    def _convert_float_to_hex_str(self, float_val:int):
+        '''
+        Pass
+        '''
+        float_hex:hex = hex(struct.unpack('!I', struct.pack('!f', float_val))[0])
+        str_val:str = str(float_hex[2:]).upper()
         return str_val
     
     ##########################
