@@ -15,6 +15,9 @@ from randomizer.assembly.assembly import ASSEMBLY_CLASS
 from randomizer.contants.variables.patching_variables import BIN_EXTENSION
 from randomizer.contants.enums.ability_enums import ABILITY_ENUMS
 from randomizer.contants.dicts.gui_move_dict import GUI_MOVE_ENUM_DICT
+from randomizer.contants.dicts.win_condition_dict import SAMPLE_WIN_CONDITIONS_DICT
+from randomizer.contants.variables.win_condition_variables import \
+    ALL_JINJOS_STR, TROTLESS_STR
 
 #####################
 ##### CONSTANTS #####
@@ -35,6 +38,19 @@ from randomizer.contants.variables.gui_variables import \
     DIVE_STR, TALON_TROT_STR, TURBO_TALON_TROT_STR, \
     WONDERWING_STR, NOTE_DOOR_STR, \
     SHOCK_JUMP_PAD_ANYWHERE_STR, \
+    ALTERNATE_WIN_CONDITION_STR, \
+    NOTE_DOOR_50_COST_STR, NOTE_DOOR_180_COST_STR, \
+    NOTE_DOOR_260_COST_STR, NOTE_DOOR_350_COST_STR, \
+    NOTE_DOOR_450_COST_STR, NOTE_DOOR_640_COST_STR, \
+    NOTE_DOOR_765_COST_STR, NOTE_DOOR_810_COST_STR, \
+    NOTE_DOOR_828_COST_STR, NOTE_DOOR_846_COST_STR, \
+    NOTE_DOOR_864_COST_STR, NOTE_DOOR_882_COST_STR, \
+    JIGSAW_PUZZLE_1_COST_STR, JIGSAW_PUZZLE_2_COST_STR, \
+    JIGSAW_PUZZLE_3_COST_STR, JIGSAW_PUZZLE_4_COST_STR, \
+    JIGSAW_PUZZLE_5_COST_STR, JIGSAW_PUZZLE_6_COST_STR, \
+    JIGSAW_PUZZLE_7_COST_STR, JIGSAW_PUZZLE_8_COST_STR, \
+    JIGSAW_PUZZLE_9_COST_STR, JIGSAW_PUZZLE_10_COST_STR, \
+    JIGSAW_PUZZLE_11_COST_STR, \
     LOW_POLY_MODEL_STR, HIGH_POLY_MODEL_STR
 
 ######################################
@@ -56,18 +72,25 @@ class MODIFICATION_PROCESS_CLASS():
         self._settings_dict:dict = {
             ORIGINAL_ROM_PATH_STR: "C:/Users/Cyrus/Documents/VS_Code/Banjo-Kazooie_Randomizer/Banjo-Kazooie_N64_Randomizer/Banjo-Kazooie.z64",
             NEW_ROM_PATH_STR: "C:/Users/Cyrus/Documents/VS_Code/Banjo-Kazooie_Randomizer/Banjo-Kazooie_N64_Randomizer/Banjo-Kazooie-TEST.z64",
-            # Quality Of Life
+            #######################
+            ### Quality Of Life ###
+            #######################
             BOOT_TO_FILE_SELECT_STR: 1,
             SKIPPABLE_CUTSCENES_STR: 1,
             SKIP_JIGGY_JIG_STR: 1,
-            # Difficulty
-            STARTING_BLUE_EGG_COUNT_STR: 0,
-            STARTING_RED_FEATHER_COUNT_STR: 0,
-            STARTING_GOLD_FEATHER_COUNT_STR: 0,
-            STARTING_MUMBO_TOKEN_COUNT_STR: 0,
-            ENABLE_FALLPROOF_STR: 0,
-            # Logic
-            SELECT_STARTING_MOVES_STR: 0,
+            ##################
+            ### Difficulty ###
+            ##################
+            STARTING_BLUE_EGG_COUNT_STR: 69,
+            STARTING_RED_FEATHER_COUNT_STR: 42,
+            STARTING_GOLD_FEATHER_COUNT_STR: 9,
+            STARTING_MUMBO_TOKEN_COUNT_STR: 21,
+            ENABLE_FALLPROOF_STR: 1,
+            #############
+            ### Logic ###
+            #############
+            # Starting Moves
+            SELECT_STARTING_MOVES_STR: 1,
             BEAK_BARGE_STR: 1,
             BEAK_BARGE_STR: 1,
             BEAK_BOMB_STR: 1,
@@ -89,7 +112,36 @@ class MODIFICATION_PROCESS_CLASS():
             WONDERWING_STR: 1,
             NOTE_DOOR_STR: 1,
             SHOCK_JUMP_PAD_ANYWHERE_STR: 0,
-            # COSMETICS & SOUNDS
+            # Win Condition
+            ALTERNATE_WIN_CONDITION_STR: TROTLESS_STR,
+            # Note Doors
+            NOTE_DOOR_50_COST_STR: 0,
+            NOTE_DOOR_180_COST_STR: 0,
+            NOTE_DOOR_260_COST_STR: 0,
+            NOTE_DOOR_350_COST_STR: 0,
+            NOTE_DOOR_450_COST_STR: 0,
+            NOTE_DOOR_640_COST_STR: 0,
+            NOTE_DOOR_765_COST_STR: 0,
+            NOTE_DOOR_810_COST_STR: 0,
+            NOTE_DOOR_828_COST_STR: 0,
+            NOTE_DOOR_846_COST_STR: 0,
+            NOTE_DOOR_864_COST_STR: 0,
+            NOTE_DOOR_882_COST_STR: 0,
+            # Jigsaw Puzzles
+            JIGSAW_PUZZLE_1_COST_STR: 0,
+            JIGSAW_PUZZLE_2_COST_STR: 0,
+            JIGSAW_PUZZLE_3_COST_STR: 0,
+            JIGSAW_PUZZLE_4_COST_STR: 0,
+            JIGSAW_PUZZLE_5_COST_STR: 0,
+            JIGSAW_PUZZLE_6_COST_STR: 0,
+            JIGSAW_PUZZLE_7_COST_STR: 0,
+            JIGSAW_PUZZLE_8_COST_STR: 0,
+            JIGSAW_PUZZLE_9_COST_STR: 0,
+            JIGSAW_PUZZLE_10_COST_STR: 0,
+            JIGSAW_PUZZLE_11_COST_STR: 0,
+            ##########################
+            ### COSMETICS & SOUNDS ###
+            ##########################
             LOW_POLY_MODEL_STR: 0x34D,
             HIGH_POLY_MODEL_STR: 0x34E,
         }
@@ -149,6 +201,40 @@ class MODIFICATION_PROCESS_CLASS():
                 self._settings_dict[STARTING_RED_FEATHER_COUNT_STR],
                 self._settings_dict[STARTING_GOLD_FEATHER_COUNT_STR]
                 )
+        # Alternate Win Condition
+        alternate_win_condition:str = self._settings_dict[ALTERNATE_WIN_CONDITION_STR]
+        if(alternate_win_condition != ""):
+            possible_win_condition_list:list = SAMPLE_WIN_CONDITIONS_DICT[alternate_win_condition]
+            asm_obj.set_alternate_win_conditions(possible_win_condition_list)
+        # Note Doors
+        asm_obj.set_note_door_values(note_door_list=[
+            self._settings_dict[NOTE_DOOR_50_COST_STR],
+            self._settings_dict[NOTE_DOOR_180_COST_STR],
+            self._settings_dict[NOTE_DOOR_260_COST_STR],
+            self._settings_dict[NOTE_DOOR_350_COST_STR],
+            self._settings_dict[NOTE_DOOR_450_COST_STR],
+            self._settings_dict[NOTE_DOOR_640_COST_STR],
+            self._settings_dict[NOTE_DOOR_765_COST_STR],
+            self._settings_dict[NOTE_DOOR_810_COST_STR],
+            self._settings_dict[NOTE_DOOR_828_COST_STR],
+            self._settings_dict[NOTE_DOOR_846_COST_STR],
+            self._settings_dict[NOTE_DOOR_864_COST_STR],
+            self._settings_dict[NOTE_DOOR_882_COST_STR]
+        ])
+        # Jigsaw Puzzles
+        asm_obj.set_jigsaw_puzzle_costs(jigsaw_puzzle_list=[
+            self._settings_dict[JIGSAW_PUZZLE_1_COST_STR],
+            self._settings_dict[JIGSAW_PUZZLE_2_COST_STR],
+            self._settings_dict[JIGSAW_PUZZLE_3_COST_STR],
+            self._settings_dict[JIGSAW_PUZZLE_4_COST_STR],
+            self._settings_dict[JIGSAW_PUZZLE_5_COST_STR],
+            self._settings_dict[JIGSAW_PUZZLE_6_COST_STR],
+            self._settings_dict[JIGSAW_PUZZLE_7_COST_STR],
+            self._settings_dict[JIGSAW_PUZZLE_8_COST_STR],
+            self._settings_dict[JIGSAW_PUZZLE_9_COST_STR],
+            self._settings_dict[JIGSAW_PUZZLE_10_COST_STR],
+            self._settings_dict[JIGSAW_PUZZLE_11_COST_STR]
+        ])
         # Shock Jump Pad Anywhere
         if(self._settings_dict[SHOCK_JUMP_PAD_ANYWHERE_STR]):
             asm_obj.shock_jump_pad_anywhere()

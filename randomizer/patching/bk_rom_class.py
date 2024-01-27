@@ -30,6 +30,7 @@ from randomizer.patching.compression_class import COMPRESSION_CLASS
 
 from randomizer.contants.variables.patching_variables import \
     ASSET_TABLE_START_INDEX, ASSET_TABLE_END_INDEX, ASSET_TABLE_OFFSET, \
+    ASSET_TABLE_INTERVAL, ASSET_TABLE_START_ID, ASSET_TABLE_END_ID, \
     ROM_END_INDEX, CIC, CRC1_INDEX_START, CRC2_INDEX_START, \
     CHECK_ROM_START_INDEX, CHECK_ROM_END_INDEX, BIN_EXTENSION, \
     EXTRACTED_FILES_DIR, COMPRESSED_BIN_EXTENSION, RAW_BIN_EXTENSION, \
@@ -89,19 +90,18 @@ class BK_ROM_CLASS(Generic_Bin_File_Class):
         Extracts all of the compressed bin files from the ROM into an individual bin file and
         runs the decompression algorithm to create the decompressed bin file.
         '''
-        print(f"INFO: extract_and_decompress_all_asset_table_pointers: Extracting and decompressing all assets...")
-        for pointer_count, pointer_index_start in enumerate(range(
-                ASSET_TABLE_START_INDEX,
-                ASSET_TABLE_END_INDEX,
-                0x8)):
-            if(pointer_count % 100 == 0):
+        print(f"INFO: extract_asset_table_pointers: Extracting and decompressing all assets...")
+        for asset_id in range(ASSET_TABLE_START_ID, ASSET_TABLE_END_ID + 0x1):
+            pointer_index_start:int = ASSET_TABLE_START_INDEX + asset_id * ASSET_TABLE_INTERVAL
+            if(asset_id % 0x100 == 0):
+                asset_id_hex_str:str = self._convert_int_to_hex_str(asset_id)
                 pointer_hex_str:str = self._convert_int_to_hex_str(pointer_index_start, byte_count=4)
-                print(f"DEBUG: extract_and_decompress_all_asset_table_pointers: Current pointer {pointer_hex_str}")
+                print(f"DEBUG: extract_asset_table_pointers: Asset Id 0x{asset_id_hex_str} -> Pointer 0x{pointer_hex_str}")
             file_name:str = self._convert_int_to_hex_str(pointer_index_start)
             self._extract_asset_by_pointer(pointer_index_start, file_name)
             compressed_obj = COMPRESSION_CLASS(file_name, COMPRESSED_STR)
             compressed_obj.decompress_file_main()
-        print(f"INFO: extract_and_decompress_all_asset_table_pointers: Extraction and decompression complete!")
+        print(f"INFO: extract_asset_table_pointers: Extraction and decompression complete!")
 
     # ASSEMBLY FILES
 
@@ -200,11 +200,12 @@ class BK_ROM_CLASS(Generic_Bin_File_Class):
         print(f"INFO: append_asset_table_pointers: Start...")
         self._append_address:int = ROM_END_INDEX
         bin_files_list = os.listdir(EXTRACTED_FILES_DIR)
-        for pointer_count, pointer_index_start in enumerate(range(
-                ASSET_TABLE_START_INDEX, ASSET_TABLE_END_INDEX, 0x8)):
-            if(pointer_count % 100 == 0):
+        for asset_id in range(ASSET_TABLE_START_ID, ASSET_TABLE_END_ID + 0x1):
+            pointer_index_start:int = ASSET_TABLE_START_INDEX + asset_id * ASSET_TABLE_INTERVAL
+            if(asset_id % 0x100 == 0):
+                asset_id_hex_str:str = self._convert_int_to_hex_str(asset_id)
                 pointer_hex_str:str = self._convert_int_to_hex_str(pointer_index_start, byte_count=4)
-                print(f"DEBUG: append_asset_table_pointers: Current pointer {pointer_hex_str}")
+                print(f"DEBUG: extract_asset_table_pointers: Asset Id 0x{asset_id_hex_str} -> Pointer 0x{pointer_hex_str}")
             file_name:str = self._convert_int_to_hex_str(pointer_index_start)
             raw_file_name:str = file_name + RAW_BIN_EXTENSION
             compressed_file_name:str = file_name + COMPRESSED_BIN_EXTENSION

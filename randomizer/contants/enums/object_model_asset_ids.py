@@ -1,6 +1,15 @@
 '''
 Purpose:
 * Class of in-game enumerators for the asset file ids
+
+ToDo:
+* Add Animations
+* Add Map Setups
+* Add Sprites/Textures
+* Add Button Inputs
+* Add Text Files
+* Add Level Models
+* Add Music Files
 '''
 
 ###################
@@ -14,7 +23,7 @@ from enum import IntEnum, unique
 ##########################
 
 @unique
-class ASSET_ID_ENUMS(IntEnum):
+class OBJECT_MODEL_ASSET_ID(IntEnum):
     grey_house_brick_upon_smashing_mm_huts = 0x02D1,
     mm_chimpys_orange = 0x02D2,
     mm_conga_tree = 0x02D3,
