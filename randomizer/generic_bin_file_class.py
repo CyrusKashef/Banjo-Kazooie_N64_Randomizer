@@ -83,6 +83,35 @@ class Generic_Bin_File_Class():
         self._file_content[index_start:index_start+4] = struct.pack('!f', float_val)
 
     ### BITS
+
+    def _parse_int_by_bits(self, start_index:int, byte_count:int, bit_count_list:list):
+        '''
+        Pass
+        '''
+        int_val:int = self._read_bytes_as_int(start_index, byte_count)
+        bit_val_list:list = []
+        expected_bit_count:int = byte_count * 8
+        curr_bit_start:int = 0
+        for bit_count in bit_count_list:
+            bit_val:bin = (int_val >> curr_bit_start) & ((1 << bit_count) - 1)
+            bit_val_list.append(bit_val)
+            curr_bit_start += bit_count
+        if(curr_bit_start != expected_bit_count):
+            error_message:str = f"Error: _parse_int_by_bits: Bitfield at index 0x{start_index} exceeds expected bit count."
+            print(error_message)
+            raise Exception(error_message)
+        return bit_val_list
+
+    def _construct_int_from_bits(self, bit_count_list:list):
+        '''
+        Pass
+        '''
+        int_val:int = 0
+        bit_shift:int = 0
+        for (item_int_val, item_bit_shift) in bit_count_list:
+            int_val += (item_int_val << bit_shift)
+            bit_shift += item_bit_shift
+        return int_val
     
     ###################
     ##### STRINGS #####
@@ -159,6 +188,13 @@ class Generic_Bin_File_Class():
         float_hex:hex = hex(struct.unpack('!I', struct.pack('!f', float_val))[0])
         str_val:str = str(float_hex[2:]).upper()
         return str_val
+
+    def _convert_float_to_hex_bytes(self, float_val:int):
+        '''
+        Pass
+        '''
+        hex_val:int = struct.unpack('!I', struct.pack('!f', float_val))[0]
+        return hex_val.to_bytes(4, 'big')
     
     ##########################
     ##### MAIN FUNCTIONS #####

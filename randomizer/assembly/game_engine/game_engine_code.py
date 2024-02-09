@@ -61,7 +61,8 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
     
     def skip_jiggy_jig(self):
         '''
-        Pass
+        Treats all instances of touching the Jiggy as if
+        the player was underwater/in air/a transformation.
         '''
         # Skips Triggers For Jiggy Count < 3
         self._write_bytes_from_int(0x5780, 0x28410000, byte_count=4)
@@ -282,9 +283,11 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
     ##### ALTERNATE WIN CONDITIONS #####
     ####################################
 
-    def _link_jiggy_increment(self):
+    def _hijack_jiggy_increment(self):
         '''
-        Pass
+        Replaces instances of the Jiggy count incrementing
+        with a function that increments the Jiggy count and
+        does other functions.
         '''
         # 15D94 \\ 0C0D17C9 \\ JAL D17C9 // item_inc()
         # 15D98 \\ 2404000E \\ ADDIU 4, 0, E // ITEM_E_JIGGY
@@ -296,9 +299,11 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         # 29DCC \\ 2404000E \\ ADDIU 4, 0, E // ITEM_E_JIGGY
         self._write_bytes_from_int(0x29DC8, 0x0C0B64FB, byte_count=4) # func_802D93EC()
     
-    def _link_note_increment(self):
+    def _hijack_note_increment(self):
         '''
-        Pass
+        Replaces instances of the Note count incrementing
+        with a function that increments the Note count and
+        does other functions.
         '''
         # 4AB4 \\ 2404000C \\ ADDIU 4, 0, C // ITEM_C_NOTE
         # 4AB8 \\ 0C0D17C9 \\ JAL D17C9 // item_inc()
@@ -313,17 +318,21 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         self._write_bytes_from_int(0x4AC8, 0x0C0B64FB, byte_count=4) # func_802D93EC()
         self._write_bytes_from_int(0x4ACC, 0x2404000C, byte_count=4) # ITEM_C_NOTE
     
-    def _link_empty_honeycomb_increment(self):
+    def _hijack_empty_honeycomb_increment(self):
         '''
-        Pass
+        Replaces instances of the Empty Honeycomb count incrementing
+        with a function that increments the Empty Honeycomb count and
+        does other functions.
         '''
         # 5850 \\ 0C0D17C9 \\ JAL D17C9 // item_inc()
         # 5854 \\ 24040013 \\ ADDIU 4, 0, 13 // ITEM_13_EMPTY_HONEYCOMB
         self._write_bytes_from_int(0x5850, 0x0C0B64FB, byte_count=4) # func_802D93EC()
 
-    def _link_mumbo_token_increment(self):
+    def _hijack_mumbo_token_increment(self):
         '''
-        Pass
+        Replaces instances of the Mumbo Token count incrementing
+        with a function that increments the Mumbo Token count and
+        does other functions.
         '''
         # 59AE0 \\ 0C0D17C9 \\ JAL D17C9 // item_inc()
         # 59AE4 \\ 2404001C \\ ADDIU 4, 0, 1C // ITEM_1C_MUMBO_TOKEN
@@ -331,7 +340,12 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
 
     def set_alternate_win_conditions(self, win_condition_list:list):
         '''
-        Pass
+        Replaces the Bottles Bridge Speech Check function with a list of
+        conditions, where if all are completed, the player will be warped
+        to the beach credits cutscene. Hijacks the functions for incrementing
+        the player's note, jiggy, empty honeycomb, and mumbo token scores.
+        Win conditions are more explained in other win condition files.
+        Decomp: ch/mole.c#L92
         '''
         # Ask For Memory
         self._write_bytes_from_int(0x5245C, 0x27BDFFE8, byte_count=4) # ADDIU 1D, 1D, 7FE8
@@ -364,10 +378,10 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         # Replace func_802D93EC() -> Set to False
         self._write_bytes_from_int(0x527DC, 0x24030000, byte_count=4) # Set To False
         # Link Increment Functions
-        self._link_jiggy_increment()
-        self._link_note_increment()
-        self._link_empty_honeycomb_increment()
-        self._link_mumbo_token_increment()
+        self._hijack_jiggy_increment()
+        self._hijack_note_increment()
+        self._hijack_empty_honeycomb_increment()
+        self._hijack_mumbo_token_increment()
 
     #####################
     ##### ABILITIES #####
@@ -394,9 +408,22 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
 
     def shock_jump_pad_anywhere(self):
         '''
-        Pass
+        Acts as though the floor is always a shock jump pad.
+        Still requires high jump/dropdown to perform.
         '''
         # 8037C1D2 0001
         # miscflag_isTrue(0x2) -> Always 1
         self._write_bytes_from_int(0x2A1B0, 0x24020001, byte_count=4)
         self._write_bytes_from_int(0x2A1B4, 0x24020001, byte_count=4)
+    
+    ############################
+    ##### CHINKER SPECIFIC #####
+    ############################
+    
+    def chinker_stop_spinning(self):
+        '''
+        Pass
+        Decomp: ch/icecube.c
+        '''
+        # self._write_bytes_from_int(0xD3750, 0x00000000, byte_count=4) # LWC1 8, 50(10)
+        self._write_bytes_from_int(0xD3754, 0x00000000, byte_count=4) # LWC1 A, 38(1D)

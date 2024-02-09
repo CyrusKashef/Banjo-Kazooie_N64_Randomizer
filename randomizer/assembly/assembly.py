@@ -38,8 +38,8 @@ from randomizer.assembly.final_battle.final_battle_data import FINAL_BATTLE_DATA
 from randomizer.assembly.cutscenes.cutscenes_code import CUTSCENES_CODE_CLASS
 from randomizer.assembly.cutscenes.cutscenes_data import CUTSCENES_DATA_CLASS
 
-from randomizer.contants.enums.jiggy_enums import JIGGY_ENUMS
-from randomizer.contants.enums.empty_honeycomb_enums import EMPTY_HONEYCOMB_ENUMS
+from randomizer.contants.int_enums.jiggy_enums import JIGGY_ENUMS
+from randomizer.contants.int_enums.empty_honeycomb_enums import EMPTY_HONEYCOMB_ENUMS
 from randomizer.contants.variables.win_condition_variables import \
     LEVEL_COUNT_STR, TOTAL_COUNT_STR, ITEM_ENUM_STR
 from randomizer.contants.dicts.win_condition_dict import \
@@ -344,6 +344,12 @@ class ASSEMBLY_CLASS():
         '''
         pass
 
+    def chinker_stop_spinning(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.chinker_stop_spinning()
+
     #################
     ##### LOGIC #####
     #################
@@ -395,9 +401,6 @@ class ASSEMBLY_CLASS():
                 break
             else:
                 win_condition_list.insert(0, command_list)
-        for command_list in win_condition_list:
-            for line in command_list:
-                print(hex(line))
         self._game_engine_code_obj.set_alternate_win_conditions(win_condition_list)
 
     def set_note_door_values(self,

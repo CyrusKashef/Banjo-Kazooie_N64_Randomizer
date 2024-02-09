@@ -5,8 +5,8 @@ Purpose:
 
 # core1/code_CE60.c#L195
 
-from randomizer.contants.enums.level_enums import LEVEL_ID_ENUMS
-from randomizer.contants.enums.music_zone_enums import MUSIC_ZONE_ENUMS
+from randomizer.contants.int_enums.level_enums import LEVEL_ID_ENUMS
+from randomizer.contants.int_enums.music_zone_enums import MUSIC_ZONE_ENUMS
 
 X_POSITION_INDEX_STR:str = "X Position Index"
 Z_POSITION_INDEX_STR:str = "Z Position Index"

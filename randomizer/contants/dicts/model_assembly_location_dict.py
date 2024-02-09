@@ -7,8 +7,8 @@ Purpose:
 ##### IMPORTS #####
 ###################
 
-from randomizer.contants.enums.object_model_asset_ids import OBJECT_MODEL_ASSET_ID
-from randomizer.contants.enums.assembly_file_enums import ASSEMBLY_FILE_ENUMS
+from randomizer.contants.int_enums.object_model_asset_ids import OBJECT_MODEL_ASSET_ID
+from randomizer.contants.int_enums.assembly_file_enums import ASSEMBLY_FILE_ENUMS
 
 ########################################
 ##### MODEL ASSEMBLY LOCATION DICT #####

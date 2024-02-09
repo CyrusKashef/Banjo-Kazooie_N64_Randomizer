@@ -23,12 +23,12 @@ class JIGGY_ENUMS(IntEnum):
     mumbos_mountain_stonehenge = 0x06
     mumbos_mountain_hill = 0x07
     mumbos_mountain_orange_pads = 0x08
-    mumbos_mountain_chimp = 0x09
+    mumbos_mountain_chimpy = 0x09
     mumbos_mountain_conga = 0x0A
     treasure_trove_cove_jinjo = 0x0B
     treasure_trove_cove_atop_lighthouse = 0x0C
-    treasure_trove_cove_shock_jump_alcove = 0x0D # Confirm?
-    treasure_trove_cove_backside_alcove = 0x0E # Confirm?
+    treasure_trove_cove_shock_jump_alcove = 0x0D
+    treasure_trove_cove_backside_alcove = 0x0E
     treasure_trove_cove_pool = 0x0F
     treasure_trove_cove_sandcastle = 0x10
     treasure_trove_cove_treasure_hunt = 0x11

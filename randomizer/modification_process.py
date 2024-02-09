@@ -12,46 +12,15 @@ ToDo:
 
 from randomizer.patching.bk_rom_class import BK_ROM_CLASS
 from randomizer.assembly.assembly import ASSEMBLY_CLASS
+from randomizer.game_assets.game_assets_class import GAME_ASSET_CLASS
 from randomizer.contants.variables.patching_variables import BIN_EXTENSION
-from randomizer.contants.enums.ability_enums import ABILITY_ENUMS
+from randomizer.contants.int_enums.ability_enums import ABILITY_ENUMS
 from randomizer.contants.dicts.gui_move_dict import GUI_MOVE_ENUM_DICT
 from randomizer.contants.dicts.win_condition_dict import SAMPLE_WIN_CONDITIONS_DICT
 from randomizer.contants.variables.win_condition_variables import \
     ALL_JINJOS_STR, TROTLESS_STR
 
-#####################
-##### CONSTANTS #####
-#####################
-
-from randomizer.contants.variables.gui_variables import \
-    ORIGINAL_ROM_PATH_STR, NEW_ROM_PATH_STR, \
-    BOOT_TO_FILE_SELECT_STR, SKIPPABLE_CUTSCENES_STR, \
-    SKIP_JIGGY_JIG_STR, \
-    STARTING_BLUE_EGG_COUNT_STR, STARTING_RED_FEATHER_COUNT_STR, \
-    STARTING_GOLD_FEATHER_COUNT_STR, STARTING_MUMBO_TOKEN_COUNT_STR, \
-    ENABLE_FALLPROOF_STR, \
-    SELECT_STARTING_MOVES_STR, BEAK_BARGE_STR, BEAK_BOMB_STR, \
-    BEAK_BUSTER_STR, CLAW_SWIPE_STR, CLIMB_STR, \
-    EGG_FIRING_STR, FEATHERY_FLAP_STR, FLAP_FLIP_STR, \
-    FLIGHT_STR, HIGH_JUMP_STR, RAT_A_TAP_RAP_STR, \
-    ROLL_STR, SHOCK_JUMP_STR, STILT_STRIDE_STR, \
-    DIVE_STR, TALON_TROT_STR, TURBO_TALON_TROT_STR, \
-    WONDERWING_STR, NOTE_DOOR_STR, \
-    SHOCK_JUMP_PAD_ANYWHERE_STR, \
-    ALTERNATE_WIN_CONDITION_STR, \
-    NOTE_DOOR_50_COST_STR, NOTE_DOOR_180_COST_STR, \
-    NOTE_DOOR_260_COST_STR, NOTE_DOOR_350_COST_STR, \
-    NOTE_DOOR_450_COST_STR, NOTE_DOOR_640_COST_STR, \
-    NOTE_DOOR_765_COST_STR, NOTE_DOOR_810_COST_STR, \
-    NOTE_DOOR_828_COST_STR, NOTE_DOOR_846_COST_STR, \
-    NOTE_DOOR_864_COST_STR, NOTE_DOOR_882_COST_STR, \
-    JIGSAW_PUZZLE_1_COST_STR, JIGSAW_PUZZLE_2_COST_STR, \
-    JIGSAW_PUZZLE_3_COST_STR, JIGSAW_PUZZLE_4_COST_STR, \
-    JIGSAW_PUZZLE_5_COST_STR, JIGSAW_PUZZLE_6_COST_STR, \
-    JIGSAW_PUZZLE_7_COST_STR, JIGSAW_PUZZLE_8_COST_STR, \
-    JIGSAW_PUZZLE_9_COST_STR, JIGSAW_PUZZLE_10_COST_STR, \
-    JIGSAW_PUZZLE_11_COST_STR, \
-    LOW_POLY_MODEL_STR, HIGH_POLY_MODEL_STR
+from randomizer.contants.str_enums.gui_selections import GUI_SELECTIONS
 
 ######################################
 ##### MODIFICATION PROCESS CLASS #####
@@ -70,87 +39,86 @@ class MODIFICATION_PROCESS_CLASS():
         selected settings from a user-interface.
         '''
         self._settings_dict:dict = {
-            ORIGINAL_ROM_PATH_STR: "C:/Users/Cyrus/Documents/VS_Code/Banjo-Kazooie_Randomizer/Banjo-Kazooie_N64_Randomizer/Banjo-Kazooie.z64",
-            NEW_ROM_PATH_STR: "C:/Users/Cyrus/Documents/VS_Code/Banjo-Kazooie_Randomizer/Banjo-Kazooie_N64_Randomizer/Banjo-Kazooie-TEST.z64",
+            GUI_SELECTIONS.original_rom_path: "C:/Users/Cyrus/Documents/VS_Code/Banjo-Kazooie_Randomizer/Banjo-Kazooie_N64_Randomizer/Banjo-Kazooie.z64",
+            GUI_SELECTIONS.new_rom_path: "C:/Users/Cyrus/Documents/VS_Code/Banjo-Kazooie_Randomizer/Banjo-Kazooie_N64_Randomizer/Banjo-Kazooie-TEST.z64",
             #######################
             ### Quality Of Life ###
             #######################
-            BOOT_TO_FILE_SELECT_STR: 1,
-            SKIPPABLE_CUTSCENES_STR: 1,
-            SKIP_JIGGY_JIG_STR: 1,
+            GUI_SELECTIONS.boot_to_file_select: 1,
+            GUI_SELECTIONS.skippable_cutscenes: 1,
+            GUI_SELECTIONS.skip_jiggy_jig: 1,
             ##################
             ### Difficulty ###
             ##################
-            STARTING_BLUE_EGG_COUNT_STR: 69,
-            STARTING_RED_FEATHER_COUNT_STR: 42,
-            STARTING_GOLD_FEATHER_COUNT_STR: 9,
-            STARTING_MUMBO_TOKEN_COUNT_STR: 21,
-            ENABLE_FALLPROOF_STR: 1,
+            GUI_SELECTIONS.starting_blue_egg_count: 69,
+            GUI_SELECTIONS.starting_red_feather_count: 42,
+            GUI_SELECTIONS.starting_gold_feather_count: 9,
+            GUI_SELECTIONS.starting_mumbo_token_count: 21,
+            GUI_SELECTIONS.enable_fallproof: 1,
             #############
             ### Logic ###
             #############
             # Starting Moves
-            SELECT_STARTING_MOVES_STR: 1,
-            BEAK_BARGE_STR: 1,
-            BEAK_BARGE_STR: 1,
-            BEAK_BOMB_STR: 1,
-            BEAK_BUSTER_STR: 1,
-            CLAW_SWIPE_STR: 1,
-            CLIMB_STR: 1,
-            EGG_FIRING_STR: 1,
-            FEATHERY_FLAP_STR: 1,
-            FLAP_FLIP_STR: 1,
-            FLIGHT_STR: 1,
-            HIGH_JUMP_STR: 1,
-            RAT_A_TAP_RAP_STR: 1,
-            ROLL_STR: 1,
-            SHOCK_JUMP_STR: 1,
-            STILT_STRIDE_STR: 1,
-            DIVE_STR: 1,
-            TALON_TROT_STR: 1,
-            TURBO_TALON_TROT_STR: 1,
-            WONDERWING_STR: 1,
-            NOTE_DOOR_STR: 1,
-            SHOCK_JUMP_PAD_ANYWHERE_STR: 0,
+            GUI_SELECTIONS.select_starting_moves: 1,
+            GUI_SELECTIONS.beak_barge: 1,
+            GUI_SELECTIONS.beak_bomb: 1,
+            GUI_SELECTIONS.beak_buster: 1,
+            GUI_SELECTIONS.claw_swipe: 1,
+            GUI_SELECTIONS.climb: 1,
+            GUI_SELECTIONS.egg_firing: 1,
+            GUI_SELECTIONS.feather_flap: 1,
+            GUI_SELECTIONS.flap_flip: 1,
+            GUI_SELECTIONS.flight: 1,
+            GUI_SELECTIONS.high_jump: 1,
+            GUI_SELECTIONS.rat_a_tap_rap: 1,
+            GUI_SELECTIONS.roll_attack: 1,
+            GUI_SELECTIONS.shock_jump: 1,
+            GUI_SELECTIONS.stilt_stride: 1,
+            GUI_SELECTIONS.dive: 1,
+            GUI_SELECTIONS.talon_trot: 1,
+            GUI_SELECTIONS.turbo_talon_trot: 1,
+            GUI_SELECTIONS.wonderwing: 1,
+            GUI_SELECTIONS.open_note_door: 1,
+            GUI_SELECTIONS.shock_jump_pad_anywhere: 0,
             # Win Condition
-            ALTERNATE_WIN_CONDITION_STR: TROTLESS_STR,
+            GUI_SELECTIONS.alternate_win_condition: TROTLESS_STR,
             # Note Doors
-            NOTE_DOOR_50_COST_STR: 0,
-            NOTE_DOOR_180_COST_STR: 0,
-            NOTE_DOOR_260_COST_STR: 0,
-            NOTE_DOOR_350_COST_STR: 0,
-            NOTE_DOOR_450_COST_STR: 0,
-            NOTE_DOOR_640_COST_STR: 0,
-            NOTE_DOOR_765_COST_STR: 0,
-            NOTE_DOOR_810_COST_STR: 0,
-            NOTE_DOOR_828_COST_STR: 0,
-            NOTE_DOOR_846_COST_STR: 0,
-            NOTE_DOOR_864_COST_STR: 0,
-            NOTE_DOOR_882_COST_STR: 0,
+            GUI_SELECTIONS.note_door_50_cost: 0,
+            GUI_SELECTIONS.note_door_180_cost: 0,
+            GUI_SELECTIONS.note_door_260_cost: 0,
+            GUI_SELECTIONS.note_door_350_cost: 0,
+            GUI_SELECTIONS.note_door_450_cost: 0,
+            GUI_SELECTIONS.note_door_640_cost: 0,
+            GUI_SELECTIONS.note_door_765_cost: 0,
+            GUI_SELECTIONS.note_door_810_cost: 0,
+            GUI_SELECTIONS.note_door_828_cost: 0,
+            GUI_SELECTIONS.note_door_846_cost: 0,
+            GUI_SELECTIONS.note_door_864_cost: 0,
+            GUI_SELECTIONS.note_door_882_cost: 0,
             # Jigsaw Puzzles
-            JIGSAW_PUZZLE_1_COST_STR: 0,
-            JIGSAW_PUZZLE_2_COST_STR: 0,
-            JIGSAW_PUZZLE_3_COST_STR: 0,
-            JIGSAW_PUZZLE_4_COST_STR: 0,
-            JIGSAW_PUZZLE_5_COST_STR: 0,
-            JIGSAW_PUZZLE_6_COST_STR: 0,
-            JIGSAW_PUZZLE_7_COST_STR: 0,
-            JIGSAW_PUZZLE_8_COST_STR: 0,
-            JIGSAW_PUZZLE_9_COST_STR: 0,
-            JIGSAW_PUZZLE_10_COST_STR: 0,
-            JIGSAW_PUZZLE_11_COST_STR: 0,
+            GUI_SELECTIONS.jigsaw_puzzle_1_cost: 0,
+            GUI_SELECTIONS.jigsaw_puzzle_2_cost: 0,
+            GUI_SELECTIONS.jigsaw_puzzle_3_cost: 0,
+            GUI_SELECTIONS.jigsaw_puzzle_4_cost: 0,
+            GUI_SELECTIONS.jigsaw_puzzle_5_cost: 0,
+            GUI_SELECTIONS.jigsaw_puzzle_6_cost: 0,
+            GUI_SELECTIONS.jigsaw_puzzle_7_cost: 0,
+            GUI_SELECTIONS.jigsaw_puzzle_8_cost: 0,
+            GUI_SELECTIONS.jigsaw_puzzle_9_cost: 0,
+            GUI_SELECTIONS.jigsaw_puzzle_10_cost: 0,
+            GUI_SELECTIONS.jigsaw_puzzle_11_cost: 0,
             ##########################
             ### COSMETICS & SOUNDS ###
             ##########################
-            LOW_POLY_MODEL_STR: 0x34D,
-            HIGH_POLY_MODEL_STR: 0x34E,
+            GUI_SELECTIONS.low_poly_model: 0x34D,
+            GUI_SELECTIONS.high_poly_model: 0x34E,
         }
 
     def _modification_setup(self):
         '''
         Extracts the assets and assembly files
         '''
-        self._bk_rom = BK_ROM_CLASS(self._settings_dict[ORIGINAL_ROM_PATH_STR])
+        self._bk_rom = BK_ROM_CLASS(self._settings_dict[GUI_SELECTIONS.original_rom_path])
         self._bk_rom.extract_asset_table_pointers()
         self._bk_rom.extract_assembly_files()
     
@@ -164,7 +132,13 @@ class MODIFICATION_PROCESS_CLASS():
         '''
         Runs the functions for modifying asset files
         '''
-        pass
+        print("INFO: _asset_modifications: Start...")
+        game_asset_obj = GAME_ASSET_CLASS()
+        game_asset_obj.reverse_all_speech_texts()
+        # game_asset_obj.add_topper_to_spiral_mountain()
+        # game_asset_obj.add_note_to_spiral_mountain()
+        # game_asset_obj.log_all_complex_objects()
+        print("INFO: _asset_modifications: Complete!")
 
     def _assembly_modifications(self):
         '''
@@ -173,73 +147,74 @@ class MODIFICATION_PROCESS_CLASS():
         asm_obj = ASSEMBLY_CLASS()
         asm_obj.disable_anti_tamper()
         asm_obj.patch_yum_yum_crash_fix()
+        asm_obj.chinker_stop_spinning()
         # Boot To File Select
-        if(self._settings_dict[BOOT_TO_FILE_SELECT_STR]):
+        if(self._settings_dict[GUI_SELECTIONS.boot_to_file_select]):
             asm_obj.boot_to_file_select()
         # Skippable Cutscenes
-        if(self._settings_dict[SKIPPABLE_CUTSCENES_STR]):
+        if(self._settings_dict[GUI_SELECTIONS.skippable_cutscenes]):
             asm_obj.skippable_cutscenes()
         # Skip Jiggy Jig
-        if(self._settings_dict[SKIP_JIGGY_JIG_STR]):
+        if(self._settings_dict[GUI_SELECTIONS.skip_jiggy_jig]):
             asm_obj.skip_jiggy_jig()
         # Starting Moves/Inventory
-        if(self._settings_dict[SELECT_STARTING_MOVES_STR]):
+        if(self._settings_dict[GUI_SELECTIONS.select_starting_moves]):
             ability_enum_list:list = [ABILITY_ENUMS.camera_control]
             for move_variable in GUI_MOVE_ENUM_DICT:
                 if(self._settings_dict[move_variable]):
                     ability_enum_list.append(GUI_MOVE_ENUM_DICT[move_variable])
             asm_obj.bottles_tutorial_moves(
                 ability_enum_list,
-                self._settings_dict[STARTING_BLUE_EGG_COUNT_STR],
-                self._settings_dict[STARTING_RED_FEATHER_COUNT_STR],
-                self._settings_dict[STARTING_GOLD_FEATHER_COUNT_STR],
-                self._settings_dict[STARTING_MUMBO_TOKEN_COUNT_STR]
+                self._settings_dict[GUI_SELECTIONS.starting_blue_egg_count],
+                self._settings_dict[GUI_SELECTIONS.starting_red_feather_count],
+                self._settings_dict[GUI_SELECTIONS.starting_gold_feather_count],
+                self._settings_dict[GUI_SELECTIONS.starting_mumbo_token_count]
                 )
         else:
             asm_obj.starting_inventory_counts(
-                self._settings_dict[STARTING_BLUE_EGG_COUNT_STR],
-                self._settings_dict[STARTING_RED_FEATHER_COUNT_STR],
-                self._settings_dict[STARTING_GOLD_FEATHER_COUNT_STR]
+                self._settings_dict[GUI_SELECTIONS.starting_blue_egg_count],
+                self._settings_dict[GUI_SELECTIONS.starting_red_feather_count],
+                self._settings_dict[GUI_SELECTIONS.starting_gold_feather_count]
                 )
         # Alternate Win Condition
-        alternate_win_condition:str = self._settings_dict[ALTERNATE_WIN_CONDITION_STR]
+        alternate_win_condition:str = self._settings_dict[GUI_SELECTIONS.alternate_win_condition]
         if(alternate_win_condition != ""):
             possible_win_condition_list:list = SAMPLE_WIN_CONDITIONS_DICT[alternate_win_condition]
             asm_obj.set_alternate_win_conditions(possible_win_condition_list)
         # Note Doors
         asm_obj.set_note_door_values(note_door_list=[
-            self._settings_dict[NOTE_DOOR_50_COST_STR],
-            self._settings_dict[NOTE_DOOR_180_COST_STR],
-            self._settings_dict[NOTE_DOOR_260_COST_STR],
-            self._settings_dict[NOTE_DOOR_350_COST_STR],
-            self._settings_dict[NOTE_DOOR_450_COST_STR],
-            self._settings_dict[NOTE_DOOR_640_COST_STR],
-            self._settings_dict[NOTE_DOOR_765_COST_STR],
-            self._settings_dict[NOTE_DOOR_810_COST_STR],
-            self._settings_dict[NOTE_DOOR_828_COST_STR],
-            self._settings_dict[NOTE_DOOR_846_COST_STR],
-            self._settings_dict[NOTE_DOOR_864_COST_STR],
-            self._settings_dict[NOTE_DOOR_882_COST_STR]
+            self._settings_dict[GUI_SELECTIONS.note_door_50_cost],
+            self._settings_dict[GUI_SELECTIONS.note_door_180_cost],
+            self._settings_dict[GUI_SELECTIONS.note_door_260_cost],
+            self._settings_dict[GUI_SELECTIONS.note_door_350_cost],
+            self._settings_dict[GUI_SELECTIONS.note_door_450_cost],
+            self._settings_dict[GUI_SELECTIONS.note_door_640_cost],
+            self._settings_dict[GUI_SELECTIONS.note_door_765_cost],
+            self._settings_dict[GUI_SELECTIONS.note_door_810_cost],
+            self._settings_dict[GUI_SELECTIONS.note_door_828_cost],
+            self._settings_dict[GUI_SELECTIONS.note_door_846_cost],
+            self._settings_dict[GUI_SELECTIONS.note_door_864_cost],
+            self._settings_dict[GUI_SELECTIONS.note_door_882_cost]
         ])
         # Jigsaw Puzzles
         asm_obj.set_jigsaw_puzzle_costs(jigsaw_puzzle_list=[
-            self._settings_dict[JIGSAW_PUZZLE_1_COST_STR],
-            self._settings_dict[JIGSAW_PUZZLE_2_COST_STR],
-            self._settings_dict[JIGSAW_PUZZLE_3_COST_STR],
-            self._settings_dict[JIGSAW_PUZZLE_4_COST_STR],
-            self._settings_dict[JIGSAW_PUZZLE_5_COST_STR],
-            self._settings_dict[JIGSAW_PUZZLE_6_COST_STR],
-            self._settings_dict[JIGSAW_PUZZLE_7_COST_STR],
-            self._settings_dict[JIGSAW_PUZZLE_8_COST_STR],
-            self._settings_dict[JIGSAW_PUZZLE_9_COST_STR],
-            self._settings_dict[JIGSAW_PUZZLE_10_COST_STR],
-            self._settings_dict[JIGSAW_PUZZLE_11_COST_STR]
+            self._settings_dict[GUI_SELECTIONS.jigsaw_puzzle_1_cost],
+            self._settings_dict[GUI_SELECTIONS.jigsaw_puzzle_2_cost],
+            self._settings_dict[GUI_SELECTIONS.jigsaw_puzzle_3_cost],
+            self._settings_dict[GUI_SELECTIONS.jigsaw_puzzle_4_cost],
+            self._settings_dict[GUI_SELECTIONS.jigsaw_puzzle_5_cost],
+            self._settings_dict[GUI_SELECTIONS.jigsaw_puzzle_6_cost],
+            self._settings_dict[GUI_SELECTIONS.jigsaw_puzzle_7_cost],
+            self._settings_dict[GUI_SELECTIONS.jigsaw_puzzle_8_cost],
+            self._settings_dict[GUI_SELECTIONS.jigsaw_puzzle_9_cost],
+            self._settings_dict[GUI_SELECTIONS.jigsaw_puzzle_10_cost],
+            self._settings_dict[GUI_SELECTIONS.jigsaw_puzzle_11_cost]
         ])
         # Shock Jump Pad Anywhere
-        if(self._settings_dict[SHOCK_JUMP_PAD_ANYWHERE_STR]):
+        if(self._settings_dict[GUI_SELECTIONS.shock_jump_pad_anywhere]):
             asm_obj.shock_jump_pad_anywhere()
         # Fallproof
-        if(self._settings_dict[ENABLE_FALLPROOF_STR]):
+        if(self._settings_dict[GUI_SELECTIONS.enable_fallproof]):
             asm_obj.enable_fallproof()
         asm_obj.save_all_assembly_changes()
     
@@ -251,7 +226,7 @@ class MODIFICATION_PROCESS_CLASS():
         self._bk_rom.insert_assembly_files()
         self._bk_rom.rename_bk_rom()
         self._bk_rom.calculate_new_crc()
-        self._bk_rom.save_as_new_rom(self._settings_dict[NEW_ROM_PATH_STR])
+        self._bk_rom.save_as_new_rom(self._settings_dict[GUI_SELECTIONS.new_rom_path])
 
     def _cleanup(self):
         '''

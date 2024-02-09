@@ -7,10 +7,10 @@ Purpose:
 ##### IMPORTS #####
 ###################
 
-from randomizer.contants.enums.level_enums import LEVEL_ID_ENUMS
-from randomizer.contants.enums.jiggy_enums import JIGGY_ENUMS
-from randomizer.contants.enums.empty_honeycomb_enums import EMPTY_HONEYCOMB_ENUMS
-from randomizer.contants.enums.item_enums import ITEM_ENUMS
+from randomizer.contants.int_enums.level_enums import LEVEL_ID_ENUMS
+from randomizer.contants.int_enums.jiggy_enums import JIGGY_ENUMS
+from randomizer.contants.int_enums.empty_honeycomb_enums import EMPTY_HONEYCOMB_ENUMS
+from randomizer.contants.int_enums.item_enums import ITEM_ENUMS
 
 from randomizer.contants.variables.win_condition_variables import \
     LEVEL_COUNT_STR, TOTAL_COUNT_STR, ITEM_ENUM_STR, \

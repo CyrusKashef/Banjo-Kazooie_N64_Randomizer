@@ -12,7 +12,7 @@ from randomizer.generic_bin_file_class import Generic_Bin_File_Class
 from randomizer.contants.variables.assembly_variables import \
     EXTRACTED_FILES_DIR, DECOMPRESSED_BIN_EXTENSION
 
-from randomizer.contants.enums.ability_enums import ABILITY_ENUMS
+from randomizer.contants.int_enums.ability_enums import ABILITY_ENUMS
 
 ######################################
 ##### SPIRAL MOUNTAIN CODE CLASS #####

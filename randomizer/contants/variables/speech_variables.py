@@ -1,8 +1,0 @@
-GENERIC_SPEECH_STR:str = "Generic Speech"
-FURNACE_FUN_GRUNTILDA_QUESTION_STR:str = "Furnace Fun Gruntilda Question"
-FURNACE_FUN_OTHER_QUESTION_STR:str = "Furnace Fun Other Question"
-FULL_SCREEN_STR:str = "Full Screen"
-TOP_SECTION_STR:str = "Top Speech"
-BOTTOM_SECTION_STR:str = "Bottom Speech"
-SPRITE_STR:str = "Sprite"
-SPEECH_STR:str = "Speech"

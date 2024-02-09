@@ -97,7 +97,7 @@ class BK_ROM_CLASS(Generic_Bin_File_Class):
                 asset_id_hex_str:str = self._convert_int_to_hex_str(asset_id)
                 pointer_hex_str:str = self._convert_int_to_hex_str(pointer_index_start, byte_count=4)
                 print(f"DEBUG: extract_asset_table_pointers: Asset Id 0x{asset_id_hex_str} -> Pointer 0x{pointer_hex_str}")
-            file_name:str = self._convert_int_to_hex_str(pointer_index_start)
+            file_name:str = self._convert_int_to_hex_str(asset_id, byte_count=2)
             self._extract_asset_by_pointer(pointer_index_start, file_name)
             compressed_obj = COMPRESSION_CLASS(file_name, COMPRESSED_STR)
             compressed_obj.decompress_file_main()
@@ -205,8 +205,8 @@ class BK_ROM_CLASS(Generic_Bin_File_Class):
             if(asset_id % 0x100 == 0):
                 asset_id_hex_str:str = self._convert_int_to_hex_str(asset_id)
                 pointer_hex_str:str = self._convert_int_to_hex_str(pointer_index_start, byte_count=4)
-                print(f"DEBUG: extract_asset_table_pointers: Asset Id 0x{asset_id_hex_str} -> Pointer 0x{pointer_hex_str}")
-            file_name:str = self._convert_int_to_hex_str(pointer_index_start)
+                print(f"DEBUG: append_asset_table_pointers: Asset Id 0x{asset_id_hex_str} -> Pointer 0x{pointer_hex_str}")
+            file_name:str = self._convert_int_to_hex_str(asset_id, byte_count=2)
             raw_file_name:str = file_name + RAW_BIN_EXTENSION
             compressed_file_name:str = file_name + COMPRESSED_BIN_EXTENSION
             if(raw_file_name in bin_files_list):

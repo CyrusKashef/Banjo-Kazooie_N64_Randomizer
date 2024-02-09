@@ -12,11 +12,7 @@ from randomizer.contants.dicts.speech_syntax_dicts import \
     FANCY_FONT_DICT, FURNACE_FUN_SPRITE_DICT, \
     GENERAL_SPRITE_DICT, ACTION_DICT
 
-from randomizer.contants.variables.speech_variables import \
-    GENERIC_SPEECH_STR, FURNACE_FUN_GRUNTILDA_QUESTION_STR, \
-    FURNACE_FUN_OTHER_QUESTION_STR, FULL_SCREEN_STR, \
-    TOP_SECTION_STR, BOTTOM_SECTION_STR, \
-    SPRITE_STR, SPEECH_STR
+from randomizer.contants.int_enums.speech_constants import SPEECH_CONSTANTS
 
 ########################
 ##### SPEECH CLASS #####
@@ -47,11 +43,11 @@ class Speech_Class(Generic_Bin_File_Class):
         first_five_bytes:int = self._read_bytes_as_int(index_start=0, byte_count=5)
         first_three_bytes:int = self._read_bytes_as_int(index_start=0, byte_count=3)
         if(first_five_bytes == 0x0103000500):
-            return FURNACE_FUN_GRUNTILDA_QUESTION_STR
+            return SPEECH_CONSTANTS.furnace_fun_gruntilda_question
         elif(first_five_bytes == 0x0101020500):
-            return FURNACE_FUN_OTHER_QUESTION_STR
+            return SPEECH_CONSTANTS.furnace_fun_other_question
         elif(first_three_bytes == 0x010300):
-            return GENERIC_SPEECH_STR
+            return SPEECH_CONSTANTS.generic_speech
         raise Exception("ERROR: _determine_speech_type: Unknown Speech File Type")
 
     ###################
@@ -100,8 +96,8 @@ class Speech_Class(Generic_Bin_File_Class):
             else:
                 translation:str = self._translate_speech(start_index, speech_length)
             self._speech_dict[section_name][speech_num] = {
-                SPRITE_STR: sprite,
-                SPEECH_STR: translation,
+                SPEECH_CONSTANTS.sprite: sprite,
+                SPEECH_CONSTANTS.speech: translation,
             }
             start_index += speech_length
         return start_index
@@ -110,7 +106,7 @@ class Speech_Class(Generic_Bin_File_Class):
         '''
         Reads a furnace fun speech file.
         '''
-        section_name:str = FULL_SCREEN_STR
+        section_name:str = SPEECH_CONSTANTS.full_screen
         start_index:int = 5
         num_of_speeches:int = self._read_bytes_as_int(start_index, byte_count=1)
         start_index += 0x1
@@ -122,12 +118,12 @@ class Speech_Class(Generic_Bin_File_Class):
         '''
         start_index:int = 3
         # Bottom Speeches
-        section_name:str = BOTTOM_SECTION_STR
+        section_name:str = SPEECH_CONSTANTS.bottom_section
         num_of_bottom_speeches:int =  self._read_bytes_as_int(start_index, byte_count=1)
         start_index += 0x1
         start_index:int = self._parse_speech_section(section_name, num_of_bottom_speeches, start_index)
         # Top Speeches
-        section_name:str = TOP_SECTION_STR
+        section_name:str = SPEECH_CONSTANTS.top_section
         num_of_top_speeches:int =  self._read_bytes_as_int(start_index, byte_count=1)
         start_index += 0x1
         start_index:int = self._parse_speech_section(section_name, num_of_top_speeches, start_index)
@@ -148,41 +144,41 @@ class Speech_Class(Generic_Bin_File_Class):
         '''
         Prints the Furnace Fun speech to the console.
         '''
-        speech_count:int = len(self._speech_dict[FULL_SCREEN_STR])
+        speech_count:int = len(self._speech_dict[SPEECH_CONSTANTS.full_screen])
         for curr_speech_count in range(speech_count):
-            curr_sprite = self._speech_dict[FULL_SCREEN_STR][curr_speech_count][SPRITE_STR]
+            curr_sprite = self._speech_dict[SPEECH_CONSTANTS.full_screen][curr_speech_count][SPEECH_CONSTANTS.sprite]
             sprite_translation:str = FURNACE_FUN_SPRITE_DICT[curr_sprite]
-            curr_speech = self._speech_dict[FULL_SCREEN_STR][curr_speech_count][SPEECH_STR]
+            curr_speech = self._speech_dict[SPEECH_CONSTANTS.full_screen][curr_speech_count][SPEECH_CONSTANTS.speech]
             curr_speech = self._translate_fancy_font(curr_speech)
-            print(f"{FULL_SCREEN_STR}: {sprite_translation}: '{curr_speech}'")
+            print(f"{SPEECH_CONSTANTS.full_screen}: {sprite_translation}: '{curr_speech}'")
 
     def _print_generic_speech(self):
         '''
         Prints the generic speech to the console.
         '''
-        curr_section:str = TOP_SECTION_STR
+        curr_section:str = SPEECH_CONSTANTS.top_section
         section_count:dict = {
-            BOTTOM_SECTION_STR: 0,
-            TOP_SECTION_STR: 0,
+            SPEECH_CONSTANTS.bottom_section: 0,
+            SPEECH_CONSTANTS.top_section: 0,
         }
-        bottom_section_count:int = len(self._speech_dict[BOTTOM_SECTION_STR])
-        top_section_count:int = len(self._speech_dict[TOP_SECTION_STR])
-        while((section_count[BOTTOM_SECTION_STR] < bottom_section_count)
-              or (section_count[TOP_SECTION_STR] < top_section_count)):
+        bottom_section_count:int = len(self._speech_dict[SPEECH_CONSTANTS.bottom_section])
+        top_section_count:int = len(self._speech_dict[SPEECH_CONSTANTS.top_section])
+        while((section_count[SPEECH_CONSTANTS.bottom_section] < bottom_section_count)
+              or (section_count[SPEECH_CONSTANTS.top_section] < top_section_count)):
             curr_section_count:int = section_count[curr_section]
             if(curr_section_count > len(self._speech_dict[curr_section])):
                 break
-            curr_sprite:int = self._speech_dict[curr_section][curr_section_count][SPRITE_STR]
+            curr_sprite:int = self._speech_dict[curr_section][curr_section_count][SPEECH_CONSTANTS.sprite]
             sprite_translation:str = GENERAL_SPRITE_DICT[curr_sprite]
-            curr_speech:str = self._speech_dict[curr_section][curr_section_count][SPEECH_STR]
+            curr_speech:str = self._speech_dict[curr_section][curr_section_count][SPEECH_CONSTANTS.speech]
             curr_speech = self._translate_fancy_font(curr_speech)
             print(f"{curr_section}:\t{sprite_translation}: '{curr_speech}'")
             section_count[curr_section] += 1
             if(curr_sprite in [0x04, 0x06]):
-                if(curr_section == BOTTOM_SECTION_STR):
-                    curr_section = TOP_SECTION_STR
-                elif(curr_section == TOP_SECTION_STR):
-                    curr_section = BOTTOM_SECTION_STR
+                if(curr_section == SPEECH_CONSTANTS.bottom_section):
+                    curr_section = SPEECH_CONSTANTS.top_section
+                elif(curr_section == SPEECH_CONSTANTS.top_section):
+                    curr_section = SPEECH_CONSTANTS.bottom_section
     
     #############################
     ##### UTILITY FUNCTIONS #####
@@ -199,11 +195,11 @@ class Speech_Class(Generic_Bin_File_Class):
             for curr_section_count in self._speech_dict[curr_section]:
                 viable_match:bool = True
                 # Sprite
-                curr_sprite:int = self._speech_dict[curr_section][curr_section_count][SPRITE_STR]
+                curr_sprite:int = self._speech_dict[curr_section][curr_section_count][SPEECH_CONSTANTS.sprite]
                 if(sprite_id and sprite_id != curr_sprite):
                     viable_match = False
                 # Speech
-                curr_speech:str = self._speech_dict[curr_section][curr_section_count][SPEECH_STR]
+                curr_speech:str = self._speech_dict[curr_section][curr_section_count][SPEECH_CONSTANTS.speech]
                 if(speech_str and speech_str not in curr_speech):
                     viable_match = False
                 # Record
@@ -219,7 +215,7 @@ class Speech_Class(Generic_Bin_File_Class):
         '''
         for curr_section in self._speech_dict:
             for curr_section_count in self._speech_dict[curr_section]:
-                curr_sprite:int = self._speech_dict[curr_section][curr_section_count][SPRITE_STR]
+                curr_sprite:int = self._speech_dict[curr_section][curr_section_count][SPEECH_CONSTANTS.sprite]
                 if(curr_sprite not in GENERAL_SPRITE_DICT):
                     return False
         return True
@@ -235,8 +231,8 @@ class Speech_Class(Generic_Bin_File_Class):
         Replaces a speech line with a new sprite
         and speech string.
         '''
-        self._speech_dict[section][section_count][SPRITE_STR] = new_sprite
-        self._speech_dict[section][section_count][SPEECH_STR] = new_speech
+        self._speech_dict[section][section_count][SPEECH_CONSTANTS.sprite] = new_sprite
+        self._speech_dict[section][section_count][SPEECH_CONSTANTS.speech] = new_speech
                     
     def append_speech_line(self,
             section:str,
@@ -246,8 +242,8 @@ class Speech_Class(Generic_Bin_File_Class):
         '''
         section_count = len(self._speech_dict[section])
         self._speech_dict[section][section_count] = {
-            SPRITE_STR: new_sprite,
-            SPEECH_STR: new_speech,
+            SPEECH_CONSTANTS.sprite: new_sprite,
+            SPEECH_CONSTANTS.speech: new_speech,
         }
                     
     def insert_speech_line(self,
@@ -261,8 +257,8 @@ class Speech_Class(Generic_Bin_File_Class):
         while(curr_section_count > section_count):
             self._speech_dict[section][curr_section_count] = self._speech_dict[section][curr_section_count - 1]
             curr_section_count -= 1
-        self._speech_dict[section][section_count][SPRITE_STR] = new_sprite
-        self._speech_dict[section][section_count][SPEECH_STR] = new_speech
+        self._speech_dict[section][section_count][SPEECH_CONSTANTS.sprite] = new_sprite
+        self._speech_dict[section][section_count][SPEECH_CONSTANTS.speech] = new_speech
                     
     def delete_speech_line(self,
             section:str, section_count:int):
@@ -290,10 +286,9 @@ class Speech_Class(Generic_Bin_File_Class):
         '''
         Writes a furnace fun speech in byte format.
         '''
-        print(self._speech_dict)
-        for curr_section_count in sorted(self._speech_dict[FULL_SCREEN_STR]):
-            curr_sprite:int = self._speech_dict[FULL_SCREEN_STR][curr_section_count][SPRITE_STR]
-            curr_speech:str = self._speech_dict[FULL_SCREEN_STR][curr_section_count][SPEECH_STR]
+        for curr_section_count in sorted(self._speech_dict[SPEECH_CONSTANTS.full_screen]):
+            curr_sprite:int = self._speech_dict[SPEECH_CONSTANTS.full_screen][curr_section_count][SPEECH_CONSTANTS.sprite]
+            curr_speech:str = self._speech_dict[SPEECH_CONSTANTS.full_screen][curr_section_count][SPEECH_CONSTANTS.speech]
             speech_length:int = len(curr_speech) + 1
             new_content += \
                 curr_sprite.to_bytes(1, 'big') + \
@@ -305,12 +300,12 @@ class Speech_Class(Generic_Bin_File_Class):
         '''
         Writes a generic speech in byte format.
         '''
-        for curr_section in [BOTTOM_SECTION_STR, TOP_SECTION_STR]:
+        for curr_section in [SPEECH_CONSTANTS.bottom_section, SPEECH_CONSTANTS.top_section]:
             curr_section_length:int = len(self._speech_dict[curr_section])
             new_content += curr_section_length.to_bytes(1, 'big')
             for curr_section_count in sorted(self._speech_dict[curr_section]):
-                curr_sprite:int = self._speech_dict[curr_section][curr_section_count][SPRITE_STR]
-                curr_speech:str = self._speech_dict[curr_section][curr_section_count][SPEECH_STR]
+                curr_sprite:int = self._speech_dict[curr_section][curr_section_count][SPEECH_CONSTANTS.sprite]
+                curr_speech:str = self._speech_dict[curr_section][curr_section_count][SPEECH_CONSTANTS.speech]
                 speech_length:int = len(curr_speech) + 1
                 new_content += \
                     curr_sprite.to_bytes(1, 'big') + \
@@ -330,10 +325,10 @@ class Speech_Class(Generic_Bin_File_Class):
         super()._read_file()
         self._speech_type:str = self._determine_speech_type()
         self._speech_dict:dict = {}
-        if(self._speech_type in [FURNACE_FUN_GRUNTILDA_QUESTION_STR,
-                                 FURNACE_FUN_OTHER_QUESTION_STR]):
+        if(self._speech_type in [SPEECH_CONSTANTS.furnace_fun_gruntilda_question,
+                                 SPEECH_CONSTANTS.furnace_fun_other_question]):
             self._parse_furance_fun_speech()
-        elif(self._speech_type == GENERIC_SPEECH_STR):
+        elif(self._speech_type == SPEECH_CONSTANTS.generic_speech):
             self._parse_generic_speech()
     
     def print_speech_file(self):
@@ -342,25 +337,25 @@ class Speech_Class(Generic_Bin_File_Class):
         Attempts to display generic speeches
         in game-presenting order.
         '''
-        if(self._speech_type in [FURNACE_FUN_GRUNTILDA_QUESTION_STR,
-                                 FURNACE_FUN_OTHER_QUESTION_STR]):
+        if(self._speech_type in [SPEECH_CONSTANTS.furnace_fun_gruntilda_question,
+                                 SPEECH_CONSTANTS.furnace_fun_other_question]):
             self._print_furnace_fun_speech()
-        elif(self._speech_type == GENERIC_SPEECH_STR):
+        elif(self._speech_type == SPEECH_CONSTANTS.generic_speech):
             self._print_generic_speech()
     
     def save_speech_file(self, file_path:str|None=None):
         '''
         Writes the speech file in binary mode.
         '''
-        if(self._speech_type == FURNACE_FUN_GRUNTILDA_QUESTION_STR):
+        if(self._speech_type == SPEECH_CONSTANTS.furnace_fun_gruntilda_question):
             header:int = 0x0103000500
             new_content:bytearray = header.to_bytes(5, 'big')
             new_content = self._write_furnace_fun_speech_file(new_content)
-        if(self._speech_type == FURNACE_FUN_OTHER_QUESTION_STR):
+        if(self._speech_type == SPEECH_CONSTANTS.furnace_fun_other_question):
             header:int = 0x0101020500
             new_content:bytearray = header.to_bytes(5, 'big')
             new_content = self._write_furnace_fun_speech_file(new_content)
-        elif(self._speech_type == GENERIC_SPEECH_STR):
+        elif(self._speech_type == SPEECH_CONSTANTS.generic_speech):
             header:int = 0x010300
             new_content:bytearray = header.to_bytes(3, 'big')
             new_content = self._write_generic_speech_file(new_content)
@@ -380,10 +375,10 @@ if __name__ == '__main__':
     speech_obj = Speech_Class(file_path)
     speech_obj.print_speech_file()
     print("~~~~~ SPACES ~~~~~")
-    speech_obj.modify_speech_line(BOTTOM_SECTION_STR, 0, 0x90, "THIS IS A TEST OF THE EMERGENCY SAFETY PROTOCOL")
+    speech_obj.modify_speech_line(SPEECH_CONSTANTS.bottom_section, 0, 0x90, "THIS IS A TEST OF THE EMERGENCY SAFETY PROTOCOL")
     speech_obj.print_speech_file()
     print("~~~~~ SPACES ~~~~~")
-    speech_obj.append_speech_line(BOTTOM_SECTION_STR, 0x90, "DO NOT BE ALARMED!")
+    speech_obj.append_speech_line(SPEECH_CONSTANTS.bottom_section, 0x90, "DO NOT BE ALARMED!")
     speech_obj.print_speech_file()
     print("~~~~~ SPACES ~~~~~")
     found_speech_list = speech_obj.find_speech_line(sprite_id=None, speech_str="EMERGENCY")

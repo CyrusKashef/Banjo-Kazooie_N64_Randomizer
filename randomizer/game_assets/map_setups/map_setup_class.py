@@ -8,39 +8,10 @@ Purpose:
 ###################
 
 from randomizer.generic_bin_file_class import Generic_Bin_File_Class
+from randomizer.contants.str_enums.map_setup_constants import MAP_SETUP_CONSTANTS
 
-from randomizer.contants.variables.map_setup_variables import \
-    X_POSITION_STR, Y_POSITION_STR, Z_POSITION_STR, \
-    BYTE_6_UNK_0_STR, BYTE_6_UNK_1_STR, BYTE_6_UNK_2_STR, \
-    ACTOR_ID_STR, MARKER_ID_STR, \
-    BYTE_B_UNK_0_STR, BYTE_B_UNK_1_STR, BYTE_B_UNK_2_STR, \
-    BYTE_B_UNK_3_STR, BYTE_B_UNK_4_STR, \
-    ROTATION_Y_AXIS_STR, BYTE_C_UNK_1_STR, \
-    BYTE_10_UNK_0_STR, BYTE_10_UNK_1_STR, BYTE_10_UNK_2_STR, \
-    BYTE_10_UNK_3_STR, BYTE_10_UNK_4_STR, BYTE_10_UNK_5_STR, \
-    BYTE_0_UNK_0_STR, BYTE_0_UNK_1_STR, BYTE_0_UNK_2_STR, \
-    BYTE_0_UNK_3_STR, BYTE_0_UNK_4_STR, BYTE_0_UNK_5_STR, \
-    BYTE_0_UNK_6_STR, BYTE_0_UNK_7_STR, \
-    BYTE_8_UNK_0_STR, BYTE_8_UNK_1_STR, BYTE_8_UNK_2_STR, \
-    BYTE_8_UNK_3_STR, BYTE_8_UNK_4_STR, BYTE_8_UNK_5_STR, \
-    BYTE_8_UNK_6_STR, BYTE_8_UNK_7_STR, \
-    CAMERA_ID_INDICATOR_STR, CAMERA_TYPE_INDICATOR_STR, \
-    CAMERA_END_INDICATOR_STR, \
-    CAMERA_SECTION_1_INDICATOR_STR, CAMERA_SECTION_2_INDICATOR_STR, \
-    CAMERA_SECTION_3_INDICATOR_STR, CAMERA_SECTION_4_INDICATOR_STR, \
-    CAMERA_SECTION_5_INDICATOR_STR, CAMERA_SECTION_6_INDICATOR_STR, \
-    CAMERA_ID_STR, CAMERA_TYPE_STR, \
-    HORIZONTAL_SPEED_STR, VERTICAL_SPEED_STR, \
-    ROTATION_STR, ACCELERATION_STR, \
-    PITCH_STR, YAW_STR, ROLL_STR, \
-    CAMERA_UNK_BYTE_STR, \
-    CLOSE_DISTANCE_STR, FAR_DISTANCE_STR, \
-    LIGHTING_START_INDICATOR_STR, \
-    LIGHTING_SECTION_1_INDICATOR_STR, LIGHTING_SECTION_2_INDICATOR_STR, \
-    LIGHTING_SECTION_3_INDICATOR_STR, LIGHTING_SECTION_4_INDICATOR_STR, \
-    BYTE_F_STR, BYTE_13_STR, \
-    RED_STR, GREEN_STR, BLUE_STR, \
-    FILE_END_INDICATOR_STR
+from randomizer.contants.variables.patching_variables import \
+    EXTRACTED_FILES_DIR
 
 ########################
 ##### SPEECH CLASS #####
@@ -121,29 +92,6 @@ class Map_Setup_Class(Generic_Bin_File_Class):
                 byte_count=1,
                 expected_value=verify_camera_dict[curr_index])
 
-    def _parse_int_by_bits(self, start_index:int, byte_count:int, bit_count_list:list):
-        '''
-        Pass
-        '''
-        # Example:
-        # int_val = 0x0B -> 0b00001011
-        # start_bit = 1
-        # bit_count = 3
-        # -> bit_val = 0b101 -> 0x05
-        int_val:int = self._read_bytes_as_int(start_index, byte_count)
-        bit_val_list:list = []
-        expected_bit_count:int = byte_count * 8
-        curr_bit_start:int = 0
-        for bit_count in bit_count_list:
-            bit_val:bin = (int_val >> curr_bit_start) & ((1 << bit_count) - 1)
-            bit_val_list.append(bit_val)
-            curr_bit_start += bit_count
-        if(curr_bit_start != expected_bit_count):
-            error_message:str = f"Error: _parse_int_by_bits: Bitfield at index 0x{start_index} exceeds expected bit count."
-            print(error_message)
-            raise Exception(error_message)
-        return bit_val_list
-
     ###################
     ##### PARSING #####
     ###################
@@ -171,27 +119,27 @@ class Map_Setup_Class(Generic_Bin_File_Class):
             byte_count=(self._COMPLEX_OBJECT_LENGTH - 0x6),
             bit_count_list=complex_object_bit_count_list)
         complex_object_dict:dict = {
-            X_POSITION_STR: x_position,
-            Y_POSITION_STR: y_position,
-            Z_POSITION_STR: z_position,
-            BYTE_6_UNK_0_STR: complex_object_count_list[17],
-            BYTE_6_UNK_1_STR: complex_object_count_list[16],
-            BYTE_6_UNK_2_STR: complex_object_count_list[15],
-            ACTOR_ID_STR: complex_object_count_list[14],
-            MARKER_ID_STR: complex_object_count_list[13],
-            BYTE_B_UNK_0_STR: complex_object_count_list[12],
-            BYTE_B_UNK_1_STR: complex_object_count_list[11],
-            BYTE_B_UNK_2_STR: complex_object_count_list[10],
-            BYTE_B_UNK_3_STR: complex_object_count_list[9],
-            BYTE_B_UNK_4_STR: complex_object_count_list[8],
-            ROTATION_Y_AXIS_STR: complex_object_count_list[7],
-            BYTE_C_UNK_1_STR: complex_object_count_list[6],
-            BYTE_10_UNK_0_STR: complex_object_count_list[5],
-            BYTE_10_UNK_1_STR: complex_object_count_list[4],
-            BYTE_10_UNK_2_STR: complex_object_count_list[3],
-            BYTE_10_UNK_3_STR: complex_object_count_list[2],
-            BYTE_10_UNK_4_STR: complex_object_count_list[1],
-            BYTE_10_UNK_5_STR: complex_object_count_list[0],
+            MAP_SETUP_CONSTANTS.x_position: x_position,
+            MAP_SETUP_CONSTANTS.y_position: y_position,
+            MAP_SETUP_CONSTANTS.z_position: z_position,
+            MAP_SETUP_CONSTANTS.byte_6_unk_0: complex_object_count_list[17],
+            MAP_SETUP_CONSTANTS.byte_6_unk_1: complex_object_count_list[16],
+            MAP_SETUP_CONSTANTS.byte_6_unk_2: complex_object_count_list[15],
+            MAP_SETUP_CONSTANTS.actor_id: complex_object_count_list[14],
+            MAP_SETUP_CONSTANTS.marker_id: complex_object_count_list[13],
+            MAP_SETUP_CONSTANTS.byte_b_unk_0: complex_object_count_list[12],
+            MAP_SETUP_CONSTANTS.byte_b_unk_1: complex_object_count_list[11],
+            MAP_SETUP_CONSTANTS.byte_b_unk_2: complex_object_count_list[10],
+            MAP_SETUP_CONSTANTS.byte_b_unk_3: complex_object_count_list[9],
+            MAP_SETUP_CONSTANTS.byte_b_unk_4: complex_object_count_list[8],
+            MAP_SETUP_CONSTANTS.rotation_y_axis: complex_object_count_list[7],
+            MAP_SETUP_CONSTANTS.byte_c_unk_1: complex_object_count_list[6],
+            MAP_SETUP_CONSTANTS.byte_10_unk_0: complex_object_count_list[5],
+            MAP_SETUP_CONSTANTS.byte_10_unk_1: complex_object_count_list[4],
+            MAP_SETUP_CONSTANTS.byte_10_unk_2: complex_object_count_list[3],
+            MAP_SETUP_CONSTANTS.byte_10_unk_3: complex_object_count_list[2],
+            MAP_SETUP_CONSTANTS.byte_10_unk_4: complex_object_count_list[1],
+            MAP_SETUP_CONSTANTS.byte_10_unk_5: complex_object_count_list[0],
         }
         return complex_object_dict
 
@@ -200,20 +148,23 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         Pass
         '''
         complex_object_count:int = self._read_bytes_as_int(start_index, byte_count=1)
-        # Verify Complex Object List Start Indicator (0x0B)
-        self._verify_indicator(
-            start_index=(start_index + 0x1),
-            byte_count=1,
-            expected_value=self._COMPLEX_OBJECT_LIST_START_INDICATOR)
-        # Grab Complex Objects
-        complex_object_start_index:int = start_index + 0x2
-        complex_object_end_index:int = complex_object_start_index + complex_object_count * self._COMPLEX_OBJECT_LENGTH
-        for curr_index in range(
-                complex_object_start_index,
-                complex_object_end_index,
-                self._COMPLEX_OBJECT_LENGTH):
-            complex_object_dict:dict = self._parse_complex_object(curr_index)
-            self._cube_dict[lowest_position][self._COMPLEX_OBJECT_LIST_STR].append(complex_object_dict)
+        if(complex_object_count > 0):
+            # Verify Complex Object List Start Indicator (0x0B)
+            self._verify_indicator(
+                start_index=(start_index + 0x1),
+                byte_count=1,
+                expected_value=self._COMPLEX_OBJECT_LIST_START_INDICATOR)
+            # Grab Complex Objects
+            complex_object_start_index:int = start_index + 0x2
+            complex_object_end_index:int = complex_object_start_index + complex_object_count * self._COMPLEX_OBJECT_LENGTH
+            for curr_index in range(
+                    complex_object_start_index,
+                    complex_object_end_index,
+                    self._COMPLEX_OBJECT_LENGTH):
+                complex_object_dict:dict = self._parse_complex_object(curr_index)
+                self._cube_dict[lowest_position][self._COMPLEX_OBJECT_LIST_STR].append(complex_object_dict)
+        else:
+            complex_object_end_index:int = start_index + 0x1
         # Verify Complex Object List End Indicator (0x08)
         self._verify_indicator(
             start_index=complex_object_end_index,
@@ -241,29 +192,29 @@ class Map_Setup_Class(Generic_Bin_File_Class):
             1, 1, 1, 1, 1, 1, 5, 5
         ]
         simple_object_count_list_2:list = self._parse_int_by_bits(
-            start_index,
+            start_index + 0xA,
             byte_count=0x2,
             bit_count_list=simple_object_bit_count_list)
         simple_object_dict:dict = {
-            BYTE_0_UNK_7_STR: simple_object_count_list_1[7],
-            BYTE_0_UNK_6_STR: simple_object_count_list_1[6],
-            BYTE_0_UNK_5_STR: simple_object_count_list_1[5],
-            BYTE_0_UNK_4_STR: simple_object_count_list_1[4],
-            BYTE_0_UNK_3_STR: simple_object_count_list_1[3],
-            BYTE_0_UNK_2_STR: simple_object_count_list_1[2],
-            BYTE_0_UNK_1_STR: simple_object_count_list_1[1],
-            BYTE_0_UNK_0_STR: simple_object_count_list_1[0],
-            X_POSITION_STR: x_position,
-            Y_POSITION_STR: y_position,
-            Z_POSITION_STR: z_position,
-            BYTE_8_UNK_7_STR: simple_object_count_list_2[7],
-            BYTE_8_UNK_6_STR: simple_object_count_list_2[6],
-            BYTE_8_UNK_5_STR: simple_object_count_list_2[5],
-            BYTE_8_UNK_4_STR: simple_object_count_list_2[4],
-            BYTE_8_UNK_3_STR: simple_object_count_list_2[3],
-            BYTE_8_UNK_2_STR: simple_object_count_list_2[2],
-            BYTE_8_UNK_1_STR: simple_object_count_list_2[1],
-            BYTE_8_UNK_0_STR: simple_object_count_list_2[0],
+            MAP_SETUP_CONSTANTS.byte_0_unk_7: simple_object_count_list_1[7],
+            MAP_SETUP_CONSTANTS.byte_0_unk_6: simple_object_count_list_1[6],
+            MAP_SETUP_CONSTANTS.byte_0_unk_5: simple_object_count_list_1[5],
+            MAP_SETUP_CONSTANTS.byte_0_unk_4: simple_object_count_list_1[4],
+            MAP_SETUP_CONSTANTS.byte_0_unk_3: simple_object_count_list_1[3],
+            MAP_SETUP_CONSTANTS.byte_0_unk_2: simple_object_count_list_1[2],
+            MAP_SETUP_CONSTANTS.byte_0_unk_1: simple_object_count_list_1[1],
+            MAP_SETUP_CONSTANTS.byte_0_unk_0: simple_object_count_list_1[0],
+            MAP_SETUP_CONSTANTS.x_position: x_position,
+            MAP_SETUP_CONSTANTS.y_position: y_position,
+            MAP_SETUP_CONSTANTS.z_position: z_position,
+            MAP_SETUP_CONSTANTS.byte_8_unk_7: simple_object_count_list_2[7],
+            MAP_SETUP_CONSTANTS.byte_8_unk_6: simple_object_count_list_2[6],
+            MAP_SETUP_CONSTANTS.byte_8_unk_5: simple_object_count_list_2[5],
+            MAP_SETUP_CONSTANTS.byte_8_unk_4: simple_object_count_list_2[4],
+            MAP_SETUP_CONSTANTS.byte_8_unk_3: simple_object_count_list_2[3],
+            MAP_SETUP_CONSTANTS.byte_8_unk_2: simple_object_count_list_2[2],
+            MAP_SETUP_CONSTANTS.byte_8_unk_1: simple_object_count_list_2[1],
+            MAP_SETUP_CONSTANTS.byte_8_unk_0: simple_object_count_list_2[0],
         }
         return simple_object_dict
 
@@ -382,8 +333,8 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         self._verify_camera_sections(verify_camera_dict)
         camera_id:int = self._read_bytes_as_int(start_index + 0x1, byte_count=2)
         self._camera_dict[camera_id] = {
-            CAMERA_ID_STR: camera_id,
-            CAMERA_TYPE_STR: 0,
+            MAP_SETUP_CONSTANTS.camera_id: camera_id,
+            MAP_SETUP_CONSTANTS.camera_type: 0,
         }
         return start_index + 0x5
 
@@ -404,19 +355,19 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         self._verify_camera_sections(verify_camera_dict)
         camera_id:int = self._read_bytes_as_int(start_index + 0x1, byte_count=2)
         self._camera_dict[camera_id] = {
-            CAMERA_ID_STR: camera_id,
-            CAMERA_TYPE_STR: 1,
-            X_POSITION_STR: self._read_bytes_as_float(start_index + 0x06),
-            Y_POSITION_STR: self._read_bytes_as_float(start_index + 0x0A),
-            Z_POSITION_STR: self._read_bytes_as_float(start_index + 0x0E),
-            HORIZONTAL_SPEED_STR: self._read_bytes_as_float(start_index + 0x13),
-            VERTICAL_SPEED_STR: self._read_bytes_as_float(start_index + 0x17),
-            ROTATION_STR: self._read_bytes_as_float(start_index + 0x1C),
-            ACCELERATION_STR: self._read_bytes_as_float(start_index + 0x20),
-            PITCH_STR: self._read_bytes_as_float(start_index + 0x25),
-            YAW_STR: self._read_bytes_as_float(start_index + 0x29),
-            ROLL_STR: self._read_bytes_as_float(start_index + 0x2D),
-            CAMERA_UNK_BYTE_STR: self._read_bytes_as_int(start_index + 0x32, byte_count=4),
+            MAP_SETUP_CONSTANTS.camera_id: camera_id,
+            MAP_SETUP_CONSTANTS.camera_type: 1,
+            MAP_SETUP_CONSTANTS.x_position: self._read_bytes_as_float(start_index + 0x06),
+            MAP_SETUP_CONSTANTS.y_position: self._read_bytes_as_float(start_index + 0x0A),
+            MAP_SETUP_CONSTANTS.z_position: self._read_bytes_as_float(start_index + 0x0E),
+            MAP_SETUP_CONSTANTS.horizontal_speed: self._read_bytes_as_float(start_index + 0x13),
+            MAP_SETUP_CONSTANTS.vertical_speed: self._read_bytes_as_float(start_index + 0x17),
+            MAP_SETUP_CONSTANTS.rotation: self._read_bytes_as_float(start_index + 0x1C),
+            MAP_SETUP_CONSTANTS.acceleration: self._read_bytes_as_float(start_index + 0x20),
+            MAP_SETUP_CONSTANTS.pitch: self._read_bytes_as_float(start_index + 0x25),
+            MAP_SETUP_CONSTANTS.yaw: self._read_bytes_as_float(start_index + 0x29),
+            MAP_SETUP_CONSTANTS.roll: self._read_bytes_as_float(start_index + 0x2D),
+            MAP_SETUP_CONSTANTS.camera_unk_byte: self._read_bytes_as_int(start_index + 0x32, byte_count=4),
         }
         return start_index + 0x37
 
@@ -434,14 +385,14 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         self._verify_camera_sections(verify_camera_dict)
         camera_id:int = self._read_bytes_as_int(start_index + 0x1, byte_count=2)
         self._camera_dict[camera_id] = {
-            CAMERA_ID_STR: camera_id,
-            CAMERA_TYPE_STR: 2,
-            X_POSITION_STR: self._read_bytes_as_float(start_index + 0x06),
-            Y_POSITION_STR: self._read_bytes_as_float(start_index + 0x0A),
-            Z_POSITION_STR: self._read_bytes_as_float(start_index + 0x0E),
-            PITCH_STR: self._read_bytes_as_float(start_index + 0x13),
-            YAW_STR: self._read_bytes_as_float(start_index + 0x17),
-            ROLL_STR: self._read_bytes_as_float(start_index + 0x1B),
+            MAP_SETUP_CONSTANTS.camera_id: camera_id,
+            MAP_SETUP_CONSTANTS.camera_type: 2,
+            MAP_SETUP_CONSTANTS.x_position: self._read_bytes_as_float(start_index + 0x06),
+            MAP_SETUP_CONSTANTS.y_position: self._read_bytes_as_float(start_index + 0x0A),
+            MAP_SETUP_CONSTANTS.z_position: self._read_bytes_as_float(start_index + 0x0E),
+            MAP_SETUP_CONSTANTS.pitch: self._read_bytes_as_float(start_index + 0x13),
+            MAP_SETUP_CONSTANTS.yaw: self._read_bytes_as_float(start_index + 0x17),
+            MAP_SETUP_CONSTANTS.roll: self._read_bytes_as_float(start_index + 0x1B),
         }
         return start_index + 0x20
 
@@ -463,21 +414,21 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         self._verify_camera_sections(verify_camera_dict)
         camera_id:int = self._read_bytes_as_int(start_index + 0x1, byte_count=2)
         self._camera_dict[camera_id] = {
-            CAMERA_ID_STR: camera_id,
-            CAMERA_TYPE_STR: 3,
-            X_POSITION_STR: self._read_bytes_as_float(start_index + 0x06),
-            Y_POSITION_STR: self._read_bytes_as_float(start_index + 0x0A),
-            Z_POSITION_STR: self._read_bytes_as_float(start_index + 0x0E),
-            HORIZONTAL_SPEED_STR: self._read_bytes_as_float(start_index + 0x13),
-            VERTICAL_SPEED_STR: self._read_bytes_as_float(start_index + 0x17),
-            ROTATION_STR: self._read_bytes_as_float(start_index + 0x1C),
-            ACCELERATION_STR: self._read_bytes_as_float(start_index + 0x20),
-            PITCH_STR: self._read_bytes_as_float(start_index + 0x25),
-            YAW_STR: self._read_bytes_as_float(start_index + 0x29),
-            ROLL_STR: self._read_bytes_as_float(start_index + 0x2D),
-            CAMERA_UNK_BYTE_STR: self._read_bytes_as_int(start_index + 0x32, byte_count=4),
-            CLOSE_DISTANCE_STR: self._read_bytes_as_float(start_index + 0x37),
-            FAR_DISTANCE_STR: self._read_bytes_as_float(start_index + 0x3B),
+            MAP_SETUP_CONSTANTS.camera_id: camera_id,
+            MAP_SETUP_CONSTANTS.camera_type: 3,
+            MAP_SETUP_CONSTANTS.x_position: self._read_bytes_as_float(start_index + 0x06),
+            MAP_SETUP_CONSTANTS.y_position: self._read_bytes_as_float(start_index + 0x0A),
+            MAP_SETUP_CONSTANTS.z_position: self._read_bytes_as_float(start_index + 0x0E),
+            MAP_SETUP_CONSTANTS.horizontal_speed: self._read_bytes_as_float(start_index + 0x13),
+            MAP_SETUP_CONSTANTS.vertical_speed: self._read_bytes_as_float(start_index + 0x17),
+            MAP_SETUP_CONSTANTS.rotation: self._read_bytes_as_float(start_index + 0x1C),
+            MAP_SETUP_CONSTANTS.acceleration: self._read_bytes_as_float(start_index + 0x20),
+            MAP_SETUP_CONSTANTS.pitch: self._read_bytes_as_float(start_index + 0x25),
+            MAP_SETUP_CONSTANTS.yaw: self._read_bytes_as_float(start_index + 0x29),
+            MAP_SETUP_CONSTANTS.roll: self._read_bytes_as_float(start_index + 0x2D),
+            MAP_SETUP_CONSTANTS.camera_unk_byte: self._read_bytes_as_int(start_index + 0x32, byte_count=4),
+            MAP_SETUP_CONSTANTS.close_distance: self._read_bytes_as_float(start_index + 0x37),
+            MAP_SETUP_CONSTANTS.far_distance: self._read_bytes_as_float(start_index + 0x3B),
         }
         return start_index + 0x40
 
@@ -494,9 +445,9 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         self._verify_camera_sections(verify_camera_dict)
         camera_id:int = self._read_bytes_as_int(start_index + 0x1, byte_count=2)
         self._camera_dict[camera_id] = {
-            CAMERA_ID_STR: camera_id,
-            CAMERA_TYPE_STR: 4,
-            CAMERA_UNK_BYTE_STR: self._read_bytes_as_int(start_index + 0x06, byte_count=4),
+            MAP_SETUP_CONSTANTS.camera_id: camera_id,
+            MAP_SETUP_CONSTANTS.camera_type: 4,
+            MAP_SETUP_CONSTANTS.camera_unk_byte: self._read_bytes_as_int(start_index + 0x06, byte_count=4),
         }
         return start_index + 0xB
 
@@ -519,7 +470,6 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         }
         curr_index:int = start_index + 0x2
         while(self._read_bytes_as_int(curr_index, byte_count=2) != self._LIGHTING_START_INDICATOR):
-            print(f"Curr Index: {self._convert_int_to_hex_str(curr_index, byte_count=2)}")
             camera_type:int = self._read_bytes_as_int(curr_index + 0x4, byte_count=1)
             curr_index = self._camera_type_dict[camera_type](curr_index)
         print("INFO: _parse_cameras: Complete!")
@@ -552,14 +502,14 @@ class Map_Setup_Class(Generic_Bin_File_Class):
             byte_count=1,
             expected_value=self._LIGHTING_SECTION_4_INDICATOR)
         lighting_dict:dict = {
-            X_POSITION_STR: self._read_bytes_as_float(start_index + 0x2),
-            Y_POSITION_STR: self._read_bytes_as_float(start_index + 0x6),
-            Z_POSITION_STR: self._read_bytes_as_float(start_index + 0xA),
-            BYTE_F_STR: self._read_bytes_as_float(start_index + 0xF),
-            BYTE_13_STR: self._read_bytes_as_float(start_index + 0x13),
-            RED_STR: self._read_bytes_as_int(start_index + 0x18, byte_count=4),
-            GREEN_STR: self._read_bytes_as_int(start_index + 0x1C, byte_count=4),
-            BLUE_STR: self._read_bytes_as_int(start_index + 0x20, byte_count=4),
+            MAP_SETUP_CONSTANTS.x_position: self._read_bytes_as_float(start_index + 0x2),
+            MAP_SETUP_CONSTANTS.y_position: self._read_bytes_as_float(start_index + 0x6),
+            MAP_SETUP_CONSTANTS.z_position: self._read_bytes_as_float(start_index + 0xA),
+            MAP_SETUP_CONSTANTS.byte_f: self._read_bytes_as_float(start_index + 0xF),
+            MAP_SETUP_CONSTANTS.byte_13: self._read_bytes_as_float(start_index + 0x13),
+            MAP_SETUP_CONSTANTS.red_value: self._read_bytes_as_int(start_index + 0x18, byte_count=4),
+            MAP_SETUP_CONSTANTS.green_value: self._read_bytes_as_int(start_index + 0x1C, byte_count=4),
+            MAP_SETUP_CONSTANTS.blue_value: self._read_bytes_as_int(start_index + 0x20, byte_count=4),
         }
         return lighting_dict
 
@@ -677,68 +627,68 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         Pass
         '''
         self._log_number(
-            complex_object_dict[X_POSITION_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, description=X_POSITION_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.x_position], convert_hex_to_num=True,
+            num_type="hex", num_count=2, description=MAP_SETUP_CONSTANTS.x_position)
         self._log_number(
-            complex_object_dict[Y_POSITION_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, description=Y_POSITION_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.y_position], convert_hex_to_num=True,
+            num_type="hex", num_count=2, description=MAP_SETUP_CONSTANTS.y_position)
         self._log_number(
-            complex_object_dict[Z_POSITION_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, description=Z_POSITION_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.z_position], convert_hex_to_num=True,
+            num_type="hex", num_count=2, description=MAP_SETUP_CONSTANTS.z_position)
         self._log_number(
-            complex_object_dict[BYTE_6_UNK_0_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=9, description=BYTE_6_UNK_0_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_6_unk_0], convert_hex_to_num=True,
+            num_type="bit", num_count=9, description=MAP_SETUP_CONSTANTS.byte_6_unk_0)
         self._log_number(
-            complex_object_dict[BYTE_6_UNK_1_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=6, description=BYTE_6_UNK_1_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_6_unk_1], convert_hex_to_num=True,
+            num_type="bit", num_count=6, description=MAP_SETUP_CONSTANTS.byte_6_unk_1)
         self._log_number(
-            complex_object_dict[BYTE_6_UNK_2_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_6_UNK_2_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_6_unk_2], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_6_unk_2)
         self._log_number(
-            complex_object_dict[ACTOR_ID_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, description=ACTOR_ID_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.actor_id], convert_hex_to_num=True,
+            num_type="hex", num_count=2, description=MAP_SETUP_CONSTANTS.actor_id)
         self._log_number(
-            complex_object_dict[MARKER_ID_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=1, description=MARKER_ID_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.marker_id], convert_hex_to_num=True,
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.marker_id)
         self._log_number(
-            complex_object_dict[BYTE_B_UNK_0_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=2, description=BYTE_B_UNK_0_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_b_unk_0], convert_hex_to_num=True,
+            num_type="bit", num_count=2, description=MAP_SETUP_CONSTANTS.byte_b_unk_0)
         self._log_number(
-            complex_object_dict[BYTE_B_UNK_1_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_B_UNK_1_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_b_unk_1], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_b_unk_1)
         self._log_number(
-            complex_object_dict[BYTE_B_UNK_2_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_B_UNK_2_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_b_unk_2], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_b_unk_2)
         self._log_number(
-            complex_object_dict[BYTE_B_UNK_3_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=3, description=BYTE_B_UNK_3_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_b_unk_3], convert_hex_to_num=True,
+            num_type="bit", num_count=3, description=MAP_SETUP_CONSTANTS.byte_b_unk_3)
         self._log_number(
-            complex_object_dict[BYTE_B_UNK_4_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_B_UNK_4_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_b_unk_4], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_b_unk_4)
         self._log_number(
-            complex_object_dict[ROTATION_Y_AXIS_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=9, description=ROTATION_Y_AXIS_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.rotation_y_axis], convert_hex_to_num=True,
+            num_type="bit", num_count=9, description=MAP_SETUP_CONSTANTS.rotation_y_axis)
         self._log_number(
-            complex_object_dict[BYTE_C_UNK_1_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=23, description=BYTE_C_UNK_1_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_c_unk_1], convert_hex_to_num=True,
+            num_type="bit", num_count=23, description=MAP_SETUP_CONSTANTS.byte_c_unk_1)
         self._log_number(
-            complex_object_dict[BYTE_10_UNK_0_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=12, description=BYTE_10_UNK_0_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_10_unk_0], convert_hex_to_num=True,
+            num_type="bit", num_count=12, description=MAP_SETUP_CONSTANTS.byte_10_unk_0)
         self._log_number(
-            complex_object_dict[BYTE_10_UNK_1_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=12, description=BYTE_10_UNK_1_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_10_unk_1], convert_hex_to_num=True,
+            num_type="bit", num_count=12, description=MAP_SETUP_CONSTANTS.byte_10_unk_1)
         self._log_number(
-            complex_object_dict[BYTE_10_UNK_2_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_10_UNK_2_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_10_unk_2], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_10_unk_2)
         self._log_number(
-            complex_object_dict[BYTE_10_UNK_3_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_10_UNK_3_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_10_unk_3], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_10_unk_3)
         self._log_number(
-            complex_object_dict[BYTE_10_UNK_4_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=4, description=BYTE_10_UNK_4_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_10_unk_4], convert_hex_to_num=True,
+            num_type="bit", num_count=4, description=MAP_SETUP_CONSTANTS.byte_10_unk_4)
         self._log_number(
-            complex_object_dict[BYTE_10_UNK_5_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=2, description=BYTE_10_UNK_5_STR)
+            complex_object_dict[MAP_SETUP_CONSTANTS.byte_10_unk_5], convert_hex_to_num=True,
+            num_type="bit", num_count=2, description=MAP_SETUP_CONSTANTS.byte_10_unk_5)
 
     def _log_complex_object_list(self, curr_index:int, position_tuple:tuple):
         '''
@@ -752,13 +702,14 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         curr_index = self._log_hex_line(
             curr_index, complex_object_count, byte_count=1, convert_hex_to_num=True,
             description="Complex Object Count", new_line_count=1)
-        curr_index = self._log_hex_line(
-            curr_index, 0x0B, byte_count=1, convert_hex_to_num=False,
-            description="Complex Object List Start", new_line_count=1)
-        for curr_complex_object in self._cube_dict[position_tuple][self._COMPLEX_OBJECT_LIST_STR]:
-            self._log_file.write(f"0x{self._convert_int_to_hex_str(curr_index, byte_count=2)}: // Complex Object\n")
-            self._log_complex_object(curr_complex_object)
-            curr_index += self._COMPLEX_OBJECT_LENGTH
+        if(complex_object_count > 0):
+            curr_index = self._log_hex_line(
+                curr_index, 0x0B, byte_count=1, convert_hex_to_num=False,
+                description="Complex Object List Start", new_line_count=1)
+            for curr_complex_object in self._cube_dict[position_tuple][self._COMPLEX_OBJECT_LIST_STR]:
+                self._log_file.write(f"0x{self._convert_int_to_hex_str(curr_index, byte_count=2)}: // Complex Object\n")
+                self._log_complex_object(curr_complex_object)
+                curr_index += self._COMPLEX_OBJECT_LENGTH
         curr_index = self._log_hex_line(
             curr_index, 0x08, byte_count=1, convert_hex_to_num=False,
             description="Complex Object List End", new_line_count=1)
@@ -769,62 +720,62 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         Pass
         '''
         self._log_number(
-            simple_object_dict[BYTE_0_UNK_0_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_0_UNK_0_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_0], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_0_unk_0)
         self._log_number(
-            simple_object_dict[BYTE_0_UNK_1_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_0_UNK_1_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_1], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_0_unk_1)
         self._log_number(
-            simple_object_dict[BYTE_0_UNK_2_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=8, description=BYTE_0_UNK_2_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_2], convert_hex_to_num=True,
+            num_type="bit", num_count=8, description=MAP_SETUP_CONSTANTS.byte_0_unk_2)
         self._log_number(
-            simple_object_dict[BYTE_0_UNK_3_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=3, description=BYTE_0_UNK_3_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_3], convert_hex_to_num=True,
+            num_type="bit", num_count=3, description=MAP_SETUP_CONSTANTS.byte_0_unk_3)
         self._log_number(
-            simple_object_dict[BYTE_0_UNK_4_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=3, description=BYTE_0_UNK_4_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_4], convert_hex_to_num=True,
+            num_type="bit", num_count=3, description=MAP_SETUP_CONSTANTS.byte_0_unk_4)
         self._log_number(
-            simple_object_dict[BYTE_0_UNK_5_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=3, description=BYTE_0_UNK_5_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_5], convert_hex_to_num=True,
+            num_type="bit", num_count=3, description=MAP_SETUP_CONSTANTS.byte_0_unk_5)
         self._log_number(
-            simple_object_dict[BYTE_0_UNK_6_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_0_UNK_6_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_6], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_0_unk_6)
         self._log_number(
-            simple_object_dict[BYTE_0_UNK_7_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=12, description=BYTE_0_UNK_7_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_7], convert_hex_to_num=True,
+            num_type="bit", num_count=12, description=MAP_SETUP_CONSTANTS.byte_0_unk_7)
         self._log_number(
-            simple_object_dict[X_POSITION_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, description=X_POSITION_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.x_position], convert_hex_to_num=True,
+            num_type="hex", num_count=2, description=MAP_SETUP_CONSTANTS.x_position)
         self._log_number(
-            simple_object_dict[Y_POSITION_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, description=Y_POSITION_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.y_position], convert_hex_to_num=True,
+            num_type="hex", num_count=2, description=MAP_SETUP_CONSTANTS.y_position)
         self._log_number(
-            simple_object_dict[Z_POSITION_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, description=Z_POSITION_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.z_position], convert_hex_to_num=True,
+            num_type="hex", num_count=2, description=MAP_SETUP_CONSTANTS.z_position)
         self._log_number(
-            simple_object_dict[BYTE_8_UNK_0_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_8_UNK_0_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_0], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_8_unk_0)
         self._log_number(
-            simple_object_dict[BYTE_8_UNK_1_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_8_UNK_1_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_1], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_8_unk_1)
         self._log_number(
-            simple_object_dict[BYTE_8_UNK_2_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_8_UNK_2_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_2], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_8_unk_2)
         self._log_number(
-            simple_object_dict[BYTE_8_UNK_3_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_8_UNK_3_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_3], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_8_unk_3)
         self._log_number(
-            simple_object_dict[BYTE_8_UNK_4_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_8_UNK_4_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_4], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_8_unk_4)
         self._log_number(
-            simple_object_dict[BYTE_8_UNK_5_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=1, description=BYTE_8_UNK_5_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_5], convert_hex_to_num=True,
+            num_type="bit", num_count=1, description=MAP_SETUP_CONSTANTS.byte_8_unk_5)
         self._log_number(
-            simple_object_dict[BYTE_8_UNK_6_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=5, description=BYTE_8_UNK_6_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_6], convert_hex_to_num=True,
+            num_type="bit", num_count=5, description=MAP_SETUP_CONSTANTS.byte_8_unk_6)
         self._log_number(
-            simple_object_dict[BYTE_8_UNK_7_STR], convert_hex_to_num=True,
-            num_type="bit", num_count=5, description=BYTE_8_UNK_7_STR)
+            simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_7], convert_hex_to_num=True,
+            num_type="bit", num_count=5, description=MAP_SETUP_CONSTANTS.byte_8_unk_7)
 
     def _log_simple_object_list(self, curr_index:int, position_tuple:tuple):
         '''
@@ -873,19 +824,19 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         '''
         self._log_number(
             self._CAMERA_ID_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_ID_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_id_indicator)
         self._log_number(
-            camera_dict[CAMERA_ID_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, tab_count=3, description=CAMERA_ID_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.camera_id], convert_hex_to_num=True,
+            num_type="hex", num_count=2, tab_count=3, description=MAP_SETUP_CONSTANTS.camera_id)
         self._log_number(
             self._CAMERA_TYPE_INDICATOR, convert_hex_to_num=True,
-            num_type="hex", num_count=1, tab_count=2, description=CAMERA_TYPE_INDICATOR_STR)
+            num_type="hex", num_count=1, tab_count=2, description=MAP_SETUP_CONSTANTS.camera_type_indicator)
         self._log_number(
-            camera_dict[CAMERA_TYPE_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, tab_count=3, description=CAMERA_TYPE_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.camera_type], convert_hex_to_num=True,
+            num_type="hex", num_count=2, tab_count=3, description=MAP_SETUP_CONSTANTS.camera_type)
         self._log_number(
             self._CAMERA_END_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_END_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_end_indicator)
 
     def _log_pivot_camera(self, camera_dict:dict):
         '''
@@ -893,67 +844,67 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         '''
         self._log_number(
             self._CAMERA_ID_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_ID_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_id_indicator)
         self._log_number(
-            camera_dict[CAMERA_ID_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, tab_count=3, description=CAMERA_ID_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.camera_id], convert_hex_to_num=True,
+            num_type="hex", num_count=2, tab_count=3, description=MAP_SETUP_CONSTANTS.camera_id)
         self._log_number(
             self._CAMERA_TYPE_INDICATOR, convert_hex_to_num=True,
-            num_type="hex", num_count=1, tab_count=2, description=CAMERA_TYPE_INDICATOR_STR)
+            num_type="hex", num_count=1, tab_count=2, description=MAP_SETUP_CONSTANTS.camera_type_indicator)
         self._log_number(
-            camera_dict[CAMERA_TYPE_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, tab_count=3, description=CAMERA_TYPE_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.camera_type], convert_hex_to_num=True,
+            num_type="hex", num_count=2, tab_count=3, description=MAP_SETUP_CONSTANTS.camera_type)
         self._log_number(
             self._CAMERA_SECTION_1_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_1_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_1_indicator)
         self._log_number(
-            camera_dict[X_POSITION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=X_POSITION_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.x_position], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.x_position)
         self._log_number(
-            camera_dict[Y_POSITION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=Y_POSITION_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.y_position], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.y_position)
         self._log_number(
-            camera_dict[Z_POSITION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=Z_POSITION_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.z_position], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.z_position)
         self._log_number(
             self._CAMERA_SECTION_2_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_2_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_2_indicator)
         self._log_number(
-            camera_dict[HORIZONTAL_SPEED_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=HORIZONTAL_SPEED_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.horizontal_speed], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.horizontal_speed)
         self._log_number(
-            camera_dict[VERTICAL_SPEED_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=VERTICAL_SPEED_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.vertical_speed], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.vertical_speed)
         self._log_number(
             self._CAMERA_SECTION_3_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_3_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_3_indicator)
         self._log_number(
-            camera_dict[ROTATION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=ROTATION_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.rotation], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.rotation)
         self._log_number(
-            camera_dict[ACCELERATION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=ACCELERATION_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.acceleration], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.acceleration)
         self._log_number(
             self._CAMERA_SECTION_4_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_4_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_4_indicator)
         self._log_number(
-            camera_dict[PITCH_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=PITCH_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.pitch], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.pitch)
         self._log_number(
-            camera_dict[YAW_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=YAW_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.yaw], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.yaw)
         self._log_number(
-            camera_dict[ROLL_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=ROLL_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.roll], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.roll)
         self._log_number(
             self._CAMERA_SECTION_5_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_5_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_5_indicator)
         self._log_number(
-            camera_dict[CAMERA_UNK_BYTE_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=4, tab_count=3, description=CAMERA_UNK_BYTE_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.camera_unk_byte], convert_hex_to_num=True,
+            num_type="hex", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.camera_unk_byte)
         self._log_number(
             self._CAMERA_END_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_END_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_end_indicator)
 
     def _log_static_camera(self, camera_dict:dict):
         '''
@@ -961,43 +912,43 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         '''
         self._log_number(
             self._CAMERA_ID_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_ID_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_id_indicator)
         self._log_number(
-            camera_dict[CAMERA_ID_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, tab_count=3, description=CAMERA_ID_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.camera_id], convert_hex_to_num=True,
+            num_type="hex", num_count=2, tab_count=3, description=MAP_SETUP_CONSTANTS.camera_id)
         self._log_number(
             self._CAMERA_TYPE_INDICATOR, convert_hex_to_num=True,
-            num_type="hex", num_count=1, tab_count=2, description=CAMERA_TYPE_INDICATOR_STR)
+            num_type="hex", num_count=1, tab_count=2, description=MAP_SETUP_CONSTANTS.camera_type_indicator)
         self._log_number(
-            camera_dict[CAMERA_TYPE_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, tab_count=3, description=CAMERA_TYPE_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.camera_type], convert_hex_to_num=True,
+            num_type="hex", num_count=2, tab_count=3, description=MAP_SETUP_CONSTANTS.camera_type)
         self._log_number(
             self._CAMERA_SECTION_1_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_1_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_1_indicator)
         self._log_number(
-            camera_dict[X_POSITION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=X_POSITION_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.x_position], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.x_position)
         self._log_number(
-            camera_dict[Y_POSITION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=Y_POSITION_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.y_position], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.y_position)
         self._log_number(
-            camera_dict[Z_POSITION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=Z_POSITION_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.z_position], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.z_position)
         self._log_number(
             self._CAMERA_SECTION_2_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_2_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_2_indicator)
         self._log_number(
-            camera_dict[PITCH_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=PITCH_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.pitch], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.pitch)
         self._log_number(
-            camera_dict[YAW_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=YAW_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.yaw], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.yaw)
         self._log_number(
-            camera_dict[ROLL_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=ROLL_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.roll], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.roll)
         self._log_number(
             self._CAMERA_END_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_END_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_end_indicator)
 
     def _log_zoom_camera(self, camera_dict:dict):
         '''
@@ -1005,76 +956,76 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         '''
         self._log_number(
             self._CAMERA_ID_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_ID_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_id_indicator)
         self._log_number(
-            camera_dict[CAMERA_ID_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, tab_count=3, description=CAMERA_ID_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.camera_id], convert_hex_to_num=True,
+            num_type="hex", num_count=2, tab_count=3, description=MAP_SETUP_CONSTANTS.camera_id)
         self._log_number(
             self._CAMERA_TYPE_INDICATOR, convert_hex_to_num=True,
-            num_type="hex", num_count=1, tab_count=2, description=CAMERA_TYPE_INDICATOR_STR)
+            num_type="hex", num_count=1, tab_count=2, description=MAP_SETUP_CONSTANTS.camera_type_indicator)
         self._log_number(
-            camera_dict[CAMERA_TYPE_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, tab_count=3, description=CAMERA_TYPE_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.camera_type], convert_hex_to_num=True,
+            num_type="hex", num_count=2, tab_count=3, description=MAP_SETUP_CONSTANTS.camera_type)
         self._log_number(
             self._CAMERA_SECTION_1_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_1_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_1_indicator)
         self._log_number(
-            camera_dict[X_POSITION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=X_POSITION_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.x_position], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.x_position)
         self._log_number(
-            camera_dict[Y_POSITION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=Y_POSITION_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.y_position], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.y_position)
         self._log_number(
-            camera_dict[Z_POSITION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=Z_POSITION_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.z_position], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.z_position)
         self._log_number(
             self._CAMERA_SECTION_2_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_2_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_2_indicator)
         self._log_number(
-            camera_dict[HORIZONTAL_SPEED_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=HORIZONTAL_SPEED_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.horizontal_speed], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.horizontal_speed)
         self._log_number(
-            camera_dict[VERTICAL_SPEED_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=VERTICAL_SPEED_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.vertical_speed], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.vertical_speed)
         self._log_number(
             self._CAMERA_SECTION_3_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_3_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_3_indicator)
         self._log_number(
-            camera_dict[ROTATION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=ROTATION_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.rotation], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.rotation)
         self._log_number(
-            camera_dict[ACCELERATION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=ACCELERATION_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.acceleration], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.acceleration)
         self._log_number(
             self._CAMERA_SECTION_4_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_4_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_4_indicator)
         self._log_number(
-            camera_dict[PITCH_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=PITCH_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.pitch], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.pitch)
         self._log_number(
-            camera_dict[YAW_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=YAW_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.yaw], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.yaw)
         self._log_number(
-            camera_dict[ROLL_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=ROLL_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.roll], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.roll)
         self._log_number(
             self._CAMERA_SECTION_5_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_5_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_5_indicator)
         self._log_number(
-            camera_dict[CAMERA_UNK_BYTE_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=4, tab_count=3, description=CAMERA_UNK_BYTE_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.camera_unk_byte], convert_hex_to_num=True,
+            num_type="hex", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.camera_unk_byte)
         self._log_number(
             self._CAMERA_SECTION_6_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_6_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_6_indicator)
         self._log_number(
-            camera_dict[CLOSE_DISTANCE_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=CLOSE_DISTANCE_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.close_distance], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.close_distance)
         self._log_number(
-            camera_dict[FAR_DISTANCE_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=FAR_DISTANCE_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.far_distance], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.far_distance)
         self._log_number(
             self._CAMERA_END_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_END_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_end_indicator)
 
     def _log_random_camera(self, camera_dict:dict):
         '''
@@ -1082,25 +1033,25 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         '''
         self._log_number(
             self._CAMERA_ID_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_ID_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_id_indicator)
         self._log_number(
-            camera_dict[CAMERA_ID_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, tab_count=3, description=CAMERA_ID_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.camera_id], convert_hex_to_num=True,
+            num_type="hex", num_count=2, tab_count=3, description=MAP_SETUP_CONSTANTS.camera_id)
         self._log_number(
             self._CAMERA_TYPE_INDICATOR, convert_hex_to_num=True,
-            num_type="hex", num_count=1, tab_count=2, description=CAMERA_TYPE_INDICATOR_STR)
+            num_type="hex", num_count=1, tab_count=2, description=MAP_SETUP_CONSTANTS.camera_type_indicator)
         self._log_number(
-            camera_dict[CAMERA_TYPE_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=2, tab_count=3, description=CAMERA_TYPE_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.camera_type], convert_hex_to_num=True,
+            num_type="hex", num_count=2, tab_count=3, description=MAP_SETUP_CONSTANTS.camera_type)
         self._log_number(
             self._CAMERA_SECTION_1_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_SECTION_1_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_section_1_indicator)
         self._log_number(
-            camera_dict[CAMERA_UNK_BYTE_STR], convert_hex_to_num=True,
-            num_type="hex", num_count=4, tab_count=3, description=CAMERA_UNK_BYTE_STR)
+            camera_dict[MAP_SETUP_CONSTANTS.camera_unk_byte], convert_hex_to_num=True,
+            num_type="hex", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.camera_unk_byte)
         self._log_number(
             self._CAMERA_END_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=CAMERA_END_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.camera_end_indicator)
 
     def _log_cameras(self, start_index:int):
         '''
@@ -1111,12 +1062,14 @@ class Map_Setup_Class(Generic_Bin_File_Class):
             description="Camera List Start Indicator", new_line_count=2)
         for curr_camera_id in sorted(self._camera_dict):
             camera_dict:dict = self._camera_dict[curr_camera_id]
-            camera_type:int = camera_dict[CAMERA_TYPE_STR]
+            camera_type:int = camera_dict[MAP_SETUP_CONSTANTS.camera_type]
             self._log_file.write(f"0x{self._convert_int_to_hex_str(curr_index, byte_count=2)}:\n")
             self._log_file.write(f"\tCamera Type {camera_type} Here\n")
             if(camera_type == 0):
+                self._log_unknown_camera(camera_dict)
                 curr_index += 0x05
             elif(camera_type == 1):
+                self._log_pivot_camera(camera_dict)
                 curr_index += 0x37
             elif(camera_type == 2):
                 self._log_static_camera(camera_dict)
@@ -1125,6 +1078,7 @@ class Map_Setup_Class(Generic_Bin_File_Class):
                 self._log_zoom_camera(camera_dict)
                 curr_index += 0x40
             elif(camera_type == 4):
+                self._log_random_camera(camera_dict)
                 curr_index += 0x0B
             else:
                 error_message:str = f"ERROR: _log_cameras: Unknown camera type {camera_type} found!"
@@ -1141,40 +1095,40 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         '''
         self._log_number(
             self._LIGHTING_SECTION_1_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=LIGHTING_SECTION_1_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.lighting_section_1_indicator)
         self._log_number(
             self._LIGHTING_SECTION_2_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=LIGHTING_SECTION_2_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.lighting_section_2_indicator)
         self._log_number(
-            light_dict[X_POSITION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=X_POSITION_STR)
+            light_dict[MAP_SETUP_CONSTANTS.x_position], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.x_position)
         self._log_number(
-            light_dict[Y_POSITION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=Y_POSITION_STR)
+            light_dict[MAP_SETUP_CONSTANTS.y_position], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.y_position)
         self._log_number(
-            light_dict[Z_POSITION_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=Z_POSITION_STR)
+            light_dict[MAP_SETUP_CONSTANTS.z_position], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.z_position)
         self._log_number(
             self._LIGHTING_SECTION_3_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=LIGHTING_SECTION_3_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.lighting_section_3_indicator)
         self._log_number(
-            light_dict[BYTE_F_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=BYTE_F_STR)
+            light_dict[MAP_SETUP_CONSTANTS.byte_f], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.byte_f)
         self._log_number(
-            light_dict[BYTE_13_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=BYTE_13_STR)
+            light_dict[MAP_SETUP_CONSTANTS.byte_13], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.byte_13)
         self._log_number(
             self._LIGHTING_SECTION_4_INDICATOR, convert_hex_to_num=False,
-            num_type="hex", num_count=1, description=LIGHTING_SECTION_4_INDICATOR_STR)
+            num_type="hex", num_count=1, description=MAP_SETUP_CONSTANTS.lighting_section_4_indicator)
         self._log_number(
-            light_dict[RED_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=RED_STR)
+            light_dict[MAP_SETUP_CONSTANTS.red_value], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.red_value)
         self._log_number(
-            light_dict[GREEN_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=GREEN_STR)
+            light_dict[MAP_SETUP_CONSTANTS.green_value], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.green_value)
         self._log_number(
-            light_dict[BLUE_STR], convert_hex_to_num=True,
-            num_type="float", num_count=4, tab_count=3, description=BLUE_STR)
+            light_dict[MAP_SETUP_CONSTANTS.blue_value], convert_hex_to_num=True,
+            num_type="float", num_count=4, tab_count=3, description=MAP_SETUP_CONSTANTS.blue_value)
 
     def _log_lighting_list(self, start_index:int):
         '''
@@ -1203,15 +1157,402 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         self._log_file.write(f"####################\n\n")
         self._log_hex_line(
             start_index, self._FILE_END_INDICATOR, byte_count=2, convert_hex_to_num=False,
-            description=FILE_END_INDICATOR_STR, new_line_count=0)
-
-    ##########################
-    ##### EDIT FUNCTIONS #####
-    ##########################
+            description=MAP_SETUP_CONSTANTS.file_end_indicator, new_line_count=0)
 
     #################
     ##### WRITE #####
     #################
+
+    ### COMPLEX OBJECTS
+
+    def _write_complex_object(self, new_content:bytearray, complex_object_dict:dict):
+        '''
+        Pass
+        '''
+        x_position:int = self._possible_neg_to_pos(complex_object_dict[MAP_SETUP_CONSTANTS.x_position], byte_count=2)
+        y_position:int = self._possible_neg_to_pos(complex_object_dict[MAP_SETUP_CONSTANTS.y_position], byte_count=2)
+        z_position:int = self._possible_neg_to_pos(complex_object_dict[MAP_SETUP_CONSTANTS.z_position], byte_count=2)
+        new_content += \
+            (x_position).to_bytes(2, 'big') + \
+            (y_position).to_bytes(2, 'big') + \
+            (z_position).to_bytes(2, 'big')
+        complex_object_bit_count_list:list = [
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_10_unk_5],   2),
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_10_unk_4],   4),
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_10_unk_3],   1),
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_10_unk_2],   1),
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_10_unk_1],  12),
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_10_unk_0],  12), # Byte 10-13
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_c_unk_1],   23),
+            (complex_object_dict[MAP_SETUP_CONSTANTS.rotation_y_axis], 9), # Byte C-F
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_b_unk_4],    1),
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_b_unk_3],    3),
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_b_unk_2],    1),
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_b_unk_1],    1),
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_b_unk_0.byte_6_unk_2],    2), # Byte B
+            (complex_object_dict[MAP_SETUP_CONSTANTS.marker_id],       8), # Byte A
+            (complex_object_dict[MAP_SETUP_CONSTANTS.actor_id],       16), # Byte 8-9
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_6_unk_2],    1),
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_6_unk_1],    6),
+            (complex_object_dict[MAP_SETUP_CONSTANTS.byte_6_unk_0],    9), # Byte 6-7
+        ]
+        int_val:int = self._construct_int_from_bits(complex_object_bit_count_list)
+        new_content += int_val.to_bytes(self._COMPLEX_OBJECT_LENGTH - 0x6, 'big')
+        return new_content
+
+    ### SIMPLE OBJECTS
+
+    def _write_simple_object(self, new_content:bytearray, simple_object_dict:dict):
+        '''
+        Pass
+        '''
+        simple_object_bit_count_list:list = [
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_0], 1),
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_1], 1), 
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_2], 8), 
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_3], 3), 
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_4], 3), 
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_5], 3), 
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_6], 1), 
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_0_unk_7], 12),
+        ]
+        int_val:int = self._construct_int_from_bits(simple_object_bit_count_list)
+        new_content += int_val.to_bytes(4, 'big')
+        x_position:int = self._possible_neg_to_pos(simple_object_dict[MAP_SETUP_CONSTANTS.x_position], byte_count=2)
+        y_position:int = self._possible_neg_to_pos(simple_object_dict[MAP_SETUP_CONSTANTS.y_position], byte_count=2)
+        z_position:int = self._possible_neg_to_pos(simple_object_dict[MAP_SETUP_CONSTANTS.z_position], byte_count=2)
+        new_content += \
+            (x_position).to_bytes(2, 'big') + \
+            (y_position).to_bytes(2, 'big') + \
+            (z_position).to_bytes(2, 'big')
+        simple_object_bit_count_list:list = [
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_0], 1),
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_1], 1), 
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_2], 1), 
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_3], 1), 
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_4], 1), 
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_5], 1), 
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_6], 5), 
+            (simple_object_dict[MAP_SETUP_CONSTANTS.byte_8_unk_7], 5),
+        ]
+        int_val:int = self._construct_int_from_bits(simple_object_bit_count_list)
+        new_content += int_val.to_bytes(2, 'big')
+        return new_content
+
+    ### CUBES
+
+    def _write_cube_counts(self, new_content:bytearray):
+        '''
+        Pass
+        '''
+        min_x = max_x = min_y = max_y = min_z = max_z = 0
+        for (x, y, z) in self._cube_dict:
+            if(x < min_x):
+                min_x = x
+            elif(x > max_x):
+                max_x = x
+            if(y < min_y):
+                min_y = y
+            elif(y > max_y):
+                max_y = y
+            if(z < min_z):
+                min_z = z
+            elif(z > max_z):
+                max_z = z
+        # Negative
+        neg_x:int = min_x // 1000
+        min_x_dimension:int = self._possible_neg_to_pos(neg_x, byte_count=4)
+        new_content += min_x_dimension.to_bytes(4, 'big')
+        neg_y:int = min_y // 1000
+        min_y_dimension:int = self._possible_neg_to_pos(neg_y, byte_count=4)
+        new_content += min_y_dimension.to_bytes(4, 'big')
+        neg_z:int = min_z // 1000
+        min_z_dimension:int = self._possible_neg_to_pos(neg_z, byte_count=4)
+        new_content += min_z_dimension.to_bytes(4, 'big')
+        # Positive
+        pos_x:int = max_x // 1000
+        max_x_dimension:int = self._possible_neg_to_pos(pos_x, byte_count=4)
+        new_content += max_x_dimension.to_bytes(4, 'big')
+        pos_y:int = max_y // 1000
+        max_y_dimension:int = self._possible_neg_to_pos(pos_y, byte_count=4)
+        new_content += max_y_dimension.to_bytes(4, 'big')
+        pos_z:int = max_z // 1000
+        max_z_dimension:int = self._possible_neg_to_pos(pos_z, byte_count=4)
+        new_content += max_z_dimension.to_bytes(4, 'big')
+        return new_content, \
+            neg_x, neg_y, neg_z, \
+            pos_x, pos_y, pos_z
+
+    def _write_cube(self, new_content:bytearray, lowest_position:tuple):
+        '''
+        Pass
+        '''
+        this_cube:dict = self._cube_dict[lowest_position]
+        if(this_cube[self._EMPTY_CUBE_STR]):
+            return new_content
+        complex_object_count:int = len(this_cube[self._COMPLEX_OBJECT_LIST_STR])
+        new_content += \
+            (self._CUBE_START_INDICATOR).to_bytes(2, 'big') + \
+            (complex_object_count).to_bytes(1, 'big')
+        if(complex_object_count > 0):
+            new_content += (self._COMPLEX_OBJECT_LIST_START_INDICATOR).to_bytes(1, 'big')
+            for complex_object_dict in this_cube[self._COMPLEX_OBJECT_LIST_STR]:
+                new_content = self._write_complex_object(new_content, complex_object_dict)
+        new_content += (0x08).to_bytes(1, 'big')
+        simple_object_count:int = len(this_cube[self._SIMPLE_OBJECT_LIST_STR])
+        new_content += (simple_object_count).to_bytes(1, 'big')
+        if(simple_object_count > 0):
+            new_content += (0x09).to_bytes(1, 'big')
+            for simple_object_dict in this_cube[self._SIMPLE_OBJECT_LIST_STR]:
+                new_content = self._write_simple_object(new_content, simple_object_dict)
+        return new_content
+
+    def _write_cubes(self, new_content:bytearray):
+        '''
+        Pass
+        '''
+        new_content, \
+        neg_x, neg_y, neg_z, \
+        pos_x, pos_y, pos_z \
+            = self._write_cube_counts(new_content)
+        for x_cube_count in range(neg_x, pos_x + 1):
+            lower_x_position:int = (x_cube_count * 1000)
+            for y_cube_count in range(neg_y, pos_y + 1):
+                lower_y_position:int = (y_cube_count * 1000)
+                for z_cube_count in range(neg_z, pos_z + 1):
+                    lower_z_position:int = (z_cube_count * 1000)
+                    lowest_position:tuple = (lower_x_position, lower_y_position, lower_z_position)
+                    new_content = self._write_cube(new_content, lowest_position)
+                    new_content += (self._CUBE_SEPERATOR).to_bytes(1, 'big')
+        return new_content
+
+    ### CAMERAS
+
+    def _write_unknown_camera(self, new_content:bytearray, camera_dict:dict):
+        '''
+        Pass
+        '''
+        new_content += \
+            (self._CAMERA_ID_INDICATOR).to_bytes(1, 'big') + \
+            (camera_dict[MAP_SETUP_CONSTANTS.camera_id]).to_bytes(2, 'big') + \
+            (self._CAMERA_TYPE_INDICATOR).to_bytes(1, 'big') + \
+            (self._CAMERA_END_INDICATOR).to_bytes(1, 'big')
+        return new_content
+
+    def _write_pivot_camera(self, new_content:bytearray, camera_dict:dict):
+        '''
+        Pass
+        '''
+        new_content += \
+            (self._CAMERA_ID_INDICATOR).to_bytes(1, 'big') + \
+            (camera_dict[MAP_SETUP_CONSTANTS.camera_id]).to_bytes(2, 'big') + \
+            (self._CAMERA_TYPE_INDICATOR).to_bytes(1, 'big') + \
+            (camera_dict[MAP_SETUP_CONSTANTS.camera_type]).to_bytes(1, 'big') + \
+            (self._CAMERA_SECTION_1_INDICATOR).to_bytes(1, 'big') + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.x_position]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.y_position]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.z_position]) + \
+            (self._CAMERA_SECTION_2_INDICATOR).to_bytes(1, 'big') + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.horizontal_speed]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.vertical_speed]) + \
+            (self._CAMERA_SECTION_3_INDICATOR).to_bytes(1, 'big') + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.rotation]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.acceleration]) + \
+            (self._CAMERA_SECTION_4_INDICATOR).to_bytes(1, 'big') + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.pitch]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.yaw]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.roll]) + \
+            (self._CAMERA_SECTION_5_INDICATOR).to_bytes(1, 'big') + \
+            (camera_dict[MAP_SETUP_CONSTANTS.camera_unk_byte]).to_bytes(4, 'big') + \
+            (self._CAMERA_END_INDICATOR).to_bytes(1, 'big')
+        return new_content
+
+    def _write_static_camera(self, new_content:bytearray, camera_dict:dict):
+        '''
+        Pass
+        '''
+        new_content += \
+            (self._CAMERA_ID_INDICATOR).to_bytes(1, 'big') + \
+            (camera_dict[MAP_SETUP_CONSTANTS.camera_id]).to_bytes(2, 'big') + \
+            (self._CAMERA_TYPE_INDICATOR).to_bytes(1, 'big') + \
+            (camera_dict[MAP_SETUP_CONSTANTS.camera_type]).to_bytes(1, 'big') + \
+            (self._CAMERA_SECTION_1_INDICATOR).to_bytes(1, 'big') + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.x_position]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.y_position]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.z_position]) + \
+            (self._CAMERA_SECTION_2_INDICATOR).to_bytes(1, 'big') + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.pitch]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.yaw]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.roll]) + \
+            (self._CAMERA_END_INDICATOR).to_bytes(1, 'big')
+        return new_content
+
+    def _write_zoom_camera(self, new_content:bytearray, camera_dict:dict):
+        '''
+        Pass
+        '''
+        new_content += \
+            (self._CAMERA_ID_INDICATOR).to_bytes(1, 'big') + \
+            (camera_dict[MAP_SETUP_CONSTANTS.camera_id]).to_bytes(2, 'big') + \
+            (self._CAMERA_TYPE_INDICATOR).to_bytes(1, 'big') + \
+            (camera_dict[MAP_SETUP_CONSTANTS.camera_type]).to_bytes(1, 'big') + \
+            (self._CAMERA_SECTION_1_INDICATOR).to_bytes(1, 'big') + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.x_position]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.y_position]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.z_position]) + \
+            (self._CAMERA_SECTION_2_INDICATOR).to_bytes(1, 'big') + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.horizontal_speed]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.vertical_speed]) + \
+            (self._CAMERA_SECTION_3_INDICATOR).to_bytes(1, 'big') + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.rotation]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.acceleration]) + \
+            (self._CAMERA_SECTION_4_INDICATOR).to_bytes(1, 'big') + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.pitch]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.yaw]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.roll]) + \
+            (self._CAMERA_SECTION_5_INDICATOR).to_bytes(1, 'big') + \
+            (camera_dict[MAP_SETUP_CONSTANTS.camera_unk_byte]).to_bytes(4, 'big') + \
+            (self._CAMERA_SECTION_6_INDICATOR).to_bytes(1, 'big') + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.close_distance]) + \
+            self._convert_float_to_hex_bytes(camera_dict[MAP_SETUP_CONSTANTS.far_distance]) + \
+            (self._CAMERA_END_INDICATOR).to_bytes(1, 'big')
+        return new_content
+
+    def _write_random_camera(self, new_content:bytearray, camera_dict:dict):
+        '''
+        Pass
+        '''
+        try:
+            new_content += \
+                (self._CAMERA_ID_INDICATOR).to_bytes(1, 'big') + \
+                (camera_dict[MAP_SETUP_CONSTANTS.camera_id]).to_bytes(2, 'big') + \
+                (self._CAMERA_TYPE_INDICATOR).to_bytes(1, 'big') + \
+                (camera_dict[MAP_SETUP_CONSTANTS.camera_type]).to_bytes(1, 'big') + \
+                (self._CAMERA_SECTION_1_INDICATOR).to_bytes(1, 'big') + \
+                (camera_dict[MAP_SETUP_CONSTANTS.camera_unk_byte]).to_bytes(4, 'big') + \
+                (self._CAMERA_END_INDICATOR).to_bytes(1, 'big')
+            return new_content
+        except KeyError as err:
+            print(f"Camera Dict:\n{camera_dict}")
+            raise err
+
+    def _write_cameras(self, new_content:bytearray):
+        '''
+        Pass
+        '''
+        new_content += (self._CAMERA_LIST_START_INDICATOR).to_bytes(2, 'big')
+        for curr_camera_id in sorted(self._camera_dict):
+            camera_dict:dict = self._camera_dict[curr_camera_id]
+            camera_type:int = camera_dict[MAP_SETUP_CONSTANTS.camera_type]
+            if(camera_type == 0):
+                new_content = self._write_unknown_camera(new_content, camera_dict)
+            elif(camera_type == 1):
+                new_content = self._write_pivot_camera(new_content, camera_dict)
+            elif(camera_type == 2):
+                new_content = self._write_static_camera(new_content, camera_dict)
+            elif(camera_type == 3):
+                new_content = self._write_zoom_camera(new_content, camera_dict)
+            elif(camera_type == 4):
+                new_content = self._write_random_camera(new_content, camera_dict)
+            else:
+                error_message:str = f"ERROR: _log_cameras: Unknown camera type {camera_type} found!"
+                print(error_message)
+                raise Exception(error_message)
+        return new_content
+
+    ### LIGHTING
+
+    def _write_lighting(self, new_content:bytearray, lighting_dict:dict):
+        '''
+        Pass
+        '''
+        new_content += \
+            (self._LIGHTING_SECTION_1_INDICATOR).to_bytes(1, 'big') + \
+            (self._LIGHTING_SECTION_2_INDICATOR).to_bytes(1, 'big') + \
+            self._convert_float_to_hex_bytes(lighting_dict[MAP_SETUP_CONSTANTS.x_position]) + \
+            self._convert_float_to_hex_bytes(lighting_dict[MAP_SETUP_CONSTANTS.y_position]) + \
+            self._convert_float_to_hex_bytes(lighting_dict[MAP_SETUP_CONSTANTS.z_position]) + \
+            (self._LIGHTING_SECTION_3_INDICATOR).to_bytes(1, 'big') + \
+            self._convert_float_to_hex_bytes(lighting_dict[MAP_SETUP_CONSTANTS.byte_f]) + \
+            self._convert_float_to_hex_bytes(lighting_dict[MAP_SETUP_CONSTANTS.byte_13]) + \
+            (self._LIGHTING_SECTION_4_INDICATOR).to_bytes(1, 'big') + \
+            (lighting_dict[MAP_SETUP_CONSTANTS.red_value]).to_bytes(4, 'big') + \
+            (lighting_dict[MAP_SETUP_CONSTANTS.green_value]).to_bytes(4, 'big') + \
+            (lighting_dict[MAP_SETUP_CONSTANTS.blue_value]).to_bytes(4, 'big')
+        return new_content
+
+    def _write_lighting_list(self, new_content:bytearray):
+        '''
+        Pass
+        '''
+        new_content += (self._LIGHTING_START_INDICATOR).to_bytes(2, 'big')
+        for lighting_count in self._lighting_dict:
+            lighting_dict:dict = self._lighting_dict[lighting_count]
+            new_content = self._write_lighting(new_content, lighting_dict)
+        return new_content
+    
+    ##########################
+    ##### EDIT FUNCTIONS #####
+    ##########################
+    
+    def _verify_complex_object_dict(self, complex_object_dict:dict):
+        '''
+        Pass
+        '''
+        return True
+    
+    def add_complex_object(self, complex_object_dict:dict):
+        '''
+        Pass
+        '''
+        print("INFO: add_complex_object: Start!")
+        if(not self._verify_complex_object_dict(complex_object_dict)):
+            raise Exception("complex Object Dict Not Properly Created")
+        x_position:int = int(complex_object_dict[MAP_SETUP_CONSTANTS.x_position] // 1000) * 1000
+        y_position:int = int(complex_object_dict[MAP_SETUP_CONSTANTS.y_position] // 1000) * 1000
+        z_position:int = int(complex_object_dict[MAP_SETUP_CONSTANTS.z_position] // 1000) * 1000
+        lowest_position:tuple = (x_position, y_position, z_position)
+        if(lowest_position not in self._cube_dict):
+            print("THE CUBE DOES NOT EXIST")
+            self._cube_dict[lowest_position] = {
+                self._EMPTY_CUBE_STR: True,
+                self._COMPLEX_OBJECT_LIST_STR: [],
+                self._SIMPLE_OBJECT_LIST_STR: [],
+            }
+        else:
+            print("WE HERE BOIZ")
+        print(f"THE CUUUUUBE 1:\n{self._cube_dict[lowest_position][self._COMPLEX_OBJECT_LIST_STR]}")
+        self._cube_dict[lowest_position][self._EMPTY_CUBE_STR] = False
+        self._cube_dict[lowest_position][self._COMPLEX_OBJECT_LIST_STR].append(complex_object_dict)
+        print(f"THE CUUUUUBE 2:\n{self._cube_dict[lowest_position][self._COMPLEX_OBJECT_LIST_STR]}")
+        print("INFO: add_complex_object: Complete!")
+    
+    def _verify_simple_object_dict(self, simple_object_dict:dict):
+        '''
+        Pass
+        '''
+        return True
+    
+    def add_simple_object(self, simple_object_dict:dict):
+        '''
+        Pass
+        '''
+        print("INFO: add_simple_object: Start!")
+        if(not self._verify_simple_object_dict(simple_object_dict)):
+            raise Exception("Simple Object Dict Not Properly Created")
+        x_position:int = int(simple_object_dict[MAP_SETUP_CONSTANTS.x_position] // 1000) * 1000
+        y_position:int = int(simple_object_dict[MAP_SETUP_CONSTANTS.y_position] // 1000) * 1000
+        z_position:int = int(simple_object_dict[MAP_SETUP_CONSTANTS.z_position] // 1000) * 1000
+        lowest_position:tuple = (x_position, y_position, z_position)
+        if(lowest_position not in self._cube_dict):
+            self._cube_dict[lowest_position] = {
+                self._EMPTY_CUBE_STR: True,
+                self._COMPLEX_OBJECT_LIST_STR: [],
+                self._SIMPLE_OBJECT_LIST_STR: [],
+            }
+        self._cube_dict[lowest_position][self._EMPTY_CUBE_STR] = False
+        self._cube_dict[lowest_position][self._SIMPLE_OBJECT_LIST_STR].append(simple_object_dict)
+        print("INFO: add_simple_object: Complete!")
 
     ##########################
     ##### MAIN FUNCTIONS #####
@@ -1226,13 +1567,12 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         curr_index:int = self._parse_camera_list(curr_index)
         curr_index:int = self._parse_lighting_list(curr_index)
     
-    def log_map_setup_file_as_text(self):
+    def log_map_setup_file_as_text(self, file_path:str=EXTRACTED_FILES_DIR):
         '''
         Pass
         '''
         file_name:str = (self._file_path).rsplit("/", 1)[1].replace(".bin", "")
-        print(file_name)
-        with open(f"randomizer/extracted_files/{file_name}.txt", "w+") as self._log_file:
+        with open(f"{file_path}{file_name}.txt", "w+") as self._log_file:
             self._log_file_header(file_name)
             self._log_file.write(f"#################\n")
             self._log_file.write(f"##### CUBES #####\n")
@@ -1252,7 +1592,14 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         '''
         Pass
         '''
-        pass
+        header:int = 0x0101
+        new_content:bytearray = header.to_bytes(2, 'big')
+        new_content = self._write_cubes(new_content)
+        new_content = self._write_cameras(new_content)
+        new_content = self._write_lighting_list(new_content)
+        self._file_content = new_content + (0x0000).to_bytes(2, 'big')
+        super()._save_changes(file_path)
+        del new_content
 
 ################
 ##### MAIN #####
