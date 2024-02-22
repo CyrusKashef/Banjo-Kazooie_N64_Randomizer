@@ -9,67 +9,9 @@ Purpose:
 
 from randomizer.generic_bin_file_class import Generic_Bin_File_Class
 
-from randomizer.contants.variables.assembly_variables import \
-    EXTRACTED_FILES_DIR, DECOMPRESSED_BIN_EXTENSION
-
-TILE_BELOW_STR:str = "Tile Below"
-TILE_LEFT_STR:str = "Tile Left"
-TILE_ABOVE_STR:str = "Tile Above"
-TILE_RIGHT_STR:str = "Tile Right"
-TILE_TYPE_STR:str = "Tile Type"
-SOUND_ENUM_STR:str = "Sound Enum"
-MAP_STR:str = "Map"
-STATE_STR:str = "State"
-CAMERA_STR:str = "Camera"
-ENTRY_POINT_STR:str = "Entry Point"
-
-UNKNOWN_1_STR:str = "Unknown 1"
-UNKNOWN_2_STR:str = "Unknown 2"
-UNKNOWN_3_STR:str = "Unknown 3"
-UNKNOWN_4_STR:str = "Unknown 4"
-UNKNOWN_5_STR:str = "Unknown 5"
-UNKNOWN_6_STR:str = "Unknown 6"
-UNKNOWN_8_STR:str = "Unknown 8"
-UNKNOWN_9_STR:str = "Unknown 9"
-UNKNOWN_A_STR:str = "Unknown A"
-UNKNOWN_B_STR:str = "Unknown B"
-UNKNOWN_C_STR:str = "Unknown C"
-UNKNOWN_10_STR:str = "Unknown 10"
-UNKNOWN_11_STR:str = "Unknown 11"
-UNKNOWN_12_STR:str = "Unknown 12"
-UNKNOWN_13_STR:str = "Unknown 13"
-UNKNOWN_14_STR:str = "Unknown 14"
-UNKNOWN_15_STR:str = "Unknown 15"
-UNKNOWN_16_STR:str = "Unknown 16"
-UNKNOWN_17_STR:str = "Unknown 17"
-UNKNOWN_18_STR:str = "Unknown 18"
-UNKNOWN_19_STR:str = "Unknown 19"
-UNKNOWN_1A_STR:str = "Unknown 1A"
-UNKNOWN_1B_STR:str = "Unknown 1B"
-UNKNOWN_1C_STR:str = "Unknown 1C"
-UNKNOWN_1D_STR:str = "Unknown 1D"
-UNKNOWN_1E_STR:str = "Unknown 1E"
-UNKNOWN_1F_STR:str = "Unknown 1F"
-
-FURNACE_FUN_BOARD_START_INDEX:int = 0xAB0
-FURNACE_FUN_BOARD_END_INDEX:int = 0x168F
-FURNACE_FUN_BOARD_INTERVAL:int = 0x20
-
-SOUND_QUESTION_START_INDEX:int = 0x16A4
-SOUND_QUESTION_END_INDEX:int = 0x1907
-SOUND_QUESTION_INTERVAL:int = 0xC
-
-MINI_GAME_START_INDEX:int = 0x1908
-MINI_GAME_END_INDEX:int = 0x191F
-MINI_GAME_INTERVAL:int = 0x4
-
-PICTURE_QUESTION_START_INDEX:int = 0x1920
-PICTURE_QUESTION_END_INDEX:int = 0x1AF7
-PICTURE_QUESTION_INTERVAL:int = 0x4
-
-CAULDRON_START_INDEX:int = 0x970
-CAULDRON_END_INDEX:int = 0x9C0
-CAULDRON_INTERVAL:int = 0X8
+from randomizer.constants.str_values.string_constants import STRING_CONSTANTS as STR_CONST
+from randomizer.constants.int_values.int_constants import INTEGER_CONSTANTS as INT_CONST
+from randomizer.constants.list_values.list_constants import LIST_CONSTANTS as LIST_CONST
 
 ######################################
 ##### GRUNTILDAS LAIR DATA CLASS #####
@@ -83,7 +25,7 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
         '''
         Constructor
         '''
-        file_path:str = EXTRACTED_FILES_DIR + file_name + DECOMPRESSED_BIN_EXTENSION
+        file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
         super().__init__(file_path)
     
     #############################
@@ -95,19 +37,23 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
         Pass
         '''
         note_door_list:list = []
-        for curr_index in range(0x7CC, 0x7E4, 0x2):
+        for curr_index in range(
+                INT_CONST.note_door_cost_start_index,
+                INT_CONST.note_door_cost_end_index,
+                INT_CONST.note_door_cost_interval):
             note_door_value:int = self._read_bytes_as_int(curr_index, byte_count=2)
             note_door_list.append(note_door_value)
         return note_door_list
     
     def set_note_door_values(self,
-            note_door_list:list=[
-                50, 180, 260, 350, 450, 640,
-                765, 810, 828, 846, 864, 882]):
+            note_door_list:list=LIST_CONST.default_note_door_list):
         '''
         Pass
         '''
-        for index_count, curr_index in enumerate(range(0x7CC, 0x7E4, 0x2)):
+        for index_count, curr_index in enumerate(range(
+                INT_CONST.note_door_cost_start_index,
+                INT_CONST.note_door_cost_end_index,
+                INT_CONST.note_door_cost_interval)):
             note_door_value:int = note_door_list[index_count]
             if(note_door_value != None):
                 self._write_bytes_from_int(curr_index, note_door_value, byte_count=2)
@@ -121,21 +67,25 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
         Pass
         '''
         jigsaw_puzzle_list:list = []
-        for curr_index in range(0x1B48, 0x1B74, 0x4):
+        for curr_index in range(
+                INT_CONST.jigsaw_puzzle_cost_start_index,
+                INT_CONST.jigsaw_puzzle_cost_end_index,
+                INT_CONST.jigsaw_puzzle_cost_interval):
             jigsaw_puzzle_cost:int = self._read_bytes_as_int(curr_index, byte_count=1)
             jigsaw_puzzle_list.append(jigsaw_puzzle_cost)
         return jigsaw_puzzle_list
     
     def set_jigsaw_puzzle_costs(self,
-            jigsaw_puzzle_list:list=[
-                1, 2, 5, 7, 8, 9,
-                10, 12, 15, 25, 4]):
+            jigsaw_puzzle_list:list=LIST_CONST.default_jiggy_puzzle_list):
         '''
         Pass
         '''
         total_bit_requirement:int = 0
-        current_bit_offset = 0x5D
-        for index_count, curr_index in enumerate(range(0x1B48, 0x1B74, 0x4)):
+        current_bit_offset = INT_CONST.jigsaw_puzzle_starting_bit_offset
+        for index_count, curr_index in enumerate(range(
+                INT_CONST.jigsaw_puzzle_cost_start_index,
+                INT_CONST.jigsaw_puzzle_cost_end_index,
+                INT_CONST.jigsaw_puzzle_cost_interval)):
             jigsaw_puzzle_cost:int = jigsaw_puzzle_list[index_count]
             if(jigsaw_puzzle_cost == None):
                 needed_bits = self._read_bytes_as_int(curr_index + 0x1, byte_count=1)
@@ -149,8 +99,10 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
                 self._write_bytes_from_int(curr_index + 0x1, needed_bits, byte_count=1)
                 self._write_bytes_from_int(curr_index + 0x2, current_bit_offset, byte_count=2)
                 current_bit_offset += needed_bits
-        if(total_bit_requirement > 37):
-            error_message:str = f"ERROR: set_jigsaw_puzzle_costs: Attempted to use {total_bit_requirement}/37 alloted bits"
+        if(total_bit_requirement > INT_CONST.jigsaw_puzzle_alloted_bit_count):
+            error_message:str = \
+                f"ERROR: set_jigsaw_puzzle_costs: " + \
+                f"Attempted to use {total_bit_requirement}/{INT_CONST.jigsaw_puzzle_alloted_bit_count} alloted bits"
             print(error_message)
             raise SystemError(error_message)
     
@@ -190,35 +142,35 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
         '''
         furnace_fun_board_dict:dict = {}
         for tile_count, curr_index in enumerate(range(
-                FURNACE_FUN_BOARD_START_INDEX, 
-                FURNACE_FUN_BOARD_END_INDEX,
-                FURNACE_FUN_BOARD_INTERVAL)):
+                INT_CONST.furnace_fun_board_start_index, 
+                INT_CONST.furnace_fun_board_end_index,
+                INT_CONST.furnace_fun_board_interval)):
             furnace_fun_board_dict[tile_count] = {
-                TILE_BELOW_STR: self._read_bytes_as_int(curr_index, byte_count=2),
-                TILE_LEFT_STR: self._read_bytes_as_int(curr_index + 0x2, byte_count=2),
-                TILE_ABOVE_STR: self._read_bytes_as_int(curr_index + 0x4, byte_count=2),
-                TILE_RIGHT_STR: self._read_bytes_as_int(curr_index + 0x6, byte_count=2),
-                TILE_TYPE_STR: self._read_bytes_as_int(curr_index + 0x8, byte_count=1),
-                UNKNOWN_9_STR: self._read_bytes_as_int(curr_index + 0x9, byte_count=1),
-                UNKNOWN_A_STR: self._read_bytes_as_int(curr_index + 0xA, byte_count=1),
-                UNKNOWN_B_STR: self._read_bytes_as_int(curr_index + 0xB, byte_count=1),
-                UNKNOWN_C_STR: self._read_bytes_as_float(curr_index + 0xC),
-                UNKNOWN_10_STR: self._read_bytes_as_int(curr_index + 0x10, byte_count=1),
-                UNKNOWN_11_STR: self._read_bytes_as_int(curr_index + 0x11, byte_count=1),
-                UNKNOWN_12_STR: self._read_bytes_as_int(curr_index + 0x12, byte_count=1),
-                UNKNOWN_13_STR: self._read_bytes_as_int(curr_index + 0x13, byte_count=1),
-                UNKNOWN_14_STR: self._read_bytes_as_int(curr_index + 0x14, byte_count=1),
-                UNKNOWN_15_STR: self._read_bytes_as_int(curr_index + 0x15, byte_count=1),
-                UNKNOWN_16_STR: self._read_bytes_as_int(curr_index + 0x16, byte_count=1),
-                UNKNOWN_17_STR: self._read_bytes_as_int(curr_index + 0x17, byte_count=1),
-                UNKNOWN_18_STR: self._read_bytes_as_int(curr_index + 0x18, byte_count=1),
-                UNKNOWN_19_STR: self._read_bytes_as_int(curr_index + 0x19, byte_count=1),
-                UNKNOWN_1A_STR: self._read_bytes_as_int(curr_index + 0x1A, byte_count=1),
-                UNKNOWN_1B_STR: self._read_bytes_as_int(curr_index + 0x1B, byte_count=1),
-                UNKNOWN_1C_STR: self._read_bytes_as_int(curr_index + 0x1C, byte_count=1),
-                UNKNOWN_1D_STR: self._read_bytes_as_int(curr_index + 0x1D, byte_count=1),
-                UNKNOWN_1E_STR: self._read_bytes_as_int(curr_index + 0x1E, byte_count=1),
-                UNKNOWN_1F_STR: self._read_bytes_as_int(curr_index + 0x1F, byte_count=1),
+                STR_CONST.tile_below: self._read_bytes_as_int(curr_index, byte_count=2),
+                STR_CONST.tile_left: self._read_bytes_as_int(curr_index + 0x2, byte_count=2),
+                STR_CONST.tile_above: self._read_bytes_as_int(curr_index + 0x4, byte_count=2),
+                STR_CONST.tile_right: self._read_bytes_as_int(curr_index + 0x6, byte_count=2),
+                STR_CONST.tile_type: self._read_bytes_as_int(curr_index + 0x8, byte_count=1),
+                STR_CONST.byte_9_unk: self._read_bytes_as_int(curr_index + 0x9, byte_count=1),
+                STR_CONST.byte_a_unk: self._read_bytes_as_int(curr_index + 0xA, byte_count=1),
+                STR_CONST.byte_b_unk: self._read_bytes_as_int(curr_index + 0xB, byte_count=1),
+                STR_CONST.byte_c_unk: self._read_bytes_as_float(curr_index + 0xC),
+                STR_CONST.byte_10_unk: self._read_bytes_as_int(curr_index + 0x10, byte_count=1),
+                STR_CONST.byte_11_unk: self._read_bytes_as_int(curr_index + 0x11, byte_count=1),
+                STR_CONST.byte_12_unk: self._read_bytes_as_int(curr_index + 0x12, byte_count=1),
+                STR_CONST.byte_13_unk: self._read_bytes_as_int(curr_index + 0x13, byte_count=1),
+                STR_CONST.byte_14_unk: self._read_bytes_as_int(curr_index + 0x14, byte_count=1),
+                STR_CONST.byte_15_unk: self._read_bytes_as_int(curr_index + 0x15, byte_count=1),
+                STR_CONST.byte_16_unk: self._read_bytes_as_int(curr_index + 0x16, byte_count=1),
+                STR_CONST.byte_17_unk: self._read_bytes_as_int(curr_index + 0x17, byte_count=1),
+                STR_CONST.byte_18_unk: self._read_bytes_as_int(curr_index + 0x18, byte_count=1),
+                STR_CONST.byte_19_unk: self._read_bytes_as_int(curr_index + 0x19, byte_count=1),
+                STR_CONST.byte_1a_unk: self._read_bytes_as_int(curr_index + 0x1A, byte_count=1),
+                STR_CONST.byte_1b_unk: self._read_bytes_as_int(curr_index + 0x1B, byte_count=1),
+                STR_CONST.byte_1c_unk: self._read_bytes_as_int(curr_index + 0x1C, byte_count=1),
+                STR_CONST.byte_1d_unk: self._read_bytes_as_int(curr_index + 0x1D, byte_count=1),
+                STR_CONST.byte_1e_unk: self._read_bytes_as_int(curr_index + 0x1E, byte_count=1),
+                STR_CONST.byte_1f_unk: self._read_bytes_as_int(curr_index + 0x1F, byte_count=1),
             }
         return furnace_fun_board_dict
     
@@ -227,35 +179,35 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
         Pass
         '''
         for tile_count, curr_index in enumerate(range(
-                FURNACE_FUN_BOARD_START_INDEX, 
-                FURNACE_FUN_BOARD_END_INDEX,
-                FURNACE_FUN_BOARD_INTERVAL)):
+                INT_CONST.furnace_fun_board_start_index, 
+                INT_CONST.furnace_fun_board_end_index,
+                INT_CONST.furnace_fun_board_interval)):
             tile_dict:dict = furnace_fun_board_dict[tile_count]
-            self._write_bytes_from_int(curr_index, tile_dict[TILE_BELOW_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x2, tile_dict[TILE_LEFT_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x4, tile_dict[TILE_ABOVE_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x6, tile_dict[TILE_RIGHT_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x8, tile_dict[TILE_TYPE_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x9, tile_dict[UNKNOWN_9_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0xA, tile_dict[UNKNOWN_A_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0xB, tile_dict[UNKNOWN_B_STR], byte_count=2)
-            self._write_bytes_from_float(curr_index + 0xC, tile_dict[UNKNOWN_C_STR])
-            self._write_bytes_from_int(curr_index + 0x10, tile_dict[UNKNOWN_10_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x11, tile_dict[UNKNOWN_11_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x12, tile_dict[UNKNOWN_12_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x13, tile_dict[UNKNOWN_13_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x14, tile_dict[UNKNOWN_14_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x15, tile_dict[UNKNOWN_15_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x16, tile_dict[UNKNOWN_16_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x17, tile_dict[UNKNOWN_17_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x18, tile_dict[UNKNOWN_18_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x19, tile_dict[UNKNOWN_19_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x1A, tile_dict[UNKNOWN_1A_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x1B, tile_dict[UNKNOWN_1B_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x1C, tile_dict[UNKNOWN_1C_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x1D, tile_dict[UNKNOWN_1D_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x1E, tile_dict[UNKNOWN_1E_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x1F, tile_dict[UNKNOWN_1F_STR], byte_count=2)
+            self._write_bytes_from_int(curr_index, tile_dict[STR_CONST.tile_below], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x2, tile_dict[STR_CONST.tile_left], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x4, tile_dict[STR_CONST.tile_above], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x6, tile_dict[STR_CONST.tile_right], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x8, tile_dict[STR_CONST.tile_type], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x9, tile_dict[STR_CONST.byte_9_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0xA, tile_dict[STR_CONST.byte_a_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0xB, tile_dict[STR_CONST.byte_b_unk], byte_count=2)
+            self._write_bytes_from_float(curr_index + 0xC, tile_dict[STR_CONST.byte_c_unk])
+            self._write_bytes_from_int(curr_index + 0x10, tile_dict[STR_CONST.byte_10_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x11, tile_dict[STR_CONST.byte_11_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x12, tile_dict[STR_CONST.byte_12_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x13, tile_dict[STR_CONST.byte_13_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x14, tile_dict[STR_CONST.byte_14_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x15, tile_dict[STR_CONST.byte_15_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x16, tile_dict[STR_CONST.byte_16_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x17, tile_dict[STR_CONST.byte_17_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x18, tile_dict[STR_CONST.byte_18_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x19, tile_dict[STR_CONST.byte_19_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x1A, tile_dict[STR_CONST.byte_1a_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x1B, tile_dict[STR_CONST.byte_1b_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x1C, tile_dict[STR_CONST.byte_1c_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x1D, tile_dict[STR_CONST.byte_1d_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x1E, tile_dict[STR_CONST.byte_1e_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x1F, tile_dict[STR_CONST.byte_1f_unk], byte_count=2)
     
     ### QUESTION COUNT
     # Start, Count
@@ -285,16 +237,16 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
         '''
         sound_question_dict:dict = {}
         for sound_count, curr_index in enumerate(range(
-                SOUND_QUESTION_START_INDEX,
-                SOUND_QUESTION_END_INDEX,
-                SOUND_QUESTION_INTERVAL)):
+                INT_CONST.sound_question_start_index,
+                INT_CONST.sound_question_end_index,
+                INT_CONST.sound_question_interval)):
             sound_question_dict[sound_count] = {
-                UNKNOWN_1_STR: self._read_bytes_as_int(curr_index, byte_count=1),
+                STR_CONST.byte_1_unk: self._read_bytes_as_int(curr_index, byte_count=1),
                 # 00
-                SOUND_ENUM_STR: self._read_bytes_as_int(curr_index + 0x2, byte_count=2),
-                UNKNOWN_4_STR: self._read_bytes_as_int(curr_index + 0x4, byte_count=2),
+                STR_CONST.sound_enum: self._read_bytes_as_int(curr_index + 0x2, byte_count=2),
+                STR_CONST.byte_4_unk: self._read_bytes_as_int(curr_index + 0x4, byte_count=2),
                 # 00 00
-                UNKNOWN_8_STR: self._read_bytes_as_float(curr_index + 0x8),
+                STR_CONST.byte_8_unk: self._read_bytes_as_float(curr_index + 0x8),
             }
         return sound_question_dict
     
@@ -303,16 +255,16 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
         Pass
         '''
         for sound_count, curr_index in enumerate(range(
-                SOUND_QUESTION_START_INDEX,
-                SOUND_QUESTION_END_INDEX,
-                SOUND_QUESTION_INTERVAL)):
+                INT_CONST.sound_question_start_index,
+                INT_CONST.sound_question_end_index,
+                INT_CONST.sound_question_interval)):
             question_dict:dict = sound_question_dict[sound_count]
-            self._write_bytes_from_int(curr_index, question_dict[UNKNOWN_1_STR], byte_count=1)
+            self._write_bytes_from_int(curr_index, question_dict[STR_CONST.byte_1_unk], byte_count=1)
             # 00
-            self._write_bytes_from_int(curr_index + 0x2, question_dict[SOUND_ENUM_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x4, question_dict[UNKNOWN_4_STR], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x2, question_dict[STR_CONST.sound_enum], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x4, question_dict[STR_CONST.byte_4_unk], byte_count=2)
             # 00 00
-            self._write_bytes_from_float(curr_index + 0x8, question_dict[UNKNOWN_8_STR])
+            self._write_bytes_from_float(curr_index + 0x8, question_dict[STR_CONST.byte_8_unk])
     
     ### MINI GAMES
 
@@ -322,12 +274,12 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
         '''
         mini_game_dict = {}
         for question_count, curr_index in enumerate(range(
-                MINI_GAME_START_INDEX,
-                MINI_GAME_END_INDEX,
-                MINI_GAME_INTERVAL)):
+                INT_CONST.mini_game_start_index,
+                INT_CONST.mini_game_end_index,
+                INT_CONST.mini_game_interval)):
             mini_game_dict[question_count] = {
-                MAP_STR: self._read_bytes_as_int(curr_index, byte_count=2),
-                STATE_STR: self._read_bytes_as_int(curr_index + 0x2, byte_count=2),
+                STR_CONST.map_enum: self._read_bytes_as_int(curr_index, byte_count=2),
+                STR_CONST.state: self._read_bytes_as_int(curr_index + 0x2, byte_count=2),
             }
     
     def _set_mini_game_dict(self, mini_game_dict:dict):
@@ -335,12 +287,12 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
         Pass
         '''
         for question_count, curr_index in enumerate(range(
-                MINI_GAME_START_INDEX,
-                MINI_GAME_END_INDEX,
-                MINI_GAME_INTERVAL)):
+                INT_CONST.mini_game_start_index,
+                INT_CONST.mini_game_end_index,
+                INT_CONST.mini_game_interval)):
             question_dict:dict = mini_game_dict[question_count]
-            self._write_bytes_from_int(curr_index, question_dict[MAP_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index, question_dict[STATE_STR], byte_count=2)
+            self._write_bytes_from_int(curr_index, question_dict[STR_CONST.map_enum], byte_count=2)
+            self._write_bytes_from_int(curr_index, question_dict[STR_CONST.state], byte_count=2)
     
     ### PICTURE QUESTIONS
 
@@ -350,25 +302,26 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
         '''
         picture_question_dict = {}
         for question_count, curr_index in enumerate(range(
-                PICTURE_QUESTION_START_INDEX,
-                PICTURE_QUESTION_END_INDEX,
-                PICTURE_QUESTION_INTERVAL)):
+                INT_CONST.picture_question_start_index,
+                INT_CONST.picture_question_end_index,
+                INT_CONST.picture_question_interval)):
             picture_question_dict[question_count] = {
-                MAP_STR: self._read_bytes_as_int(curr_index, byte_count=2),
-                CAMERA_STR: self._read_bytes_as_int(curr_index + 0x2, byte_count=2),
+                STR_CONST.map_enum: self._read_bytes_as_int(curr_index, byte_count=2),
+                STR_CONST.camera_id: self._read_bytes_as_int(curr_index + 0x2, byte_count=2),
             }
+        return picture_question_dict
     
     def _set_picture_question_dict(self, picture_question_dict:dict):
         '''
         Pass
         '''
         for question_count, curr_index in enumerate(range(
-                PICTURE_QUESTION_START_INDEX,
-                PICTURE_QUESTION_END_INDEX,
-                PICTURE_QUESTION_INTERVAL)):
+                INT_CONST.picture_question_start_index,
+                INT_CONST.picture_question_end_index,
+                INT_CONST.picture_question_interval)):
             question_dict:dict = picture_question_dict[question_count]
-            self._write_bytes_from_int(curr_index, question_dict[MAP_STR], byte_count=2)
-            self._write_bytes_from_int(curr_index, question_dict[CAMERA_STR], byte_count=2)
+            self._write_bytes_from_int(curr_index, question_dict[STR_CONST.map_enum], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x2, question_dict[STR_CONST.camera_id], byte_count=2)
     
     #################
     ### CAULDRONS ###
@@ -381,17 +334,17 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
         '''
         cauldron_dict = {}
         for cauldron_count, curr_index in enumerate(range(
-                CAULDRON_START_INDEX,
-                CAULDRON_END_INDEX,
-                CAULDRON_INTERVAL)):
+                INT_CONST.cauldron_start_index,
+                INT_CONST.cauldron_end_index,
+                INT_CONST.cauldron_interval)):
             cauldron_dict[cauldron_count] = {
-                MAP_STR: self._read_bytes_as_int(curr_index, byte_count=1),
-                UNKNOWN_1_STR: self._read_bytes_as_int(curr_index + 0x1, byte_count=1),
-                ENTRY_POINT_STR: self._read_bytes_as_int(curr_index + 0x2, byte_count=1),
-                UNKNOWN_3_STR: self._read_bytes_as_int(curr_index + 0x3, byte_count=1),
-                UNKNOWN_4_STR: self._read_bytes_as_int(curr_index + 0x4, byte_count=1),
-                UNKNOWN_5_STR: self._read_bytes_as_int(curr_index + 0x5, byte_count=1),
-                UNKNOWN_6_STR: self._read_bytes_as_int(curr_index + 0x6, byte_count=2),
+                STR_CONST.map_enum: self._read_bytes_as_int(curr_index, byte_count=1),
+                STR_CONST.byte_1_unk: self._read_bytes_as_int(curr_index + 0x1, byte_count=1),
+                STR_CONST.entry_point: self._read_bytes_as_int(curr_index + 0x2, byte_count=1),
+                STR_CONST.byte_3_unk: self._read_bytes_as_int(curr_index + 0x3, byte_count=1),
+                STR_CONST.byte_4_unk: self._read_bytes_as_int(curr_index + 0x4, byte_count=1),
+                STR_CONST.byte_5_unk: self._read_bytes_as_int(curr_index + 0x5, byte_count=1),
+                STR_CONST.byte_6_unk: self._read_bytes_as_int(curr_index + 0x6, byte_count=2),
             }
         return cauldron_dict
 
@@ -400,14 +353,14 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
         Pass
         '''
         for cauldron_count, curr_index in enumerate(range(
-                CAULDRON_START_INDEX,
-                CAULDRON_END_INDEX,
-                CAULDRON_INTERVAL)):
+                INT_CONST.cauldron_start_index,
+                INT_CONST.cauldron_end_index,
+                INT_CONST.cauldron_interval)):
             curr_dict:dict = cauldron_dict[cauldron_count]
-            self._write_bytes_from_int(curr_index, curr_dict[MAP_STR], byte_count=1)
-            self._write_bytes_from_int(curr_index, curr_dict[UNKNOWN_1_STR], byte_count=1)
-            self._write_bytes_from_int(curr_index, curr_dict[ENTRY_POINT_STR], byte_count=1)
-            self._write_bytes_from_int(curr_index, curr_dict[UNKNOWN_3_STR], byte_count=1)
-            self._write_bytes_from_int(curr_index, curr_dict[UNKNOWN_4_STR], byte_count=1)
-            self._write_bytes_from_int(curr_index, curr_dict[UNKNOWN_5_STR], byte_count=1)
-            self._write_bytes_from_int(curr_index, curr_dict[UNKNOWN_6_STR], byte_count=2)
+            self._write_bytes_from_int(curr_index, curr_dict[STR_CONST.map_enum], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x1, curr_dict[STR_CONST.byte_1_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x2, curr_dict[STR_CONST.entry_point], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x3, curr_dict[STR_CONST.byte_3_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x4, curr_dict[STR_CONST.byte_4_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x5, curr_dict[STR_CONST.byte_5_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x6, curr_dict[STR_CONST.byte_6_unk], byte_count=2)

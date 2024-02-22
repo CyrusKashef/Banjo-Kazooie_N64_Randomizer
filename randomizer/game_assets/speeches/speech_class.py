@@ -8,11 +8,11 @@ Purpose:
 ###################
 
 from randomizer.generic_bin_file_class import Generic_Bin_File_Class
-from randomizer.contants.dicts.speech_syntax_dicts import \
+from randomizer.constants.dict_values.speech_syntax_dicts import \
     FANCY_FONT_DICT, FURNACE_FUN_SPRITE_DICT, \
     GENERAL_SPRITE_DICT, ACTION_DICT
 
-from randomizer.contants.int_enums.speech_constants import SPEECH_CONSTANTS
+from randomizer.constants.int_values.speech_constants import SPEECH_CONSTANTS
 
 ########################
 ##### SPEECH CLASS #####
@@ -286,6 +286,8 @@ class Speech_Class(Generic_Bin_File_Class):
         '''
         Writes a furnace fun speech in byte format.
         '''
+        num_of_speeches:int = len(self._speech_dict[SPEECH_CONSTANTS.full_screen])
+        new_content += num_of_speeches.to_bytes(1, 'big')
         for curr_section_count in sorted(self._speech_dict[SPEECH_CONSTANTS.full_screen]):
             curr_sprite:int = self._speech_dict[SPEECH_CONSTANTS.full_screen][curr_section_count][SPEECH_CONSTANTS.sprite]
             curr_speech:str = self._speech_dict[SPEECH_CONSTANTS.full_screen][curr_section_count][SPEECH_CONSTANTS.speech]
@@ -373,19 +375,26 @@ if __name__ == '__main__':
     print("Generic:")
     file_path:str = f"{file_dir}5C21F8.bin"
     speech_obj = Speech_Class(file_path)
-    speech_obj.print_speech_file()
-    print("~~~~~ SPACES ~~~~~")
-    speech_obj.modify_speech_line(SPEECH_CONSTANTS.bottom_section, 0, 0x90, "THIS IS A TEST OF THE EMERGENCY SAFETY PROTOCOL")
-    speech_obj.print_speech_file()
-    print("~~~~~ SPACES ~~~~~")
-    speech_obj.append_speech_line(SPEECH_CONSTANTS.bottom_section, 0x90, "DO NOT BE ALARMED!")
-    speech_obj.print_speech_file()
-    print("~~~~~ SPACES ~~~~~")
-    found_speech_list = speech_obj.find_speech_line(sprite_id=None, speech_str="EMERGENCY")
-    for (section, section_count) in found_speech_list:
-        speech_obj.delete_speech_line(section, section_count)
-    speech_obj.print_speech_file()
-    speech_obj.save_speech_file(f"{save_file_dir}5C21F8.bin")
+    print(speech_obj._speech_dict)
+    # speech_obj.print_speech_file()
+    # print("~~~~~ SPACES ~~~~~")
+    # print("~~~~~ SPACES ~~~~~")
+    # print("~~~~~ SPACES ~~~~~")
+    # speech_obj.modify_speech_line(SPEECH_CONSTANTS.bottom_section, 0, 0x90, "THIS IS A TEST OF THE EMERGENCY SAFETY PROTOCOL")
+    # speech_obj.print_speech_file()
+    # print("~~~~~ SPACES ~~~~~")
+    # print("~~~~~ SPACES ~~~~~")
+    # print("~~~~~ SPACES ~~~~~")
+    # speech_obj.append_speech_line(SPEECH_CONSTANTS.bottom_section, 0x90, "DO NOT BE ALARMED!")
+    # speech_obj.print_speech_file()
+    # print("~~~~~ SPACES ~~~~~")
+    # print("~~~~~ SPACES ~~~~~")
+    # print("~~~~~ SPACES ~~~~~")
+    # found_speech_list = speech_obj.find_speech_line(sprite_id=None, speech_str="EMERGENCY")
+    # for (section, section_count) in found_speech_list:
+    #     speech_obj.delete_speech_line(section, section_count)
+    # speech_obj.print_speech_file()
+    # speech_obj.save_speech_file(f"{save_file_dir}5C21F8.bin")
     # # Brentilda
     # print("\nBrentilda:")
     # file_path:str = f"{file_dir}5CFDC0.bin"

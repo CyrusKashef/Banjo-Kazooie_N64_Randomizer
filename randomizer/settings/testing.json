@@ -1,0 +1,102 @@
+{
+    "rom_paths": {
+        "original_rom_path": "Banjo-Kazooie.z64",
+        "new_rom_path": "Banjo-Kazooie-TEST.z64"
+    },
+    "starting_inventory_counts": {
+        "starting_blue_egg_count": 69,
+        "starting_red_feather_count": 42,
+        "starting_gold_feather_count": 9,
+        "starting_mumbo_token_count": 21
+    },
+    "select_starting_moves": {
+        "beak_barge": 1,
+        "beak_bomb": 1,
+        "beak_buster": 1,
+        "claw_swipe": 1,
+        "climb": 1,
+        "egg_firing": 1,
+        "feather_flap": 1,
+        "flap_flip": 1,
+        "flight": 1,
+        "high_jump": 1,
+        "rat_a_tap_rap": 1,
+        "roll_attack": 1,
+        "shock_jump": 1,
+        "stilt_stride": 1,
+        "dive": 1,
+        "talon_trot": 1,
+        "turbo_talon_trot": 1,
+        "wonderwing": 1,
+        "open_note_door": 1
+    },
+    "alternate_win_condition": {
+        "win_condition_all_jinjos": 1,
+        "win_condition_trotless": 0
+    },
+    "note_doors": {
+        "note_door_item_requirement": {
+            "note": 1,
+            "jiggy": 0,
+            "empty_honeycomb": 0,
+            "mumbo_token": 0
+        },
+        "note_door_costs": {
+            "note_door_50_cost": 0,
+            "note_door_180_cost": 0,
+            "note_door_260_cost": 0,
+            "note_door_350_cost": 0,
+            "note_door_450_cost": 0,
+            "note_door_640_cost": 0,
+            "note_door_765_cost": 0,
+            "note_door_810_cost": 0,
+            "note_door_828_cost": 0,
+            "note_door_846_cost": 0,
+            "note_door_864_cost": 0,
+            "note_door_882_cost": 0
+        }
+    },
+    "jigsaw_puzzles": {
+        "jigsaw_puzzle_item_requirement": {
+            "jiggy": 1,
+            "mumbo_token": 0
+        },
+        "jigsaw_puzzle_costs": {
+            "mumbos_mountain_puzzle_cost": 0,
+            "treasure_trove_cove_puzzle_cost": 0,
+            "clankers_cavern_puzzle_cost": 0,
+            "bubblegloop_swamp_puzzle_cost": 0,
+            "freezeezy_peak_puzzle_cost": 0,
+            "gobis_valley_puzzle_cost": 0,
+            "mad_monster_mansion_puzzle_cost": 0,
+            "rusty_bucket_bay_puzzle_cost": 0,
+            "click_clock_wood_puzzle_cost": 0,
+            "final_battle_puzzle_cost": 0,
+            "double_health_puzzle_cost": 0
+        }
+    },
+    "transformations": {
+        "transformation_item_requirement": {
+            "mumbo_token": 1,
+            "jiggy": 0
+        },
+        "transformation_costs": {
+            "termite_transformation_cost": 0,
+            "crocodile_transformation_cost": 0,
+            "walrus_transformation_cost": 0,
+            "pumpkin_transformation_cost": 0,
+            "bee_transformation_cost": 0
+        }
+    },
+    "furnace_fun": {
+        "geoguesser": 1,
+        "death_squares_only": 1
+    },
+    "other_options": {
+        "boot_to_file_select": 1,
+        "skippable_cutscenes": 1,
+        "skip_jiggy_jig": 1,
+        "enable_fallproof": 1,
+        "shock_jump_pad_anywhere": 0
+    }
+}

@@ -38,12 +38,13 @@ from randomizer.assembly.final_battle.final_battle_data import FINAL_BATTLE_DATA
 from randomizer.assembly.cutscenes.cutscenes_code import CUTSCENES_CODE_CLASS
 from randomizer.assembly.cutscenes.cutscenes_data import CUTSCENES_DATA_CLASS
 
-from randomizer.contants.int_enums.jiggy_enums import JIGGY_ENUMS
-from randomizer.contants.int_enums.empty_honeycomb_enums import EMPTY_HONEYCOMB_ENUMS
-from randomizer.contants.variables.win_condition_variables import \
-    LEVEL_COUNT_STR, TOTAL_COUNT_STR, ITEM_ENUM_STR
-from randomizer.contants.dicts.win_condition_dict import \
+from randomizer.constants.int_values.jiggy_enums import JIGGY_ENUMS
+from randomizer.constants.int_values.empty_honeycomb_enums import EMPTY_HONEYCOMB_ENUMS
+from randomizer.constants.str_values.string_constants import STRING_CONSTANTS as STR_CONST
+from randomizer.constants.dict_values.win_condition_dict import \
     WIN_CONDITION_FUNCTION_DICT, WIN_CONDITION_COMMANDS_DICT
+
+from randomizer.constants.int_values.map_enums import MAP_ENUMS
 
 ####################
 ##### ASSEMBLY #####
@@ -298,6 +299,16 @@ class ASSEMBLY_CLASS():
         '''
         pass
 
+    def geoguesser_furnace_fun(self):
+        '''
+        Pass
+        '''
+        picture_question_dict:dict = self._gruntildas_lair_data_obj._get_picture_question_dict()
+        for question_count in picture_question_dict:
+            picture_question_dict[question_count][STR_CONST.map_enum] = MAP_ENUMS.spiral_mountain_main
+            picture_question_dict[question_count][STR_CONST.camera_id] = 0x7F
+        self._gruntildas_lair_data_obj._set_picture_question_dict(picture_question_dict)
+
     ##############################
     ##### COSMETICS & SOUNDS #####
     ##############################
@@ -382,20 +393,20 @@ class ASSEMBLY_CLASS():
         branch_count:int = 4
         for item_enum, level_enum, item_val in possible_win_condition_list:
             if(level_enum is not None):
-                command_function = WIN_CONDITION_FUNCTION_DICT[LEVEL_COUNT_STR][item_enum]
+                command_function = WIN_CONDITION_FUNCTION_DICT[STR_CONST.level_count][item_enum]
                 command_list:list = \
-                    WIN_CONDITION_COMMANDS_DICT[LEVEL_COUNT_STR](command_function, level_enum, item_val, branch_count)
+                    WIN_CONDITION_COMMANDS_DICT[STR_CONST.level_count](command_function, level_enum, item_val, branch_count)
                 branch_count += 5
             elif((type(item_val) == JIGGY_ENUMS) or
                  (type(item_val) == EMPTY_HONEYCOMB_ENUMS)):
-                command_function = WIN_CONDITION_FUNCTION_DICT[ITEM_ENUM_STR][item_enum]
+                command_function = WIN_CONDITION_FUNCTION_DICT[STR_CONST.item_enum][item_enum]
                 command_list:list = \
-                    WIN_CONDITION_COMMANDS_DICT[ITEM_ENUM_STR](command_function, item_val, branch_count)
+                    WIN_CONDITION_COMMANDS_DICT[STR_CONST.item_enum](command_function, item_val, branch_count)
                 branch_count += 4
             else:
-                command_function = WIN_CONDITION_FUNCTION_DICT[TOTAL_COUNT_STR][item_enum]
+                command_function = WIN_CONDITION_FUNCTION_DICT[STR_CONST.total_count][item_enum]
                 command_list:list = \
-                    WIN_CONDITION_COMMANDS_DICT[TOTAL_COUNT_STR](command_function, item_val, branch_count)
+                    WIN_CONDITION_COMMANDS_DICT[STR_CONST.total_count](command_function, item_val, branch_count)
                 branch_count += 5
             if(branch_count > 0x98):
                 break

@@ -21,11 +21,15 @@ class OBJECT_MODEL_CONSTANTS(IntEnum):
     object_model_geo_type = auto()
     display_list_setup_offset = auto()
     vertex_setup_offset = auto()
+    hitbox_setup_offset = auto()
     animation_setup_offset = auto()
     collision_setup_offset = auto()
-    unknown1_setup_offset = auto()
+    unknown_20_setup_offset = auto()
     effect_setup_offset = auto()
-    unknown2_setup_offset = auto()
+    unknown_28_setup_offset = auto()
+    animated_textures_offset = auto()
+    unknown_count = auto()
+    vert_count = auto()
     # GEOMETRY LIST
     # TEXTURE LIST
     textures = auto()

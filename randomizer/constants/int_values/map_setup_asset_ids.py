@@ -9,9 +9,9 @@ Purpose:
 
 from enum import IntEnum, unique
 
-##########################
-##### LEVEL ID ENUMS #####
-##########################
+###############################
+##### MAP SETUP ASSET IDS #####
+###############################
 
 @unique
 class MAP_SETUP_ASSET_ID(IntEnum):

@@ -12,7 +12,7 @@ import pytest
 
 from randomizer.game_assets.speeches.speech_class import Speech_Class
 
-from randomizer.contants.variables.speech_variables import \
+from randomizer.constants.variables.speech_variables import \
     GENERIC_SPEECH_STR, FURNACE_FUN_GRUNTILDA_QUESTION_STR, \
     FURNACE_FUN_OTHER_QUESTION_STR, FULL_SCREEN_STR, \
     TOP_SECTION_STR, BOTTOM_SECTION_STR, \

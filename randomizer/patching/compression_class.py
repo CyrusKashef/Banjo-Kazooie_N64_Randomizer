@@ -13,11 +13,9 @@ import shutil
 
 from randomizer.generic_bin_file_class import Generic_Bin_File_Class
 
-from randomizer.contants.variables.patching_variables import \
-    WBITS, BK_COMPRESSED_FILE_HEADER, \
-    EXTRACTED_FILES_DIR, COMPRESSED_BIN_EXTENSION, \
-    DECOMPRESSED_BIN_EXTENSION, RAW_BIN_EXTENSION, \
-    DECOMPRESSED_STR, COMPRESSED_STR, RAW_STR
+from randomizer.constants.str_values.string_constants import STRING_CONSTANTS as STR_CONST
+from randomizer.constants.int_values.int_constants import INTEGER_CONSTANTS as INT_CONST
+from randomizer.constants.byte_values.byte_constants import BYTE_CONSTANTS as BYTE_CONST
 
 #############################
 ##### COMPRESSION CLASS #####
@@ -46,15 +44,15 @@ class COMPRESSION_CLASS(Generic_Bin_File_Class):
         '''
         Sets the current file's path based on the file extention.
         '''
-        if(file_type == COMPRESSED_STR):
-            file_ext = COMPRESSED_BIN_EXTENSION
-        elif(file_type == DECOMPRESSED_STR):
-            file_ext = DECOMPRESSED_BIN_EXTENSION
-        elif(file_type == RAW_STR):
-            file_ext = RAW_BIN_EXTENSION
+        if(file_type == STR_CONST.compressed):
+            file_ext = STR_CONST.compressed_bin_extension
+        elif(file_type == STR_CONST.decompressed):
+            file_ext = STR_CONST.decompressed_bin_extension
+        elif(file_type == STR_CONST.raw):
+            file_ext = STR_CONST.raw_bin_extension
         else:
             raise Exception("ERROR: _determine_file_path: Unknown File Extension")
-        self._file_path:str = EXTRACTED_FILES_DIR + self._file_name + file_ext
+        self._file_path:str = STR_CONST.extracted_files_dir + self._file_name + file_ext
 
     ######################
     ##### DECOMPRESS #####
@@ -65,18 +63,18 @@ class COMPRESSION_CLASS(Generic_Bin_File_Class):
         Determines whether the current file is empty, compressed, or decompressed.
         '''
         if(len(self._file_content) == 0):
-            return DECOMPRESSED_STR
-        elif(self._file_content[:2] == BK_COMPRESSED_FILE_HEADER):
-            return COMPRESSED_STR
-        return DECOMPRESSED_STR
+            return STR_CONST.decompressed
+        elif(self._file_content[:2] == BYTE_CONST.bk_compressed_file_header):
+            return STR_CONST.compressed
+        return STR_CONST.decompressed
     
     def _decompress_file(self):
         '''
         Creates a decompressed version of a compressed file.
         '''
-        compressor_obj = zlib.decompressobj(wbits=WBITS)
+        compressor_obj = zlib.decompressobj(wbits=INT_CONST.wbits)
         decompressed_file_bytes = compressor_obj.decompress(self._file_content[6:])
-        decompressed_file_path:str = EXTRACTED_FILES_DIR + self._file_name + DECOMPRESSED_BIN_EXTENSION
+        decompressed_file_path:str = STR_CONST.extracted_files_dir + self._file_name + STR_CONST.decompressed_bin_extension
         with open(decompressed_file_path, "wb+") as decompressed_file:
             decompressed_file.write(decompressed_file_bytes)
 
@@ -84,7 +82,7 @@ class COMPRESSION_CLASS(Generic_Bin_File_Class):
         '''
         Copies an extracted file as a raw file.
         '''
-        raw_file_path:str = EXTRACTED_FILES_DIR + self._file_name + RAW_BIN_EXTENSION
+        raw_file_path:str = STR_CONST.extracted_files_dir + self._file_name + STR_CONST.raw_bin_extension
         shutil.copy(self._file_path, raw_file_path)
     
     ####################
@@ -103,13 +101,13 @@ class COMPRESSION_CLASS(Generic_Bin_File_Class):
         decompressed_file_length:int = len(self._file_content)
         # Deflate & Build
         compressed_body = gzip.compress(data=self._file_content, compresslevel=9, mtime=None)[10:-8]
-        compressed_content = BK_COMPRESSED_FILE_HEADER + decompressed_file_length.to_bytes(4, "big") + compressed_body
+        compressed_content = BYTE_CONST.bk_compressed_file_header + decompressed_file_length.to_bytes(4, "big") + compressed_body
         # Align
         while(len(compressed_content) % padding_interval):
             compressed_content += padding_byte
         compressed_content_length:int = len(compressed_content)
         # Create Compressed File
-        compressed_file_path:str = EXTRACTED_FILES_DIR + self._file_name + COMPRESSED_BIN_EXTENSION
+        compressed_file_path:str = STR_CONST.extracted_files_dir + self._file_name + STR_CONST.compressed_bin_extension
         with open(compressed_file_path, "wb+") as compressed_file:
             compressed_file.write(compressed_content)
         return compressed_content_length
@@ -124,9 +122,9 @@ class COMPRESSION_CLASS(Generic_Bin_File_Class):
         decompressed_file_length:int = len(self._file_content)
         # Deflate & Build
         compressed_body = gzip.compress(data=self._file_content, compresslevel=9, mtime=None)[10:-8]
-        compressed_content = BK_COMPRESSED_FILE_HEADER + decompressed_file_length.to_bytes(4, "big") + compressed_body
+        compressed_content = BYTE_CONST.bk_compressed_file_header + decompressed_file_length.to_bytes(4, "big") + compressed_body
         # Create Compressed File
-        compressed_file_path:str = EXTRACTED_FILES_DIR + self._file_name + COMPRESSED_BIN_EXTENSION
+        compressed_file_path:str = STR_CONST.extracted_files_dir + self._file_name + STR_CONST.compressed_bin_extension
         with open(compressed_file_path, "wb+") as compressed_file:
             compressed_file.write(compressed_content)
         return compressed_file_path
@@ -136,7 +134,7 @@ class COMPRESSION_CLASS(Generic_Bin_File_Class):
         Copies a decompressed file to another file with the compressed extension.
         '''
         compressed_content_length:int = len(self._file_content)
-        compressed_file_path:str = EXTRACTED_FILES_DIR + self._file_name + COMPRESSED_BIN_EXTENSION
+        compressed_file_path:str = STR_CONST.extracted_files_dir + self._file_name + STR_CONST.compressed_bin_extension
         shutil.copy(self._file_path, compressed_file_path)
         return compressed_content_length
 
@@ -150,9 +148,9 @@ class COMPRESSION_CLASS(Generic_Bin_File_Class):
         The file may be decompressed or copied as raw.
         '''
         file_type:str = self._check_extracted_file_type()
-        if(file_type == COMPRESSED_STR):
+        if(file_type == STR_CONST.compressed):
             self._decompress_file()
-        elif(file_type == DECOMPRESSED_STR):
+        elif(file_type == STR_CONST.decompressed):
             self._copy_compressed_to_raw()
 
     def compress_asset_file_main(self):
@@ -160,9 +158,9 @@ class COMPRESSION_CLASS(Generic_Bin_File_Class):
         Runs the main workflow for prepping a file for insersion.
         The file may be compressed or copied as raw.
         '''
-        if(self._file_type == DECOMPRESSED_STR):
+        if(self._file_type == STR_CONST.decompressed):
             compressed_content_length:int = self._compress_asset_file(b"\xAA", 0x08)
-        elif(self._file_type == RAW_STR):
+        elif(self._file_type == STR_CONST.raw):
             compressed_content_length:int = self._copy_raw_to_compressed()
         else:
             raise Exception(f"Error: compress_file_main: Unidentified file type '{self._file_type}'")

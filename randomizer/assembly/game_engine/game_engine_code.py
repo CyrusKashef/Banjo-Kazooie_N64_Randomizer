@@ -9,8 +9,7 @@ Purpose:
 
 from randomizer.generic_bin_file_class import Generic_Bin_File_Class
 
-from randomizer.contants.variables.assembly_variables import \
-    EXTRACTED_FILES_DIR, DECOMPRESSED_BIN_EXTENSION
+from randomizer.constants.str_values.string_constants import STRING_CONSTANTS as STR_CONST
 
 #############################
 ##### C LIBRARIES CLASS #####
@@ -24,7 +23,7 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         '''
         Constructor
         '''
-        file_path:str = EXTRACTED_FILES_DIR + file_name + DECOMPRESSED_BIN_EXTENSION
+        file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
         super().__init__(file_path)
     
     #################
@@ -415,6 +414,21 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         # miscflag_isTrue(0x2) -> Always 1
         self._write_bytes_from_int(0x2A1B0, 0x24020001, byte_count=4)
         self._write_bytes_from_int(0x2A1B4, 0x24020001, byte_count=4)
+    
+    ###########################
+    ##### TRANSFORMATIONS #####
+    ###########################
+    
+    def set_transformation_costs(self,
+            transformation_cost_dict:dict=[5, 10, 15, 20, 25]):
+        '''
+        Pass
+        '''
+        self._write_bytes_from_int(0x4A7E6, transformation_cost_dict[STR_CONST.TERMITE], byte_count=2)
+        self._write_bytes_from_int(0x4A7EE, transformation_cost_dict[STR_CONST.CROCODILE], byte_count=2)
+        self._write_bytes_from_int(0x4A7F6, transformation_cost_dict[STR_CONST.WALRUS], byte_count=2)
+        self._write_bytes_from_int(0x4A7FE, transformation_cost_dict[STR_CONST.PUMPKIN], byte_count=2)
+        self._write_bytes_from_int(0x4A7F6, transformation_cost_dict[STR_CONST.BEE], byte_count=2)
     
     ############################
     ##### CHINKER SPECIFIC #####

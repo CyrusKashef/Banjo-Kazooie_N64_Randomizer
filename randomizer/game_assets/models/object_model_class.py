@@ -8,7 +8,7 @@ Purpose:
 ###################
 
 from randomizer.generic_bin_file_class import Generic_Bin_File_Class
-from randomizer.contants.int_enums.object_model_constants import OBJECT_MODEL_CONSTANTS as CONSTANT
+from randomizer.constants.int_values.object_model_constants import OBJECT_MODEL_CONSTANTS as CONSTANT
 
 ##############################
 ##### OBJECT MODEL CLASS #####
@@ -41,11 +41,15 @@ class OBJECT_MODEL_CLASS(Generic_Bin_File_Class):
         self._object_model_dict[CONSTANT.object_model_geo_type] = self._read_bytes_as_int(0x0A, byte_count=2)
         self._object_model_dict[CONSTANT.display_list_setup_offset] = self._read_bytes_as_int(0x0C, byte_count=4)
         self._object_model_dict[CONSTANT.vertex_setup_offset] = self._read_bytes_as_int(0x10, byte_count=4)
+        self._object_model_dict[CONSTANT.hitbox_setup_offset] = self._read_bytes_as_int(0x14, byte_count=4)
         self._object_model_dict[CONSTANT.animation_setup_offset] = self._read_bytes_as_int(0x18, byte_count=4)
         self._object_model_dict[CONSTANT.collision_setup_offset] = self._read_bytes_as_int(0x1C, byte_count=4)
-        self._object_model_dict[CONSTANT.unknown1_setup_offset] = self._read_bytes_as_int(0x20, byte_count=4)
+        self._object_model_dict[CONSTANT.unknown_20_setup_offset] = self._read_bytes_as_int(0x20, byte_count=4)
         self._object_model_dict[CONSTANT.effect_setup_offset] = self._read_bytes_as_int(0x24, byte_count=4)
-        self._object_model_dict[CONSTANT.unknown2_setup_offset] = self._read_bytes_as_int(0x2C, byte_count=4)
+        self._object_model_dict[CONSTANT.unknown_28_setup_offset] = self._read_bytes_as_int(0x28, byte_count=4)
+        self._object_model_dict[CONSTANT.animated_textures_offset] = self._read_bytes_as_int(0x2C, byte_count=4)
+        self._object_model_dict[CONSTANT.unknown_count] = self._read_bytes_as_int(0x30, byte_count=2)
+        self._object_model_dict[CONSTANT.vert_count] = self._read_bytes_as_int(0x32, byte_count=2)
 
     ### TEXTURE LIST
 
@@ -144,7 +148,13 @@ class OBJECT_MODEL_CLASS(Generic_Bin_File_Class):
 
     ### EFFECTS LIST
 
-    def _parse_effects_list(self):
+    def _parse_effects_header(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def _parse_effects_section(self):
         '''
         Pass
         '''
