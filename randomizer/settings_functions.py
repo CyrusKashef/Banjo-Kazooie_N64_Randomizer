@@ -23,6 +23,7 @@ from randomizer.constants.dict_values.win_condition_dict import SAMPLE_WIN_CONDI
 ### ENUMS
 
 from randomizer.constants.int_values.ability_enums import ABILITY_ENUMS
+from randomizer.constants.int_values.item_enums import ITEM_ENUMS
 
 ##############################
 ##### SETTINGS FUNCTIONS #####
@@ -74,7 +75,7 @@ class SETTINGS_FUNCTIONS():
             return
         print(f"INFO: {STR_CONST.alternate_win_condition}")
         alternate_win_conditions_choice:str = random.choice(alternate_win_conditions_option_list)
-        print(f"INFO: {STR_CONST.alternate_win_conditions_choice}")
+        print(f"INFO: {alternate_win_conditions_choice}")
         possible_win_condition_list:list = SAMPLE_WIN_CONDITIONS_DICT[alternate_win_conditions_choice]
         self._asm_obj.set_alternate_win_conditions(possible_win_condition_list)
 
@@ -82,11 +83,21 @@ class SETTINGS_FUNCTIONS():
     ##### NOTE DOOR COSTS #####
     ###########################
 
-    def _note_door_item_requirement(self, note_door_item_requirement_dict:dict):
+    def _note_door_item_requirement(self, note_door_item_requirement_option_dict:dict):
         '''
         Pass
         '''
         # Adjust Assembly
+        note_door_item_requirement_option_list:list = []
+        for note_door_item_requirement_option in note_door_item_requirement_option_dict:
+            if(note_door_item_requirement_option_dict[note_door_item_requirement_option]):
+                note_door_item_requirement_option_list.append(note_door_item_requirement_option)
+        if(note_door_item_requirement_option_list == []):
+            return
+        print(f"INFO: {STR_CONST.note_door_item_requirement}")
+        note_door_item_requirement_choice:str = random.choice(note_door_item_requirement_option_list)
+        print(f"INFO: {note_door_item_requirement_choice}")
+        self._asm_obj.set_note_door_criteria(note_door_item_requirement_choice)
         # Adjust Object Model Asset
         pass
 
@@ -118,8 +129,8 @@ class SETTINGS_FUNCTIONS():
         print(f"INFO: {STR_CONST.note_doors}")
         note_door_dict:dict = self._settings_dict[STR_CONST.note_doors]
         # Item Requirement
-        note_door_item_requirement_dict:dict = note_door_dict[STR_CONST.note_door_item_requirement]
-        self._note_door_item_requirement(note_door_item_requirement_dict)
+        note_door_item_requirement_option_dict:dict = note_door_dict[STR_CONST.note_door_item_requirement]
+        self._note_door_item_requirement(note_door_item_requirement_option_dict)
         # Costs
         note_door_costs_dict:dict = note_door_dict[STR_CONST.note_door_costs]
         self._note_door_costs(note_door_costs_dict)
@@ -185,7 +196,7 @@ class SETTINGS_FUNCTIONS():
         Pass
         '''
         # Adjust Assembly
-        pass
+        self._asm_obj.set_transformation_costs(transformation_costs_dict)
 
     def _transformations(self):
         '''
@@ -292,3 +303,15 @@ class SETTINGS_FUNCTIONS():
         if(shock_jump_pad_anywhere_bool):
             print(f"INFO: {STR_CONST.shock_jump_pad_anywhere}")
             self._asm_obj.shock_jump_pad_anywhere()
+    
+    def _singular_inventory_item(self):
+        '''
+        Pass
+        '''
+        singular_inventory_item_bool:bool = \
+            self._settings_dict[STR_CONST.other_options][STR_CONST.singular_inventory_item]
+        if(singular_inventory_item_bool):
+            print(f"INFO: {STR_CONST.singular_inventory_item}")
+            # self._asm_obj.egg_firing_item_requirement(ITEM_ENUMS.blue_egg)
+            self._asm_obj.flight_item_requirement(ITEM_ENUMS.blue_egg)
+            self._asm_obj.wonderwing_item_requirement(ITEM_ENUMS.blue_egg)

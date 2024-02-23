@@ -97,6 +97,7 @@
         "skippable_cutscenes": 1,
         "skip_jiggy_jig": 1,
         "enable_fallproof": 1,
-        "shock_jump_pad_anywhere": 0
+        "shock_jump_pad_anywhere": 0,
+        "singular_inventory_item": 0
     }
 }

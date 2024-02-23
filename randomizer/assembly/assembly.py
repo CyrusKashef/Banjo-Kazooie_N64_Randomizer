@@ -250,6 +250,24 @@ class ASSEMBLY_CLASS():
             red_feather_count,
             gold_feather_count,
         )
+    
+    def egg_firing_item_requirement(self, item_enum:int):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.egg_firing_item_requirement(item_enum)
+    
+    def flight_item_requirement(self, item_enum:int):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.flight_item_requirement(item_enum)
+    
+    def wonderwing_item_requirement(self, item_enum:int):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.wonderwing_item_requirement(item_enum)
 
     def carrying_capacity(self, carrying_capacity:dict):
         '''
@@ -355,12 +373,6 @@ class ASSEMBLY_CLASS():
         '''
         pass
 
-    def chinker_stop_spinning(self):
-        '''
-        Pass
-        '''
-        self._game_engine_code_obj.chinker_stop_spinning()
-
     #################
     ##### LOGIC #####
     #################
@@ -432,6 +444,13 @@ class ASSEMBLY_CLASS():
         '''
         self._gruntildas_lair_data_obj.set_jigsaw_puzzle_costs(jigsaw_puzzle_list)
 
+    def set_transformation_costs(self,
+            transformation_costs_dict:dict=[5, 10, 15, 20, 25]):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.set_transformation_costs(transformation_costs_dict)
+
     def new_game_moves(self):
         '''
         Pass
@@ -450,11 +469,20 @@ class ASSEMBLY_CLASS():
         '''
         pass
 
-    def set_note_door_criteria(self):
+    def set_note_door_criteria(self, note_door_item_requirement:str):
         '''
         Pass
         '''
-        pass
+        mips_hex_code:int = 0x0C0D1BBB # itemscore_noteScores_getTotal()
+        if(note_door_item_requirement == STR_CONST.note):
+            mips_hex_code:int = 0x0C0D1BBB # itemscore_noteScores_getTotal()
+        elif(note_door_item_requirement == STR_CONST.jiggy):
+            mips_hex_code:int = 0x0C0C848F # jiggyscore_total()
+        elif(note_door_item_requirement == STR_CONST.empty_honeycomb):
+            mips_hex_code:int = 0x0C0C8527 # honeycombscore_get_total()
+        elif(note_door_item_requirement == STR_CONST.mumbo_token):
+            mips_hex_code:int = 0x0C0C8599 # mumboscore_get_total()
+        self._gruntildas_lair_code_obj.note_door_item_requirement(mips_hex_code)
 
     def set_jigsaw_puzzle_criteria(self):
         '''

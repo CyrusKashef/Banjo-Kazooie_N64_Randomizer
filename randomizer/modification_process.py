@@ -55,7 +55,8 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
 
     def _apply_modifications(self):
         '''
-        Pass
+        Runs through each setting and makes modifications to
+        the assets and assembly files.
         '''
         print("INFO: _apply_modifications: Start...")
         # Always Run These
@@ -71,6 +72,8 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         self._boot_to_file_select()
         self._skippable_cutscenes()
         self._skip_jiggy_jig()
+        self._enable_fallproof()
+        self._singular_inventory_item()
         # Save Asssembly Files
         self._asm_obj.save_all_assembly_changes()
         print("INFO: _apply_modifications: Complete!")

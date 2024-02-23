@@ -127,6 +127,41 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         self._write_bytes_from_int(0xBF237, red_feather_after_val, byte_count=1)
         self._write_bytes_from_int(0xBF25B, gold_feather_before_val, byte_count=1)
         self._write_bytes_from_int(0xBF257, gold_feather_after_val, byte_count=1)
+    
+    def egg_firing_item_requirement(self, item_enum:int):
+        '''
+        Pass
+        '''
+        # Egg Ass
+        self._write_bytes_from_int(0x1B2CA, item_enum, byte_count=2)
+        # Egg Head
+        self._write_bytes_from_int(0x1B53A, item_enum, byte_count=2)
+        # Poop Egg
+        self._write_bytes_from_int(0x26DFE, item_enum, byte_count=2)
+        # Shoot Egg
+        self._write_bytes_from_int(0x26E22, item_enum, byte_count=2)
+        # has_eggs = (item_empty(ITEM_D_EGGS) == 0);
+        self._write_bytes_from_int(0x1B282, item_enum, byte_count=2)
+        # Item Dec
+        self._write_bytes_from_int(0x1B31A, item_enum, byte_count=2)
+    
+    def flight_item_requirement(self, item_enum:int):
+        '''
+        Pass
+        '''
+        # Flying Higher
+        self._write_bytes_from_int(0x1CBAA, item_enum, byte_count=2)
+        # Beak Bomb
+        self._write_bytes_from_int(0x1CF82, item_enum, byte_count=2)
+    
+    def wonderwing_item_requirement(self, item_enum:int):
+        '''
+        Pass
+        '''
+        # Keeping Wonderwing
+        self._write_bytes_from_int(0x2363A, item_enum, byte_count=2)
+        # Start Wonderwing
+        self._write_bytes_from_int(0x26DCE, item_enum, byte_count=2)
 
     #############################
     ##### HEALTH AND LIVES ######
@@ -420,24 +455,12 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
     ###########################
     
     def set_transformation_costs(self,
-            transformation_cost_dict:dict=[5, 10, 15, 20, 25]):
+            transformation_costs_dict:dict=[5, 10, 15, 20, 25]):
         '''
         Pass
         '''
-        self._write_bytes_from_int(0x4A7E6, transformation_cost_dict[STR_CONST.TERMITE], byte_count=2)
-        self._write_bytes_from_int(0x4A7EE, transformation_cost_dict[STR_CONST.CROCODILE], byte_count=2)
-        self._write_bytes_from_int(0x4A7F6, transformation_cost_dict[STR_CONST.WALRUS], byte_count=2)
-        self._write_bytes_from_int(0x4A7FE, transformation_cost_dict[STR_CONST.PUMPKIN], byte_count=2)
-        self._write_bytes_from_int(0x4A7F6, transformation_cost_dict[STR_CONST.BEE], byte_count=2)
-    
-    ############################
-    ##### CHINKER SPECIFIC #####
-    ############################
-    
-    def chinker_stop_spinning(self):
-        '''
-        Pass
-        Decomp: ch/icecube.c
-        '''
-        # self._write_bytes_from_int(0xD3750, 0x00000000, byte_count=4) # LWC1 8, 50(10)
-        self._write_bytes_from_int(0xD3754, 0x00000000, byte_count=4) # LWC1 A, 38(1D)
+        self._write_bytes_from_int(0x4A7E6, transformation_costs_dict[STR_CONST.termite_transformation_cost], byte_count=2)
+        self._write_bytes_from_int(0x4A7EE, transformation_costs_dict[STR_CONST.crocodile_transformation_cost], byte_count=2)
+        self._write_bytes_from_int(0x4A7F6, transformation_costs_dict[STR_CONST.walrus_transformation_cost], byte_count=2)
+        self._write_bytes_from_int(0x4A7FE, transformation_costs_dict[STR_CONST.pumpkin_transformation_cost], byte_count=2)
+        self._write_bytes_from_int(0x4A7F6, transformation_costs_dict[STR_CONST.bee_transformation_cost], byte_count=2)

@@ -247,3 +247,4 @@ class STRING_CONSTANTS(StrEnum):
     empty_honeycomb_flag = auto()
     mumbo_token_flag = auto()
     unknown = auto()
+    singular_inventory_item = auto()
