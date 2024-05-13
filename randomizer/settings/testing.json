@@ -3,6 +3,7 @@
         "original_rom_path": "Banjo-Kazooie.z64",
         "new_rom_path": "Banjo-Kazooie-TEST.z64"
     },
+    "seed": 69420,
     "starting_inventory_counts": {
         "starting_blue_egg_count": 69,
         "starting_red_feather_count": 42,
@@ -31,7 +32,7 @@
         "open_note_door": 1
     },
     "alternate_win_condition": {
-        "win_condition_all_jinjos": 1,
+        "win_condition_all_jinjos": 0,
         "win_condition_trotless": 0
     },
     "note_doors": {
@@ -90,7 +91,10 @@
     },
     "furnace_fun": {
         "geoguesser": 1,
-        "death_squares_only": 1
+        "death_squares_only": 0
+    },
+    "warps": {
+        "new_starting_area": "gruntildas_lair_furnace_fun_from_path_to_furnace_fun"
     },
     "other_options": {
         "boot_to_file_select": 1,

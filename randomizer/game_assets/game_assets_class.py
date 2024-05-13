@@ -7,15 +7,24 @@ Purpose:
 ##### IMPORTS #####
 ###################
 
+import os
+import shutil
+
 from randomizer.generic_bin_file_class import Generic_Bin_File_Class
+from randomizer.game_assets.models.object_model_class import OBJECT_MODEL_CLASS
 from randomizer.game_assets.map_setups.map_setup_class import Map_Setup_Class
 from randomizer.game_assets.speeches.speech_class import Speech_Class
 
 from randomizer.constants.int_values.speech_constants import SPEECH_CONSTANTS
-
-from randomizer.constants.dict_values.speeches.geoguesser_speech_dict import GEOGUESSER_SPEECH_MEDIUM_LIST
+from randomizer.constants.int_values.object_model_constants import OBJECT_MODEL_CONSTANTS
 
 from randomizer.constants.str_values.string_constants import STRING_CONSTANTS as STR_CONST
+
+from randomizer.constants.int_values.int_constants import INTEGER_CONSTANTS as INT_CONST
+from randomizer.constants.int_values.map_enums import MAP_ENUMS
+
+from randomizer.constants.dict_values.speeches.geoguesser_speech_dict import \
+    GEOGUESSER_LEVEL_SPECIFIC_PROMPTS_LIST
 
 ######################
 ##### GAME ASSET #####
@@ -30,7 +39,7 @@ class GAME_ASSET_CLASS():
         Constructor
         '''
         self._OBJECT_ANIMATION_ASSETS_START_ID:int = 0x0000
-        self._OBJECT_MODEL_ASSETS_START_ID:int = 0x02C9
+        self._OBJECT_MODEL_ASSETS_START_ID:int = 0x02D1
         self._MAP_SETUP_ASSETS_START_ID:int = 0x071C
         self._SPRITE_ASSETS_START_ID:int = 0x07B9
         self._BUTTON_INPUT_ASSETS_START_ID:int = 0x09A3
@@ -76,8 +85,9 @@ class GAME_ASSET_CLASS():
             file_name:str = self._return_file_name(asset_id)
             try:
                 file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
-                model_obj:Generic_Bin_File_Class = Generic_Bin_File_Class(file_path)
-                yield model_obj
+                if(os.path.exists(file_path)):
+                    model_obj:OBJECT_MODEL_CLASS = OBJECT_MODEL_CLASS(file_path)
+                    yield model_obj
             except FileNotFoundError:
                 pass
 
@@ -127,7 +137,7 @@ class GAME_ASSET_CLASS():
             except FileNotFoundError:
                 pass
 
-    def _mass_speech_editing(self, start_asset_id:int=None, end_asset_id:int=None):
+    def _mass_speech_editing(self, start_asset_id:int=None, end_asset_id:int=None, include_raws:bool=False):
         '''
         Pass
         '''
@@ -139,9 +149,12 @@ class GAME_ASSET_CLASS():
                 start_asset_id,
                 end_asset_id):
             file_name:str = self._return_file_name(asset_id)
+            raw_file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.raw_bin_extension
+            decompressed_file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
+            if(include_raws and os.path.exists(raw_file_path)):
+                shutil.move(raw_file_path, decompressed_file_path)
             try:
-                file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
-                speech_obj:Speech_Class = Speech_Class(file_path)
+                speech_obj:Speech_Class = Speech_Class(decompressed_file_path)
                 yield speech_obj
             except FileNotFoundError:
                 pass
@@ -184,11 +197,30 @@ class GAME_ASSET_CLASS():
     ##### OBJECT MODEL #####
     ########################
     
+    def validate_object_model_file_editing(self):
+        import filecmp
+        object_model_generator = self._mass_object_model_editing()
+        for object_model in object_model_generator:
+            old_file_path:str = object_model._file_path
+            print(f"File Path: {old_file_path}")
+            new_file_path:str = (old_file_path).replace(STR_CONST.decompressed_bin_extension, f"-NEW{STR_CONST.decompressed_bin_extension}")
+            # logging_path:str = "C:/Users/Cyrus/Desktop/N64/ROMs/GEDecompressor_Files/Breakdown_Notes/Setup_Files_Updated/"
+            # object_model.log_map_setup_file_as_text(file_path=logging_path)
+            object_model.read_object_model_file()
+            # object_model_geo_type:int = object_model._object_model_dict[OBJECT_MODEL_CONSTANTS.object_model_geo_type]
+            # if(object_model_geo_type == 0x2):
+            #     print(old_file_path)
+            # object_model.save_object_model_file(file_path=new_file_path)
+            # same_file:bool = filecmp.cmp(old_file_path, new_file_path)
+            # if(not same_file):
+            #     print(f"ERROR: validate_object_model_file_editing: Copied file at '{old_file_path}' is not the same!")
+            #     exit(0)
+    
     #####################
     ##### MAP SETUP #####
     #####################
     
-    def validate_file_editing(self):
+    def validate_map_setup_file_editing(self):
         import filecmp
         map_setup_generator = self._mass_map_setup_editing()
         for map_setup in map_setup_generator:
@@ -200,7 +232,7 @@ class GAME_ASSET_CLASS():
             map_setup.save_map_setup_file(file_path=new_file_path)
             same_file:bool = filecmp.cmp(old_file_path, new_file_path)
             if(not same_file):
-                print(f"ERROR: validate_file_editing: Copied file at '{old_file_path}' is not the same!")
+                print(f"ERROR: validate_map_setup_file_editing: Copied file at '{old_file_path}' is not the same!")
                 exit(0)
 
     def add_topper_to_spiral_mountain(self):
@@ -386,31 +418,27 @@ class GAME_ASSET_CLASS():
         print("Logging Done!")
         exit(0)
 
-    # def geoguesser_map_setup_files(self):
-    #     '''
-    #     Pass
-    #     '''
-    #     camera_dict:dict = GEOGUESSER_SPEECH_LIST[0][CAMERA_DICT_STR]
-    #     camera_dict[STR_CONST.camera_id] = 0x7F
-    #     file_name:str = self._return_file_name(0x071D) # Spiral Mountain
-    #     print(f"File Name: {file_name}")
-    #     file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
-    #     map_setup_obj:Map_Setup_Class = Map_Setup_Class(file_path)
-    #     map_setup_obj.add_camera(camera_dict)
-    #     map_setup_obj.save_map_setup_file()
-
-    def geoguesser_map_setup_files(self):
+    def geoguesser_map_setup_files(self, geoguesser_list:list):
         '''
         Pass
         '''
-        camera_dict:dict = GEOGUESSER_SPEECH_MEDIUM_LIST[0][STR_CONST.camera_dict]
-        camera_dict[STR_CONST.camera_id] = 0x7F
-        file_name:str = self._return_file_name(0x071D) # Spiral Mountain
-        print(f"File Name: {file_name}")
-        file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
-        map_setup_obj:Map_Setup_Class = Map_Setup_Class(file_path)
-        map_setup_obj.add_camera(camera_dict)
-        map_setup_obj.save_map_setup_file()
+        print("Geoguesser Map Setup Files")
+        geoguesser_map_camera_list:list = []
+        for geoguesser_item in geoguesser_list:
+            map_id:int = geoguesser_item[STR_CONST.map_enum]
+            camera_dict:dict = geoguesser_item[STR_CONST.camera_dict]
+            asset_id:int = self._MAP_SETUP_ASSETS_START_ID + map_id
+            file_name:str = self._return_file_name(asset_id)
+            file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
+            map_setup_obj:Map_Setup_Class = Map_Setup_Class(file_path)
+            highest_camera_id = max((map_setup_obj._camera_dict).keys()) + 1
+            if(map_id in [MAP_ENUMS.freezeezy_peak_main, MAP_ENUMS.gobis_valley_main]):
+                highest_camera_id = max(highest_camera_id, 0x60)
+            geoguesser_map_camera_list.append((map_id, highest_camera_id))
+            camera_dict[STR_CONST.camera_id] = highest_camera_id
+            map_setup_obj.add_camera(camera_dict)
+            map_setup_obj.save_map_setup_file()
+        return geoguesser_map_camera_list
 
     ##################
     ##### SPRITE #####
@@ -463,14 +491,59 @@ class GAME_ASSET_CLASS():
         with open("C:/Users/Cyrus/Desktop/N64/ROMs/GEDecompressor_Files/default_speech_dict.txt", "w+") as default_speech_file:
             default_speech_file.write(speech_str)
         exit(0)
-
-    def geoguesser_speech_files(self):
+    
+    def hack64_print_all_log_speeches(self):
         '''
         Pass
         '''
-        speech_obj_generator = self._mass_speech_editing(start_asset_id=0x1277, end_asset_id=0x12EE)
-        for speech_obj in speech_obj_generator:
-            speech_option:dict = GEOGUESSER_SPEECH_MEDIUM_LIST[0]
+        from randomizer.constants.dict_values.temp_dict import my_temp_dict
+        hack64_str:str = ""
+        speech_obj_generator = self._mass_speech_editing(include_raws=True)
+        asset_id:int = self._SPEECH_ASSETS_START_ID
+        unpacking_address_start:int = 0xAEF0
+        for speech_count, speech_obj in enumerate(speech_obj_generator):
+            file_name:str = self._return_file_name(asset_id)
+            unpacking_address:str = self._return_file_name(unpacking_address_start + 0x08 * speech_count)
+            print(file_name)
+            try:
+                speech_str = speech_obj.return_speech_file_as_str()
+            except KeyError as err:
+                speech_obj.print_speech_file()
+                raise err
+            speech_str = speech_str.replace("FILE_ID", file_name, 1)
+            speech_str = speech_str.replace("ROM_ADDRESS", my_temp_dict[file_name], 1)
+            speech_str = speech_str.replace("UNPACKING_ADDRESS", unpacking_address, 1)
+            speech_str = speech_str.replace("FILE_ID", ":::")
+            speech_str = speech_str.replace("ROM_ADDRESS", ":::")
+            speech_str = speech_str.replace("UNPACKING_ADDRESS", ":::")
+            hack64_str += speech_str
+            asset_id += 1
+        with open("C:/Users/Cyrus/Desktop/N64/ROMs/GEDecompressor_Files/hack64_speech_strs.txt", "w+") as default_speech_file:
+            default_speech_file.write(hack64_str)
+        exit(0)
+
+    def geoguesser_speech_files(self, geoguesser_list:list):
+        '''
+        Pass
+        '''
+        print("Geoguesser Level Specific Speech Files")
+        speech_obj_generator = self._mass_speech_editing(
+            start_asset_id=0x12DB, end_asset_id=0x12EE)
+        for speech_count, speech_obj in enumerate(speech_obj_generator):
+            print(hex(0x12DB + speech_count))
+            if(speech_count < 9):
+                print(f"Level Specific: {GEOGUESSER_LEVEL_SPECIFIC_PROMPTS_LIST[speech_count]}")
+                speech_option:dict = {
+                    STR_CONST.question_dict: {
+                        SPEECH_CONSTANTS.full_screen: GEOGUESSER_LEVEL_SPECIFIC_PROMPTS_LIST[speech_count]
+                    }
+                }
+                print(f"Level Specific:\n\t{speech_option}")
+            else:
+                print(f"Generic:\n\t{geoguesser_list[speech_count + 99]}")
+                speech_option:dict = geoguesser_list[speech_count + 99]
+                print(f"Generic:\n\t{speech_option}")
+            speech_obj.set_speech_type(SPEECH_CONSTANTS.furnace_fun_other_question)
             speech_obj.replace_entire_speech_dict(speech_option[STR_CONST.question_dict])
             speech_obj.save_speech_file()
     

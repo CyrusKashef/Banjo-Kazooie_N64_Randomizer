@@ -27,8 +27,8 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
     Class to run the functions that implement modifying the ROM
     '''
     def __init__(self):
-        self._game_asset_obj = GAME_ASSET_CLASS()
-        self._asm_obj = ASSEMBLY_CLASS()
+        self._game_asset_obj = None
+        self._asm_obj = None
 
     def _load_settings(self, settings_file:str):
         '''
@@ -46,6 +46,8 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         self._bk_rom = BK_ROM_CLASS(self._settings_dict[STR_CONST.rom_paths][STR_CONST.original_rom_path])
         self._bk_rom.extract_asset_table_pointers()
         self._bk_rom.extract_assembly_files()
+        self._game_asset_obj = GAME_ASSET_CLASS()
+        self._asm_obj = ASSEMBLY_CLASS()
     
     def _logic_process(self):
         '''
@@ -59,6 +61,10 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         the assets and assembly files.
         '''
         print("INFO: _apply_modifications: Start...")
+        # Testing
+        self._game_asset_obj.validate_object_model_file_editing()
+        print("All Verified!")
+        exit()
         # Always Run These
         self._asm_obj.disable_anti_tamper()
         self._asm_obj.patch_yum_yum_crash_fix()
@@ -69,11 +75,14 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         self._jigsaw_puzzles()
         self._transformations()
         self._furnace_fun()
+        self._new_game_start_area()
         self._boot_to_file_select()
         self._skippable_cutscenes()
         self._skip_jiggy_jig()
         self._enable_fallproof()
         self._singular_inventory_item()
+        # Testing
+        # self._testing_cauldron_warps()
         # Save Asssembly Files
         self._asm_obj.save_all_assembly_changes()
         print("INFO: _apply_modifications: Complete!")
@@ -88,11 +97,11 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         self._bk_rom.calculate_new_crc()
         self._bk_rom.save_as_new_rom(self._settings_dict[STR_CONST.rom_paths][STR_CONST.new_rom_path])
 
-    def _cleanup(self):
+    def _cleanup(self, file_ext:str=STR_CONST.bin_extension):
         '''
         Removes bin files from extraction folder
         '''
-        self._bk_rom.clear_extracted_files_dir(STR_CONST.bin_extension)
+        self._bk_rom.clear_extracted_files_dir(file_ext)
 
     ################
     ##### MAIN #####
@@ -108,7 +117,7 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         self._logic_process()
         self._apply_modifications()
         self._modification_finalization()
-        # self._cleanup()
+        self._cleanup(file_ext=STR_CONST.compressed_bin_extension)
     
 if __name__ == '__main__':
     modification_process_obj = MODIFICATION_PROCESS_CLASS()

@@ -8,8 +8,6 @@ import random
 
 from randomizer.assembly.assembly import ASSEMBLY_CLASS
 from randomizer.game_assets.game_assets_class import GAME_ASSET_CLASS
-from randomizer.assembly.assembly import ASSEMBLY_CLASS
-from randomizer.game_assets.game_assets_class import GAME_ASSET_CLASS
 
 ### CONSTANTS
 
@@ -19,6 +17,10 @@ from randomizer.constants.dict_values.dict_constants import DICT_CONSTANTS as DI
 ### DICTS
 
 from randomizer.constants.dict_values.win_condition_dict import SAMPLE_WIN_CONDITIONS_DICT
+from randomizer.constants.dict_values.warp_entry_dict import WARP_ENTRY_DICT
+from randomizer.constants.dict_values.speeches.geoguesser_speech_dict import \
+    GEOGUESSER_LEVEL_SPECIFIC_QUESTIONS_DICT, \
+    GEOGUESSER_GENERAL_SPEECH_DICT
 
 ### ENUMS
 
@@ -34,8 +36,8 @@ class SETTINGS_FUNCTIONS():
     Pass
     '''
     def __init__(self):
-        self._game_asset_obj = GAME_ASSET_CLASS()
-        self._asm_obj = ASSEMBLY_CLASS()
+        self._game_asset_obj = None # ASSEMBLY_CLASS()
+        self._asm_obj = None # GAME_ASSET_CLASS()
     
     ###############################################
     ##### STARTING MOVES AND INVENTORY COUNTS #####
@@ -74,6 +76,7 @@ class SETTINGS_FUNCTIONS():
         if(alternate_win_conditions_option_list == []):
             return
         print(f"INFO: {STR_CONST.alternate_win_condition}")
+        random.seed(a=(self._settings_dict[STR_CONST.seed]))
         alternate_win_conditions_choice:str = random.choice(alternate_win_conditions_option_list)
         print(f"INFO: {alternate_win_conditions_choice}")
         possible_win_condition_list:list = SAMPLE_WIN_CONDITIONS_DICT[alternate_win_conditions_choice]
@@ -95,6 +98,7 @@ class SETTINGS_FUNCTIONS():
         if(note_door_item_requirement_option_list == []):
             return
         print(f"INFO: {STR_CONST.note_door_item_requirement}")
+        random.seed(a=(self._settings_dict[STR_CONST.seed]))
         note_door_item_requirement_choice:str = random.choice(note_door_item_requirement_option_list)
         print(f"INFO: {note_door_item_requirement_choice}")
         self._asm_obj.set_note_door_criteria(note_door_item_requirement_choice)
@@ -214,14 +218,82 @@ class SETTINGS_FUNCTIONS():
     #######################
     ##### FURNACE FUN #####
     #######################
+        
+    def _geoguesser_level_specific_question_list(self):
+        '''
+        Pass
+        '''
+        print("Geoguesser Pick Level Specific Questions")
+        num_of_level_picture_questions:int = 0xC
+        geoguesser_list:list = []
+        remaining_questions_list:list = []
+        for level_count, level_name in enumerate([
+                STR_CONST.mumbos_mountain, STR_CONST.treasure_trove_cove, STR_CONST.clankers_cavern,
+                STR_CONST.bubblegloop_swamp, STR_CONST.freezeezy_peak, STR_CONST.gobis_valley,
+                STR_CONST.mad_monster_mansion, STR_CONST.rusty_bucket_bay, STR_CONST.click_clock_wood]):
+            print(f"Level Name: {level_name}")
+            current_level_specific_questions_list:list = list(GEOGUESSER_LEVEL_SPECIFIC_QUESTIONS_DICT[level_name])
+            # Replace "choices" with "sample"
+            random.seed(a=(self._settings_dict[STR_CONST.seed] + level_count))
+            level_picture_question_choices:list = random.choices(current_level_specific_questions_list, k=num_of_level_picture_questions)
+            # level_picture_question_choices:list = random.sample(current_level_specific_questions_list, k=num_of_level_picture_questions)
+            for level_picture_question in level_picture_question_choices:
+                geoguesser_list.append(level_picture_question)
+                # Can adjust when choices -> sample
+                if(level_picture_question in current_level_specific_questions_list):
+                    current_level_specific_questions_list.remove(level_picture_question)
+            for level_picture_question in current_level_specific_questions_list:
+                remaining_questions_list.append(level_picture_question)
+        return geoguesser_list, remaining_questions_list
+
+    def _geoguesser_remaining_question_list(self, geoguesser_list:list, remaining_questions_list:list):
+        '''
+        Pass
+        '''
+        print("Geoguesser Pick Generic Questions")
+        num_of_general_picture_questions:int = 0xA
+        remaining_questions_list.extend(GEOGUESSER_GENERAL_SPEECH_DICT)
+        # Replace "choices" with "sample"
+        random.seed(a=(self._settings_dict[STR_CONST.seed]))
+        generic_picture_question_choices:list = random.choices(remaining_questions_list, k=num_of_general_picture_questions)
+        # generic_picture_question_choices:list = random.sample(remaining_questions_list, k=num_of_general_picture_questions)
+        for generic_picture_question in generic_picture_question_choices:
+            geoguesser_list.append(generic_picture_question)
+        return geoguesser_list
+
+    def _geoguesser_generate_cameras(self, geoguesser_list:list):
+        '''
+        Pass
+        '''
+        print("Geoguesser Generate Cameras")
+        geoguesser_camera_dict:dict = {}
+        geoguesser_camera_list = []
+        for geoguesser_item in geoguesser_list:
+            map_id:int = geoguesser_item[STR_CONST.map_enum]; print(f"Map Id: {map_id}")
+            if(map_id not in geoguesser_camera_dict):
+                geoguesser_camera_dict[map_id] = 0x7F
+            else:
+                geoguesser_camera_dict[map_id] -= 1
+            geoguesser_camera_list.append(geoguesser_camera_dict[map_id])
+        return geoguesser_camera_list
 
     def _geoguesser(self):
         '''
         Pass
         '''
-        self._game_asset_obj.geoguesser_speech_files()
-        self._game_asset_obj.geoguesser_map_setup_files()
-        self._asm_obj.geoguesser_furnace_fun()
+        print("Geoguesser")
+        geoguesser_list, remaining_questions_list = self._geoguesser_level_specific_question_list()
+        geoguesser_list:list = self._geoguesser_remaining_question_list(geoguesser_list, remaining_questions_list)
+        # geoguesser_list:list = [GEOGUESSER_LEVEL_SPECIFIC_QUESTIONS_DICT[STR_CONST.mumbos_mountain][1]] * 118
+        # geoguesser_list:list = [GEOGUESSER_GENERAL_SPEECH_DICT[12]] * 118
+        # geoguesser_camera_list:list = self._geoguesser_generate_cameras(geoguesser_list)
+        print("Geoguesser Adjust Speeches")
+        self._game_asset_obj.geoguesser_speech_files(geoguesser_list)
+        print("Geoguesser Set Cameras")
+        geoguesser_map_camera_list:list = \
+            self._game_asset_obj.geoguesser_map_setup_files(geoguesser_list)
+        print("Geoguesser Assembly Changes")
+        self._asm_obj.geoguesser_furnace_fun(geoguesser_map_camera_list)
     
     def _death_squares_only(self):
         '''
@@ -239,9 +311,11 @@ class SETTINGS_FUNCTIONS():
         for furnace_fun_option in furnace_fun_options_dict:
             if(furnace_fun_options_dict[furnace_fun_option]):
                 furnace_fun_option_list.append(furnace_fun_option)
-        if(furnace_fun_option == []):
+        if(furnace_fun_option_list == []):
+            print(f"INFO: No Furnace Fun Option")
             return
         print(f"INFO: {STR_CONST.furnace_fun}")
+        random.seed(a=(self._settings_dict[STR_CONST.seed]))
         furnace_fun_choice:str = random.choice(furnace_fun_option_list)
         if(furnace_fun_choice == STR_CONST.geoguesser):
             print(f"INFO: {STR_CONST.geoguesser}")
@@ -249,6 +323,8 @@ class SETTINGS_FUNCTIONS():
         elif(furnace_fun_choice == STR_CONST.death_squares_only):
             print(f"INFO: {STR_CONST.death_squares_only}")
             self._death_squares_only()
+        else:
+            print(f"INFO: Furnace Fun Option {furnace_fun_choice}")
     
     #########################
     ##### OTHER OPTIONS #####
@@ -315,3 +391,27 @@ class SETTINGS_FUNCTIONS():
             # self._asm_obj.egg_firing_item_requirement(ITEM_ENUMS.blue_egg)
             self._asm_obj.flight_item_requirement(ITEM_ENUMS.blue_egg)
             self._asm_obj.wonderwing_item_requirement(ITEM_ENUMS.blue_egg)
+    
+    #################
+    ##### WARPS #####
+    #################
+    
+    def _new_game_start_area(self):
+        '''
+        Pass
+        '''
+        new_start_area:str = \
+            self._settings_dict[STR_CONST.warps][STR_CONST.new_starting_area]
+        if(new_start_area not in WARP_ENTRY_DICT):
+            raise Exception(f"ERROR: _new_game_start_area: Area '{new_start_area}' does not exist in WARP_ENTRY_DICT")
+        warp_entry = WARP_ENTRY_DICT[new_start_area]
+        map_id:int = warp_entry[0]
+        entry_id:int = warp_entry[1]
+        self._asm_obj.new_game_start_area(map_id, entry_id)
+    
+    def _testing_cauldron_warps(self):
+        '''
+        Pass
+        '''
+        print("Testing Cauldron Warps")
+        self._asm_obj.modify_cauldron_warps()

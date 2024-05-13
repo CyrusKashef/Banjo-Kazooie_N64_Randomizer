@@ -45,6 +45,9 @@ from randomizer.constants.dict_values.win_condition_dict import \
     WIN_CONDITION_FUNCTION_DICT, WIN_CONDITION_COMMANDS_DICT
 
 from randomizer.constants.int_values.map_enums import MAP_ENUMS
+from randomizer.constants.dict_values.warp_entry_dict import WARP_ENTRY_DICT
+from randomizer.constants.int_values.furnace_fun_tile_type_enums import FURNACE_FUN_TILE_TYPE_ENUMS as FF_TT_ENUMS
+from randomizer.constants.int_values.furnace_fun_question_type_enums import FURNACE_FUN_QUESTION_TYPE_ENUMS as FF_QT_ENUMS
 
 ####################
 ##### ASSEMBLY #####
@@ -190,7 +193,7 @@ class ASSEMBLY_CLASS():
         '''
         Pass
         '''
-        pass
+        self._game_engine_code_obj.new_game_start_map(map_id, entry_id)
     
     def enable_exit_to_witchs_lair(self):
         '''
@@ -317,15 +320,32 @@ class ASSEMBLY_CLASS():
         '''
         pass
 
-    def geoguesser_furnace_fun(self):
+    def geoguesser_furnace_fun(self, geoguesser_map_camera_list:list):
         '''
         Pass
         '''
+        print("Geoguesser Furnace Fun Questions")
         picture_question_dict:dict = self._gruntildas_lair_data_obj._get_picture_question_dict()
         for question_count in picture_question_dict:
-            picture_question_dict[question_count][STR_CONST.map_enum] = MAP_ENUMS.spiral_mountain_main
-            picture_question_dict[question_count][STR_CONST.camera_id] = 0x7F
+            map_id:int = geoguesser_map_camera_list[question_count][0]
+            camera_id:int = geoguesser_map_camera_list[question_count][1]
+            print(hex(map_id), hex(camera_id))
+            picture_question_dict[question_count][STR_CONST.map_enum] = map_id
+            picture_question_dict[question_count][STR_CONST.camera_id] = camera_id
         self._gruntildas_lair_data_obj._set_picture_question_dict(picture_question_dict)
+        # self._gruntildas_lair_code_obj.furnace_fun_picture_questions_extend()
+        # self._game_engine_code_obj.set_furnace_fun_question_assets_id(
+        #     picture_start_id=0x12DB, picture_end_id=0x128A)
+        print("Geoguesser Furnace Fun BK, Sound, Minigame, Gruntilda -> Picture Questions")
+        furnace_fun_board_dict:dict = self._gruntildas_lair_data_obj.get_furnace_fun_board_dict()
+        for tile_count in furnace_fun_board_dict:
+            current_type_type:int = furnace_fun_board_dict[tile_count][STR_CONST.tile_type]
+            if(current_type_type in [FF_TT_ENUMS.banjo_kazooie, FF_TT_ENUMS.sound,
+                                     FF_TT_ENUMS.minigame, FF_TT_ENUMS.gruntilda]):
+                furnace_fun_board_dict[tile_count][STR_CONST.tile_type] = FF_TT_ENUMS.picture
+        self._gruntildas_lair_data_obj.set_furnace_fun_board_dict(furnace_fun_board_dict)
+        print("Geoguesser Furnace Fun Joker, Skull -> Picture Questions")
+        self._gruntildas_lair_code_obj._set_rng_tile_to_one_type(FF_QT_ENUMS.picture)
 
     ##############################
     ##### COSMETICS & SOUNDS #####
@@ -567,3 +587,13 @@ class ASSEMBLY_CLASS():
         Pass
         '''
         self._game_engine_code_obj.shock_jump_pad_anywhere()
+    
+    def modify_cauldron_warps(self):
+        '''
+        Pass
+        '''
+        cauldron_dict = self._gruntildas_lair_data_obj.get_cauldron_dict()
+        warp_info = WARP_ENTRY_DICT[STR_CONST.treasure_trove_cove_nippers_shell_from_main]
+        cauldron_dict[4][STR_CONST.map_enum] = warp_info[0]
+        cauldron_dict[4][STR_CONST.entry_point] = warp_info[1]
+        self._gruntildas_lair_data_obj.set_cauldron_dict(cauldron_dict)

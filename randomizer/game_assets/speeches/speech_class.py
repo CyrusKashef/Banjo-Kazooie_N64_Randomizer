@@ -40,6 +40,8 @@ class Speech_Class(Generic_Bin_File_Class):
         whether the speech is a Furnace Fun Gruntilda question,
         Furnace Fun Generic question, or Generic speech file.
         '''
+        if(len(self._file_content) == 0):
+            return SPEECH_CONSTANTS.empty_speech
         first_five_bytes:int = self._read_bytes_as_int(index_start=0, byte_count=5)
         first_three_bytes:int = self._read_bytes_as_int(index_start=0, byte_count=3)
         if(first_five_bytes == 0x0103000500):
@@ -179,6 +181,53 @@ class Speech_Class(Generic_Bin_File_Class):
                     curr_section = SPEECH_CONSTANTS.top_section
                 elif(curr_section == SPEECH_CONSTANTS.top_section):
                     curr_section = SPEECH_CONSTANTS.bottom_section
+
+    def _return_furnace_fun_speech_as_str(self):
+        '''
+        Prints the Furnace Fun speech to the console.
+        '''
+        speech_str:str = ""
+        speech_count:int = len(self._speech_dict[SPEECH_CONSTANTS.full_screen])
+        for curr_speech_count in range(speech_count):
+            curr_sprite = self._speech_dict[SPEECH_CONSTANTS.full_screen][curr_speech_count][SPEECH_CONSTANTS.sprite]
+            sprite_translation:str = FURNACE_FUN_SPRITE_DICT[curr_sprite]
+            curr_speech = self._speech_dict[SPEECH_CONSTANTS.full_screen][curr_speech_count][SPEECH_CONSTANTS.speech]
+            for fancy_font in FANCY_FONT_DICT:
+                curr_speech = curr_speech.replace(fancy_font, "")
+            speech_str += f"| FILE_ID | ROM_ADDRESS | UNPACKING_ADDRESS | {sprite_translation}: {curr_speech} |\n"
+        return speech_str
+
+    def _return_generic_speech_as_str(self):
+        '''
+        Returns the generic speech as a string.
+        '''
+        speech_str:str = ""
+        curr_section:str = SPEECH_CONSTANTS.top_section
+        section_count:dict = {
+            SPEECH_CONSTANTS.bottom_section: 0,
+            SPEECH_CONSTANTS.top_section: 0,
+        }
+        bottom_section_count:int = len(self._speech_dict[SPEECH_CONSTANTS.bottom_section])
+        top_section_count:int = len(self._speech_dict[SPEECH_CONSTANTS.top_section])
+        while((section_count[SPEECH_CONSTANTS.bottom_section] < bottom_section_count)
+              or (section_count[SPEECH_CONSTANTS.top_section] < top_section_count)):
+            curr_section_count:int = section_count[curr_section]
+            if(curr_section_count >= len(self._speech_dict[curr_section])):
+                break
+            curr_sprite:int = self._speech_dict[curr_section][curr_section_count][SPEECH_CONSTANTS.sprite]
+            if(curr_sprite > 0x80):
+                sprite_translation:str = GENERAL_SPRITE_DICT[curr_sprite]
+                curr_speech:str = self._speech_dict[curr_section][curr_section_count][SPEECH_CONSTANTS.speech]
+                for fancy_font in FANCY_FONT_DICT:
+                    curr_speech = curr_speech.replace(fancy_font, "")
+                speech_str += f"| FILE_ID | ROM_ADDRESS | UNPACKING_ADDRESS | {sprite_translation}: {curr_speech} |\n"
+            section_count[curr_section] += 1
+            if(curr_sprite in [0x04, 0x06]):
+                if(curr_section == SPEECH_CONSTANTS.bottom_section):
+                    curr_section = SPEECH_CONSTANTS.top_section
+                elif(curr_section == SPEECH_CONSTANTS.top_section):
+                    curr_section = SPEECH_CONSTANTS.bottom_section
+        return speech_str
     
     #############################
     ##### UTILITY FUNCTIONS #####
@@ -278,6 +327,12 @@ class Speech_Class(Generic_Bin_File_Class):
         '''
         self._speech_dict = new_speech_dict
     
+    def set_speech_type(self, speech_type:int):
+        '''
+        Pass
+        '''
+        self._speech_type = speech_type
+    
     #################
     ##### WRITE #####
     #################
@@ -332,6 +387,8 @@ class Speech_Class(Generic_Bin_File_Class):
             self._parse_furance_fun_speech()
         elif(self._speech_type == SPEECH_CONSTANTS.generic_speech):
             self._parse_generic_speech()
+        # elif(self._speech_type == SPEECH_CONSTANTS.empty_speech):
+        #     pass
     
     def print_speech_file(self):
         '''
@@ -344,6 +401,18 @@ class Speech_Class(Generic_Bin_File_Class):
             self._print_furnace_fun_speech()
         elif(self._speech_type == SPEECH_CONSTANTS.generic_speech):
             self._print_generic_speech()
+    
+    def return_speech_file_as_str(self):
+        '''
+        Pass
+        '''
+        speech_str = f"| FILE_ID | X | UNPACKING_ADDRESS | X |\n"
+        if(self._speech_type in [SPEECH_CONSTANTS.furnace_fun_gruntilda_question,
+                                 SPEECH_CONSTANTS.furnace_fun_other_question]):
+            speech_str = self._return_furnace_fun_speech_as_str()
+        elif(self._speech_type == SPEECH_CONSTANTS.generic_speech):
+            speech_str = self._return_generic_speech_as_str()
+        return speech_str
     
     def save_speech_file(self, file_path:str|None=None):
         '''

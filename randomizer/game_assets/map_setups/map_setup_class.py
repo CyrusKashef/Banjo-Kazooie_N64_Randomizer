@@ -294,7 +294,7 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         '''
         Pass
         '''
-        print("INFO: _parse_cubes: Start!")
+        # print("INFO: _parse_cubes: Start!")
         negative_x_cube_count, negative_y_cube_count, negative_z_cube_count, \
         positive_x_cube_count, positive_y_cube_count, positive_z_cube_count = \
             self._parse_cube_counts()
@@ -313,7 +313,7 @@ class Map_Setup_Class(Generic_Bin_File_Class):
                         byte_count=1,
                         expected_value=self._CUBE_SEPERATOR)
                     curr_index += 1
-        print("INFO: _parse_cubes: Complete!")
+        # print("INFO: _parse_cubes: Complete!")
         return curr_index
 
     ### CAMERAS
@@ -452,7 +452,7 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         '''
         Pass
         '''
-        print("INFO: _parse_cameras: Start!")
+        # print("INFO: _parse_cameras: Start!")
         # Verify Camera Start Indicator (0x0003)
         self._verify_indicator(
             start_index=start_index,
@@ -469,7 +469,7 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         while(self._read_bytes_as_int(curr_index, byte_count=2) != self._LIGHTING_START_INDICATOR):
             camera_type:int = self._read_bytes_as_int(curr_index + 0x4, byte_count=1)
             curr_index = self._camera_type_dict[camera_type](curr_index)
-        print("INFO: _parse_cameras: Complete!")
+        # print("INFO: _parse_cameras: Complete!")
         return curr_index
 
     ### LIGHTING
@@ -514,7 +514,7 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         '''
         Pass
         '''
-        print("INFO: _parse_lighting: Start!")
+        # print("INFO: _parse_lighting: Start!")
         curr_index:int = start_index + 0x2
         lighting_count:int = 0
         while(self._read_bytes_as_int(curr_index, byte_count=2) != self._FILE_END_INDICATOR):
@@ -522,7 +522,7 @@ class Map_Setup_Class(Generic_Bin_File_Class):
             self._lighting_dict[lighting_count] = lighting_dict
             lighting_count += 1
             curr_index += 0x24
-        print("INFO: _parse_lighting: Complete!")
+        # print("INFO: _parse_lighting: Complete!")
         return curr_index
 
     ###################
@@ -1133,7 +1133,7 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         '''
         curr_index = self._log_hex_line(
             start_index, self._LIGHTING_START_INDICATOR, byte_count=2, convert_hex_to_num=False,
-            description=LIGHTING_START_INDICATOR_STR, new_line_count=2)
+            description=STR_CONST.lighting_start_indicator, new_line_count=2)
         for curr_lighting_count in sorted(self._lighting_dict):
             self._log_file.write(f"0x{self._convert_int_to_hex_str(curr_index, byte_count=2)}:\n")
             self._log_file.write(f"\tLighting Here\n")

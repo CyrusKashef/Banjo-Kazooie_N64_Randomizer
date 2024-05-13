@@ -183,31 +183,31 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
                 INT_CONST.furnace_fun_board_end_index,
                 INT_CONST.furnace_fun_board_interval)):
             tile_dict:dict = furnace_fun_board_dict[tile_count]
-            self._write_bytes_from_int(curr_index, tile_dict[STR_CONST.tile_below], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x0, tile_dict[STR_CONST.tile_below], byte_count=2)
             self._write_bytes_from_int(curr_index + 0x2, tile_dict[STR_CONST.tile_left], byte_count=2)
             self._write_bytes_from_int(curr_index + 0x4, tile_dict[STR_CONST.tile_above], byte_count=2)
             self._write_bytes_from_int(curr_index + 0x6, tile_dict[STR_CONST.tile_right], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x8, tile_dict[STR_CONST.tile_type], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x9, tile_dict[STR_CONST.byte_9_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0xA, tile_dict[STR_CONST.byte_a_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0xB, tile_dict[STR_CONST.byte_b_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x8, tile_dict[STR_CONST.tile_type], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x9, tile_dict[STR_CONST.byte_9_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0xA, tile_dict[STR_CONST.byte_a_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0xB, tile_dict[STR_CONST.byte_b_unk], byte_count=1)
             self._write_bytes_from_float(curr_index + 0xC, tile_dict[STR_CONST.byte_c_unk])
-            self._write_bytes_from_int(curr_index + 0x10, tile_dict[STR_CONST.byte_10_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x11, tile_dict[STR_CONST.byte_11_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x12, tile_dict[STR_CONST.byte_12_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x13, tile_dict[STR_CONST.byte_13_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x14, tile_dict[STR_CONST.byte_14_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x15, tile_dict[STR_CONST.byte_15_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x16, tile_dict[STR_CONST.byte_16_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x17, tile_dict[STR_CONST.byte_17_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x18, tile_dict[STR_CONST.byte_18_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x19, tile_dict[STR_CONST.byte_19_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x1A, tile_dict[STR_CONST.byte_1a_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x1B, tile_dict[STR_CONST.byte_1b_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x1C, tile_dict[STR_CONST.byte_1c_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x1D, tile_dict[STR_CONST.byte_1d_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x1E, tile_dict[STR_CONST.byte_1e_unk], byte_count=2)
-            self._write_bytes_from_int(curr_index + 0x1F, tile_dict[STR_CONST.byte_1f_unk], byte_count=2)
+            self._write_bytes_from_int(curr_index + 0x10, tile_dict[STR_CONST.byte_10_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x11, tile_dict[STR_CONST.byte_11_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x12, tile_dict[STR_CONST.byte_12_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x13, tile_dict[STR_CONST.byte_13_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x14, tile_dict[STR_CONST.byte_14_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x15, tile_dict[STR_CONST.byte_15_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x16, tile_dict[STR_CONST.byte_16_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x17, tile_dict[STR_CONST.byte_17_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x18, tile_dict[STR_CONST.byte_18_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x19, tile_dict[STR_CONST.byte_19_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x1A, tile_dict[STR_CONST.byte_1a_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x1B, tile_dict[STR_CONST.byte_1b_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x1C, tile_dict[STR_CONST.byte_1c_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x1D, tile_dict[STR_CONST.byte_1d_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x1E, tile_dict[STR_CONST.byte_1e_unk], byte_count=1)
+            self._write_bytes_from_int(curr_index + 0x1F, tile_dict[STR_CONST.byte_1f_unk], byte_count=1)
     
     ### QUESTION COUNT
     # Start, Count
@@ -328,7 +328,7 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
     #################
     # Decomp: lair/ch/cauldron.c#L46
 
-    def _get_cauldron_dict(self):
+    def get_cauldron_dict(self):
         '''
         Pass
         '''
@@ -348,7 +348,7 @@ class GRUNTILDAS_LAIR_DATA_CLASS(Generic_Bin_File_Class):
             }
         return cauldron_dict
 
-    def _set_cauldron_dict(self, cauldron_dict:dict):
+    def set_cauldron_dict(self, cauldron_dict:dict):
         '''
         Pass
         '''

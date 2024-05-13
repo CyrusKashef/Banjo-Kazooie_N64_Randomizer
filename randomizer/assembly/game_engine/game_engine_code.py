@@ -41,6 +41,26 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         self._write_bytes_from_int(0x1467F, map_id, byte_count=1)
         self._write_bytes_from_int(0x9580B, map_id, byte_count=1)
     
+    def new_game_start_map(self, map_id:int, entry_id:int):
+        '''
+        ch/gameSelect.c
+        code_956B0.c
+        '''
+        # Cutscene (MAP_85_CS_SPIRAL_MOUNTAIN_3)
+        self._write_bytes_from_int(0x3E17A, map_id, byte_count=2)
+        self._write_bytes_from_int(0x3E180, 0x24070000 + entry_id, byte_count=4)
+        # Warps (0x112 -> MAP_1_SM_SPIRAL_MOUNTAIN + Entry 18)
+        self._write_bytes_from_int(0x986FA, map_id, byte_count=1)
+        self._write_bytes_from_int(0x986FB, entry_id, byte_count=1)
+    
+    def reassign_warp(self, start_index_list:list, map_id:int, exit_id:int):
+        '''
+        Pass
+        '''
+        warp_id = map_id * 0x100 + exit_id
+        for start_index in start_index_list:
+            self._write_bytes_from_int(start_index, warp_id, byte_count=2)
+    
     #####################
     ##### CUTSCENES #####
     #####################
@@ -464,3 +484,27 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         self._write_bytes_from_int(0x4A7F6, transformation_costs_dict[STR_CONST.walrus_transformation_cost], byte_count=2)
         self._write_bytes_from_int(0x4A7FE, transformation_costs_dict[STR_CONST.pumpkin_transformation_cost], byte_count=2)
         self._write_bytes_from_int(0x4A7F6, transformation_costs_dict[STR_CONST.bee_transformation_cost], byte_count=2)
+    
+    #######################
+    ##### FURNACE FUN #####
+    #######################
+    # core2/code_91E10.c
+    
+    def set_furnace_fun_question_assets_id(self,
+            picture_start_id:int=0x12DB, picture_end_id:int=0x12EE,
+            sound_start_id:int=0x13A3, sound_end_id:int=0x13D6,
+            grunty_start_id:int=0x1407, grunty_end_id:int=0x1425,
+            default_start_id:int=0x1213, default_end_id:int=0x1277):
+        '''
+        Pass
+        '''
+        # Start Ids
+        self._write_bytes_from_int(0x91F60, 0x24020000 + default_start_id, byte_count=4)
+        self._write_bytes_from_int(0x91F70, 0x24020000 + picture_start_id, byte_count=4)
+        self._write_bytes_from_int(0x91F78, 0x24020000 + sound_start_id, byte_count=4)
+        self._write_bytes_from_int(0x91F80, 0x24020000 + grunty_start_id, byte_count=4)
+        # End Ids
+        self._write_bytes_from_int(0x91FA4, 0x24020000 + default_end_id, byte_count=4)
+        self._write_bytes_from_int(0x91FB4, 0x24020000 + picture_end_id, byte_count=4)
+        self._write_bytes_from_int(0x91FBC, 0x24020000 + sound_end_id, byte_count=4)
+        self._write_bytes_from_int(0x91FC4, 0x24020000 + grunty_end_id, byte_count=4)

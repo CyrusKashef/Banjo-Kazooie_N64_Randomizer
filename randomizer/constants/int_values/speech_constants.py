@@ -15,6 +15,7 @@ from enum import IntEnum, unique, auto
 
 @unique
 class SPEECH_CONSTANTS(IntEnum):
+    empty_speech = auto()
     generic_speech = auto()
     furnace_fun_gruntilda_question = auto()
     furnace_fun_other_question = auto()

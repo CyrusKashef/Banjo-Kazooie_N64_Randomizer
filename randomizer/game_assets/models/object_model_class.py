@@ -7,14 +7,14 @@ Purpose:
 ##### IMPORTS #####
 ###################
 
-from randomizer.generic_bin_file_class import Generic_Bin_File_Class
+from randomizer.game_assets.models.object_3d_model_class import OBJECT_3D_MODEL_CLASS
 from randomizer.constants.int_values.object_model_constants import OBJECT_MODEL_CONSTANTS as CONSTANT
 
 ##############################
 ##### OBJECT MODEL CLASS #####
 ##############################
 
-class OBJECT_MODEL_CLASS(Generic_Bin_File_Class):
+class OBJECT_MODEL_CLASS(OBJECT_3D_MODEL_CLASS):
     '''
     Class for reading and modifying object model files.
     '''
@@ -22,230 +22,85 @@ class OBJECT_MODEL_CLASS(Generic_Bin_File_Class):
         '''
         Constructor
         '''
+        # Constant
+        self._3d_model_header:int = 0x0000000B
+
+        # Variables
+        self._file_path = file_path
+        self._file_content = None
         self._object_model_dict:dict = {}
-
-    #############################
-    ##### UTILITY FUNCTIONS #####
-    #############################
-
-    ###################
-    ##### PARSING #####
-    ###################
-
-    def _parse_file_header(self):
+        self._model_type:int = None
+    
+    def _determine_model_type(self):
         '''
         Pass
         '''
-        self._object_model_dict[CONSTANT.geometry_layout_setup_offset] = self._read_bytes_as_int(0x04, byte_count=4)
-        self._object_model_dict[CONSTANT.texture_setup_offset] = self._read_bytes_as_int(0x08, byte_count=2)
-        self._object_model_dict[CONSTANT.object_model_geo_type] = self._read_bytes_as_int(0x0A, byte_count=2)
-        self._object_model_dict[CONSTANT.display_list_setup_offset] = self._read_bytes_as_int(0x0C, byte_count=4)
-        self._object_model_dict[CONSTANT.vertex_setup_offset] = self._read_bytes_as_int(0x10, byte_count=4)
-        self._object_model_dict[CONSTANT.hitbox_setup_offset] = self._read_bytes_as_int(0x14, byte_count=4)
-        self._object_model_dict[CONSTANT.animation_setup_offset] = self._read_bytes_as_int(0x18, byte_count=4)
-        self._object_model_dict[CONSTANT.collision_setup_offset] = self._read_bytes_as_int(0x1C, byte_count=4)
-        self._object_model_dict[CONSTANT.unknown_20_setup_offset] = self._read_bytes_as_int(0x20, byte_count=4)
-        self._object_model_dict[CONSTANT.effect_setup_offset] = self._read_bytes_as_int(0x24, byte_count=4)
-        self._object_model_dict[CONSTANT.unknown_28_setup_offset] = self._read_bytes_as_int(0x28, byte_count=4)
-        self._object_model_dict[CONSTANT.animated_textures_offset] = self._read_bytes_as_int(0x2C, byte_count=4)
-        self._object_model_dict[CONSTANT.unknown_count] = self._read_bytes_as_int(0x30, byte_count=2)
-        self._object_model_dict[CONSTANT.vert_count] = self._read_bytes_as_int(0x32, byte_count=2)
-
-    ### TEXTURE LIST
-
-    def _parse_texture_list(self, start_index:int, texture_count:int):
-        '''
-        Pass
-        '''
-        self._object_model_dict[CONSTANT.texture_list] = {}
-        for curr_count in range(texture_count):
-            curr_index:int = start_index + 0x10 * curr_count
-            self._object_model_dict[CONSTANT.textures][CONSTANT.texture_list][curr_count] = {
-                CONSTANT.texture_offset: self._read_bytes_as_int(curr_index, byte_count=4),
-                CONSTANT.texture_type: self._read_bytes_as_int(curr_index + 0x5, byte_count=1),
-                CONSTANT.texture_x_dimension: self._read_bytes_as_int(curr_index + 0x8, byte_count=1),
-                CONSTANT.texture_y_dimension: self._read_bytes_as_int(curr_index + 0x9, byte_count=1),
-            }
-
-    def _parse_texture(self):
-        '''
-        Pass
-        '''
-        start_index:int = self._object_model_dict[CONSTANT.texture_setup_offset]
-        self._object_model_dict[CONSTANT.texture_bytes_to_load] = self._read_bytes_as_int(self._texture_setup_offset, byte_count=4)
-        texture_count:int = self._read_bytes_as_int(self._texture_setup_offset + 0x04, byte_count=2)
-        self._parse_texture_list(start_index + 0x08, texture_count)
-
-    ### DISPLAY LIST
-
-    def _parse_display_list(self, start_index:int, display_list_command_count:int):
-        '''
-        Pass
-        '''
-        self._object_model_dict[CONSTANT.display_list] = {}
-        for curr_count in range(display_list_command_count):
-            curr_index:int = start_index + 0x8 * curr_count
-            self._object_model_dict[CONSTANT.display_list][curr_count] = self._read_bytes_as_int(curr_index, byte_count=8)
-
-    def _parse_display_list_section(self):
-        '''
-        Pass
-        '''
-        start_index:int = self._object_model_dict[CONSTANT.display_list_setup_offset]
-        display_list_command_count:int = self._read_bytes_as_int(start_index, byte_count=4)
-        self._parse_display_list(start_index + 0x08, display_list_command_count)
-
-    ### VERTEX LIST
-
-    def _parse_vertex_list(self, start_index:int, vertex_count:int):
-        '''
-        Pass
-        '''
-        self._object_model_dict[CONSTANT.vertex_list] = {}
-        for curr_count in range(vertex_count):
-            curr_index: int = start_index + 0x10 * curr_count
-            self._object_model_dict[CONSTANT.vertex_list][curr_count] = {
-                CONSTANT.vertex_x_position: self._read_bytes_as_int(curr_index, byte_count=2),
-                CONSTANT.vertex_y_position: self._read_bytes_as_int(curr_index + 0x2, byte_count=2),
-                CONSTANT.vertex_z_position: self._read_bytes_as_int(curr_index + 0x4, byte_count=2),
-                # padding
-                CONSTANT.vertex_u_coordinate: self._read_bytes_as_int(curr_index + 0x8, byte_count=2),
-                CONSTANT.vertex_v_coordinate: self._read_bytes_as_int(curr_index + 0xA, byte_count=2),
-                CONSTANT.vertex_red_value: self._read_bytes_as_int(curr_index + 0xC, byte_count=1),
-                CONSTANT.vertex_green_value: self._read_bytes_as_int(curr_index + 0xD, byte_count=1),
-                CONSTANT.vertex_blue_value: self._read_bytes_as_int(curr_index + 0xE, byte_count=1),
-                CONSTANT.vertex_alpha_value: self._read_bytes_as_int(curr_index + 0xF, byte_count=1),
-            }
-
-    def _parse_vertex_section(self):
-        '''
-        Pass
-        '''
-        start_index:int = self._object_model_dict[CONSTANT.vertex_setup_offset]
-        self._object_model_dict[CONSTANT.vertex_min_x_coord] = self._read_bytes_as_int(start_index, byte_count=2)
-        self._object_model_dict[CONSTANT.vertex_min_y_coord] = self._read_bytes_as_int(start_index + 0x02, byte_count=2)
-        self._object_model_dict[CONSTANT.vertex_min_z_coord] = self._read_bytes_as_int(start_index + 0x04, byte_count=2)
-        self._object_model_dict[CONSTANT.vertex_max_x_coord] = self._read_bytes_as_int(start_index + 0x06, byte_count=2)
-        self._object_model_dict[CONSTANT.vertex_max_y_coord] = self._read_bytes_as_int(start_index + 0x08, byte_count=2)
-        self._object_model_dict[CONSTANT.vertex_max_z_coord] = self._read_bytes_as_int(start_index + 0x0A, byte_count=2)
-        self._object_model_dict[CONSTANT.vertex_center_x_coord] = self._read_bytes_as_int(start_index + 0x0C, byte_count=2)
-        self._object_model_dict[CONSTANT.vertex_center_y_coord] = self._read_bytes_as_int(start_index + 0x0E, byte_count=2)
-        self._object_model_dict[CONSTANT.vertex_center_z_coord] = self._read_bytes_as_int(start_index + 0x10, byte_count=2)
-        # distance to furthest vtx relative to model center
-        self._object_model_dict[CONSTANT.vertex_local_norm] = self._read_bytes_as_int(start_index + 0x12, byte_count=2)
-        # distance to furthest vtx relative to model origin
-        self._object_model_dict[CONSTANT.vertex_global_norm] = self._read_bytes_as_int(start_index + 0x16, byte_count=2)
-        vertex_count:int = self._read_bytes_as_int(start_index + 0x14, byte_count=2)
-        self._parse_vertex_list(start_index + 0x18, vertex_count)
-
-    ### ANIMATION LIST
-
-    def _parse_animation_list(self):
-        '''
-        Pass
-        '''
-        start_index:int = self._object_model_dict[CONSTANT.animation_setup_offset]
-
-    ### EFFECTS LIST
-
-    def _parse_effects_header(self):
-        '''
-        Pass
-        '''
-        pass
-
-    def _parse_effects_section(self):
-        '''
-        Pass
-        '''
-        start_index:int = self._object_model_dict[CONSTANT.effect_setup_offset]
-
-    ### ANIMATION TEXTURE LIST
-
-    def _parse_animated_texture_list(self):
-        '''
-        Pass
-        '''
-        start_index:int = None
-
-    ### COLLISION LIST
-
-    def _parse_collision_geo_list(self, start_index:int, geo_count:int):
-        '''
-        Pass
-        '''
-        self._object_model_dict[CONSTANT.collision_geo_list] = {}
-        for curr_count in range(geo_count):
-            curr_index: int = start_index + 0x04 * curr_count
-            self._object_model_dict[CONSTANT.collision_geo_list][curr_count] = {
-                CONSTANT.collision_start_tri_index: self._read_bytes_as_int(curr_index, byte_count=2),
-                CONSTANT.collision_geo_tri_count: self._read_bytes_as_int(curr_index + 0x2, byte_count=2),
-            }
-        return curr_index
-
-    def _parse_collision_collision_tri_list(self, start_index:int, tri_count:int):
-        '''
-        Pass
-        '''
-        self._object_model_dict[CONSTANT.collision_tri_list] = {}
-        for curr_count in range(tri_count):
-            curr_index: int = start_index + 0x0C * curr_count
-            self._object_model_dict[CONSTANT.collision_tri_list][curr_count] = {
-                CONSTANT.collision_vertex_1: self._read_bytes_as_int(curr_index, byte_count=2),
-                CONSTANT.collision_vertex_2: self._read_bytes_as_int(curr_index + 0x2, byte_count=2),
-                CONSTANT.collision_vertex_3: self._read_bytes_as_int(curr_index + 0x4, byte_count=2),
-                CONSTANT.collision_tri_unk: self._read_bytes_as_int(curr_index + 0x6, byte_count=2),
-                CONSTANT.collision_flags: self._read_bytes_as_int(curr_index + 0x8, byte_count=4),
-            }
-        return curr_index
-
-    def _parse_collision_list(self):
-        '''
-        Pass
-        '''
-        start_index:int = self._object_model_dict[CONSTANT.collision_setup_offset]
-        self._object_model_dict[CONSTANT.collision_min_x] = self._read_bytes_as_int(start_index, byte_count=2)
-        self._object_model_dict[CONSTANT.collision_min_y] = self._read_bytes_as_int(start_index + 0x02, byte_count=2)
-        self._object_model_dict[CONSTANT.collision_min_z] = self._read_bytes_as_int(start_index + 0x04, byte_count=2)
-        self._object_model_dict[CONSTANT.collision_max_x] = self._read_bytes_as_int(start_index + 0x06, byte_count=2)
-        self._object_model_dict[CONSTANT.collision_max_y] = self._read_bytes_as_int(start_index + 0x08, byte_count=2)
-        self._object_model_dict[CONSTANT.collision_max_z] = self._read_bytes_as_int(start_index + 0x0A, byte_count=2)
-        self._object_model_dict[CONSTANT.collision_y_stride] = self._read_bytes_as_int(start_index + 0x0C, byte_count=2)
-        self._object_model_dict[CONSTANT.collision_z_stride] = self._read_bytes_as_int(start_index + 0x0E, byte_count=2)
-        collision_geo_count:int = self._read_bytes_as_int(start_index + 0x10, byte_count=2)
-        self._object_model_dict[CONSTANT.collision_scale] = self._read_bytes_as_int(start_index + 0x12, byte_count=2)
-        collision_tri_count:int = self._read_bytes_as_int(start_index + 0x14, byte_count=2)
-        # padding
-        curr_index:int = self._parse_collision_geo_list(start_index + 0x18, collision_geo_count)
-        self._parse_collision_collision_tri_list(curr_index, collision_tri_count)
-
-    ### GEOMETRY LIST
-
-    def _parse_geometry_list(self):
-        '''
-        Pass
-        '''
-        start_index:int = self._object_model_dict[CONSTANT.geometry_layout_setup_offset]
-
-    ###################
-    ##### LOGGING #####
-    ###################
-
-    ##########################
-    ##### EDIT FUNCTIONS #####
-    ##########################
-
-    #################
-    ##### WRITE #####
-    #################
+        model_header:int = self._read_bytes_as_int(0x0, byte_count=4)
+        if(model_header == self._3d_model_header):
+            self._model_type:int = CONSTANT.object_3d_model
+        else:
+            self._model_type:int = CONSTANT.object_2d_model
 
     ##########################
     ##### MAIN FUNCTIONS #####
     ##########################
+        
+    def read_object_model_file(self):
+        '''
+        Pass
+        '''
+        super()._read_file()
+        self._determine_model_type()
+        if(self._model_type == CONSTANT.object_3d_model):
+            self.setup_object_3d_model_class()
+            self.read_object_3d_model_file()
+        elif(self._model_type == CONSTANT.object_2d_model):
+            pass
+        else:
+            print("Fucking blowing my load")
+            exit(0)
+    
+    def save_object_model_file(self, file_path:str|None=None):
+        '''
+        Pass
+        '''
+        super()._read_file()
+        self._determine_model_type()
+        if(self._model_type == CONSTANT.object_3d_model):
+            self.save_object_3d_model_file()
+        elif(self._model_type == CONSTANT.object_2d_model):
+            pass
+        else:
+            print("Fucking blowing your load")
+            exit(0)
 
 ################
 ##### MAIN #####
 ################
     
 if __name__ == '__main__':
-    pass
+    old_file_path:str = "C:/Users/Cyrus/Desktop/N64/ROMs/GEDecompressor_Files/test2/"
+    new_file_path:str = "C:/Users/Cyrus/Desktop/N64/ROMs/GEDecompressor_Files/test/"
+    file_list:list = [
+        # "19D530", # Banjo Kazooie High Poly Model
+        # "3AAA50", # Secret SNS Egg
+        # "3B4E20", # Iron Gate (No Lock)
+        # "1466E8", # MM Chimpy's Orange
+        # "146BD8", # MM Conga Tree
+        # "1484D0", # FP Blue Present (No Eyes)
+        # "153698", # MM Orange Pad
+        "1B4C40", # Walrus Banjo
+        ]
+    import filecmp
+    for file_name in file_list:
+        old_file_name:str = f"{old_file_path}{file_name}.bin"
+        new_file_name:str = f"{new_file_path}{file_name}-TEST.bin"
+        object_model_obj = OBJECT_MODEL_CLASS(old_file_name)
+        object_model_obj.read_object_model_file()
+        object_model_obj.save_object_model_file(new_file_name)
+        files_are_copies:bool = filecmp.cmp(old_file_name, new_file_name)
+        if(files_are_copies):
+            print("Copies")
+        else:
+            print(f"Not Copies: {file_name}")
+            exit(0)
