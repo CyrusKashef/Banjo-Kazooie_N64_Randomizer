@@ -63,15 +63,15 @@
             "mumbo_token": 0
         },
         "jigsaw_puzzle_costs": {
-            "mumbos_mountain_puzzle_cost": 1,
-            "treasure_trove_cove_puzzle_cost": 1,
-            "clankers_cavern_puzzle_cost": 1,
-            "bubblegloop_swamp_puzzle_cost": 1,
-            "freezeezy_peak_puzzle_cost": 1,
-            "gobis_valley_puzzle_cost": 1,
-            "mad_monster_mansion_puzzle_cost": 1,
-            "rusty_bucket_bay_puzzle_cost": 1,
-            "click_clock_wood_puzzle_cost": 1,
+            "mumbos_mountain_puzzle_cost": 0,
+            "treasure_trove_cove_puzzle_cost": 0,
+            "clankers_cavern_puzzle_cost": 0,
+            "bubblegloop_swamp_puzzle_cost": 0,
+            "freezeezy_peak_puzzle_cost": 0,
+            "gobis_valley_puzzle_cost": 0,
+            "mad_monster_mansion_puzzle_cost": 0,
+            "rusty_bucket_bay_puzzle_cost": 0,
+            "click_clock_wood_puzzle_cost": 0,
             "final_battle_puzzle_cost": 0,
             "double_health_puzzle_cost": 1
         }

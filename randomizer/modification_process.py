@@ -62,9 +62,10 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         '''
         print("INFO: _apply_modifications: Start...")
         # Testing
-        self._game_asset_obj.validate_object_model_file_editing()
-        print("All Verified!")
-        exit()
+        # self._game_asset_obj.validate_object_model_file_editing()
+        # self._game_asset_obj.validate_level_model_file_editing()
+        # print("All Verified!")
+        # exit()
         # Always Run These
         self._asm_obj.disable_anti_tamper()
         self._asm_obj.patch_yum_yum_crash_fix()
@@ -112,7 +113,8 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         Runs through the entire process of extracting,
         modifying, and replacing files
         '''
-        self._load_settings("testing.json")
+        # self._load_settings("testing.json")
+        self._load_settings("furnace_fun_geoguesser.json")
         self._modification_setup()
         self._logic_process()
         self._apply_modifications()

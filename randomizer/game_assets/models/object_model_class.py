@@ -67,7 +67,7 @@ class OBJECT_MODEL_CLASS(OBJECT_3D_MODEL_CLASS):
         super()._read_file()
         self._determine_model_type()
         if(self._model_type == CONSTANT.object_3d_model):
-            self.save_object_3d_model_file()
+            self.save_object_3d_model_file(file_path)
         elif(self._model_type == CONSTANT.object_2d_model):
             pass
         else:
@@ -89,7 +89,8 @@ if __name__ == '__main__':
         # "146BD8", # MM Conga Tree
         # "1484D0", # FP Blue Present (No Eyes)
         # "153698", # MM Orange Pad
-        "1B4C40", # Walrus Banjo
+        # "1B4C40", # Walrus Banjo
+        "A795B8", # Furnace Fun
         ]
     import filecmp
     for file_name in file_list:

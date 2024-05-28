@@ -75,13 +75,17 @@ class GAME_ASSET_CLASS():
             except FileNotFoundError:
                 pass
 
-    def _mass_object_model_editing(self):
+    def _mass_object_model_editing(self, start_asset_id:int=None, end_asset_id:int=None):
         '''
         Pass
         '''
+        if(start_asset_id is None):
+            start_asset_id:int = self._OBJECT_MODEL_ASSETS_START_ID
+        if(end_asset_id is None):
+            end_asset_id:int = self._MAP_SETUP_ASSETS_START_ID
         for asset_id in range(
-                self._OBJECT_MODEL_ASSETS_START_ID,
-                self._MAP_SETUP_ASSETS_START_ID):
+                start_asset_id,
+                end_asset_id):
             file_name:str = self._return_file_name(asset_id)
             try:
                 file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
@@ -433,7 +437,7 @@ class GAME_ASSET_CLASS():
             map_setup_obj:Map_Setup_Class = Map_Setup_Class(file_path)
             highest_camera_id = max((map_setup_obj._camera_dict).keys()) + 1
             if(map_id in [MAP_ENUMS.freezeezy_peak_main, MAP_ENUMS.gobis_valley_main]):
-                highest_camera_id = max(highest_camera_id, 0x60)
+                highest_camera_id = max(highest_camera_id, 0x50)
             geoguesser_map_camera_list.append((map_id, highest_camera_id))
             camera_dict[STR_CONST.camera_id] = highest_camera_id
             map_setup_obj.add_camera(camera_dict)
@@ -550,6 +554,40 @@ class GAME_ASSET_CLASS():
     #######################
     ##### LEVEL MODEL #####
     #######################
+
+    def geoguesser_level_file(self):
+        '''
+        Pass
+        '''
+        file_name:str = self._return_file_name(0x14E8)
+        file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
+        furnace_fun_level_model_obj:OBJECT_MODEL_CLASS = OBJECT_MODEL_CLASS(file_path)
+        furnace_fun_level_model_obj.read_object_model_file()
+        # Replace Textures
+        texture_replacement_dict:dict = {
+            17: 22, # bk -> eye
+            18: 22, # note -> eye
+            20: 22, # grunty -> eye
+            23: 22, # timer -> eye
+            44: 49, # blue -> orange
+            45: 49, # green -> orange
+            47: 49, # purple -> orange
+            50: 49, # magenta -> orange
+        }
+        furnace_fun_level_model_obj._replace_textures(texture_replacement_dict)
+        # Replace Display List Commands
+        dlist_command_replacement_dict:dict = {
+            0xFD100000020097A0: 0xFD1000000200C040, # bk -> eye
+            0xFD10000002009FC0: 0xFD1000000200C040, # note -> eye
+            0xFD1000000200B000: 0xFD1000000200C040, # grunty -> eye
+            0xFD1000000200C860: 0xFD1000000200C040, # timer -> eye
+            0xFD10000002015760: 0xFD10000002019360, # blue -> orange
+            0xFD10000002016360: 0xFD10000002019360, # green -> orange
+            0xFD10000002017B60: 0xFD10000002019360, # purple -> orange
+            0xFD10000002019F60: 0xFD10000002019360, # magenta -> orange
+        }
+        furnace_fun_level_model_obj._replace_display_list_commands(dlist_command_replacement_dict)
+        furnace_fun_level_model_obj.save_object_model_file()
     
     ########################
     ##### MUSIC ASSETS #####

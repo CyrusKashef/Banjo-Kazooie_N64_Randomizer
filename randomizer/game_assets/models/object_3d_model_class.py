@@ -110,12 +110,13 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels] = []
         for y_position in range(texture_y_dimension):
             for x_position in range(texture_x_dimension // 2):
-                curr_index = image_start_index + y_position * texture_x_dimension // 2 + x_position
+                curr_index:int = image_start_index + y_position * texture_x_dimension // 2 + x_position
                 curr_color_index_nums:int = self._read_bytes_as_int(curr_index, byte_count=1)
                 curr_pixel_left:int = curr_color_index_nums // 0x10
                 curr_pixel_right:int = curr_color_index_nums % 0x10
                 (self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels]).append(curr_pixel_left)
                 (self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels]).append(curr_pixel_right)
+        return curr_index + 0x1
     
     def _parse_ci8_texture(self, start_index:int, texture_count:int):
         '''
@@ -133,9 +134,10 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels] = []
         for y_position in range(texture_y_dimension):
             for x_position in range(texture_x_dimension):
-                curr_index = image_start_index + y_position * texture_x_dimension + x_position
+                curr_index:int = image_start_index + y_position * texture_x_dimension + x_position
                 curr_pixel:int = self._read_bytes_as_int(curr_index, byte_count=1)
                 (self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels]).append(curr_pixel)
+        return curr_index + 0x1
     
     def _parse_rgba5551_texture(self, start_index:int, texture_count:int):
         '''
@@ -158,6 +160,7 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
                 (self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels]).append(curr_pixel)
         # print(f"Num Of Pixels: {hex(len(self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels]))}")
         # print(f"Ending Index: {hex(curr_index + 2)}")
+        return curr_index + 0x2
     
     def _parse_rgba8888_texture(self, start_index:int, texture_count:int):
         '''
@@ -171,6 +174,7 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
                 curr_index = start_index + y_position * texture_x_dimension * 4 + x_position * 4
                 curr_pixel:int = self._read_bytes_as_int(curr_index, byte_count=4)
                 (self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels]).append(curr_pixel)
+        return curr_index + 0x4
     
     def _parse_ia8_texture(self, start_index:int, texture_count:int):
         '''
@@ -184,6 +188,17 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
                 curr_index = start_index + y_position * texture_x_dimension + x_position
                 curr_pixel:int = self._read_bytes_as_int(curr_index, byte_count=1)
                 (self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels]).append(curr_pixel)
+        return curr_index + 0x1
+
+    def _get_extra_texture_bytes(self, texture_count:int, texture_end_index:int, next_texture_start_index:int):
+        '''
+        Pass
+        '''
+        extra_bytes_list:list = []
+        for curr_index in range(texture_end_index, next_texture_start_index):
+            curr_byte:int = self._read_bytes_as_int(curr_index, byte_count=1)
+            extra_bytes_list.append(curr_byte)
+        self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_extra_bytes] = extra_bytes_list
 
     def _parse_textures(self):
         '''
@@ -198,21 +213,27 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
             texture_offset:int = self._object_model_dict[CONSTANT.texture_list][curr_count][CONSTANT.texture_offset]
             texture_type:int = self._object_model_dict[CONSTANT.texture_list][curr_count][CONSTANT.texture_type]
             texture_start_index:int = texture_begin_offset + texture_offset
+            if(curr_count < (total_texture_count - 1)):
+                next_texture_offset:int = self._object_model_dict[CONSTANT.texture_list][curr_count + 1][CONSTANT.texture_offset]
+                next_texture_start_index:int = texture_begin_offset + next_texture_offset
+            else:
+                next_texture_start_index:int = self._object_model_dict[CONSTANT.display_list_setup_offset]
             # print(f"Texture Offset: {hex(texture_offset)}")
             # print(f"Texture Type: {hex(texture_type)}")
             # print(f"Texture Start Index: {hex(texture_start_index)}")
             if(texture_type == self._CI4_VALUE):
-                self._parse_ci4_texture(start_index=texture_start_index, texture_count=curr_count)
+                texture_end_index:int = self._parse_ci4_texture(start_index=texture_start_index, texture_count=curr_count)
             elif(texture_type == self._CI8_VALUE):
-                self._parse_ci8_texture(start_index=texture_start_index, texture_count=curr_count)
+                texture_end_index:int = self._parse_ci8_texture(start_index=texture_start_index, texture_count=curr_count)
             elif(texture_type == self._RGBA5551_VALUE):
-                self._parse_rgba5551_texture(start_index=texture_start_index, texture_count=curr_count)
+                texture_end_index:int = self._parse_rgba5551_texture(start_index=texture_start_index, texture_count=curr_count)
             elif(texture_type == self._RGBA8888_VALUE):
-                self._parse_rgba8888_texture(start_index=texture_start_index, texture_count=curr_count)
+                texture_end_index:int = self._parse_rgba8888_texture(start_index=texture_start_index, texture_count=curr_count)
             elif(texture_type == self._IA8_VALUE):
-                self._parse_ia8_texture(start_index=texture_start_index, texture_count=curr_count)
+                texture_end_index:int = self._parse_ia8_texture(start_index=texture_start_index, texture_count=curr_count)
             else:
                 raise Exception(f"Texture '{curr_count}' has invalid type '{hex(texture_type)}'")
+            self._get_extra_texture_bytes(curr_count, texture_end_index, next_texture_start_index)
 
     def _parse_texture(self):
         '''
@@ -247,10 +268,7 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         start_index:int = self._object_model_dict[CONSTANT.display_list_setup_offset]
         if(start_index == 0x0):
             return
-        self._object_model_dict[CONSTANT.display_list_header_unk_0] = self._read_bytes_as_int(start_index, byte_count=1)
-        self._object_model_dict[CONSTANT.display_list_header_unk_1] = self._read_bytes_as_int(start_index + 0x1, byte_count=1)
-        self._object_model_dict[CONSTANT.display_list_header_unk_2] = self._read_bytes_as_int(start_index + 0x2, byte_count=1)
-        display_list_command_count:int = self._read_bytes_as_int(start_index + 0x3, byte_count=1)
+        display_list_command_count:int = self._read_bytes_as_int(start_index, byte_count=4)
         self._object_model_dict[CONSTANT.display_list_header_unk_4] = self._read_bytes_as_int(start_index + 0x4, byte_count=1)
         self._object_model_dict[CONSTANT.display_list_header_unk_5] = self._read_bytes_as_int(start_index + 0x5, byte_count=1)
         self._object_model_dict[CONSTANT.display_list_header_unk_6] = self._read_bytes_as_int(start_index + 0x6, byte_count=1)
@@ -555,6 +573,23 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
     ##### EDIT FUNCTIONS #####
     ##########################
 
+    def _replace_textures(self, replacement_dict:dict):
+        '''
+        Pass
+        '''
+        for texture_count in replacement_dict:
+            self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels] = \
+                self._object_model_dict[CONSTANT.texture_list][replacement_dict[texture_count]][CONSTANT.texture_pixels]
+
+    def _replace_display_list_commands(self, replacement_dict:dict):
+        '''
+        Pass
+        '''
+        for curr_count in self._object_model_dict[CONSTANT.display_list]:
+            curr_command:int = self._object_model_dict[CONSTANT.display_list][curr_count]
+            if(curr_command in replacement_dict):
+                self._object_model_dict[CONSTANT.display_list][curr_count] = replacement_dict[curr_command]
+
     #################
     ##### WRITE #####
     #################
@@ -670,6 +705,15 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
             new_content += curr_pixel.to_bytes(1, 'big')
         return new_content
 
+    def _write_texture_extra_bytes(self, new_content:bytearray, texture_count:int):
+        '''
+        Pass
+        '''
+        extra_byte_list:list = self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_extra_bytes]
+        for curr_byte in extra_byte_list:
+            new_content += curr_byte.to_bytes(1, 'big')
+        return new_content
+
     def _write_textures(self, new_content:bytearray):
         '''
         Pass
@@ -688,6 +732,7 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
                 new_content = self._write_ia8_texture(new_content, texture_count=curr_count)
             else:
                 raise Exception(f"Texture type not found: '{texture_type}'")
+            new_content = self._write_texture_extra_bytes(new_content, texture_count=curr_count)
         return new_content
 
     def _write_texture(self, new_content:bytearray):
@@ -697,6 +742,7 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         start_index:int = self._object_model_dict[CONSTANT.texture_setup_offset]
         if(start_index == 0x0):
             return new_content
+        # TODO: Update Header Offset & Texture Offsets
         texture_bytes_to_load:int = self._object_model_dict[CONSTANT.texture_bytes_to_load]
         texture_count:int = len(self._object_model_dict[CONSTANT.texture_list])
         new_content += \
@@ -725,19 +771,14 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         start_index:int = self._object_model_dict[CONSTANT.display_list_setup_offset]
         if(start_index == 0x0):
             return new_content
+        # TODO: Update Header Offset & Texture Offsets
         display_list_command_count:int = len(self._object_model_dict[CONSTANT.display_list])
-        display_list_header_unk_0:int = self._object_model_dict[CONSTANT.display_list_header_unk_0]
-        display_list_header_unk_1:int = self._object_model_dict[CONSTANT.display_list_header_unk_1]
-        display_list_header_unk_2:int = self._object_model_dict[CONSTANT.display_list_header_unk_2]
         display_list_header_unk_4:int = self._object_model_dict[CONSTANT.display_list_header_unk_4]
         display_list_header_unk_5:int = self._object_model_dict[CONSTANT.display_list_header_unk_5]
         display_list_header_unk_6:int = self._object_model_dict[CONSTANT.display_list_header_unk_6]
         display_list_header_unk_7:int = self._object_model_dict[CONSTANT.display_list_header_unk_7]
         new_content += \
-            display_list_header_unk_0.to_bytes(1, 'big') + \
-            display_list_header_unk_1.to_bytes(1, 'big') + \
-            display_list_header_unk_2.to_bytes(1, 'big') + \
-            display_list_command_count.to_bytes(1, 'big') + \
+            display_list_command_count.to_bytes(4, 'big') + \
             display_list_header_unk_4.to_bytes(1, 'big') + \
             display_list_header_unk_5.to_bytes(1, 'big') + \
             display_list_header_unk_6.to_bytes(1, 'big') + \
@@ -813,6 +854,7 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         start_index:int = self._object_model_dict[CONSTANT.vertex_setup_offset]
         if(start_index == 0x0):
             return new_content
+        # TODO: Update Header Offset
         new_content = self._write_vertex_section_header(new_content)
         new_content = self._write_vertex_list(new_content)
         return new_content
@@ -842,6 +884,7 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         start_index:int = self._object_model_dict[CONSTANT.animation_setup_offset]
         if(start_index == 0x0):
             return new_content
+        # TODO: Update Header Offset
         animation_unk_header:float = self._object_model_dict[CONSTANT.animation_unk_header]
         animation_count:int = len(self._object_model_dict[CONSTANT.animation_list])
         new_content += \
@@ -872,6 +915,9 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         start_index:int = self._object_model_dict[CONSTANT.effect_setup_offset]
         if(start_index == 0x0):
             return new_content
+        # TODO: Update Header Offset
+        total_effects_count:int = len(self._object_model_dict[CONSTANT.effects_list])
+        new_content += total_effects_count.to_bytes(2, 'big')
         for effects_count in self._object_model_dict[CONSTANT.effects_list]:
             effects_info:dict = self._object_model_dict[CONSTANT.effects_list][effects_count]
             new_content = self._write_effects_list(new_content, effects_info)
@@ -981,6 +1027,7 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         start_index:int = self._object_model_dict[CONSTANT.hitbox_setup_offset]
         if(start_index == 0x0):
             return new_content
+        # TODO: Update Header Offset
         hitbox_type_0_count:int = len(self._object_model_dict[CONSTANT.hitbox_type_0_list])
         hitbox_type_1_count:int = len(self._object_model_dict[CONSTANT.hitbox_type_1_list])
         hitbox_type_2_count:int = len(self._object_model_dict[CONSTANT.hitbox_type_2_list])
@@ -1004,6 +1051,7 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         start_index:int = self._object_model_dict[CONSTANT.animated_textures_offset]
         if(start_index == 0x0):
             return new_content
+        # TODO: Update Header Offset
         animation_texture_frame_size:int = self._object_model_dict[CONSTANT.animation_texture_frame_size]
         animation_texture_frame_count:int = self._object_model_dict[CONSTANT.animation_texture_frame_count]
         animation_texture_frame_rate:float = self._object_model_dict[CONSTANT.animation_texture_frame_rate]
@@ -1011,7 +1059,8 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         new_content += \
             animation_texture_frame_size.to_bytes(2, 'big') + \
             animation_texture_frame_count.to_bytes(2, 'big') + \
-            self._convert_float_to_hex_bytes(animation_texture_frame_rate)
+            self._convert_float_to_hex_bytes(animation_texture_frame_rate) + \
+            (0).to_bytes(0x18, 'big')
         return new_content
 
     ### COLLISION LIST
@@ -1055,6 +1104,7 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         start_index:int = self._object_model_dict[CONSTANT.collision_setup_offset]
         if(start_index == 0x0):
             return new_content
+        # TODO: Update Header Offset
         collision_min_x:int = self._object_model_dict[CONSTANT.collision_min_x]
         collision_min_y:int = self._object_model_dict[CONSTANT.collision_min_y]
         collision_min_z:int = self._object_model_dict[CONSTANT.collision_min_z]
@@ -1094,6 +1144,7 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         start_index:int = self._object_model_dict[CONSTANT.geometry_layout_setup_offset]
         if(start_index == 0x0):
             return new_content
+        # TODO: Update Header Offset
         for curr_count in self._object_model_dict[CONSTANT.geometry_list]:
             geometry_command:int = self._object_model_dict[CONSTANT.geometry_list][curr_count]
             new_content += geometry_command.to_bytes(4, 'big')
@@ -1129,10 +1180,10 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         new_content = self._write_display_list_section(new_content)
         new_content = self._write_vertex_section(new_content)
         new_content = self._write_animation_section(new_content)
+        new_content = self._write_collision_list(new_content)
         new_content = self._write_effects_section(new_content)
         new_content = self._write_hitbox_section(new_content)
         new_content = self._write_animated_texture_list(new_content)
-        new_content = self._write_collision_list(new_content)
         new_content = self._write_geometry_list(new_content)
         self._file_content = new_content
         super()._save_changes(file_path)
@@ -1144,7 +1195,8 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
     
 if __name__ == '__main__':
     old_file_path:str = "C:/Users/Cyrus/Desktop/N64/ROMs/GEDecompressor_Files/test2/"
-    new_file_path:str = "C:/Users/Cyrus/Desktop/N64/ROMs/GEDecompressor_Files/test/"
+    # new_file_path:str = "C:/Users/Cyrus/Desktop/N64/ROMs/GEDecompressor_Files/test/"
+    new_file_path:str = "C:/Users/Cyrus/Documents/VS_Code/BKDecompressor/BKDecompressor/decompressor/custom_files/"
     file_list:list = [
         # "19D530", # Banjo Kazooie High Poly Model
         # "3AAA50", # Secret SNS Egg
@@ -1153,18 +1205,42 @@ if __name__ == '__main__':
         # "146BD8", # MM Conga Tree
         # "1484D0", # FP Blue Present (No Eyes)
         # "153698", # MM Orange Pad
-        "1B4C40", # Walrus Banjo
+        # "1B4C40", # Walrus Banjo
+        "A795B8", # Furnace Fun
         ]
     import filecmp
     for file_name in file_list:
         old_file_name:str = f"{old_file_path}{file_name}.bin"
-        new_file_name:str = f"{new_file_path}{file_name}-TEST.bin"
+        # new_file_name:str = f"{new_file_path}{file_name}-TEST.bin"
+        new_file_name:str = f"{new_file_path}14E8-Decompressed.bin"
         object_model_obj = OBJECT_3D_MODEL_CLASS(old_file_name)
         object_model_obj.read_object_3d_model_file()
+        texture_replacement_dict:dict = {
+            17: 22,
+            18: 22,
+            20: 22,
+            23: 22,
+            44: 49,
+            45: 49,
+            47: 49,
+            50: 49,
+        }
+        object_model_obj._replace_textures(texture_replacement_dict)
+        dlist_command_replacement_dict:dict = {
+            0xFD100000020097A0: 0xFD1000000200C040, # bk -> eye
+            0xFD10000002009FC0: 0xFD1000000200C040, # note -> eye
+            0xFD1000000200B000: 0xFD1000000200C040, # grunty -> eye
+            0xFD1000000200C860: 0xFD1000000200C040, # timer -> eye
+            0xFD10000002015760: 0xFD10000002019360, # blue -> orange
+            0xFD10000002016360: 0xFD10000002019360, # green -> orange
+            0xFD10000002017B60: 0xFD10000002019360, # purple -> orange
+            0xFD10000002019F60: 0xFD10000002019360, # magenta -> orange
+        }
+        object_model_obj._replace_display_list_commands(dlist_command_replacement_dict)
         object_model_obj.save_object_3d_model_file(new_file_name)
-        files_are_copies:bool = filecmp.cmp(old_file_name, new_file_name)
-        if(files_are_copies):
-            print("Copies")
-        else:
-            print(f"Not Copies: {file_name}")
-            exit(0)
+        # files_are_copies:bool = filecmp.cmp(old_file_name, new_file_name)
+        # if(files_are_copies):
+        #     print("Copies")
+        # else:
+        #     print(f"Not Copies: {file_name}")
+        #     exit(0)

@@ -51,31 +51,63 @@ class OBJECT_2D_MODEL_CLASS(Generic_Bin_File_Class):
     ###################
     ##### PARSING #####
     ###################
-
-    def _parse_ci4_sprite(self, start_index:int, sprite_count:int):
+    
+    def _parse_sprite_texture_block(self, start_index:int):
         '''
         Pass
         '''
-        image_start_index:int = start_index + 0x20
-        sprite_x_dimension:int = self._object_model_dict[CONSTANT.sprite_list][sprite_count][CONSTANT.sprite_x_dimension]
-        sprite_y_dimension:int = self._object_model_dict[CONSTANT.sprite_list][sprite_count][CONSTANT.sprite_y_dimension]
-        # Color Index
-        self._object_model_dict[CONSTANT.sprite_list][sprite_count][CONSTANT.sprite_color_index] = []
-        for curr_index in range(start_index, image_start_index, 0x2):
+        x_position:int = self._read_bytes_as_int(start_index, byte_count=2)
+        y_position:int = self._read_bytes_as_int(start_index + 0x2, byte_count=2)
+        width:int = self._read_bytes_as_int(start_index + 0x4, byte_count=2)
+        height:int = self._read_bytes_as_int(start_index + 0x6, byte_count=2)
+        return x_position, y_position, width, height
+
+    def _parse_color_index(self, start_index:int):
+        '''
+        Pass
+        '''
+        sprite_type:int = self._object_model_dict[CONSTANT.sprite_type]
+        if(sprite_type == 0x01):
+            end_index:int = start_index + 0x20
+        elif(sprite_type == 0x02):
+            end_index:int = start_index + 0x200
+        color_index_list:list = []
+        for curr_index in range(start_index, end_index, 0x2):
             curr_color:int = self._read_bytes_as_int(curr_index, byte_count=2)
-            (self._object_model_dict[CONSTANT.sprite_list][sprite_count][CONSTANT.sprite_color_index]).append(curr_color)
-        # Sprite Texture Block
-        pass
-        # Image
-        self._object_model_dict[CONSTANT.sprite_list][sprite_count][CONSTANT.sprite_pixels] = []
+            color_index_list.append(curr_color)
+        return color_index_list, end_index
+    
+    def _parse_ci4_sprite_pixels(self, start_index:int, sprite_x_dimension:int, sprite_y_dimension:int):
+        '''
+        Pass
+        '''
+        sprite_pixel_list:list = []
         for y_position in range(sprite_y_dimension):
             for x_position in range(sprite_x_dimension // 2):
-                curr_index = image_start_index + y_position * sprite_x_dimension // 2 + x_position
+                curr_index = start_index + y_position * sprite_x_dimension // 2 + x_position
                 curr_color_index_nums:int = self._read_bytes_as_int(curr_index, byte_count=1)
                 curr_pixel_left:int = curr_color_index_nums // 0x10
                 curr_pixel_right:int = curr_color_index_nums % 0x10
-                (self._object_model_dict[CONSTANT.sprite_list][sprite_count][CONSTANT.sprite_pixels]).append(curr_pixel_left)
-                (self._object_model_dict[CONSTANT.sprite_list][sprite_count][CONSTANT.sprite_pixels]).append(curr_pixel_right)
+                sprite_pixel_list.append(curr_pixel_left)
+                sprite_pixel_list.append(curr_pixel_right)
+        return sprite_pixel_list
+
+    def _parse_ci4_sprites(self, start_index:int):
+        '''
+        Pass
+        '''
+        for sprite_count in range(self._object_model_dict[CONSTANT.frame_count]):
+            # Color Index
+            color_index_list, sprite_texture_block_index_start = self._parse_ci4_color_index(start_index)
+            self._object_model_dict[CONSTANT.sprite_list][sprite_count][CONSTANT.sprite_color_index] = color_index_list
+            # Sprite Texture Block
+            x_position, y_position, width, height = self._parse_sprite_texture_block(sprite_texture_block_index_start)
+            # Image
+            image_start_index:int = sprite_texture_block_index_start + 0x08
+            sprite_x_dimension:int = self._object_model_dict[CONSTANT.sprite_list][sprite_count][CONSTANT.sprite_x_dimension]
+            sprite_y_dimension:int = self._object_model_dict[CONSTANT.sprite_list][sprite_count][CONSTANT.sprite_y_dimension]
+            sprite_pixel_list:list = self._parse_ci4_sprite_pixels(image_start_index, sprite_x_dimension, sprite_y_dimension)
+            self._object_model_dict[CONSTANT.sprite_list][sprite_count][CONSTANT.sprite_pixels] = sprite_pixel_list
 
     def _parse_frame_header(self, start_index:int):
         '''
@@ -94,7 +126,7 @@ class OBJECT_2D_MODEL_CLASS(Generic_Bin_File_Class):
         curr_index:int = start_index + 0x14
         sprite_type:int = self._object_model_dict[CONSTANT.sprite_type]
         if(sprite_type == 0x01):
-            self._parse_ci4_sprite(curr_index)
+            self._parse_ci4_sprites(curr_index)
         else:
             raise Exception(f"Unknown Frame Sprite Type: {hex(sprite_type)}")
 
@@ -139,6 +171,13 @@ class OBJECT_2D_MODEL_CLASS(Generic_Bin_File_Class):
     ##########################
     ##### MAIN FUNCTIONS #####
     ##########################
+        
+    def read_object_2d_model_file(self):
+        '''
+        Pass
+        '''
+        super()._read_file()
+        self._parse_2d_model_file_header()
 
 ################
 ##### MAIN #####

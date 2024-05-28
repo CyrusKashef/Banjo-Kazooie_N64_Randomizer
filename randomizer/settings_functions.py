@@ -235,8 +235,8 @@ class SETTINGS_FUNCTIONS():
             current_level_specific_questions_list:list = list(GEOGUESSER_LEVEL_SPECIFIC_QUESTIONS_DICT[level_name])
             # Replace "choices" with "sample"
             random.seed(a=(self._settings_dict[STR_CONST.seed] + level_count))
-            level_picture_question_choices:list = random.choices(current_level_specific_questions_list, k=num_of_level_picture_questions)
-            # level_picture_question_choices:list = random.sample(current_level_specific_questions_list, k=num_of_level_picture_questions)
+            # level_picture_question_choices:list = random.choices(current_level_specific_questions_list, k=num_of_level_picture_questions)
+            level_picture_question_choices:list = random.sample(current_level_specific_questions_list, k=num_of_level_picture_questions)
             for level_picture_question in level_picture_question_choices:
                 geoguesser_list.append(level_picture_question)
                 # Can adjust when choices -> sample
@@ -246,7 +246,7 @@ class SETTINGS_FUNCTIONS():
                 remaining_questions_list.append(level_picture_question)
         return geoguesser_list, remaining_questions_list
 
-    def _geoguesser_remaining_question_list(self, geoguesser_list:list, remaining_questions_list:list):
+    def _geoguesser_remaining_question_list(self, geoguesser_list:list, remaining_questions_list:list=[]):
         '''
         Pass
         '''
@@ -255,8 +255,8 @@ class SETTINGS_FUNCTIONS():
         remaining_questions_list.extend(GEOGUESSER_GENERAL_SPEECH_DICT)
         # Replace "choices" with "sample"
         random.seed(a=(self._settings_dict[STR_CONST.seed]))
-        generic_picture_question_choices:list = random.choices(remaining_questions_list, k=num_of_general_picture_questions)
-        # generic_picture_question_choices:list = random.sample(remaining_questions_list, k=num_of_general_picture_questions)
+        # generic_picture_question_choices:list = random.choices(remaining_questions_list, k=num_of_general_picture_questions)
+        generic_picture_question_choices:list = random.sample(remaining_questions_list, k=num_of_general_picture_questions)
         for generic_picture_question in generic_picture_question_choices:
             geoguesser_list.append(generic_picture_question)
         return geoguesser_list
@@ -283,7 +283,8 @@ class SETTINGS_FUNCTIONS():
         '''
         print("Geoguesser")
         geoguesser_list, remaining_questions_list = self._geoguesser_level_specific_question_list()
-        geoguesser_list:list = self._geoguesser_remaining_question_list(geoguesser_list, remaining_questions_list)
+        # geoguesser_list:list = self._geoguesser_remaining_question_list(geoguesser_list, remaining_questions_list)
+        geoguesser_list:list = self._geoguesser_remaining_question_list(geoguesser_list)
         # geoguesser_list:list = [GEOGUESSER_LEVEL_SPECIFIC_QUESTIONS_DICT[STR_CONST.mumbos_mountain][1]] * 118
         # geoguesser_list:list = [GEOGUESSER_GENERAL_SPEECH_DICT[12]] * 118
         # geoguesser_camera_list:list = self._geoguesser_generate_cameras(geoguesser_list)
@@ -294,6 +295,8 @@ class SETTINGS_FUNCTIONS():
             self._game_asset_obj.geoguesser_map_setup_files(geoguesser_list)
         print("Geoguesser Assembly Changes")
         self._asm_obj.geoguesser_furnace_fun(geoguesser_map_camera_list)
+        print("Geoguesser Level Model Adjustments")
+        self._game_asset_obj.geoguesser_level_file()
     
     def _death_squares_only(self):
         '''

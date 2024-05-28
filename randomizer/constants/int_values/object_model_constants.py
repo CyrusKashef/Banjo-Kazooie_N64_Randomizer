@@ -49,11 +49,9 @@ class OBJECT_MODEL_CONSTANTS(IntEnum):
     texture_y_dimension = auto()
     texture_color_index = auto()
     texture_pixels = auto()
+    texture_extra_bytes = auto()
     # DISPLAY LIST
     display_list = auto()
-    display_list_header_unk_0 = auto()
-    display_list_header_unk_1 = auto()
-    display_list_header_unk_2 = auto()
     display_list_header_unk_4 = auto()
     display_list_header_unk_5 = auto()
     display_list_header_unk_6 = auto()
