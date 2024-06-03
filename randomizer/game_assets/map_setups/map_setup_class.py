@@ -1518,10 +1518,8 @@ class Map_Setup_Class(Generic_Bin_File_Class):
             }
         else:
             print("WE HERE BOIZ")
-        print(f"THE CUUUUUBE 1:\n{self._cube_dict[lowest_position][self._COMPLEX_OBJECT_LIST_STR]}")
         self._cube_dict[lowest_position][self._EMPTY_CUBE_STR] = False
         self._cube_dict[lowest_position][self._COMPLEX_OBJECT_LIST_STR].append(complex_object_dict)
-        print(f"THE CUUUUUBE 2:\n{self._cube_dict[lowest_position][self._COMPLEX_OBJECT_LIST_STR]}")
         print("INFO: add_complex_object: Complete!")
     
     def _verify_simple_object_dict(self, simple_object_dict:dict):
@@ -1550,6 +1548,12 @@ class Map_Setup_Class(Generic_Bin_File_Class):
         self._cube_dict[lowest_position][self._EMPTY_CUBE_STR] = False
         self._cube_dict[lowest_position][self._SIMPLE_OBJECT_LIST_STR].append(simple_object_dict)
         print("INFO: add_simple_object: Complete!")
+
+    def remove_simple_object(self, simple_object_dict:dict, lowest_position:tuple):
+        '''
+        Pass
+        '''
+        (self._cube_dict[lowest_position][self._SIMPLE_OBJECT_LIST_STR]).remove(simple_object_dict)
     
     def add_camera(self, camera_dict:dict):
         '''

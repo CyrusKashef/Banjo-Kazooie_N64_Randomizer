@@ -14,6 +14,7 @@ from randomizer.generic_bin_file_class import Generic_Bin_File_Class
 from randomizer.game_assets.models.object_model_class import OBJECT_MODEL_CLASS
 from randomizer.game_assets.map_setups.map_setup_class import Map_Setup_Class
 from randomizer.game_assets.speeches.speech_class import Speech_Class
+from randomizer.game_assets.animations.animation_class import ANIMATION_CLASS
 
 from randomizer.constants.int_values.speech_constants import SPEECH_CONSTANTS
 from randomizer.constants.int_values.object_model_constants import OBJECT_MODEL_CONSTANTS
@@ -60,17 +61,23 @@ class GAME_ASSET_CLASS():
         file_name:str = (str(hex(asset_id))[2:]).zfill(byte_count * 2).upper()
         return file_name
 
-    def _mass_object_animation_editing(self):
+    def _mass_object_animation_editing(self, start_asset_id:int=None, end_asset_id:int=None, include_raws:bool=False):
         '''
         Pass
         '''
-        for asset_id in range(
-                self._OBJECT_ANIMATION_ASSETS_START_ID,
-                self._OBJECT_MODEL_ASSETS_START_ID):
+        if(start_asset_id is None):
+            start_asset_id:int = self._OBJECT_ANIMATION_ASSETS_START_ID
+        if(end_asset_id is None):
+            end_asset_id:int = self._OBJECT_MODEL_ASSETS_START_ID
+        for asset_id in range(start_asset_id, end_asset_id):
             file_name:str = self._return_file_name(asset_id)
+            raw_file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.raw_bin_extension
+            decompressed_file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
+            if(include_raws and os.path.exists(raw_file_path)):
+                shutil.move(raw_file_path, decompressed_file_path)
             try:
                 file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
-                animation_obj:Generic_Bin_File_Class = Generic_Bin_File_Class(file_path)
+                animation_obj:ANIMATION_CLASS = ANIMATION_CLASS(file_path)
                 yield animation_obj
             except FileNotFoundError:
                 pass
@@ -196,6 +203,19 @@ class GAME_ASSET_CLASS():
     ############################
     ##### OBJECT ANIMATION #####
     ############################
+    
+    def validate_animation_file_editing(self):
+        import filecmp
+        animation_generator = self._mass_object_animation_editing()
+        for animation in animation_generator:
+            old_file_path:str = animation._file_path
+            print(f"File Path: {old_file_path}")
+            new_file_path:str = (old_file_path).replace(STR_CONST.decompressed_bin_extension, f"-NEW{STR_CONST.decompressed_bin_extension}")
+            animation.save_animation_file(file_path=new_file_path)
+            same_file:bool = filecmp.cmp(old_file_path, new_file_path)
+            if(not same_file):
+                print(f"ERROR: validate_map_setup_file_editing: Copied file at '{old_file_path}' is not the same!")
+                exit(0)
     
     ########################
     ##### OBJECT MODEL #####
@@ -443,6 +463,69 @@ class GAME_ASSET_CLASS():
             map_setup_obj.add_camera(camera_dict)
             map_setup_obj.save_map_setup_file()
         return geoguesser_map_camera_list
+    
+    def replace_sprite_collectables_with_complex_variations(self):
+        '''
+        Pass
+        '''
+        print("Replacing Sprite Collectables With Complex Variations")
+        replacement_dict:dict = {
+            0b000101100101: { # Blue Egg
+                STR_CONST.actor_id: 0x0052,
+                STR_CONST.byte_10_unk_5: 0b01,
+            },
+            0b000000001110: { # Red Feather
+                STR_CONST.actor_id: 0x0129,
+                STR_CONST.byte_10_unk_5: 0b00,
+            },
+            0b000101011111: { # Gold Feather
+                STR_CONST.actor_id: 0x0370,
+                STR_CONST.byte_10_unk_5: 0b01,
+            },
+        }
+        map_setup_generator = self._mass_map_setup_editing()
+        for map_setup_obj in map_setup_generator:
+            for lowest_position in map_setup_obj._cube_dict:
+                curr_cube:dict = map_setup_obj._cube_dict[lowest_position]
+                curr_simple_object_count:int = 0
+                while(curr_simple_object_count < len(curr_cube[map_setup_obj._SIMPLE_OBJECT_LIST_STR])):
+                    simple_object_dict:dict = curr_cube[map_setup_obj._SIMPLE_OBJECT_LIST_STR][curr_simple_object_count]
+                    simple_actor_id:int = simple_object_dict[STR_CONST.byte_0_unk_7]
+                    if(simple_actor_id in replacement_dict):
+                        size:int = simple_object_dict[STR_CONST.byte_0_unk_2]
+                        x_position:int = simple_object_dict[STR_CONST.x_position]
+                        y_position:int = simple_object_dict[STR_CONST.y_position]
+                        z_position:int = simple_object_dict[STR_CONST.z_position]
+                        complex_actor_id:int = replacement_dict[simple_actor_id][STR_CONST.actor_id]
+                        byte_10_unk_5:int = replacement_dict[simple_actor_id][STR_CONST.byte_10_unk_5]
+                        complex_object_dict:dict = {
+                            STR_CONST.x_position: x_position,
+                            STR_CONST.y_position: y_position,
+                            STR_CONST.z_position: z_position,
+                            STR_CONST.byte_6_unk_0: 0b000110010,
+                            STR_CONST.byte_6_unk_1: 0b000110,
+                            STR_CONST.byte_6_unk_2: 0b0,
+                            STR_CONST.actor_id: complex_actor_id,
+                            STR_CONST.marker_id: 0x00,
+                            STR_CONST.byte_b_unk_0: 0b00,
+                            STR_CONST.byte_b_unk_1: 0b0,
+                            STR_CONST.byte_b_unk_2: 0b0,
+                            STR_CONST.byte_b_unk_3: 0b000,
+                            STR_CONST.byte_b_unk_4: 0b0,
+                            STR_CONST.rotation_y_axis: 0b000000000,
+                            STR_CONST.byte_c_unk_1: 0b00000000000000001100100,
+                            STR_CONST.byte_10_unk_0: size,
+                            STR_CONST.byte_10_unk_1: 0b000000000000,
+                            STR_CONST.byte_10_unk_2: 0b0,
+                            STR_CONST.byte_10_unk_3: 0b1,
+                            STR_CONST.byte_10_unk_4: 0b0000,
+                            STR_CONST.byte_10_unk_5: byte_10_unk_5,
+                        }
+                        map_setup_obj.add_complex_object(complex_object_dict)
+                        map_setup_obj.remove_simple_object(simple_object_dict, lowest_position)
+                    else:
+                        curr_simple_object_count += 1
+            map_setup_obj.save_map_setup_file()
 
     ##################
     ##### SPRITE #####
@@ -534,19 +617,14 @@ class GAME_ASSET_CLASS():
         speech_obj_generator = self._mass_speech_editing(
             start_asset_id=0x12DB, end_asset_id=0x12EE)
         for speech_count, speech_obj in enumerate(speech_obj_generator):
-            print(hex(0x12DB + speech_count))
             if(speech_count < 9):
-                print(f"Level Specific: {GEOGUESSER_LEVEL_SPECIFIC_PROMPTS_LIST[speech_count]}")
                 speech_option:dict = {
                     STR_CONST.question_dict: {
                         SPEECH_CONSTANTS.full_screen: GEOGUESSER_LEVEL_SPECIFIC_PROMPTS_LIST[speech_count]
                     }
                 }
-                print(f"Level Specific:\n\t{speech_option}")
             else:
-                print(f"Generic:\n\t{geoguesser_list[speech_count + 99]}")
                 speech_option:dict = geoguesser_list[speech_count + 99]
-                print(f"Generic:\n\t{speech_option}")
             speech_obj.set_speech_type(SPEECH_CONSTANTS.furnace_fun_other_question)
             speech_obj.replace_entire_speech_dict(speech_option[STR_CONST.question_dict])
             speech_obj.save_speech_file()

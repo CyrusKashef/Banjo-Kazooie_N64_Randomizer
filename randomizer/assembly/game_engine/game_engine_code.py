@@ -182,6 +182,16 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         self._write_bytes_from_int(0x2363A, item_enum, byte_count=2)
         # Start Wonderwing
         self._write_bytes_from_int(0x26DCE, item_enum, byte_count=2)
+    
+    def respawnable_sprite_collectables(self):
+        '''
+        Treat sprite collectables as if they are always in the final battle area
+        Decomp: https://gitlab.com/banjo.decomp/banjo-kazooie/-/blob/master/src/core2/ch/collectible.c
+        '''
+        # Uses the branch for blue eggs instead of red feathers
+        self._write_bytes_from_int(0x51D2C, 0x13010006, byte_count=4)
+        # MAP_90_GL_BATTLEMENTS -> 0
+        self._write_bytes_from_int(0x520E4, 0x300E0000, byte_count=4)
 
     #############################
     ##### HEALTH AND LIVES ######

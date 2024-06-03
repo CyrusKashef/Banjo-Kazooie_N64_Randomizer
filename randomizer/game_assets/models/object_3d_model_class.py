@@ -86,7 +86,6 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         self._object_model_dict[CONSTANT.texture_list] = {}
         for curr_count in range(texture_count):
             curr_index:int = start_index + 0x10 * curr_count
-            print(f"Curr Count, Index: {curr_count}, {hex(curr_index)}")
             self._object_model_dict[CONSTANT.texture_list][curr_count] = {
                 CONSTANT.texture_offset: self._read_bytes_as_int(curr_index, byte_count=4),
                 CONSTANT.texture_type: self._read_bytes_as_int(curr_index + 0x4, byte_count=2),
@@ -684,7 +683,6 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         '''
         Pass
         '''
-        print(len(self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels]))
         for curr_pixel in self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels]:
             new_content += curr_pixel.to_bytes(2, 'big')
         return new_content

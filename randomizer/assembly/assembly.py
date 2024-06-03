@@ -278,6 +278,12 @@ class ASSEMBLY_CLASS():
         '''
         pass
 
+    def respawnable_sprite_collectables(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.respawnable_sprite_collectables()
+
     def starting_lives(self, starting_life_count:int):
         '''
         Pass

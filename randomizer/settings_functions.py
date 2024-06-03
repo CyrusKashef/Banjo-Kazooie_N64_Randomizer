@@ -231,7 +231,6 @@ class SETTINGS_FUNCTIONS():
                 STR_CONST.mumbos_mountain, STR_CONST.treasure_trove_cove, STR_CONST.clankers_cavern,
                 STR_CONST.bubblegloop_swamp, STR_CONST.freezeezy_peak, STR_CONST.gobis_valley,
                 STR_CONST.mad_monster_mansion, STR_CONST.rusty_bucket_bay, STR_CONST.click_clock_wood]):
-            print(f"Level Name: {level_name}")
             current_level_specific_questions_list:list = list(GEOGUESSER_LEVEL_SPECIFIC_QUESTIONS_DICT[level_name])
             # Replace "choices" with "sample"
             random.seed(a=(self._settings_dict[STR_CONST.seed] + level_count))
@@ -269,7 +268,7 @@ class SETTINGS_FUNCTIONS():
         geoguesser_camera_dict:dict = {}
         geoguesser_camera_list = []
         for geoguesser_item in geoguesser_list:
-            map_id:int = geoguesser_item[STR_CONST.map_enum]; print(f"Map Id: {map_id}")
+            map_id:int = geoguesser_item[STR_CONST.map_enum]
             if(map_id not in geoguesser_camera_dict):
                 geoguesser_camera_dict[map_id] = 0x7F
             else:
@@ -394,6 +393,13 @@ class SETTINGS_FUNCTIONS():
             # self._asm_obj.egg_firing_item_requirement(ITEM_ENUMS.blue_egg)
             self._asm_obj.flight_item_requirement(ITEM_ENUMS.blue_egg)
             self._asm_obj.wonderwing_item_requirement(ITEM_ENUMS.blue_egg)
+    
+    def _respawnable_sprite_collectables(self):
+        '''
+        Pass
+        '''
+        self._asm_obj.respawnable_sprite_collectables()
+        self._game_asset_obj.replace_sprite_collectables_with_complex_variations()
     
     #################
     ##### WARPS #####

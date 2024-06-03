@@ -9,9 +9,9 @@ Purpose:
 
 from enum import IntEnum, unique
 
-##########################
-##### LEVEL ID ENUMS #####
-##########################
+#######################
+##### JIGGY ENUMS #####
+#######################
 
 @unique
 class JIGGY_ENUMS(IntEnum):

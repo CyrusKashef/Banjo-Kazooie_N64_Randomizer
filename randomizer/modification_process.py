@@ -64,6 +64,7 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         # Testing
         # self._game_asset_obj.validate_object_model_file_editing()
         # self._game_asset_obj.validate_level_model_file_editing()
+        # self._game_asset_obj.validate_animation_file_editing()
         # print("All Verified!")
         # exit()
         # Always Run These
@@ -84,6 +85,7 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         self._singular_inventory_item()
         # Testing
         # self._testing_cauldron_warps()
+        # self._respawnable_sprite_collectables()
         # Save Asssembly Files
         self._asm_obj.save_all_assembly_changes()
         print("INFO: _apply_modifications: Complete!")
@@ -113,8 +115,8 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         Runs through the entire process of extracting,
         modifying, and replacing files
         '''
-        # self._load_settings("testing.json")
-        self._load_settings("furnace_fun_geoguesser.json")
+        self._load_settings("testing.json")
+        # self._load_settings("furnace_fun_geoguesser.json")
         self._modification_setup()
         self._logic_process()
         self._apply_modifications()

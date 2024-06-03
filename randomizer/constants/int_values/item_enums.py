@@ -9,9 +9,9 @@ Purpose:
 
 from enum import IntEnum, unique
 
-##########################
-##### LEVEL ID ENUMS #####
-##########################
+######################
+##### ITEM ENUMS #####
+######################
 
 @unique
 class ITEM_ENUMS(IntEnum):
