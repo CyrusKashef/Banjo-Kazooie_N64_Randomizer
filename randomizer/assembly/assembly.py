@@ -195,11 +195,21 @@ class ASSEMBLY_CLASS():
         '''
         self._game_engine_code_obj.new_game_start_map(map_id, entry_id)
     
-    def enable_exit_to_witchs_lair(self):
+    def enable_exit_to_witchs_lair(self, level_start:bool=False):
         '''
         Pass
         '''
-        pass
+        self._game_engine_code_obj.enable_exit_to_witchs_lair()
+        self._game_engine_data_obj.adjust_menu_for_witchs_lair()
+        if(level_start):
+            self._game_engine_code_obj.transform_witchs_lair_to_level_start()
+            self._game_engine_data_obj.transform_witchs_lair_to_level_start()
+        
+    def all_transformations_can_learn_moves(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.all_transformations_can_learn_moves()
 
     def remove_tutorial_option(self):
         '''
@@ -236,6 +246,13 @@ class ASSEMBLY_CLASS():
         Pass
         '''
         self._game_engine_code_obj.skip_jiggy_jig()
+    
+    def disable_world_reset_on_death(self):
+        '''
+        Disables a check for whether the level should reset.
+        Resetting will still occur on leaving the level.
+        '''
+        self._game_engine_code_obj.disable_world_reset_on_death()
     
     ######################
     ##### DIFFICULTY #####

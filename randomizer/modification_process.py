@@ -83,6 +83,9 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         self._skip_jiggy_jig()
         self._enable_fallproof()
         self._singular_inventory_item()
+        self._exit_to_witchs_lair()
+        self._disable_world_reset_on_death()
+        self._all_transformations_can_learn_moves()
         # Testing
         # self._testing_cauldron_warps()
         # self._respawnable_sprite_collectables()

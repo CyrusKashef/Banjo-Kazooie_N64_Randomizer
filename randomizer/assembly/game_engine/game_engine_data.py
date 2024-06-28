@@ -58,6 +58,54 @@ class GAME_ENGINE_DATA_CLASS(Generic_Bin_File_Class):
         # Sprite
         self._write_bytes_from_int(0x8F6E, 0x05, byte_count=1) # Give "EXIT TO WITCH'S LAIR" the Gruntilda Sprite
     
+    def transform_witchs_lair_to_level_start(self):
+        '''
+        Changes the text of 'Exit To Witch's Lair' to
+        'Warp To World Exit' to adjust for new setting.
+        '''
+        # Adjusting Text
+        self._write_bytes_from_int(0x14FC0, 0x5741525020544F20574F524C4420455849540000, byte_count=20)
+
+    def set_level_start_warp_pad_destinations(self, warp_dict:dict):
+        '''
+        Sets the level start warp pads to different maps and entries.
+        Also affects 'Exit To Witch's Lair' feature unless function
+        'transform_witchs_lair_to_level_start' is ran.
+        '''
+        # Mumbo's Mountain
+        self._write_bytes_from_int(0x8FD0, warp_dict[STR_CONST.mumbos_mountain][STR_CONST.map_enum], byte_count=2)
+        self._write_bytes_from_int(0x8FD2, warp_dict[STR_CONST.mumbos_mountain][STR_CONST.entry_point], byte_count=2)
+        # Treasure Trove Cove
+        self._write_bytes_from_int(0x8FD4, warp_dict[STR_CONST.treasure_trove_cove][STR_CONST.map_enum], byte_count=2)
+        self._write_bytes_from_int(0x8FD6, warp_dict[STR_CONST.treasure_trove_cove][STR_CONST.entry_point], byte_count=2)
+        # Clanker's Cavern
+        self._write_bytes_from_int(0x8FD8, warp_dict[STR_CONST.clankers_cavern][STR_CONST.map_enum], byte_count=2)
+        self._write_bytes_from_int(0x8FDA, warp_dict[STR_CONST.clankers_cavern][STR_CONST.entry_point], byte_count=2)
+        # Bubblegloop Swamp
+        self._write_bytes_from_int(0x8FDC, warp_dict[STR_CONST.bubblegloop_swamp][STR_CONST.map_enum], byte_count=2)
+        self._write_bytes_from_int(0x8FDE, warp_dict[STR_CONST.bubblegloop_swamp][STR_CONST.entry_point], byte_count=2)
+        # Freezeezy Peak
+        self._write_bytes_from_int(0x8FE0, warp_dict[STR_CONST.freezeezy_peak][STR_CONST.map_enum], byte_count=2)
+        self._write_bytes_from_int(0x8FE2, warp_dict[STR_CONST.freezeezy_peak][STR_CONST.entry_point], byte_count=2)
+        # Gruntilda's Lair (Left at -1, -1 to prevent warping?)
+        self._write_bytes_from_int(0x8FE4, 0xFFFF, byte_count=2)
+        self._write_bytes_from_int(0x8FE6, 0xFFFF, byte_count=2)
+        # Gobi's Valley
+        self._write_bytes_from_int(0x8FE8, warp_dict[STR_CONST.gobis_valley][STR_CONST.map_enum], byte_count=2)
+        self._write_bytes_from_int(0x8FEA, warp_dict[STR_CONST.gobis_valley][STR_CONST.entry_point], byte_count=2)
+        # Click Clock Wood
+        self._write_bytes_from_int(0x8FEC, warp_dict[STR_CONST.click_clock_wood][STR_CONST.map_enum], byte_count=2)
+        self._write_bytes_from_int(0x8FEE, warp_dict[STR_CONST.click_clock_wood][STR_CONST.entry_point], byte_count=2)
+        # Rusty Bucket Bay
+        self._write_bytes_from_int(0x8FF0, warp_dict[STR_CONST.rusty_bucket_bay][STR_CONST.map_enum], byte_count=2)
+        self._write_bytes_from_int(0x8FF2, warp_dict[STR_CONST.rusty_bucket_bay][STR_CONST.entry_point], byte_count=2)
+        # Mad Monster Mansion
+        self._write_bytes_from_int(0x8FF4, warp_dict[STR_CONST.mad_monster_mansion][STR_CONST.map_enum], byte_count=2)
+        self._write_bytes_from_int(0x8FF6, warp_dict[STR_CONST.mad_monster_mansion][STR_CONST.entry_point], byte_count=2)
+        # Spiral Mountain
+        self._write_bytes_from_int(0x8FF8, warp_dict[STR_CONST.spiral_mountain][STR_CONST.map_enum], byte_count=2)
+        self._write_bytes_from_int(0x8FFA, warp_dict[STR_CONST.spiral_mountain][STR_CONST.entry_point], byte_count=2)
+
     ###################
     ##### ZOOMBOX #####
     ###################

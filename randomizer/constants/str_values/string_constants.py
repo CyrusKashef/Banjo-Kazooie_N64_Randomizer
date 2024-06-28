@@ -498,3 +498,8 @@ class STRING_CONSTANTS(StrEnum):
     gruntildas_lair_dingpot_from_furnace_fun = auto()
     other = auto()
     seed = auto()
+    additional_pause_menu_option = auto()
+    enable_exit_to_witchs_lair = auto()
+    enable_warp_to_world_exit = auto()
+    disable_world_reset_on_death = auto()
+    all_transformations_can_learn_moves = auto()

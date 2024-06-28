@@ -90,11 +90,12 @@
         }
     },
     "furnace_fun": {
-        "geoguesser": 1,
+        "geoguesser": 0,
         "death_squares_only": 0
     },
     "warps": {
-        "new_starting_area": "spiral_mountain_main_from_banjos_house"
+        "new_starting_area": "spiral_mountain_main_from_banjos_house",
+        "additional_pause_menu_option": "enable_warp_to_world_exit"
     },
     "other_options": {
         "boot_to_file_select": 1,
@@ -102,6 +103,7 @@
         "skip_jiggy_jig": 1,
         "enable_fallproof": 1,
         "shock_jump_pad_anywhere": 0,
-        "singular_inventory_item": 0
+        "singular_inventory_item": 0,
+        "disable_world_reset_on_death": 1
     }
 }

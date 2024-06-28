@@ -13,6 +13,6 @@ class TRANSFORMATION_ENUMS(IntEnum):
     termite = auto()
     pumpkin = auto()
     walrus = auto()
-    croc = auto()
+    crocodile = auto()
     bee = auto()
     wishywashy = auto()

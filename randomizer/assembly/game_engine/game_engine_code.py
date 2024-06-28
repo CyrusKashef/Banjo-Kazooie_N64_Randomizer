@@ -343,6 +343,23 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         # Disable Debug Byte
         self._write_bytes_from_int(0x8BCE7, 0x00, byte_count=1)
     
+    def transform_witchs_lair_to_level_start(self):
+        '''
+        Changes 'Exit To Witch's Lair' to use death warp
+        locations instead of level exit locations.
+
+        Glitch: Continues to play Pause Menu music once selected.
+        Work Around: Pause and Unpause to stop the music.
+        '''
+        self._write_bytes_from_int(0x8C9B8, 0x0C0A7182, byte_count=4) # update_void_return_Location()
+        self._write_bytes_from_int(0x8C9BC, 0x00000000, byte_count=4)
+        self._write_bytes_from_int(0x8C9C0, 0x0C0A6DBC, byte_count=4) # func_8029B6F0() // Void Out Function
+        self._write_bytes_from_int(0x8C9C4, 0x00000000, byte_count=4)
+        self._write_bytes_from_int(0x8C9C8, 0x10000003, byte_count=4) # BEQ 0, 0, 3
+        self._write_bytes_from_int(0x8C9CC, 0x00000000, byte_count=4)
+        self._write_bytes_from_int(0x8C9D0, 0x00000000, byte_count=4)
+        self._write_bytes_from_int(0x8C9D4, 0x00000000, byte_count=4)
+    
     ####################################
     ##### ALTERNATE WIN CONDITIONS #####
     ####################################
@@ -518,3 +535,21 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         self._write_bytes_from_int(0x91FB4, 0x24020000 + picture_end_id, byte_count=4)
         self._write_bytes_from_int(0x91FBC, 0x24020000 + sound_end_id, byte_count=4)
         self._write_bytes_from_int(0x91FC4, 0x24020000 + grunty_end_id, byte_count=4)
+    
+    ###########################
+    ##### QUALITY OF LIFE #####
+    ###########################
+    # core2/code_9A740.c
+
+    def disable_world_reset_on_death(self):
+        '''
+        Disables a check for whether the level should reset.
+        Resetting will still occur on leaving the level.
+        '''
+        self._write_bytes_from_int(0x5C964, 0x24040001, byte_count=4)
+    
+    def all_transformations_can_learn_moves(self):
+        '''
+        Removes the transformation check for learning Bottles moves
+        '''
+        self._write_bytes_from_int(0x53018, 0x24020045, byte_count=4)

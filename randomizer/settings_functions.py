@@ -328,6 +328,41 @@ class SETTINGS_FUNCTIONS():
         else:
             print(f"INFO: Furnace Fun Option {furnace_fun_choice}")
     
+    #################
+    ##### WARPS #####
+    #################
+    
+    def _new_game_start_area(self):
+        '''
+        Pass
+        '''
+        new_start_area:str = \
+            self._settings_dict[STR_CONST.warps][STR_CONST.new_starting_area]
+        if(new_start_area not in WARP_ENTRY_DICT):
+            raise Exception(f"ERROR: _new_game_start_area: Area '{new_start_area}' does not exist in WARP_ENTRY_DICT")
+        warp_entry = WARP_ENTRY_DICT[new_start_area]
+        map_id:int = warp_entry[0]
+        entry_id:int = warp_entry[1]
+        self._asm_obj.new_game_start_area(map_id, entry_id)
+    
+    def _exit_to_witchs_lair(self):
+        '''
+        Pass
+        '''
+        additional_pause_menu_option:str = \
+            self._settings_dict[STR_CONST.warps][STR_CONST.additional_pause_menu_option]
+        if(additional_pause_menu_option == STR_CONST.enable_exit_to_witchs_lair):
+            self._asm_obj.enable_exit_to_witchs_lair()
+        elif(additional_pause_menu_option == STR_CONST.enable_warp_to_world_exit):
+            self._asm_obj.enable_exit_to_witchs_lair(level_start=True)
+    
+    def _testing_cauldron_warps(self):
+        '''
+        Pass
+        '''
+        print("Testing Cauldron Warps")
+        self._asm_obj.modify_cauldron_warps()
+    
     #########################
     ##### OTHER OPTIONS #####
     #########################
@@ -401,26 +436,20 @@ class SETTINGS_FUNCTIONS():
         self._asm_obj.respawnable_sprite_collectables()
         self._game_asset_obj.replace_sprite_collectables_with_complex_variations()
     
-    #################
-    ##### WARPS #####
-    #################
-    
-    def _new_game_start_area(self):
+    def _disable_world_reset_on_death(self):
         '''
         Pass
         '''
-        new_start_area:str = \
-            self._settings_dict[STR_CONST.warps][STR_CONST.new_starting_area]
-        if(new_start_area not in WARP_ENTRY_DICT):
-            raise Exception(f"ERROR: _new_game_start_area: Area '{new_start_area}' does not exist in WARP_ENTRY_DICT")
-        warp_entry = WARP_ENTRY_DICT[new_start_area]
-        map_id:int = warp_entry[0]
-        entry_id:int = warp_entry[1]
-        self._asm_obj.new_game_start_area(map_id, entry_id)
+        disable_world_reset_on_death_bool:bool = \
+            self._settings_dict[STR_CONST.other_options][STR_CONST.disable_world_reset_on_death]
+        if(disable_world_reset_on_death_bool):
+            self._asm_obj.disable_world_reset_on_death()
     
-    def _testing_cauldron_warps(self):
+    def _all_transformations_can_learn_moves(self):
         '''
         Pass
         '''
-        print("Testing Cauldron Warps")
-        self._asm_obj.modify_cauldron_warps()
+        all_transformations_can_learn_moves_bool:bool = \
+            self._settings_dict[STR_CONST.other_options][STR_CONST.all_transformations_can_learn_moves]
+        if(all_transformations_can_learn_moves_bool):
+            self._asm_obj.all_transformations_can_learn_moves()
