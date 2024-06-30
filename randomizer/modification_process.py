@@ -70,6 +70,7 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         # Always Run These
         self._asm_obj.disable_anti_tamper()
         self._asm_obj.patch_yum_yum_crash_fix()
+        self._asm_obj.all_transformations_can_enter_crypt() # Used In Logic
         # Options
         self._starting_moves_and_inventory()
         self._alternate_win_conditions()

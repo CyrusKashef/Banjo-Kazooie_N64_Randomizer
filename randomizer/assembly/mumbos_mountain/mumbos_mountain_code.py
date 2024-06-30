@@ -32,3 +32,16 @@ class MUMBOS_MOUNTAIN_CODE_CLASS(Generic_Bin_File_Class):
         Thank You, Wedarobi! <3
         '''
         self._write_bytes_from_int(0x1B7C, 0x1000, byte_count=2)
+    
+    #################
+    ##### CONGA #####
+    #################
+
+    def all_transformations_conga_text(self):
+        '''
+        Pass
+        '''
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x1520, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x1528, 0x24010000, byte_count=4)

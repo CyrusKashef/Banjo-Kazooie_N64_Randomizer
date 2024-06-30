@@ -104,6 +104,7 @@
         "enable_fallproof": 1,
         "shock_jump_pad_anywhere": 0,
         "singular_inventory_item": 0,
-        "disable_world_reset_on_death": 1
+        "disable_world_reset_on_death": 1,
+        "all_transformations_can_learn_moves": 1
     }
 }

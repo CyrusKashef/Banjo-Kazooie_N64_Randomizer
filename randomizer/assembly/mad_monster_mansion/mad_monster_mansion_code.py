@@ -32,3 +32,25 @@ class MAD_MONSTER_MANSION_CODE_CLASS(Generic_Bin_File_Class):
         Thank You, Wedarobi! <3
         '''
         self._write_bytes_from_int(0x4830, 0x1000, byte_count=2)
+    
+    #################
+    ##### LOGGO #####
+    #################
+
+    def all_transformations_loggo_pumpkin_dialog(self):
+        '''
+        Pass
+        '''
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x94, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x9C, 0x24010000, byte_count=4)
+
+    def all_transformations_loggo_flush(self):
+        '''
+        Pass
+        '''
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x100, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x108, 0x24010000, byte_count=4)

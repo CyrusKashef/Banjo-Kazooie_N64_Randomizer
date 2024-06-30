@@ -210,6 +210,72 @@ class ASSEMBLY_CLASS():
         Pass
         '''
         self._game_engine_code_obj.all_transformations_can_learn_moves()
+    
+    def all_transformations_can_enter_crypt(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.all_transformations_crypt_warps()
+
+    def _remove_termite_exclusivity(self):
+        '''
+        Pass
+        '''
+        self._mumbos_mountain_code_obj.all_transformations_conga_text()
+        self._game_engine_code_obj.all_transformations_cool_shorts_text()
+    
+    def _remove_crocodile_exclusivity(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.all_transformations_turbo_trainers()
+        self._game_engine_code_obj.all_transformations_mr_vile_warps()
+
+    def _remove_walrus_exclusivity(self):
+        '''
+        Pass
+        '''
+        self._freezeezy_peak_code_obj.all_transformations_boggy_2()
+        self._freezeezy_peak_code_obj.all_transformations_race_sled()
+        self._freezeezy_peak_code_obj.all_transformations_wozza()
+        self._game_engine_code_obj.all_transformations_lose_boggy_race()
+        self._game_engine_code_obj.all_transformations_in_water()
+
+    def _remove_pumpkin_exclusivity(self):
+        '''
+        Pass
+        '''
+        self._mad_monster_mansion_code_obj.all_transformations_loggo_pumpkin_dialog()
+        self._mad_monster_mansion_code_obj.all_transformations_loggo_flush()
+        self._game_engine_code_obj.all_transformations_pumpkin_honeycomb()
+        self._game_engine_code_obj.all_transformations_rain_barrel_warp()
+        self._game_engine_code_obj.all_transformations_loggo_spin_animation()
+        self._game_engine_code_obj.all_transformations_crypt_warps()
+        self._game_engine_code_obj.all_transformations_well_warps()
+        self._game_engine_code_obj.all_transformations_loggo_warps()
+
+    def _remove_bee_exclusivity(self):
+        '''
+        Pass
+        '''
+        self._click_clock_wood_code_obj.all_transformations_snarebear_collision_off()
+        self._game_engine_code_obj.all_transformations_note_door_jig()
+        self._game_engine_code_obj.all_transformations_non_hostile_bee_swarm()
+        self._game_engine_code_obj.all_transformations_zubba_hive_warp()
+
+    def remove_all_transformation_exclusivity(self):
+        '''
+        Replaces all significant instances of "get transformation"
+        with a function that returns a boolean for whether the
+        player is Banjo or Wishywashy (func_8028F0D4)
+        Needs Testing
+        src/core2/code_7060.c#L589
+        '''
+        self._remove_termite_exclusivity()
+        self._remove_crocodile_exclusivity()
+        self._remove_walrus_exclusivity()
+        self._remove_pumpkin_exclusivity()
+        self._remove_bee_exclusivity()
 
     def remove_tutorial_option(self):
         '''

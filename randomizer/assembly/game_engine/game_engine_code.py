@@ -511,7 +511,161 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         self._write_bytes_from_int(0x4A7F6, transformation_costs_dict[STR_CONST.walrus_transformation_cost], byte_count=2)
         self._write_bytes_from_int(0x4A7FE, transformation_costs_dict[STR_CONST.pumpkin_transformation_cost], byte_count=2)
         self._write_bytes_from_int(0x4A7F6, transformation_costs_dict[STR_CONST.bee_transformation_cost], byte_count=2)
+
+    ### Termite
+
+    def all_transformations_cool_shorts_text(self):
+        '''
+        Pass
+        '''
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0xD7A20, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0xD7A28, 0x24010000, byte_count=4)
     
+    def all_transformations_pumpkin_honeycomb(self):
+        '''
+        src/core2/ba/marker.c#L559
+        '''
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x5810, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x5818, 0x24010000, byte_count=4)
+    
+    ### Crocodile
+    
+    def all_transformations_turbo_trainers(self):
+        '''
+        Allows all transformations to use Turbo Trainers
+        src/core2/ba/marker.c#L759
+        '''
+        # You are always Banjo
+        self._write_bytes_from_int(0x5FC4, 0x10420003, byte_count=4)
+    
+    def all_transformations_mr_vile_warps(self):
+        '''
+        Enter Vile Warp: src/core2/code_956B0.c#L574
+        Exit Vile Warp Already Allow Anything
+        '''
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x96D08, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x96D10, 0x24010000, byte_count=4)
+    
+    ### Walrus
+
+    def all_transformations_lose_boggy_race(self):
+        '''
+        src/core2/code_14420.c#L871
+        '''
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0xFC5C, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0xFC64, 0x24010000, byte_count=4)
+    
+    def all_transformations_in_water(self):
+        '''
+        src/core2/code_9450.c#L94
+        '''
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x9770, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x9778, 0x24010000, byte_count=4)
+    
+    ### Pumpkin
+
+    def all_transformations_rain_barrel_warp(self):
+        '''
+        src/core2/code_956B0.c#L550
+        '''
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x96C28, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x96C30, 0x24010000, byte_count=4)
+    
+    def all_transformations_loggo_spin_animation(self):
+        '''
+        src/core2/code_956B0.c#L562
+        '''
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x96C8C, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x96C94, 0x24010000, byte_count=4)
+    
+    def all_transformations_crypt_warps(self):
+        '''
+        Checks If You Are Banjo Or Wishywashy
+        Set Comparison To 0 (False)
+        src/core2/code_956B0.c#L1189
+        '''
+        # Enter Crypt
+        self._write_bytes_from_int(0x982D8, 0x0C0A3C35, byte_count=4)
+        self._write_bytes_from_int(0x982E0, 0x24010000, byte_count=4)
+        # Leave Crypt
+        self._write_bytes_from_int(0x98310, 0x0C0A3C35, byte_count=4)
+        self._write_bytes_from_int(0x98318, 0x24010000, byte_count=4)
+    
+    def all_transformations_well_warps(self):
+        '''
+        src/core2/code_956B0.c#L1324
+        src/core2/code_956B0.c#L1330
+        '''
+        # Enter Well
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x987A8, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x987B0, 0x24010000, byte_count=4)
+        # Leave Well
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x987E0, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x987E8, 0x24010000, byte_count=4)
+    
+    def all_transformations_loggo_warps(self):
+        '''
+        src/core2/code_956B0.c#L1336
+        src/core2/code_956B0.c#L1342
+        '''
+        # Enter Loggo
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x98818, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x98820, 0x24010000, byte_count=4)
+        # Leave Loggo
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x98850, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x98858, 0x24010000, byte_count=4)
+    
+    ### Bee
+    
+    def all_transformations_note_door_jig(self):
+        '''
+        src/core2/code_14420.c#L856
+        '''
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x15B40, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x15B48, 0x24010000, byte_count=4)
+    
+    def all_transformations_non_hostile_bee_swarm(self):
+        '''
+        src/core2/code_47BD0.c#L251
+        '''
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x485C0, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x485C8, 0x24010000, byte_count=4)
+    
+    def all_transformations_zubba_hive_warp(self):
+        '''
+        src/core2/code_956B0.c#L1261
+        '''
+        # Checks If You Are Banjo Or Wishywashy
+        self._write_bytes_from_int(0x98564, 0x0C0A3C35, byte_count=4)
+        # Set Comparison To 0 (False)
+        self._write_bytes_from_int(0x9856C, 0x24010000, byte_count=4)
+
     #######################
     ##### FURNACE FUN #####
     #######################
