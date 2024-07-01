@@ -15,6 +15,9 @@ from enum import IntEnum, unique
 
 @unique
 class JIGGY_ENUMS(IntEnum):
+    ###########################
+    ##### MUMBOS MOUNTAIN #####
+    ###########################
     mumbos_mountain_jinjo = 0x01
     mumbos_mountain_atop_tickers_tower = 0x02
     mumbos_mountain_mumbos_skull_eye = 0x03
@@ -25,6 +28,9 @@ class JIGGY_ENUMS(IntEnum):
     mumbos_mountain_orange_pads = 0x08
     mumbos_mountain_chimpy = 0x09
     mumbos_mountain_conga = 0x0A
+    ###############################
+    ##### TREASURE TROVE COVE #####
+    ###############################
     treasure_trove_cove_jinjo = 0x0B
     treasure_trove_cove_atop_lighthouse = 0x0C
     treasure_trove_cove_shock_jump_alcove = 0x0D
@@ -35,6 +41,9 @@ class JIGGY_ENUMS(IntEnum):
     treasure_trove_cove_nipper = 0x12
     treasure_trove_cove_lockup = 0x13
     treasure_trove_cove_blubber = 0x14
+    ###########################
+    ##### CLANKERS CAVERN #####
+    ###########################
     clankers_cavern_jinjo = 0x15
     clankers_cavern_mutie_snippets = 0x16
     clankers_cavern_raise_clanker = 0x17
@@ -45,6 +54,9 @@ class JIGGY_ENUMS(IntEnum):
     clankers_cavern_rings = 0x1C
     clankers_cavern_blowhole = 0x1D
     clankers_cavern_wonderwing = 0x1E
+    #############################
+    ##### BUBBLEGLOOP SWAMP #####
+    #############################
     bubblegloop_swamp_jinjo = 0x1F
     bubblegloop_swamp_central_button = 0x20
     bubblegloop_swamp_pink_egg = 0x21
@@ -55,6 +67,9 @@ class JIGGY_ENUMS(IntEnum):
     bubblegloop_swamp_tanktup = 0x26
     bubblegloop_swamp_tiptup = 0x27
     bubblegloop_swamp_mr_vile = 0x28
+    ##########################
+    ##### FREEZEEZY PEAK #####
+    ##########################
     freezeezy_peak_jinjo = 0x29
     freezeezy_peak_save_boggy = 0x2A
     freezeezy_peak_smoke_pipe = 0x2B
@@ -65,6 +80,9 @@ class JIGGY_ENUMS(IntEnum):
     freezeezy_peak_race_boggy_walrus = 0x30
     freezeezy_peak_sir_slushes = 0x31
     freezeezy_peak_wozza = 0x32
+    ###########################
+    ##### GRUNTILDAS LAIR #####
+    ###########################
     gruntildas_lair_1st_jiggy = 0x33
     gruntildas_lair_mumbos_mountain_witch_switch = 0x34
     gruntildas_lair_clankers_cavern_witch_switch = 0x35
@@ -75,6 +93,9 @@ class JIGGY_ENUMS(IntEnum):
     gruntildas_lair_gobis_valley_witch_switch = 0x3A
     gruntildas_lair_rusty_bucket_bay_witch_switch = 0x3B
     gruntildas_lair_click_clock_wood_witch_switch = 0x3C
+    ########################
+    ##### GOBIS VALLEY #####
+    ########################
     gobis_valley_jinjo = 0x3D
     gobis_valley_grabba = 0x3E
     gobis_valley_jinxy = 0x3F
@@ -85,6 +106,9 @@ class JIGGY_ENUMS(IntEnum):
     gobis_valley_free_gobi = 0x44
     gobis_valley_trunker = 0x45
     gobis_valley_ancient_ones = 0x46
+    ############################
+    ##### CLICK CLOCK WOOD #####
+    ############################
     click_clock_wood_jinjo = 0x47
     click_clock_wood_treehouse = 0x48
     click_clock_wood_eyrie = 0x49
@@ -95,6 +119,9 @@ class JIGGY_ENUMS(IntEnum):
     click_clock_wood_leaf_jumps = 0x4E
     click_clock_wood_tree_top = 0x4F
     click_clock_wood_whipcrack_room = 0x50
+    ############################
+    ##### RUSTY BUCKET BAY #####
+    ############################
     rusty_bucket_bay_jinjo = 0x51
     rusty_bucket_bay_chump_warehouse = 0x52
     rusty_bucket_bay_snorkel = 0x53
@@ -105,6 +132,9 @@ class JIGGY_ENUMS(IntEnum):
     rusty_bucket_bay_captains_cabin = 0x58
     rusty_bucket_bay_crane_cage = 0x59
     rusty_bucket_bay_engine_room = 0x5A
+    ###############################
+    ##### MAD MONSTER MANSION #####
+    ###############################
     mad_monster_mansion_jinjo = 0x5B
     mad_monster_mansion_well = 0x5C
     mad_monster_mansion_napper = 0x5D
