@@ -1,14 +1,18 @@
+'''
+Enumerators from the following class are arbitrary values used to make each instance unique.
+'''
+
 ###################
 ##### IMPORTS #####
 ###################
 
 from enum import IntEnum, auto
 
-#######################
-##### OTHER ENUMS #####
-#######################
+###########################
+##### ITEM TYPE ENUMS #####
+###########################
 
-class OTHER_ITEM_ENUMS(IntEnum):
+class ITEM_TYPE_ENUMS(IntEnum):
     ###################
     ##### GENERAL #####
     ###################
@@ -17,6 +21,9 @@ class OTHER_ITEM_ENUMS(IntEnum):
     red_feather = auto()
     gold_feather = auto()
     extra_life = auto()
+    jiggy = auto()
+    empty_honeycomb = auto()
+    mumbo_token = auto()
     ###########################
     ##### SPIRAL MOUNTAIN #####
     ###########################

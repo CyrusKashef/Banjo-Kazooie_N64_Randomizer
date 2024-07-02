@@ -1,6 +1,5 @@
 '''
-Purpose:
-* Class of in-game enumerators for the asset file ids
+Each enumerator in the class below is the value used IN GAME.
 
 ToDo:
 * Add Animations

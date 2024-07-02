@@ -1,5 +1,6 @@
 '''
 Shoutouts to the DK64 Randomizer team for sharing their logic <3
+Enumerators from the following class are arbitrary values used to make each instance unique.
 
 A region is a section of a map that a player can either:
 1) 1 & Separate From Other Warps

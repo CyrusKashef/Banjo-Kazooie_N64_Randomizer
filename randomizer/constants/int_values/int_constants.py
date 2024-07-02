@@ -1,6 +1,5 @@
 '''
-Purpose:
-*
+Class containing constant integers
 '''
 
 ###################

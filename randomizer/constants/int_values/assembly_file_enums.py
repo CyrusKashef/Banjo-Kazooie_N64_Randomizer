@@ -1,6 +1,5 @@
 '''
-Purpose:
-* Class of generic enumerators for the assembly files
+Enumerators from the following class are arbitrary values used to make each instance unique.
 '''
 
 ###################

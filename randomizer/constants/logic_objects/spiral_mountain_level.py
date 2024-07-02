@@ -10,6 +10,10 @@ from randomizer.constants.int_values.level_enums import LEVEL_ID_ENUMS as LEVEL
 from randomizer.constants.int_values.warp_enums import WARP_ENUMS as WARP
 from randomizer.constants.int_values.map_enums import MAP_ENUMS as MAP
 from randomizer.constants.int_values.logic_difficulty_enums import LOGIC_DIFFICULTY_ENUMS as DIFFICULTY
+from randomizer.constants.int_values.jiggy_enums import JIGGY_ENUMS as JIGGY
+from randomizer.constants.int_values.empty_honeycomb_enums import EMPTY_HONEYCOMB_ENUMS as EMPTY_HONEYCOMB
+# from randomizer.constants.int_values.mumbo_token_enums import MUMBO_TOKEN_ENUMS as MUMBO_TOKEN
+from randomizer.constants.int_values.item_type_enums import ITEM_TYPE_ENUMS as ITEM_TYPE
 
 from randomizer.logic.location_class import LOCATION_CLASS
 from randomizer.logic.warp_class import WARP_CLASS
@@ -155,7 +159,7 @@ SPIRAL_MOUNTAIN_LEVEL = LEVEL_CLASS(
                 # Bottles Molehills
                 LOCATION.spiral_mountain_bottles_climb: LOCATION_CLASS(
                     debug_name="SM Bottles Climb",
-                    location_enum=LOCATION_CLASS.spiral_mountain_bottles_climb,
+                    location_enum=LOCATION.spiral_mountain_bottles_climb,
                     reach_requirement_dict={
                         TRANSFORMATION.banjo_kazooie: (lambda item_dict, settings_dict: True),
                         TRANSFORMATION.termite: (lambda item_dict, settings_dict: True),
@@ -167,7 +171,7 @@ SPIRAL_MOUNTAIN_LEVEL = LEVEL_CLASS(
                 ),
                 LOCATION.spiral_mountain_bottles_jump: LOCATION_CLASS(
                     debug_name="SM Bottles Jump",
-                    location_enum=LOCATION_CLASS.spiral_mountain_bottles_jump,
+                    location_enum=LOCATION.spiral_mountain_bottles_jump,
                     reach_requirement_dict={
                         TRANSFORMATION.banjo_kazooie: (lambda item_dict, settings_dict: True),
                         TRANSFORMATION.termite: (lambda item_dict, settings_dict: True),
@@ -179,7 +183,7 @@ SPIRAL_MOUNTAIN_LEVEL = LEVEL_CLASS(
                 ),
                 LOCATION.spiral_mountain_bottles_attack: LOCATION_CLASS(
                     debug_name="SM Bottles Attack",
-                    location_enum=LOCATION_CLASS.spiral_mountain_bottles_attack,
+                    location_enum=LOCATION.spiral_mountain_bottles_attack,
                     reach_requirement_dict={
                         TRANSFORMATION.banjo_kazooie: (lambda item_dict, settings_dict: True),
                         TRANSFORMATION.termite: (lambda item_dict, settings_dict: True),
@@ -191,7 +195,7 @@ SPIRAL_MOUNTAIN_LEVEL = LEVEL_CLASS(
                 ),
                 LOCATION.spiral_mountain_bottles_dive: LOCATION_CLASS(
                     debug_name="SM Bottles Dive",
-                    location_enum=LOCATION_CLASS.spiral_mountain_bottles_dive,
+                    location_enum=LOCATION.spiral_mountain_bottles_dive,
                     reach_requirement_dict={
                         TRANSFORMATION.banjo_kazooie: (lambda item_dict, settings_dict: True),
                         TRANSFORMATION.termite: (lambda item_dict, settings_dict: True),

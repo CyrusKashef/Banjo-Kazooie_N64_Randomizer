@@ -1,6 +1,6 @@
 '''
-Purpose:
-*
+Items are any numerical value stored in the player's inventory.
+Each enumerator in the class below is the value used IN GAME.
 '''
 
 ###################

@@ -1,4 +1,6 @@
 '''
+Enumerators from the following class are arbitrary values used to make each instance unique.
+
 Logic Difficulties Explained:
 * Beginner (Hasn't Play Game In Long Time):
   - Developer Intended Strategies

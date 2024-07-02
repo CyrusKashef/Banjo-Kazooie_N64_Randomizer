@@ -1,3 +1,8 @@
+'''
+A warp is considered a spherical object that transports the player from one map to another.
+Enumerators from the following class are arbitrary values used to make each instance unique.
+'''
+
 ###################
 ##### IMPORTS #####
 ###################

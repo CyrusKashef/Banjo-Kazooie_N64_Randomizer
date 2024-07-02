@@ -1,4 +1,6 @@
 '''
+Enumerators from the following class are arbitrary values used to make each instance unique.
+
 Glitch Explanations:
 * Simple Slope Abuse:
   - Easy jumping, rolling, or button mashing to climb slope

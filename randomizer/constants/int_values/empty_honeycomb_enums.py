@@ -1,6 +1,5 @@
 '''
-Purpose:
-*
+Each enumerator in the class below is the value used IN GAME.
 '''
 
 ###################

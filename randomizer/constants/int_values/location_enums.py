@@ -1,3 +1,12 @@
+'''
+A location is a specific area of the map that can hold:
+* A level temporary collectable (notes, jinjos, misc objects)
+* A flagged collectable (jiggies, empty honeycombs, mumbo tokens)
+* An inventory item (blue eggs, red feathers, gold feathers)
+* An ability (moves from Bottles)
+* An event (breaking huts, defeating Nipper, etc)
+'''
+
 ###################
 ##### IMPORTS #####
 ###################
@@ -167,8 +176,8 @@ class LOCATION_ENUMS(IntEnum):
     mumbos_mountain_stonehenge_jiggy = auto()
     mumbos_mountain_atop_tickers_tower_jiggy = auto()
     # Empty Honeycombs
-    mumbos_mountain_above_juju = auto()
-    mumbos_mountain_alcove = auto()
+    mumbos_mountain_above_juju_empty_honeycomb = auto()
+    mumbos_mountain_alcove_empty_honeycomb = auto()
     # Mumbo Tokens
     mumbos_mountain_mumbos_bridge_token = auto()
     mumbos_mountain_near_pink_jinjo_token = auto()
@@ -193,7 +202,7 @@ class LOCATION_ENUMS(IntEnum):
     mumbos_mountain_orange_pads = auto()
     mumbos_mountain_huts = auto()
     # Other Items
-    mumbos_mountain_below_conga = auto()
+    mumbos_mountain_orange_below_conga = auto()
     # Custom Locations
     ###############################
     ##### TREASURE TROVE COVE #####
