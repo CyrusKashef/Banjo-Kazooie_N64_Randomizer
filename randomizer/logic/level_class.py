@@ -5,51 +5,92 @@
 from randomizer.constants.int_values.region_enums import REGION_ENUMS
 from randomizer.constants.int_values.level_enums import LEVEL_ID_ENUMS as LEVEL
 
-#################
-##### CLASS #####
-#################
+#######################
+##### LEVEL CLASS #####
+#######################
 
 class LEVEL_CLASS():
     def __init__(self,
             debug_name:str,
             level_enum:LEVEL,
-            level_start_region_enum:REGION_ENUMS,
-            region_dict:dict):
+            default_start_region:REGION_ENUMS,
+            level_regions:dict):
+        '''
+        Pass
+        '''
+        # DEVELOPER VALUES
         self.debug_name:str = debug_name
         self.level_enum:LEVEL = level_enum
-        self.level_start_region_enum:REGION_ENUMS = level_start_region_enum
-        self.region_dict:dict = region_dict
-    
-    def get_level_item_counts(self):
-        '''
-        Pass
-        '''
-        for curr_region in self.region_dict:
-            curr_region
+        # ACCESS/OBTAIN REQUIREMENTS
+        # CONSTANT PRIOR TO LOGIC
+        self.level_start_region_enum:REGION_ENUMS = default_start_region
+        # SET, BUT MUTABLE
+        self.level_regions:dict = level_regions
+        # SET DURING LOGIC
+        self.level_start_region:REGION_ENUMS = None
 
-    def level_specific_items(self, item_dict:dict):
+    ###################
+    ##### GETTERS #####
+    ###################
+
+    def get_debug_name(self):
         '''
         Pass
         '''
-        if(self.level_enum is LEVEL.spiral_mountain):
-            pass
-        elif(self.level_enum is LEVEL.mumbos_mountain):
-            pass
-        elif(self.level_enum is LEVEL.treasure_trove_cove):
-            pass
-        elif(self.level_enum is LEVEL.clankers_cavern):
-            pass
-        elif(self.level_enum is LEVEL.bubblegloop_swamp):
-            pass
-        elif(self.level_enum is LEVEL.freezeezy_peak):
-            pass
-        elif(self.level_enum is LEVEL.gobis_valley):
-            pass
-        elif(self.level_enum is LEVEL.mad_monster_mansion):
-            pass
-        elif(self.level_enum is LEVEL.rusty_bucket_bay):
-            pass
-        elif(self.level_enum is LEVEL.click_clock_wood):
-            pass
-        elif(self.level_enum is LEVEL.gruntildas_lair):
-            pass
+        return self.debug_name
+
+    def get_level_enum(self):
+        '''
+        Pass
+        '''
+        return self.level_enum
+
+    def get_level_region(self, region_enum:REGION_ENUMS):
+        '''
+        Pass
+        '''
+        return self.level_regions[region_enum]
+
+    def get_level_regions(self):
+        '''
+        Pass
+        '''
+        return self.level_regions
+
+    ###################
+    ##### SETTERS #####
+    ###################
+
+    def set_start_region(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def allocate_warps(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def allocate_items(self):
+        '''
+        Pass
+        '''
+        pass
+
+    #####################
+    ##### UTILITIES #####
+    #####################
+
+    def check_connected_regions(self):
+        '''
+        Pass
+        '''
+        pass
+
+    def calculate_obtainable_items(self):
+        '''
+        Pass
+        '''
+        pass

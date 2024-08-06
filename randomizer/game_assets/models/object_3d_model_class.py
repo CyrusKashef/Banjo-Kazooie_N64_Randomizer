@@ -7,8 +7,13 @@ Purpose:
 ##### IMPORTS #####
 ###################
 
+from enum import IntEnum, unique, auto
+from PIL import Image
+
 from randomizer.generic_bin_file_class import Generic_Bin_File_Class
 from randomizer.constants.int_values.object_model_constants import OBJECT_MODEL_CONSTANTS as CONSTANT
+from randomizer.constants.int_values.color_enums import COLOR_BLINDNESS
+from randomizer.constants.str_values.color_str import COLORS
 
 ##############################
 ##### OBJECT MODEL CLASS #####
@@ -24,6 +29,7 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         '''
         # Constant
         self._3d_model_header:int = 0x0000000B
+        self._model_json_dir:str = "randomizer/game_assets/models/"
 
         # Variables
         self._file_path = file_path
@@ -39,11 +45,11 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
         Pass
         '''
         # Constants
-        self._CI4_VALUE:int = 1 # 1 << 0
-        self._CI8_VALUE:int = 2 # 1 << 1
+        self._CI4_VALUE:int = 1      # 1 << 0
+        self._CI8_VALUE:int = 2      # 1 << 1
         self._RGBA5551_VALUE:int = 4 # 1 << 2
         self._RGBA8888_VALUE:int = 8 # 1 << 3
-        self._IA8_VALUE:int = 16 # 1 << 4
+        self._IA8_VALUE:int = 16     # 1 << 4
         self._GEO_TYPE_NORMAL:int = 0
         self._GEO_TYPE_TRILINEAR_MIPMAPPING:int = 2
         self._GEO_TYPE_ENV_MIPMAPPING:int = 4
@@ -52,6 +58,94 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
     #############################
     ##### UTILITY FUNCTIONS #####
     #############################
+
+    def _calculate_luminosity(self, red:int, green:int, blue:int):
+        '''
+        Pass
+        '''
+        luminosity:float = 0.2126 * red + 0.7152 * green + 0.0722 * blue
+        return luminosity
+    
+    def _calculate_texture_luminosity_colors(self,
+            json_dict:dict, model_part:str, highest_luminosity:float,
+            original_red_val:int, original_green_val:int, original_blue_val:int):
+        '''
+        Pass
+        '''
+        target_red_val:int = json_dict[model_part][COLORS.red]
+        target_green_val:int = json_dict[model_part][COLORS.green]
+        target_blue_val:int = json_dict[model_part][COLORS.blue]
+        current_luminosity:float = self._calculate_luminosity(original_red_val, original_green_val, original_blue_val)
+        luminosity_delta = (highest_luminosity - current_luminosity) / (highest_luminosity + 0.00001)
+        new_red_val:int = max(0, round(target_red_val - target_red_val * luminosity_delta * 0.2126))
+        new_green_val:int = max(0, round(target_green_val - target_green_val * luminosity_delta * 0.7152))
+        new_blue_val:int = max(0, round(target_blue_val - target_blue_val * luminosity_delta * 0.0722))
+        return new_red_val, new_green_val, new_blue_val
+    
+    def _calculate_vertex_luminosity_colors(self,
+            json_dict:dict, model_part:str,
+            original_red_val:int, original_green_val:int, original_blue_val:int):
+        '''
+        Pass
+        '''
+        highest_luminosity:float = self._highest_luminosity_dict[model_part]
+        target_red_val:int = json_dict[model_part][COLORS.red]
+        target_green_val:int = json_dict[model_part][COLORS.green]
+        target_blue_val:int = json_dict[model_part][COLORS.blue]
+        current_luminosity:float = self._calculate_luminosity(original_red_val, original_green_val, original_blue_val)
+        luminosity_delta = (highest_luminosity - current_luminosity) / (highest_luminosity + 0.00001)
+        new_red_val:int = max(0, round(target_red_val - target_red_val * luminosity_delta * 0.2126))
+        new_green_val:int = max(0, round(target_green_val - target_green_val * luminosity_delta * 0.7152))
+        new_blue_val:int = max(0, round(target_blue_val - target_blue_val * luminosity_delta * 0.0722))
+        return new_red_val, new_green_val, new_blue_val
+
+    def _obtain_rgba5551_colors(self, rbga_val:int):
+        '''
+        Pass
+        '''
+        bitwise_red_val:int = (rbga_val >> 11) & 0b11111
+        bitwise_green_val:int = (rbga_val >> 6) & 0b11111
+        bitwise_blue_val:int = (rbga_val >> 1) & 0b11111
+        bitwise_alpha_val:int = rbga_val & 0b1
+        red_val:int = bitwise_red_val << 3
+        green_val:int = bitwise_green_val << 3
+        blue_val:int = bitwise_blue_val << 3
+        alpha_val:int = bitwise_alpha_val * 0xFF
+        return red_val, green_val, blue_val, alpha_val
+
+    def _create_rgba5551_from_colors(self,
+            red_val:int, green_val:int, blue_val:int, alpha_val:int):
+        '''
+        Pass
+        '''
+        bitwise_red_val:int = red_val >> 3
+        bitwise_green_val:int = green_val >> 3
+        bitwise_blue_val:int = blue_val >> 3
+        bitwise_alpha_val:int = alpha_val // 0xFF
+        rgba_val:int = \
+            (bitwise_red_val << 11) \
+            + (bitwise_green_val << 6) \
+            + (bitwise_blue_val << 1) \
+            + bitwise_alpha_val
+        return rgba_val
+
+    def _obtain_rgba8888_colors(self, rbga_val:int):
+        '''
+        Pass
+        '''
+        red_val:int = (rbga_val >> 24) & 0b11111111
+        green_val:int = (rbga_val >> 16) & 0b11111111
+        blue_val:int = (rbga_val >> 8) & 0b11111111
+        alpha_val:int = rbga_val & 0b11111111
+        return red_val, green_val, blue_val, alpha_val
+
+    def _create_rgba8888_from_colors(self,
+            red_val:int, green_val:int, blue_val:int, alpha_val:int):
+        '''
+        Pass
+        '''
+        rbga_val:int = (red_val << 24) + (green_val << 16) + (blue_val << 8) + alpha_val
+        return rbga_val
 
     ###################
     ##### PARSING #####
@@ -572,6 +666,8 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
     ##### EDIT FUNCTIONS #####
     ##########################
 
+    # REPLACE
+
     def _replace_textures(self, replacement_dict:dict):
         '''
         Pass
@@ -588,6 +684,295 @@ class OBJECT_3D_MODEL_CLASS(Generic_Bin_File_Class):
             curr_command:int = self._object_model_dict[CONSTANT.display_list][curr_count]
             if(curr_command in replacement_dict):
                 self._object_model_dict[CONSTANT.display_list][curr_count] = replacement_dict[curr_command]
+
+    # COLOR SHIFT
+
+    def _color_shift_color_index(self, texture_count:int, color_shift:dict, degree:float=0):
+        '''
+        Pass
+        '''
+        original_color_index:list = self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_color_index]
+        new_color_index:list = []
+        for original_color in original_color_index:
+            original_red_val, original_green_val, original_blue_val, original_alpha_val = \
+                self._obtain_rgba5551_colors(original_color)
+            new_red_val:int = color_shift[COLORS.red](original_red_val, original_green_val, original_blue_val, degree)
+            new_green_val:int = color_shift[COLORS.green](original_red_val, original_green_val, original_blue_val, degree)
+            new_blue_val:int = color_shift[COLORS.blue](original_red_val, original_green_val, original_blue_val, degree)
+            new_color:int = self._create_rgba5551_from_colors(new_red_val, new_green_val, new_blue_val, original_alpha_val)
+            new_color_index.append(new_color)
+        self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_color_index] = new_color_index
+
+    def _color_shift_rgba5551(self, texture_count:int, color_shift:dict, degree:float=0):
+        '''
+        Pass
+        '''
+        original_texture_pixels:list = self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels]
+        new_texture_pixels:list = []
+        for original_color in original_texture_pixels:
+            original_red_val, original_green_val, original_blue_val, original_alpha_val = \
+                self._obtain_rgba5551_colors(original_color)
+            new_red_val:int = color_shift[COLORS.red](original_red_val, original_green_val, original_blue_val, degree)
+            new_green_val:int = color_shift[COLORS.green](original_red_val, original_green_val, original_blue_val, degree)
+            new_blue_val:int = color_shift[COLORS.blue](original_red_val, original_green_val, original_blue_val, degree)
+            new_color:int = self._create_rgba5551_from_colors(new_red_val, new_green_val, new_blue_val, original_alpha_val)
+            new_texture_pixels.append(new_color)
+        self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels] = new_texture_pixels
+
+    def _color_shift_rgba8888(self, texture_count:int, color_shift:dict, degree:float=0):
+        '''
+        Pass
+        '''
+        original_texture_pixels:list = self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels]
+        new_texture_pixels:list = []
+        for original_color in original_texture_pixels:
+            original_red_val, original_green_val, original_blue_val, original_alpha_val = \
+                self._obtain_rgba8888_colors(original_color)
+            new_red_val:int = color_shift[COLORS.red](original_red_val, original_green_val, original_blue_val, degree)
+            new_green_val:int = color_shift[COLORS.green](original_red_val, original_green_val, original_blue_val, degree)
+            new_blue_val:int = color_shift[COLORS.blue](original_red_val, original_green_val, original_blue_val, degree)
+            new_color:int = self._create_rgba8888_from_colors(new_red_val, new_green_val, new_blue_val, original_alpha_val)
+            new_texture_pixels.append(new_color)
+        self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels] = new_texture_pixels
+
+    def _color_shift_textures(self, color_shift:dict, degree:float=0):
+        '''
+        Pass
+        '''
+        for curr_count in self._object_model_dict[CONSTANT.texture_list]:
+            texture_type:int = self._object_model_dict[CONSTANT.texture_list][curr_count][CONSTANT.texture_type]
+            if(texture_type in (self._CI4_VALUE, self._CI8_VALUE)):
+                self._color_shift_color_index(curr_count, color_shift, degree)
+            elif(texture_type == self._RGBA5551_VALUE):
+                self._color_shift_rgba5551(curr_count, color_shift, degree)
+            elif(texture_type == self._RGBA8888_VALUE):
+                self._color_shift_rgba8888(curr_count, color_shift, degree)
+            elif(texture_type == self._IA8_VALUE):
+                pass
+            else:
+                raise Exception(f"Texture '{curr_count}' has invalid type '{hex(texture_type)}'")
+
+    def _color_shift_vertices(self, color_shift:dict, degree:float=0):
+        '''
+        Pass
+        '''
+        for curr_count in self._object_model_dict[CONSTANT.vertex_list]:
+            original_red_val:int = self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_red_value]
+            original_green_val:int = self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_green_value]
+            original_blue_val:int = self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_blue_value]
+            new_red_val:int = color_shift[COLORS.red](original_red_val, original_green_val, original_blue_val, degree)
+            new_green_val:int = color_shift[COLORS.green](original_red_val, original_green_val, original_blue_val, degree)
+            new_blue_val:int = color_shift[COLORS.blue](original_red_val, original_green_val, original_blue_val, degree)
+            self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_red_value] = new_red_val
+            self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_green_value] = new_green_val
+            self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_blue_value] = new_blue_val
+
+    def color_shift(self, color_shift:dict, degree:float=0):
+        '''
+        Pass
+        '''
+        self._color_shift_textures(color_shift, degree)
+        self._color_shift_vertices(color_shift, degree)
+
+    # COLOR BY JSON
+
+    def _adjust_color_index_by_json(self,
+            texture_count:int, texture_color_count_list:int,
+            json_dict:dict, model_part:str):
+        '''
+        Pass
+        '''
+        ignore_gray:bool = json_dict[model_part]["ignore_gray"]
+        original_color_index:list = self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_color_index]
+        highest_luminosity:float = 0
+        for texture_color_count in texture_color_count_list:
+            original_color = original_color_index[texture_color_count]
+            original_red_val, original_green_val, original_blue_val, original_alpha_val = \
+                self._obtain_rgba5551_colors(original_color)
+            if(ignore_gray and
+               original_red_val == original_green_val and
+               original_red_val == original_blue_val):
+                continue
+            curr_luminosity:float = self._calculate_luminosity(original_red_val, original_green_val, original_blue_val)
+            highest_luminosity:float = max(highest_luminosity, curr_luminosity)
+        for texture_color_count in texture_color_count_list:
+            original_color = original_color_index[texture_color_count]
+            original_red_val, original_green_val, original_blue_val, original_alpha_val = \
+                self._obtain_rgba5551_colors(original_color)
+            if(ignore_gray and
+               original_red_val == original_green_val and
+               original_red_val == original_blue_val):
+                continue
+            new_red_val, new_green_val, new_blue_val = self._calculate_texture_luminosity_colors(
+                json_dict, model_part, highest_luminosity,
+                original_red_val, original_green_val, original_blue_val)
+            new_color:int = self._create_rgba5551_from_colors(new_red_val, new_green_val, new_blue_val, original_alpha_val)
+            original_color_index[texture_color_count] = new_color
+        self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_color_index] = original_color_index
+    
+    def _adjust_rgba5551_by_json(self,
+            texture_count:int, json_dict:dict, model_part:str):
+        '''
+        Pass
+        '''
+        ignore_gray:bool = json_dict[model_part]["ignore_gray"]
+        original_texture_pixels:list = self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels]
+        new_texture_pixels:list = []
+        highest_luminosity:float = 0
+        for original_color in original_texture_pixels:
+            original_red_val, original_green_val, original_blue_val, original_alpha_val = \
+                self._obtain_rgba5551_colors(original_color)
+            if(ignore_gray and
+               original_red_val == original_green_val and
+               original_red_val == original_blue_val):
+                continue
+            curr_luminosity:float = self._calculate_luminosity(original_red_val, original_green_val, original_blue_val)
+            highest_luminosity:float = max(highest_luminosity, curr_luminosity)
+        for original_color in original_texture_pixels:
+            original_red_val, original_green_val, original_blue_val, original_alpha_val = \
+                self._obtain_rgba5551_colors(original_color)
+            if(ignore_gray and
+               original_red_val == original_green_val and
+               original_red_val == original_blue_val):
+                continue
+            new_red_val, new_green_val, new_blue_val = self._calculate_texture_luminosity_colors(
+                json_dict, model_part, highest_luminosity,
+                original_red_val, original_green_val, original_blue_val)
+            new_color:int = self._create_rgba5551_from_colors(new_red_val, new_green_val, new_blue_val, original_alpha_val)
+            new_texture_pixels.append(new_color)
+        self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels] = new_texture_pixels
+    
+    def _adjust_rgba8888_by_json(self,
+            texture_count:int, json_dict:dict, model_part:str):
+        '''
+        Pass
+        '''
+        ignore_gray:bool = json_dict[model_part]["ignore_gray"]
+        original_texture_pixels:list = self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels]
+        new_texture_pixels:list = []
+        highest_luminosity:float = 0
+        for original_color in original_texture_pixels:
+            original_red_val, original_green_val, original_blue_val, original_alpha_val = \
+                self._obtain_rgba8888_colors(original_color)
+            if(ignore_gray and
+               original_red_val == original_green_val and
+               original_red_val == original_blue_val):
+                continue
+            curr_luminosity:float = self._calculate_luminosity(original_red_val, original_green_val, original_blue_val)
+            highest_luminosity:float = max(highest_luminosity, curr_luminosity)
+        for original_color in original_texture_pixels:
+            original_red_val, original_green_val, original_blue_val, original_alpha_val = \
+                self._obtain_rgba8888_colors(original_color)
+            if(ignore_gray and
+               original_red_val == original_green_val and
+               original_red_val == original_blue_val):
+                continue
+            new_red_val, new_green_val, new_blue_val = self._calculate_texture_luminosity_colors(
+                json_dict, model_part, highest_luminosity,
+                original_red_val, original_green_val, original_blue_val)
+            new_color:int = self._create_rgba8888_from_colors(new_red_val, new_green_val, new_blue_val, original_alpha_val)
+            new_texture_pixels.append(new_color)
+        self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_pixels] = new_texture_pixels
+
+    def _color_texture_by_json(self, json_dict:dict):
+        '''
+        Pass
+        '''
+        for model_part in self._texture_dict:
+            if(model_part == "skip" or json_dict[model_part] == "skip"):
+                continue
+            for texture_count in self._texture_dict[model_part]:
+                texture_type:int = self._object_model_dict[CONSTANT.texture_list][texture_count][CONSTANT.texture_type]
+                if(texture_type == self._CI4_VALUE):
+                    texture_color_count_list:list = range(0x10)
+                    if(texture_count in self._texture_specific_dict):
+                        texture_color_count_list:list = self._texture_specific_dict[texture_count][model_part]
+                    self._adjust_color_index_by_json(
+                        texture_count, texture_color_count_list, json_dict, model_part)
+                elif(texture_type == self._CI8_VALUE):
+                    texture_color_count_list:list = range(0x100)
+                    if(texture_count in self._texture_specific_dict):
+                        texture_color_count_list:list = self._texture_specific_dict[texture_count][model_part]
+                    self._adjust_color_index_by_json(
+                        texture_count, texture_color_count_list, json_dict, model_part)
+                elif(texture_type == self._RGBA5551_VALUE):
+                    self._adjust_rgba5551_by_json(texture_count, json_dict, model_part)
+                elif(texture_type == self._RGBA8888_VALUE):
+                    self._adjust_rgba8888_by_json(texture_count, json_dict, model_part)
+    
+    def _calculate_vertices_highest_luminosity(self):
+        '''
+        Pass
+        '''
+        for curr_count in self._object_model_dict[CONSTANT.vertex_list]:
+            original_red_val:int = self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_red_value]
+            original_green_val:int = self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_green_value]
+            original_blue_val:int = self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_blue_value]
+            original_alpha_val:int = self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_alpha_value]
+            original_color:tuple = (original_red_val, original_green_val, original_blue_val, original_alpha_val)
+            if(curr_count in self._vertex_count_dict):
+                model_part:str = self._vertex_count_dict[curr_count]
+            elif(original_color in self._vertex_dict):
+                model_part:str = self._vertex_dict[original_color]
+            else:
+                print("Vertex Not Accounted For!")
+                print(f"Vertex Count: {curr_count}")
+                print(f"Original: {hex(original_red_val)}, {hex(original_green_val)}, {hex(original_blue_val)}, {hex(original_alpha_val)}")
+                exit(0)
+            if(model_part == "skip"):
+                continue
+            curr_luminosity:float = self._calculate_luminosity(original_red_val, original_green_val, original_blue_val)
+            if(model_part in self._highest_luminosity_dict):
+                curr_highest_luminosity:float = self._highest_luminosity_dict[model_part]
+                actual_highest_luminosity:float = max(curr_highest_luminosity, curr_luminosity)
+                self._highest_luminosity_dict[model_part] = actual_highest_luminosity
+            else:
+                self._highest_luminosity_dict[model_part] = curr_luminosity
+
+    def _color_vertices_via_luminosity(self, json_dict:dict):
+        '''
+        Pass
+        '''
+        for curr_count in self._object_model_dict[CONSTANT.vertex_list]:
+            original_red_val:int = self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_red_value]
+            original_green_val:int = self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_green_value]
+            original_blue_val:int = self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_blue_value]
+            original_alpha_val:int = self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_alpha_value]
+            original_color:tuple = (original_red_val, original_green_val, original_blue_val, original_alpha_val)
+            if(curr_count in self._vertex_count_dict):
+                model_part:str = self._vertex_count_dict[curr_count]
+            elif(original_color in self._vertex_dict):
+                model_part:str = self._vertex_dict[original_color]
+            else:
+                print("Vertex Not Accounted For!")
+                print(f"Vertex Count: {curr_count}")
+                print(f"Original: {hex(original_red_val)}, {hex(original_green_val)}, {hex(original_blue_val)}, {hex(original_alpha_val)}")
+                exit(0)
+            if(model_part == "skip" or json_dict[model_part] == "skip"):
+                continue
+            new_red_val, new_green_val, new_blue_val = self._calculate_vertex_luminosity_colors(
+                json_dict, model_part,
+                original_red_val, original_green_val, original_blue_val)
+            self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_red_value] = new_red_val
+            self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_green_value] = new_green_val
+            self._object_model_dict[CONSTANT.vertex_list][curr_count][CONSTANT.vertex_blue_value] = new_blue_val
+
+    def _color_vertices_by_json(self, json_dict:dict):
+        '''
+        Pass
+        '''
+        self._highest_luminosity_dict:dict = {}
+        self._calculate_vertices_highest_luminosity()
+        self._color_vertices_via_luminosity(json_dict)
+
+    def color_by_json(self, json_name:str):
+        '''
+        Pass
+        '''
+        json_dir:str = f"{self._model_json_dir}{self._json_file_dir}{json_name}.json"
+        json_dict:dict = self._read_json_as_dict(json_dir)
+        self._color_texture_by_json(json_dict)
+        self._color_vertices_by_json(json_dict)
 
     #################
     ##### WRITE #####

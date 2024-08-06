@@ -1,21 +1,111 @@
 '''
 Enumerators from the following class are arbitrary values used to make each instance unique.
+
+This will be used for Archipelago and general tracking.
+
+What we are accounting for:
+* Abilities
+* Jiggies
+* Empty Honeycombs
+* Mumbo Tokens
+* Musical Notes
+* Jinjos
+* Flight Pad
+* Events
+* Switches/Buttons
+
+What we aren't accounting for:
+* Blue Eggs
+* Red Feathers
+* Gold Feathers
 '''
 
 ###################
 ##### IMPORTS #####
 ###################
 
-from enum import IntEnum, auto
+from enum import IntEnum, auto, unique
 
-##############################
-##### MUSICAL NOTE ENUMS #####
-##############################
+############################
+##### LOGIC ITEM ENUMS #####
+############################
 
-class MUSICAL_NOTE_ENUMS(IntEnum):
+@unique
+class LOGIC_ITEM_ENUMS(IntEnum):
+    #####################
+    ##### ABILITIES #####
+    #####################
+    ability_beak_barge = auto()
+    ability_beak_bomb = auto()
+    ability_beak_buster = auto()
+    ability_claw_swipe = auto()
+    ability_climb = auto()
+    ability_egg_firing = auto()
+    ability_feathery_flap = auto()
+    ability_flap_flip = auto()
+    ability_flight = auto()
+    ability_high_jump = auto()
+    ability_rat_a_tat_rap = auto()
+    ability_roll = auto()
+    ability_shock_jump = auto()
+    ability_stilt_stride = auto()
+    ability_dive = auto()
+    ability_talon_trot = auto()
+    ability_turbo_talon_trot = auto()
+    ability_wonderwing = auto()
+    ability_note_door = auto()
+    ###########################
+    ##### TRANSFORMATIONS #####
+    ###########################
+    transformation_termite = auto()
+    transformation_crocodile = auto()
+    transformation_walrus = auto()
+    transformation_pumpkin = auto()
+    transformation_bee = auto()
+    ###########################
+    ##### SPIRAL MOUNTAIN #####
+    ###########################
+    # Jiggies
+    # Empty Honeycombs
+    spiral_mountain_empty_honeycomb_stump = auto()
+    spiral_mountain_empty_honeycomb_waterfall = auto()
+    spiral_mountain_empty_honeycomb_underwater = auto()
+    spiral_mountain_empty_honeycomb_atop_tree = auto()
+    spiral_mountain_empty_honeycomb_colliwobble = auto()
+    spiral_mountain_empty_honeycomb_quarries = auto()
+    # Mumbo Tokens
+    # Musical Notes
+    # Jinjos
+    # Flight Pad
+    # Events
+    spiral_mountain_jump_tutorial = auto()
+    spiral_mountain_attack_tutorial = auto()
+    spiral_mountain_bridge_complete = auto() # Auto Complete?
+    # Switches/Buttons
     ###########################
     ##### MUMBOS MOUNTAIN #####
     ###########################
+    # Jiggies
+    mumbos_mountain_jiggy_jinjo = auto()
+    mumbos_mountain_jiggy_atop_tickers_tower = auto()
+    mumbos_mountain_jiggy_mumbos_skull_eye = auto()
+    mumbos_mountain_jiggy_juju = auto()
+    mumbos_mountain_jiggy_huts = auto()
+    mumbos_mountain_jiggy_stonehenge = auto()
+    mumbos_mountain_jiggy_hill = auto()
+    mumbos_mountain_jiggy_orange_pads = auto()
+    mumbos_mountain_jiggy_chimpy = auto()
+    mumbos_mountain_jiggy_conga = auto()
+    # Empty Honeycombs
+    mumbos_mountain_empty_honeycomb_alcove = auto()
+    mumbos_mountain_empty_honeycomb_atop_juju = auto()
+    # Mumbo Tokens
+    mumbos_mountain_mumbo_token_conga = auto()
+    mumbos_mountain_mumbo_token_stonehenge = auto()
+    mumbos_mountain_mumbo_token_under_mumbos_bridge = auto()
+    mumbos_mountain_mumbo_token_near_pink_jinjo = auto()
+    mumbos_mountain_mumbo_token_tickers_tower = auto()
+    # Musical Notes
     mumbos_mountain_musical_note_1 = auto()
     mumbos_mountain_musical_note_2 = auto()
     mumbos_mountain_musical_note_3 = auto()
@@ -111,14 +201,52 @@ class MUSICAL_NOTE_ENUMS(IntEnum):
     mumbos_mountain_musical_note_93 = auto()
     mumbos_mountain_musical_note_94 = auto()
     mumbos_mountain_musical_note_95 = auto()
-    mumbos_mountain_musical_note_96 = auto()
-    mumbos_mountain_musical_note_97 = auto()
-    mumbos_mountain_musical_note_98 = auto()
-    mumbos_mountain_musical_note_99 = auto()
-    mumbos_mountain_musical_note_100 = auto()
+    mumbos_mountain_musical_note_hut_1 = auto()
+    mumbos_mountain_musical_note_hut_2 = auto()
+    mumbos_mountain_musical_note_hut_3 = auto()
+    mumbos_mountain_musical_note_hut_4 = auto()
+    mumbos_mountain_musical_note_hut_5 = auto()
+    # Jinjos
+    mumbos_mountain_pink_jinjo = auto()
+    mumbos_mountain_blue_jinjo = auto()
+    mumbos_mountain_orange_jinjo = auto()
+    mumbos_mountain_yellow_jinjo = auto()
+    mumbos_mountain_green_jinjo = auto()
+    # Flight Pad
+    # Events
+    mumbos_mountain_collect_jinjos = auto()
+    mumbos_mountain_destroy_huts = auto()
+    # Switches/Buttons
+    mumbos_mountain_witch_switch = auto()
     ###############################
     ##### TREASURE TROVE COVE #####
     ###############################
+    # Jiggies
+    treasure_trove_cove_jiggy_jinjo = auto()
+    treasure_trove_cove_jiggy_atop_lighthouse = auto()
+    treasure_trove_cove_jiggy_shock_jump_alcove = auto()
+    treasure_trove_cove_jiggy_backside_alcove = auto()
+    treasure_trove_cove_jiggy_pool = auto()
+    treasure_trove_cove_jiggy_sandcastle = auto()
+    treasure_trove_cove_jiggy_treasure_hunt = auto()
+    treasure_trove_cove_jiggy_nipper = auto()
+    treasure_trove_cove_jiggy_lockup = auto()
+    treasure_trove_cove_jiggy_blubber = auto()
+    # Empty Honeycombs
+    treasure_trove_cove_empty_honeycomb_underwater = auto()
+    treasure_trove_cove_empty_honeycomb_floating_crate = auto()
+    # Mumbo Tokens
+    treasure_trove_cove_mumbo_token_inside_salty_hippo = auto()
+    treasure_trove_cove_mumbo_token_lockup_1 = auto()
+    treasure_trove_cove_mumbo_token_lockup_2 = auto()
+    treasure_trove_cove_mumbo_token_salty_hippo_mast = auto()
+    treasure_trove_cove_mumbo_token_lighthouse = auto()
+    treasure_trove_cove_mumbo_token_floating_box = auto()
+    treasure_trove_cove_mumbo_token_by_last_x = auto()
+    treasure_trove_cove_mumbo_token_inside_pool = auto()
+    treasure_trove_cove_mumbo_token_shock_spring_pad = auto()
+    treasure_trove_cove_mumbo_token_behind_nipper = auto()
+    # Musical Notes
     treasure_trove_cove_musical_note_1 = auto()
     treasure_trove_cove_musical_note_2 = auto()
     treasure_trove_cove_musical_note_3 = auto()
@@ -219,9 +347,45 @@ class MUSICAL_NOTE_ENUMS(IntEnum):
     treasure_trove_cove_musical_note_98 = auto()
     treasure_trove_cove_musical_note_99 = auto()
     treasure_trove_cove_musical_note_100 = auto()
+    # Jinjos
+    treasure_trove_cove_pink_jinjo = auto()
+    treasure_trove_cove_blue_jinjo = auto()
+    treasure_trove_cove_orange_jinjo = auto()
+    treasure_trove_cove_yellow_jinjo = auto()
+    treasure_trove_cove_green_jinjo = auto()
+    # Flight Pad
+    treasure_trove_cove_flight_pad_treasure_x_one = auto()
+    treasure_trove_cove_flight_pad_treasure_x_two_through_four = auto()
+    treasure_trove_cove_flight_pad_crows_nest = auto()
+    # Events
+    treasure_trove_cove_collect_jinjos = auto()
+    treasure_trove_cove_patch_leaky = auto()
+    # Switches/Buttons
+    treasure_trove_cove_witch_switch = auto()
     ###########################
     ##### CLANKERS CAVERN #####
     ###########################
+    # Jiggies
+    clankers_cavern_jiggy_jinjo = auto()
+    clankers_cavern_jiggy_mutie_snippets = auto()
+    clankers_cavern_jiggy_raise_clanker = auto()
+    clankers_cavern_jiggy_bolt = auto()
+    clankers_cavern_jiggy_tail = auto()
+    clankers_cavern_jiggy_long_pipe = auto()
+    clankers_cavern_jiggy_tooth = auto()
+    clankers_cavern_jiggy_rings = auto()
+    clankers_cavern_jiggy_blowhole = auto()
+    clankers_cavern_jiggy_wonderwing = auto()
+    # Empty Honeycombs
+    clankers_cavern_empty_honeycomb_underwater_pipe = auto()
+    clankers_cavern_empty_honeycomb_grated_pipe = auto()
+    # Mumbo Tokens
+    clankers_cavern_mumbo_token_tail_chompa = auto()
+    clankers_cavern_mumbo_token_above_world_exit = auto()
+    clankers_cavern_mumbo_token_underwater_alcove = auto()
+    clankers_cavern_mumbo_token_window = auto()
+    clankers_cavern_mumbo_token_clankers_tooth = auto()
+    # Musical Notes
     clankers_cavern_musical_note_1 = auto()
     clankers_cavern_musical_note_2 = auto()
     clankers_cavern_musical_note_3 = auto()
@@ -322,9 +486,47 @@ class MUSICAL_NOTE_ENUMS(IntEnum):
     clankers_cavern_musical_note_98 = auto()
     clankers_cavern_musical_note_99 = auto()
     clankers_cavern_musical_note_100 = auto()
+    # Jinjos
+    clankers_cavern_pink_jinjo = auto()
+    clankers_cavern_blue_jinjo = auto()
+    clankers_cavern_orange_jinjo = auto()
+    clankers_cavern_yellow_jinjo = auto()
+    clankers_cavern_green_jinjo = auto()
+    # Flight Pad
+    # Events
+    clankers_cavern_collect_jinjos = auto()
+    clankers_cavern_raise_clanker = auto()
+    # Switches/Buttons
+    clankers_cavern_witch_switch = auto()
     #############################
     ##### BUBBLEGLOOP SWAMP #####
     #############################
+    # Jiggies
+    bubblegloop_swamp_jiggy_jinjo = auto()
+    bubblegloop_swamp_jiggy_central_button = auto()
+    bubblegloop_swamp_jiggy_pink_egg = auto()
+    bubblegloop_swamp_jiggy_croctus = auto()
+    bubblegloop_swamp_jiggy_huts = auto()
+    bubblegloop_swamp_jiggy_yellow_flibbits = auto()
+    bubblegloop_swamp_jiggy_maze_button = auto()
+    bubblegloop_swamp_jiggy_tanktup = auto()
+    bubblegloop_swamp_jiggy_tiptup = auto()
+    bubblegloop_swamp_jiggy_mr_vile = auto()
+    # Empty Honeycombs
+    bubblegloop_swamp_empty_honeycomb_mumbos_skull = auto()
+    bubblegloop_swamp_empty_honeycomb_tanktup = auto()
+    # Mumbo Tokens
+    bubblegloop_swamp_mumbo_token_under_huts_1 = auto()
+    bubblegloop_swamp_mumbo_token_under_huts_2 = auto()
+    bubblegloop_swamp_mumbo_token_above_cattail = auto()
+    bubblegloop_swamp_mumbo_token_by_yellow_jinjo = auto()
+    bubblegloop_swamp_mumbo_token_above_huts = auto()
+    bubblegloop_swamp_mumbo_token_behind_mumbos_skull = auto()
+    bubblegloop_swamp_mumbo_token_elevated_walkway = auto()
+    bubblegloop_swamp_mumbo_token_inside_tanktup = auto()
+    bubblegloop_swamp_mumbo_token_mr_vile = auto()
+    bubblegloop_swamp_mumbo_token_behind_mumbos_chair = auto()
+    # Musical Notes
     bubblegloop_swamp_musical_note_1 = auto()
     bubblegloop_swamp_musical_note_2 = auto()
     bubblegloop_swamp_musical_note_3 = auto()
@@ -420,14 +622,54 @@ class MUSICAL_NOTE_ENUMS(IntEnum):
     bubblegloop_swamp_musical_note_93 = auto()
     bubblegloop_swamp_musical_note_94 = auto()
     bubblegloop_swamp_musical_note_95 = auto()
-    bubblegloop_swamp_musical_note_96 = auto()
-    bubblegloop_swamp_musical_note_97 = auto()
-    bubblegloop_swamp_musical_note_98 = auto()
-    bubblegloop_swamp_musical_note_99 = auto()
-    bubblegloop_swamp_musical_note_100 = auto()
+    bubblegloop_swamp_musical_note_hut_1 = auto()
+    bubblegloop_swamp_musical_note_hut_2 = auto()
+    bubblegloop_swamp_musical_note_hut_3 = auto()
+    bubblegloop_swamp_musical_note_hut_4 = auto()
+    bubblegloop_swamp_musical_note_hut_5 = auto()
+    # Jinjos
+    bubblegloop_swamp_pink_jinjo = auto()
+    bubblegloop_swamp_blue_jinjo = auto()
+    bubblegloop_swamp_orange_jinjo = auto()
+    bubblegloop_swamp_yellow_jinjo = auto()
+    bubblegloop_swamp_green_jinjo = auto()
+    # Flight Pad
+    # Events
+    bubblegloop_swamp_collect_jinjos = auto()
+    bubblegloop_swamp_break_huts = auto()
+    # Switches/Buttons
+    bubblegloop_swamp_witch_switch = auto()
+    bubblegloop_swamp_central_button = auto()
+    bubblegloop_swamp_maze_button = auto()
     ##########################
     ##### FREEZEEZY PEAK #####
     ##########################
+    # Jiggies
+    freezeezy_peak_jiggy_jinjo = auto()
+    freezeezy_peak_jiggy_save_boggy = auto()
+    freezeezy_peak_jiggy_smoke_pipe = auto()
+    freezeezy_peak_jiggy_race_boggy_bk = auto()
+    freezeezy_peak_jiggy_snowman_buttons = auto()
+    freezeezy_peak_jiggy_presents = auto()
+    freezeezy_peak_jiggy_christmas_tree = auto()
+    freezeezy_peak_jiggy_race_boggy_walrus = auto()
+    freezeezy_peak_jiggy_sir_slushes = auto()
+    freezeezy_peak_jiggy_wozza = auto()
+    # Empty Honeycombs
+    freezeezy_peak_empty_honeycomb_wozzas_cave = auto()
+    freezeezy_peak_empty_honeycomb_under_sir_slush = auto()
+    # Mumbo Tokens
+    freezeezy_peak_mumbo_token_snowman_leg_1 = auto()
+    freezeezy_peak_mumbo_token_snowman_leg_2 = auto()
+    freezeezy_peak_mumbo_token_present_stack = auto()
+    freezeezy_peak_mumbo_token_chimney_fly_pad = auto()
+    freezeezy_peak_mumbo_token_sir_slush_island = auto()
+    freezeezy_peak_mumbo_token_sir_slush_present = auto()
+    freezeezy_peak_mumbo_token_christmas_tree_base = auto()
+    freezeezy_peak_mumbo_token_scarf_sled = auto()
+    freezeezy_peak_mumbo_token_water_by_wozza = auto()
+    freezeezy_peak_mumbo_token_boggys_igloo = auto()
+    # Musical Notes
     freezeezy_peak_musical_note_1 = auto()
     freezeezy_peak_musical_note_2 = auto()
     freezeezy_peak_musical_note_3 = auto()
@@ -528,9 +770,50 @@ class MUSICAL_NOTE_ENUMS(IntEnum):
     freezeezy_peak_musical_note_98 = auto()
     freezeezy_peak_musical_note_99 = auto()
     freezeezy_peak_musical_note_100 = auto()
+    # Jinjos
+    freezeezy_peak_pink_jinjo = auto()
+    freezeezy_peak_blue_jinjo = auto()
+    freezeezy_peak_orange_jinjo = auto()
+    freezeezy_peak_yellow_jinjo = auto()
+    freezeezy_peak_green_jinjo = auto()
+    # Flight Pad
+    freezeezy_peak_flight_pad_chimney = auto()
+    freezeezy_peak_flight_pad_presents = auto()
+    # Events
+    freezeezy_peak_collect_jinjos = auto()
+    freezeezy_peak_escort_twinklies = auto()
+    # Switches/Buttons
+    freezeezy_peak_witch_switch = auto()
+    freezeezy_peak_christmas_tree_button = auto()
     ########################
     ##### GOBIS VALLEY #####
     ########################
+    # Jiggies
+    gobis_valley_jiggy_jinjo = auto()
+    gobis_valley_jiggy_grabba = auto()
+    gobis_valley_jiggy_jinxy = auto()
+    gobis_valley_jiggy_matching_puzzle = auto()
+    gobis_valley_jiggy_king_sandybutt = auto()
+    gobis_valley_jiggy_water_pyramid = auto()
+    gobis_valley_jiggy_rubee = auto()
+    gobis_valley_jiggy_free_gobi = auto()
+    gobis_valley_jiggy_trunker = auto()
+    gobis_valley_jiggy_ancient_ones = auto()
+    # Empty Honeycombs
+    gobis_valley_empty_honeycomb_cactus = auto()
+    gobis_valley_empty_honeycomb_gobi_3 = auto()
+    # Mumbo Tokens
+    gobis_valley_mumbo_token_jinxys_nose = auto()
+    gobis_valley_mumbo_token_in_sand_by_jinxy = auto()
+    gobis_valley_mumbo_token_moat = auto()
+    gobis_valley_mumbo_token_over_maze_pyramid = auto()
+    gobis_valley_mumbo_token_water_temple_door = auto()
+    gobis_valley_mumbo_token_matching_pyramid = auto()
+    gobis_valley_mumbo_token_in_maze_pyramid = auto()
+    gobis_valley_mumbo_token_in_water_pyramid = auto()
+    gobis_valley_mumbo_token_rubees_pyramid = auto()
+    gobis_valley_mumbo_token_inside_jinxy = auto()
+    # Musical Notes
     gobis_valley_musical_note_1 = auto()
     gobis_valley_musical_note_2 = auto()
     gobis_valley_musical_note_3 = auto()
@@ -631,9 +914,60 @@ class MUSICAL_NOTE_ENUMS(IntEnum):
     gobis_valley_musical_note_98 = auto()
     gobis_valley_musical_note_99 = auto()
     gobis_valley_musical_note_100 = auto()
+    # Jinjos
+    gobis_valley_pink_jinjo = auto()
+    gobis_valley_blue_jinjo = auto()
+    gobis_valley_orange_jinjo = auto()
+    gobis_valley_yellow_jinjo = auto()
+    gobis_valley_green_jinjo = auto()
+    # Flight Pad
+    gobis_valley_flight_pad_atop_jinxy = auto()
+    gobis_valley_flight_pad_moat = auto()
+    # Events
+    gobis_valley_collect_jinjos = auto()
+    gobis_valley_defeat_grabba = auto()
+    gobis_valley_open_jinxy = auto()
+    gobis_valley_raise_king_sandybutts_pyramid = auto()
+    # Switches/Buttons
+    gobis_valley_witch_switch = auto()
+    gobis_valley_water_pyramid_button = auto()
+    gobis_valley_matching_puzzle_button = auto()
+    gobis_valley_rubees_pyramid_target = auto()
+    gobis_valley_empty_honeycomb_switch = auto()
     ###############################
     ##### MAD MONSTER MANSION #####
     ###############################
+    # Jiggies
+    mad_monster_mansion_jiggy_jinjo = auto()
+    mad_monster_mansion_jiggy_well = auto()
+    mad_monster_mansion_jiggy_napper = auto()
+    mad_monster_mansion_jiggy_cellar = auto()
+    mad_monster_mansion_jiggy_church_roof = auto()
+    mad_monster_mansion_jiggy_motzand = auto()
+    mad_monster_mansion_jiggy_rain_barrel = auto()
+    mad_monster_mansion_jiggy_tumblar = auto()
+    mad_monster_mansion_jiggy_flower_pots = auto()
+    mad_monster_mansion_jiggy_loggo = auto()
+    # Empty Honeycombs
+    mad_monster_mansion_empty_honeycomb_church_rafters = auto()
+    mad_monster_mansion_empty_honeycomb_floorboards = auto()
+    # Mumbo Tokens
+    mad_monster_mansion_mumbo_token_by_fountain = auto()
+    mad_monster_mansion_mumbo_token_by_tumblar_shed = auto()
+    mad_monster_mansion_mumbo_token_church_roof = auto()
+    mad_monster_mansion_mumbo_token_hedges_by_ramp = auto()
+    mad_monster_mansion_mumbo_token_hedge_maze = auto()
+    mad_monster_mansion_mumbo_token_cemetary = auto()
+    mad_monster_mansion_mumbo_token_in_fountain_whipcrack = auto()
+    mad_monster_mansion_mumbo_token_church_rafters = auto()
+    mad_monster_mansion_mumbo_token_organ_stool = auto()
+    mad_monster_mansion_mumbo_token_tumblar_shed_roof = auto()
+    mad_monster_mansion_mumbo_token_cellar_or_loggo = auto()
+    mad_monster_mansion_mumbo_token_dining_room = auto()
+    mad_monster_mansion_mumbo_token_well = auto()
+    mad_monster_mansion_mumbo_token_bedroom = auto()
+    mad_monster_mansion_mumbo_token_bathroom = auto()
+    # Musical Notes
     mad_monster_mansion_musical_note_1 = auto()
     mad_monster_mansion_musical_note_2 = auto()
     mad_monster_mansion_musical_note_3 = auto()
@@ -734,9 +1068,53 @@ class MUSICAL_NOTE_ENUMS(IntEnum):
     mad_monster_mansion_musical_note_98 = auto()
     mad_monster_mansion_musical_note_99 = auto()
     mad_monster_mansion_musical_note_100 = auto()
+    # Jinjos
+    mad_monster_mansion_pink_jinjo = auto()
+    mad_monster_mansion_blue_jinjo = auto()
+    mad_monster_mansion_orange_jinjo = auto()
+    mad_monster_mansion_yellow_jinjo = auto()
+    mad_monster_mansion_green_jinjo = auto()
+    # Flight Pad
+    # Events
+    mad_monster_mansion_collect_jinjos = auto()
+    mad_monster_mansion_fill_flower_pots = auto()
+    # Switches/Buttons
+    mad_monster_mansion_witch_switch = auto()
+    mad_monster_mansion_church_button = auto()
     ############################
     ##### RUSTY BUCKET BAY #####
     ############################
+    # Jiggies
+    rusty_bucket_bay_jiggy_jinjo = auto()
+    rusty_bucket_bay_jiggy_chump_warehouse = auto()
+    rusty_bucket_bay_jiggy_snorkel = auto()
+    rusty_bucket_bay_jiggy_whistles = auto()
+    rusty_bucket_bay_jiggy_atop_funnel = auto()
+    rusty_bucket_bay_jiggy_boss_boom_box = auto()
+    rusty_bucket_bay_jiggy_propeller = auto()
+    rusty_bucket_bay_jiggy_captains_cabin = auto()
+    rusty_bucket_bay_jiggy_crane_cage = auto()
+    rusty_bucket_bay_jiggy_engine_room = auto()
+    # Empty Honeycombs
+    rusty_bucket_bay_empty_honeycomb_boat_room = auto()
+    rusty_bucket_bay_empty_honeycomb_engine_room = auto()
+    # Mumbo Tokens
+    rusty_bucket_bay_mumbo_token_top_of_funnel = auto()
+    rusty_bucket_bay_mumbo_token_front_of_ship = auto()
+    rusty_bucket_bay_mumbo_token_lifeboat = auto()
+    rusty_bucket_bay_mumbo_token_above_tollway = auto()
+    rusty_bucket_bay_mumbo_token_toxic_pool = auto()
+    rusty_bucket_bay_mumbo_token_witch_switch_chompa = auto()
+    rusty_bucket_bay_mumbo_token_chompa_container = auto()
+    rusty_bucket_bay_mumbo_token_seaman_grublin_container = auto()
+    rusty_bucket_bay_mumbo_token_crew_cabin = auto()
+    rusty_bucket_bay_mumbo_token_navigation_room = auto()
+    rusty_bucket_bay_mumbo_token_kitchen_oven = auto()
+    rusty_bucket_bay_mumbo_token_engine_room_left = auto()
+    rusty_bucket_bay_mumbo_token_engine_room_right = auto()
+    rusty_bucket_bay_mumbo_token_engine_room_middle = auto()
+    rusty_bucket_bay_mumbo_token_boom_box_pipe = auto()
+    # Musical Notes
     rusty_bucket_bay_musical_note_1 = auto()
     rusty_bucket_bay_musical_note_2 = auto()
     rusty_bucket_bay_musical_note_3 = auto()
@@ -837,9 +1215,64 @@ class MUSICAL_NOTE_ENUMS(IntEnum):
     rusty_bucket_bay_musical_note_98 = auto()
     rusty_bucket_bay_musical_note_99 = auto()
     rusty_bucket_bay_musical_note_100 = auto()
+    # Jinjos
+    rusty_bucket_bay_pink_jinjo = auto()
+    rusty_bucket_bay_blue_jinjo = auto()
+    rusty_bucket_bay_orange_jinjo = auto()
+    rusty_bucket_bay_yellow_jinjo = auto()
+    rusty_bucket_bay_green_jinjo = auto()
+    # Events
+    rusty_bucket_bay_collect_jinjos = auto()
+    # Flight Pad
+    rusty_bucket_bay_flight_pad_boat_room = auto()
+    # Switches/Buttons
+    rusty_bucket_bay_witch_switch = auto()
+    rusty_bucket_bay_up_button = auto()
+    rusty_bucket_bay_down_switch = auto()
+    rusty_bucket_bay_empty_honeycomb_switch = auto()
     ############################
     ##### CLICK CLOCK WOOD #####
     ############################
+    # Jiggies
+    click_clock_wood_jiggy_jinjo = auto()
+    click_clock_wood_jiggy_treehouse = auto()
+    click_clock_wood_jiggy_eyrie = auto()
+    click_clock_wood_jiggy_nabnut = auto()
+    click_clock_wood_jiggy_gnawty = auto()
+    click_clock_wood_jiggy_zubbas = auto()
+    click_clock_wood_jiggy_flower = auto()
+    click_clock_wood_jiggy_leaf_jumps = auto()
+    click_clock_wood_jiggy_tree_top = auto()
+    click_clock_wood_jiggy_whipcrack_room = auto()
+    # Empty Honeycombs
+    click_clock_wood_empty_honeycomb_gnawty = auto()
+    click_clock_wood_empty_honeycomb_acorn_storage = auto()
+    # Mumbo Tokens
+    click_clock_wood_mumbo_token_spring_house = auto()
+    click_clock_wood_mumbo_token_spring_low_branch = auto()
+    click_clock_wood_mumbo_token_spring_brambles_or_eyrie = auto()
+    click_clock_wood_mumbo_token_spring_garden_snare = auto()
+    click_clock_wood_mumbo_token_spring_entrance = auto()
+    click_clock_wood_mumbo_token_spring_hive = auto()
+    click_clock_wood_mumbo_token_spring_nabnuts = auto()
+    click_clock_wood_mumbo_token_summer_eyrie = auto()
+    click_clock_wood_mumbo_token_summer_garden_corner = auto()
+    click_clock_wood_mumbo_token_summer_bramble_snare = auto()
+    click_clock_wood_mumbo_token_summer_low_branch = auto()
+    click_clock_wood_mumbo_token_summer_gnawtys = auto()
+    click_clock_wood_mumbo_token_summer_leaf_jumps = auto()
+    click_clock_wood_mumbo_token_summer_in_mumbos = auto()
+    click_clock_wood_mumbo_token_autumn_leaf_jumps = auto()
+    click_clock_wood_mumbo_token_autumn_entrance = auto()
+    click_clock_wood_mumbo_token_autumn_top = auto()
+    click_clock_wood_mumbo_token_autumn_by_house = auto()
+    click_clock_wood_mumbo_token_autumn_low_branch = auto()
+    click_clock_wood_mumbo_token_winter_flower = auto()
+    click_clock_wood_mumbo_token_winter_river_fly_pad = auto()
+    click_clock_wood_mumbo_token_winter_hive = auto()
+    click_clock_wood_mumbo_token_winter_nabnut = auto()
+    click_clock_wood_mumbo_token_winter_sir_slush = auto()
+    # Musical Notes
     click_clock_wood_musical_note_1 = auto()
     click_clock_wood_musical_note_2 = auto()
     click_clock_wood_musical_note_3 = auto()
@@ -940,3 +1373,85 @@ class MUSICAL_NOTE_ENUMS(IntEnum):
     click_clock_wood_musical_note_98 = auto()
     click_clock_wood_musical_note_99 = auto()
     click_clock_wood_musical_note_100 = auto()
+    # Jinjos
+    click_clock_wood_pink_jinjo = auto()
+    click_clock_wood_blue_jinjo = auto()
+    click_clock_wood_orange_jinjo = auto()
+    click_clock_wood_yellow_jinjo = auto()
+    click_clock_wood_green_jinjo = auto()
+    # Flight Pad
+    click_clock_wood_winter_flight_pad_near_mumbos_hut = auto()
+    click_clock_wood_winter_flight_pad_dead_snarebear = auto()
+    click_clock_wood_winter_flight_pad_near_nabnut = auto()
+    # Events
+    click_clock_wood_collect_jinjos = auto()
+    click_clock_wood_spring_hatch_eyrie = auto()
+    click_clock_wood_summer_feed_eyrie = auto()
+    click_clock_wood_autumn_feed_eyrie = auto()
+    click_clock_wood_summer_unblock_gnawty = auto()
+    # Switches/Buttons
+    click_clock_wood_witch_switch = auto()
+    click_clock_wood_spring_switch = auto()
+    click_clock_wood_summer_switch = auto()
+    click_clock_wood_autumn_switch = auto()
+    click_clock_wood_winter_switch = auto()
+    ###########################
+    ##### GRUNTILDAS LAIR #####
+    ###########################
+    # Jiggies
+    gruntildas_lair_jiggy_1st_jiggy = auto()
+    gruntildas_lair_jiggy_mumbos_mountain_witch_switch = auto()
+    gruntildas_lair_jiggy_clankers_cavern_witch_switch = auto()
+    gruntildas_lair_jiggy_treasure_trove_cove_witch_switch = auto()
+    gruntildas_lair_jiggy_bubblegloop_swamp_witch_switch = auto()
+    gruntildas_lair_jiggy_freezeezy_peak_witch_switch = auto()
+    gruntildas_lair_jiggy_mad_monster_mansion_witch_switch = auto()
+    gruntildas_lair_jiggy_gobis_valley_witch_switch = auto()
+    gruntildas_lair_jiggy_rusty_bucket_bay_witch_switch = auto()
+    gruntildas_lair_jiggy_click_clock_wood_witch_switch = auto()
+    # Empty Honeycombs
+    # Mumbo Tokens
+    gruntildas_lair_mumbo_token_behind_pink_cauldron = auto()
+    gruntildas_lair_mumbo_token_by_ccw_puzzle = auto()
+    gruntildas_lair_mumbo_token_near_pipe_amber_cauldron = auto()
+    gruntildas_lair_mumbo_token_above_cc_entrance = auto()
+    gruntildas_lair_mumbo_token_behind_gv_sarcophagus = auto()
+    gruntildas_lair_mumbo_token_advent_calendar = auto()
+    gruntildas_lair_mumbo_token_in_crypt = auto()
+    gruntildas_lair_mumbo_token_above_640_note_door = auto()
+    gruntildas_lair_mumbo_token_rbb_entrance_underwater = auto()
+    gruntildas_lair_mumbo_token_mmm_puzzle = auto()
+    # Musical Notes
+    # Flight Pad
+    gruntildas_lair_temporary_flight_pad = auto()
+    # Events
+    gruntildas_lair_open_first_world = auto()
+    gruntildas_lair_open_second_world = auto()
+    gruntildas_lair_open_third_world = auto()
+    gruntildas_lair_open_fourth_world = auto()
+    gruntildas_lair_open_fifth_world = auto()
+    gruntildas_lair_open_sixth_world = auto()
+    gruntildas_lair_open_seventh_world = auto()
+    gruntildas_lair_open_eighth_world = auto()
+    gruntildas_lair_open_ninth_world = auto()
+    gruntildas_lair_open_final_battle = auto()
+    gruntildas_lair_activate_double_health = auto()
+    gruntildas_lair_open_first_note_door = auto()
+    gruntildas_lair_open_second_note_door = auto()
+    gruntildas_lair_open_third_note_door = auto()
+    gruntildas_lair_open_fourth_note_door = auto()
+    gruntildas_lair_open_fifth_note_door = auto()
+    gruntildas_lair_open_sixth_note_door = auto()
+    gruntildas_lair_open_seventh_note_door = auto()
+    gruntildas_lair_open_eighth_note_door = auto()
+    gruntildas_lair_open_ninth_note_door = auto()
+    gruntildas_lair_open_tenth_note_door = auto()
+    gruntildas_lair_open_eleventh_note_door = auto()
+    gruntildas_lair_open_twelfth_note_door = auto()
+    # Switches/Buttons
+    gruntildas_lair_shock_jump_pad_switch = auto()
+    gruntildas_lair_flight_pad_button = auto()
+    gruntildas_lair_click_clock_wood_puzzle_switch = auto()
+    gruntildas_lair_water_level_one_switch = auto()
+    gruntildas_lair_water_level_two_switch = auto()
+    gruntildas_lair_water_level_three_button = auto()

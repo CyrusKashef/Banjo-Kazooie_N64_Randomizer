@@ -16,16 +16,21 @@ from randomizer.constants.dict_values.dict_constants import DICT_CONSTANTS as DI
 
 ### DICTS
 
-from randomizer.constants.dict_values.win_condition_dict import SAMPLE_WIN_CONDITIONS_DICT
+# from randomizer.constants.dict_values.win_condition_dict import SAMPLE_WIN_CONDITIONS_DICT
 from randomizer.constants.dict_values.warp_entry_dict import WARP_ENTRY_DICT
 from randomizer.constants.dict_values.speeches.geoguesser_speech_dict import \
     GEOGUESSER_LEVEL_SPECIFIC_QUESTIONS_DICT, \
     GEOGUESSER_GENERAL_SPEECH_DICT
+from randomizer.constants.dict_values.color_dicts import \
+    COLOR_BLINDNESS_CORRECTION_DICT
 
 ### ENUMS
 
 from randomizer.constants.int_values.ability_enums import ABILITY_ENUMS
 from randomizer.constants.int_values.item_enums import ITEM_ENUMS
+
+from randomizer.constants.int_values.color_enums import COLOR_BLINDNESS
+from randomizer.constants.str_values.color_str import COLORS
 
 ##############################
 ##### SETTINGS FUNCTIONS #####
@@ -63,24 +68,24 @@ class SETTINGS_FUNCTIONS():
     ##### ALTERNATE WIN CONDITION #####
     ###################################
     
-    def _alternate_win_conditions(self):
-        '''
-        Pass
-        '''
-        alternate_win_conditions_option_list:list = []
-        alternate_win_conditions_option_dict:dict = \
-            self._settings_dict[STR_CONST.alternate_win_condition]
-        for alternate_win_conditions_option in alternate_win_conditions_option_dict:
-            if(alternate_win_conditions_option_dict[alternate_win_conditions_option]):
-                alternate_win_conditions_option_list.append(alternate_win_conditions_option)
-        if(alternate_win_conditions_option_list == []):
-            return
-        print(f"INFO: {STR_CONST.alternate_win_condition}")
-        random.seed(a=(self._settings_dict[STR_CONST.seed]))
-        alternate_win_conditions_choice:str = random.choice(alternate_win_conditions_option_list)
-        print(f"INFO: {alternate_win_conditions_choice}")
-        possible_win_condition_list:list = SAMPLE_WIN_CONDITIONS_DICT[alternate_win_conditions_choice]
-        self._asm_obj.set_alternate_win_conditions(possible_win_condition_list)
+    # def _alternate_win_conditions(self):
+    #     '''
+    #     Pass
+    #     '''
+    #     alternate_win_conditions_option_list:list = []
+    #     alternate_win_conditions_option_dict:dict = \
+    #         self._settings_dict[STR_CONST.alternate_win_condition]
+    #     for alternate_win_conditions_option in alternate_win_conditions_option_dict:
+    #         if(alternate_win_conditions_option_dict[alternate_win_conditions_option]):
+    #             alternate_win_conditions_option_list.append(alternate_win_conditions_option)
+    #     if(alternate_win_conditions_option_list == []):
+    #         return
+    #     print(f"INFO: {STR_CONST.alternate_win_condition}")
+    #     random.seed(a=(self._settings_dict[STR_CONST.seed]))
+    #     alternate_win_conditions_choice:str = random.choice(alternate_win_conditions_option_list)
+    #     print(f"INFO: {alternate_win_conditions_choice}")
+    #     possible_win_condition_list:list = SAMPLE_WIN_CONDITIONS_DICT[alternate_win_conditions_choice]
+    #     self._asm_obj.set_alternate_win_conditions(possible_win_condition_list)
 
     ###########################
     ##### NOTE DOOR COSTS #####
@@ -328,6 +333,19 @@ class SETTINGS_FUNCTIONS():
         else:
             print(f"INFO: Furnace Fun Option {furnace_fun_choice}")
     
+    ##################
+    ##### SOUNDS #####
+    ##################
+
+    def _music_options(self):
+        '''
+        Pass
+        '''
+        music_option:str = \
+            self._settings_dict[STR_CONST.sounds][STR_CONST.music_option]
+        if(music_option == STR_CONST.mute_all_music):
+            self._asm_obj.mute_all_music()
+
     #################
     ##### WARPS #####
     #################
@@ -363,6 +381,86 @@ class SETTINGS_FUNCTIONS():
         print("Testing Cauldron Warps")
         self._asm_obj.modify_cauldron_warps()
     
+    #######################
+    ##### JUST MODELS #####
+    #######################
+
+    def _color_shift(self):
+        color_blindness_select:str = \
+            self._settings_dict[STR_CONST.models][STR_CONST.color_shift]
+        color_blindness_degree:float = \
+            self._settings_dict[STR_CONST.models][STR_CONST.degree]
+        try:
+            if(color_blindness_select == "trichromacy"):
+                return
+            color_shift:dict = COLOR_BLINDNESS_CORRECTION_DICT[COLOR_BLINDNESS.__getitem__(color_blindness_select)]
+            self._game_asset_obj.color_shift(color_shift, color_blindness_degree)
+        except KeyError:
+            print(f"Color Shift: Color Blindness Option Does Not Exist: '{color_blindness_select}'")
+            exit(0)
+    
+    def _banjo_kazooie_model_by_json(self):
+        '''
+        Pass
+        '''
+        starting_asset_id:int = 0x0581
+        self._asm_obj.replace_player_models(0x0581)
+        # Wishywashy
+        self._game_asset_obj.copy_asset_to_different_id(0x0356, 0x0581)
+        # Termite
+        self._game_asset_obj.copy_asset_to_different_id(0x034F, 0x0582)
+        # Crocodile
+        self._game_asset_obj.copy_asset_to_different_id(0x0374, 0x0583)
+        # Walrus
+        self._game_asset_obj.copy_asset_to_different_id(0x0359, 0x0584)
+        # Pumpkin
+        self._game_asset_obj.copy_asset_to_different_id(0x036F, 0x0585)
+        # Bee
+        self._game_asset_obj.copy_asset_to_different_id(0x0362, 0x0586)
+        # BK
+        starting_asset_id:int = 0x0587
+        bk_model_count:int = 0xD
+        bk_model_name_list:list = (
+            "donkey_and_diddy_kong", # Mumbo's Mountain
+            "wario_and_waluigi", # Treasure Trove Cove
+            "link_and_zelda", # Clankers Cavern
+            "mario_and_luigi", # Bubblegloop Swamp
+            "ice_climbers", # Freezeezy Peak
+            "sonic_and_tails", # Gruntilda's Lair
+            "donkey_and_diddy_kong", # Gobi's Valley
+            "wario_and_waluigi", # Click Clock Wood
+            "link_and_zelda", # Rusty Bucket Bay
+            "mario_and_luigi", # Mad Monster Mansion
+            "ice_climbers", # Spiral Mountain
+            "donkey_and_diddy_kong", # Final Battle
+            "sonic_and_tails", # Cutscene
+        )
+        self._bk_rom.add_asset_to_offset_table(starting_asset_id, compression_flag=0x0001, unk_flag=0x0000)
+        self._game_asset_obj.banjo_kazooie_model_by_json("mario_and_luigi", save_as_id=0x0587)
+        for asset_id in range(
+                starting_asset_id + 1,
+                starting_asset_id + bk_model_count - 1):
+            self._bk_rom.add_asset_to_offset_table(asset_id, compression_flag=0x0001, unk_flag=0x0000)
+            self._game_asset_obj.banjo_kazooie_model_by_json("link_and_zelda", save_as_id=asset_id)
+
+    def _level_dynamic_banjo_kazooie_model(self):
+        '''
+        Pass
+        '''
+        starting_asset_id:int = 0x0581
+        self._asm_obj.replace_player_models(starting_asset_id)
+        for increment in range(0x12):
+            self._bk_rom.add_custom_asset_to_offset_table(starting_asset_id + increment)
+    
+    def _super_baddie(self):
+        '''
+        Pass
+        '''
+        self._asm_obj.extra_fast_buzzbomb(speed_multiplier=2)
+        self._bk_rom.add_custom_asset_to_offset_table(0x03ED)
+        # self._asm_obj.modify_sir_slush_spawn(actor_id=0x037D)
+        # self._asm_obj.extra_fast_bigbutt()
+
     #########################
     ##### OTHER OPTIONS #####
     #########################
@@ -450,6 +548,6 @@ class SETTINGS_FUNCTIONS():
         Pass
         '''
         all_transformations_can_learn_moves_bool:bool = \
-            self._settings_dict[STR_CONST.other_options][STR_CONST.all_transformations_can_learn_moves]
+            self._settings_dict[STR_CONST.transformations][STR_CONST.all_transformations_can_learn_moves]
         if(all_transformations_can_learn_moves_bool):
             self._asm_obj.all_transformations_can_learn_moves()

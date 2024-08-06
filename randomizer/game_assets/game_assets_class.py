@@ -16,7 +16,11 @@ from randomizer.game_assets.map_setups.map_setup_class import Map_Setup_Class
 from randomizer.game_assets.speeches.speech_class import Speech_Class
 from randomizer.game_assets.animations.animation_class import ANIMATION_CLASS
 
-from randomizer.constants.int_values.speech_constants import SPEECH_CONSTANTS
+from randomizer.game_assets.models.characters.banjo_kazooie.banjo_kazooie_high_poly_model import \
+    BANJO_KAZOOIE_HIGH_POLY_MODEL_CLASS
+
+from randomizer.constants.int_values.speech_constants import \
+    SPEECH_CONSTANTS, GENERAL_SPEECH_SPRITE_ENUMS
 from randomizer.constants.int_values.object_model_constants import OBJECT_MODEL_CONSTANTS
 
 from randomizer.constants.str_values.string_constants import STRING_CONSTANTS as STR_CONST
@@ -148,7 +152,10 @@ class GAME_ASSET_CLASS():
             except FileNotFoundError:
                 pass
 
-    def _mass_speech_editing(self, start_asset_id:int=None, end_asset_id:int=None, include_raws:bool=False):
+    def _mass_speech_editing(self,
+            start_asset_id:int|None=None,
+            end_asset_id:int|None=None,
+            include_raws:bool=False):
         '''
         Pass
         '''
@@ -162,8 +169,11 @@ class GAME_ASSET_CLASS():
             file_name:str = self._return_file_name(asset_id)
             raw_file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.raw_bin_extension
             decompressed_file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
-            if(include_raws and os.path.exists(raw_file_path)):
+            raw_exists:bool = os.path.exists(raw_file_path)
+            if(include_raws and raw_exists):
                 shutil.move(raw_file_path, decompressed_file_path)
+            elif(raw_exists):
+                continue
             try:
                 speech_obj:Speech_Class = Speech_Class(decompressed_file_path)
                 yield speech_obj
@@ -239,6 +249,43 @@ class GAME_ASSET_CLASS():
             # if(not same_file):
             #     print(f"ERROR: validate_object_model_file_editing: Copied file at '{old_file_path}' is not the same!")
             #     exit(0)
+    
+    def copy_asset_to_different_id(self, original_asset_id:int, copied_asset_id:int):
+        '''
+        Pass
+        '''
+        original_file_name:str = self._return_file_name(original_asset_id)
+        original_file_path:str = STR_CONST.extracted_files_dir + original_file_name + STR_CONST.decompressed_bin_extension
+        copied_file_name:str = self._return_file_name(copied_asset_id)
+        copied_file_path:str = STR_CONST.extracted_files_dir + copied_file_name + STR_CONST.decompressed_bin_extension
+        shutil.copy(original_file_path, copied_file_path)
+
+    def color_shift(self, color_shift:dict, degree:float):
+        '''
+        Pass
+        '''
+        file_name:str = self._return_file_name(0x034E)
+        file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
+        high_poly_bk_model = OBJECT_MODEL_CLASS(file_path)
+        high_poly_bk_model.read_object_model_file()
+        high_poly_bk_model.color_shift(color_shift, degree)
+        high_poly_bk_model.save_object_3d_model_file()
+        
+    def banjo_kazooie_model_by_json(self, json_name:str, save_as_id:int|None=None):
+        '''
+        Pass
+        '''
+        file_name:str = self._return_file_name(0x034E)
+        file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
+        high_poly_bk_model = BANJO_KAZOOIE_HIGH_POLY_MODEL_CLASS(file_path)
+        high_poly_bk_model.read_object_3d_model_file()
+        high_poly_bk_model.color_by_json(json_name)
+        if(save_as_id is None):
+            high_poly_bk_model.save_object_3d_model_file()
+        else:
+            file_name:str = self._return_file_name(save_as_id)
+            file_path:str = STR_CONST.extracted_files_dir + file_name + STR_CONST.decompressed_bin_extension
+            high_poly_bk_model.save_object_3d_model_file(file_path)
     
     #####################
     ##### MAP SETUP #####
@@ -560,17 +607,19 @@ class GAME_ASSET_CLASS():
         eight_spaces:str = " " * 8
         twelve_spaces:str = " " * 12
         speech_str:str = "DEFAULT_SPEECH_DICT:dict = {\n"
-        speech_obj_generator = self._mass_speech_editing()
+        speech_obj_generator = self._mass_speech_editing(include_raws=False)
         asset_id:int = self._SPEECH_ASSETS_START_ID
         for speech_obj in speech_obj_generator:
             file_name:str = self._return_file_name(asset_id)
             speech_str += four_spaces + "0x" + file_name + ": {\n"
             for curr_section in speech_obj._speech_dict:
-                speech_str += eight_spaces + f'{curr_section}' + ": {\n"
+                section_name:str = SPEECH_CONSTANTS.get_constant_name(curr_section)
+                speech_str += eight_spaces + f'SPEECH_CONSTANTS.{section_name}' + ": {\n"
                 for curr_section_count in speech_obj._speech_dict[curr_section]:
                     curr_sprite:int = speech_obj._speech_dict[curr_section][curr_section_count][SPEECH_CONSTANTS.sprite]
+                    sprite_name:str = GENERAL_SPEECH_SPRITE_ENUMS.get_sprite_name(curr_sprite)
                     curr_speech:str = speech_obj._speech_dict[curr_section][curr_section_count][SPEECH_CONSTANTS.speech]
-                    speech_str += twelve_spaces + f'{curr_sprite}: "{curr_speech}"' + ",\n"
+                    speech_str += twelve_spaces + f'GENERAL_SPEECH_SPRITE_ENUMS.{sprite_name}: "{curr_speech}"' + ",\n"
                 speech_str += eight_spaces + "},\n"
             speech_str += four_spaces + "},\n"
             asset_id += 1

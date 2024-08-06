@@ -163,3 +163,5 @@ cython_debug/
 do_not_commit
 randomizer/extracted_files/*
 *.z64
+*.xdelta
+randomizer/custom_files/*.bin

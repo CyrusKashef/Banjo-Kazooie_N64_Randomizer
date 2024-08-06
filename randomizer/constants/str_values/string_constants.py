@@ -207,6 +207,7 @@ class STRING_CONSTANTS(StrEnum):
     pumpkin_transformation_cost = auto()
     bee_transformation_cost = auto()
     extracted_files_dir = "randomizer/extracted_files/"
+    custom_files_dir = "randomizer/custom_files/"
     bin_extension = ".bin"
     compressed_bin_extension = f"-Compressed.bin"
     decompressed_bin_extension = f"-Decompressed.bin"
@@ -503,3 +504,9 @@ class STRING_CONSTANTS(StrEnum):
     enable_warp_to_world_exit = auto()
     disable_world_reset_on_death = auto()
     all_transformations_can_learn_moves = auto()
+    sounds = auto()
+    music_option = auto()
+    mute_all_music = auto()
+    models = auto()
+    color_shift = auto()
+    degree = auto()

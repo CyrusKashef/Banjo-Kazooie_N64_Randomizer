@@ -39,10 +39,14 @@ class LOCATION_ENUMS(IntEnum):
     spiral_mountain_behind_waterfall = auto()
     # Jinjos
     # Bottles Molehills
+    spiral_mountain_bottles_intro = auto()
+    spiral_mountain_bottles_camera = auto()
     spiral_mountain_bottles_climb = auto()
     spiral_mountain_bottles_jump = auto()
     spiral_mountain_bottles_attack = auto()
     spiral_mountain_bottles_dive = auto()
+    spiral_mountain_bottles_beak_barge = auto()
+    spiral_mountain_bottles_bridge = auto()
     # Other Items
     # Custom Locations
     ###########################

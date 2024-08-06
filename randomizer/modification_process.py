@@ -65,7 +65,9 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         # self._game_asset_obj.validate_object_model_file_editing()
         # self._game_asset_obj.validate_level_model_file_editing()
         # self._game_asset_obj.validate_animation_file_editing()
+        # self._game_asset_obj.log_all_speech_texts()
         # print("All Verified!")
+        # self._asm_obj.log_collision_markers()
         # exit()
         # Always Run These
         self._asm_obj.disable_anti_tamper()
@@ -73,7 +75,7 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         self._asm_obj.all_transformations_can_enter_crypt() # Used In Logic
         # Options
         self._starting_moves_and_inventory()
-        self._alternate_win_conditions()
+        # self._alternate_win_conditions()
         self._note_doors()
         self._jigsaw_puzzles()
         self._transformations()
@@ -87,7 +89,16 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         self._exit_to_witchs_lair()
         self._disable_world_reset_on_death()
         self._all_transformations_can_learn_moves()
+        self._music_options()
         # Testing
+        # self._color_shift()
+        self._banjo_kazooie_model_by_json()
+        # self._level_dynamic_banjo_kazooie_model()
+        # self._asm_obj.bottles_bonus_codes_always_activatable()
+        #
+        # self._super_baddie()
+        # self._asm_obj.agro_conga()
+        # self._asm_obj.bk_model_dynamic_coloring()
         # self._testing_cauldron_warps()
         # self._respawnable_sprite_collectables()
         # Save Asssembly Files

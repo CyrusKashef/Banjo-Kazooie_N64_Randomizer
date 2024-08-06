@@ -7,6 +7,7 @@ Purpose:
 ###################
 
 import struct
+import json
 
 ##############################
 ##### GENERIC FILE CLASS #####
@@ -159,6 +160,21 @@ class Generic_Bin_File_Class():
         '''
         byte_count:int = len(str_val)
         self._file_content[index_start:index_start+byte_count] = bytes(str_val, 'latin-1')
+    
+    #########################
+    ##### MIPS COMMANDS #####
+    #########################
+
+    def _write_bytes_from_hex_assembly(self, index_start:int, command_list:list, max_index:int):
+        '''
+        Pass
+        '''
+        for command in command_list:
+            self._write_bytes_from_int(index_start, command, byte_count=4)
+            index_start += 4
+        if(index_start > max_index):
+            print(f"ERROR: Max Index '{hex(max_index)}' passed Start Index '{hex(index_start)}'")
+            exit(0)
 
     #######################
     ##### CONVERSIONS #####
@@ -195,6 +211,33 @@ class Generic_Bin_File_Class():
         '''
         hex_val:int = struct.unpack('!I', struct.pack('!f', float_val))[0]
         return hex_val.to_bytes(4, 'big')
+
+    def _convert_bfloat_to_hex(self, float_val:int):
+        '''
+        Pass
+        '''
+        hex_val:int = struct.unpack('!I', struct.pack('!f', float_val))[0]
+        bfloat:int = hex_val >> 16
+        return bfloat
+    
+    ######################
+    ##### JSON FILES #####
+    ######################
+
+    def _read_json_as_dict(self, json_dir:str):
+        '''
+        Pass
+        '''
+        with open(json_dir, "r") as json_file:
+            json_dict:dict = json.load(json_file)
+        return json_dict
+    
+    def _write_json_as_dict(self, json_dir:str, json_dict:dict):
+        '''
+        Pass
+        '''
+        with open(json_dir, "w+") as json_file:
+            json.dump(json_dict, json_file, indent=4)
     
     ##########################
     ##### MAIN FUNCTIONS #####

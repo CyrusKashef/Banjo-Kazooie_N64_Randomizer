@@ -24,6 +24,7 @@ TODO:
 ###################
 
 import os
+import shutil
 
 from randomizer.generic_bin_file_class import Generic_Bin_File_Class
 from randomizer.patching.compression_class import COMPRESSION_CLASS
@@ -211,10 +212,10 @@ class BK_ROM_CLASS(Generic_Bin_File_Class):
             file_name:str = self._convert_int_to_hex_str(asset_id, byte_count=2)
             raw_file_name:str = file_name + STR_CONST.raw_bin_extension
             decompressed_file_name:str = file_name + STR_CONST.decompressed_bin_extension
-            if(raw_file_name in bin_files_list):
-                file_type:str = STR_CONST.raw
-            elif(decompressed_file_name in bin_files_list):
+            if(decompressed_file_name in bin_files_list):
                 file_type:str = STR_CONST.decompressed
+            elif(raw_file_name in bin_files_list):
+                file_type:str = STR_CONST.raw
             else:
                 raise Exception(f"ERROR: append_asset_table_pointers: Pointer '{self._convert_int_to_hex_str(pointer_index_start)}' file not found!")
             compressed_obj = COMPRESSION_CLASS(file_name, file_type)
@@ -224,6 +225,84 @@ class BK_ROM_CLASS(Generic_Bin_File_Class):
         while(len(self._file_content) % 0x10 != 0):
             self._file_content.extend(bytearray(b"\xAA"))
         print(f"INFO: append_asset_table_pointers: Complete!")
+
+    # Adding Custom Asset
+
+    def _get_file_unk_flag(self, file_name:str):
+        '''
+        Pass
+        '''
+        file_name_split:list = file_name.split("-")
+        unk_flag:int = int(file_name_split[1], 16)
+        if(unk_flag not in range(5)):
+            print(f"ERROR: Unknown file flag '{unk_flag}' is ironically unknown?")
+            exit(0)
+        return unk_flag
+
+    def _get_file_compression_flag(self, file_name:str):
+        '''
+        Pass
+        '''
+        if(file_name.endswith(STR_CONST.raw_bin_extension)):
+            compression_flag:int = 0
+        elif(file_name.endswith(STR_CONST.decompressed_bin_extension)):
+            compression_flag:int = 1
+        else:
+            print(f"ERROR: Custom file '{file_name}' is neither raw nor decompressed?")
+            exit(0)
+        return compression_flag
+
+    def _remove_old_asset_placeholder(self, asset_id_hex_str:str):
+        '''
+        Removes all compressed, decompressed, and raw files starting with the
+        asset id hex string.
+        '''
+        extracted_files:list = os.listdir(STR_CONST.extracted_files_dir)
+        for file_name in extracted_files:
+            if(not file_name.startswith(asset_id_hex_str)):
+                continue
+            os.remove(STR_CONST.extracted_files_dir + file_name)
+
+    def _copy_custom_asset_to_extracted_files(self, custom_file_path:str):
+        '''
+        Pass
+        '''
+        extracted_file_split:list = (custom_file_path.replace(STR_CONST.custom_files_dir, STR_CONST.extracted_files_dir)).split("-")
+        extracted_file_path:str = f"{extracted_file_split[0]}-{extracted_file_split[-1]}"
+        shutil.copy(custom_file_path, extracted_file_path)
+
+    def add_asset_to_offset_table(self,
+            asset_id:int, compression_flag:int, unk_flag:int):
+        '''
+        Pass
+        '''
+        asset_id_hex_str:str = self._convert_int_to_hex_str(asset_id, byte_count=2)
+        pointer_index_start:int = INT_CONST.asset_table_start_index + asset_id * INT_CONST.asset_table_interval
+        self._write_bytes_from_int(pointer_index_start + 0x4, compression_flag, byte_count=2)
+        self._write_bytes_from_int(pointer_index_start + 0x6, unk_flag, byte_count=2)
+        self._remove_old_asset_placeholder(asset_id_hex_str)
+
+    def add_custom_asset_to_offset_table(self, asset_id:int):
+        '''
+        Pass
+        '''
+        custom_file_path:str|None = None
+        compression_flag:int|None = None
+        unk_flag:int|None = None
+        custom_files:list = os.listdir(STR_CONST.custom_files_dir)
+        asset_id_hex_str:str = self._convert_int_to_hex_str(asset_id, byte_count=2)
+        for file_name in custom_files:
+            if(not file_name.startswith(asset_id_hex_str)):
+                continue
+            custom_file_path:str|None = STR_CONST.custom_files_dir + file_name
+            compression_flag:int|None = self._get_file_compression_flag(file_name)
+            unk_flag:int|None = self._get_file_unk_flag(file_name)
+            break
+        if((custom_file_path is None) or (compression_flag is None) or (unk_flag is None)):
+            print(f"ERROR: Compression Flag '{compression_flag}' or Unk Flag '{unk_flag}' was/were not found!")
+            exit(0)
+        self.add_asset_to_offset_table(asset_id, compression_flag, unk_flag)
+        self._copy_custom_asset_to_extracted_files(custom_file_path)
 
     # ASSEMBLY FILES
 

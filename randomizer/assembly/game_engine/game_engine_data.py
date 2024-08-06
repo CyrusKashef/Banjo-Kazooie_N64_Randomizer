@@ -11,6 +11,11 @@ from randomizer.generic_bin_file_class import Generic_Bin_File_Class
 
 from randomizer.constants.str_values.string_constants import STRING_CONSTANTS as STR_CONST
 
+from randomizer.constants.int_values.marker_enums import \
+    PARAMETERS_ENUM, COLLISION_ENUMS, \
+    MARKER_ID_ENUMS, BK_EFFECT_ENUMS, \
+    ENTITY_NEXT_STATE_ENUM, COLLISION_SFX_ENUM
+
 SPRITE_STR:str = "Sprite"
 SFX_LIST_STR:str = "SFX List"
 SFX_ID_STR:str = "SFX Id"
@@ -159,3 +164,62 @@ class GAME_ENGINE_DATA_CLASS(Generic_Bin_File_Class):
                 self._write_bytes_from_float(curr_index, sfx_item[UNKNOWN_4_STR])
                 curr_count += 0x8
                 sfx_count += 1
+    
+    #############################
+    ##### MARKER COLLISIONS #####
+    #############################
+
+    def _parse_marker_collision_value(self, parameter_value:int):
+        '''
+        Pass
+        '''
+        bk_effect:int = (parameter_value >> 12) & 0b1111
+        entity_next_state:int = (parameter_value >> 10) & 0b11
+        collision_sfx:int = (parameter_value >> 7) & 0b111
+        bk_damage:int = (parameter_value >> 5) & 0b11
+        hits_to_trigger:int = (parameter_value >> 2) & 0b111
+        item_drop_slot:int = parameter_value & 0b11
+        marker_collision_values:dict = {
+            COLLISION_ENUMS.bk_effect: bk_effect,
+            COLLISION_ENUMS.entity_next_state: entity_next_state,
+            COLLISION_ENUMS.collision_sfx: collision_sfx,
+            COLLISION_ENUMS.bk_damage: bk_damage,
+            COLLISION_ENUMS.hits_to_trigger: hits_to_trigger,
+            COLLISION_ENUMS.item_drop_slot: item_drop_slot,
+        }
+        return marker_collision_values
+
+    def _create_marker_collision_value(self, marker_collision_values:dict):
+        '''
+        Pass
+        '''
+        pass
+
+    def _get_marker_collision_item(self, item_count):
+        '''
+        Pass
+        '''
+        index_start:int = 0xD530
+        index_increment:int = 0x1A
+        parameter_increment:int = 0x2
+        marker_collision_item:dict = {}
+        for parameter in PARAMETERS_ENUM:
+            curr_index:int = index_start + index_increment * item_count + parameter * parameter_increment
+            curr_parameter_value:int = self._read_bytes_as_int(curr_index, byte_count=2)
+            if(parameter == PARAMETERS_ENUM.marker_id):
+                marker_collision_item[parameter] = curr_parameter_value
+                continue
+            marker_collision_values:dict = self._parse_marker_collision_value(curr_parameter_value)
+            marker_collision_item[parameter] =  marker_collision_values
+        return marker_collision_item
+
+    def get_marker_collision_table(self):
+        '''
+        Pass
+        '''
+        table_count:int = 0xBB
+        marker_collision_dict:dict = {}
+        for item_count in range(table_count):
+            marker_collision_item:dict = self._get_marker_collision_item(item_count)
+            marker_collision_dict[item_count] = marker_collision_item
+        return marker_collision_dict

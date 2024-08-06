@@ -1,0 +1,110 @@
+{
+    "banjo_fur": {
+        "red": 0,
+        "green": 150,
+        "blue": 0,
+        "alpha": 255,
+        "ignore_gray": false
+    },
+    "banjo_skin": {
+        "red": 255,
+        "green": 202,
+        "blue": 148,
+        "alpha": 255,
+        "ignore_gray": false
+    },
+    "banjo_eyes": {
+        "red": 4,
+        "green": 201,
+        "blue": 238,
+        "alpha": 255,
+        "ignore_gray": true
+    },
+    "banjo_eyelids": {
+        "red": 255,
+        "green": 202,
+        "blue": 148,
+        "alpha": 255,
+        "ignore_gray": false
+    },
+    "banjo_shorts": {
+        "red": 0,
+        "green": 150,
+        "blue": 0,
+        "alpha": 255,
+        "ignore_gray": false
+    },
+    "banjo_belt": {
+        "red": 143,
+        "green": 50,
+        "blue": 8,
+        "alpha": 255,
+        "ignore_gray": false
+    },
+    "banjo_necklace_string": "skip",
+    "banjo_necklace_tooth": {
+        "red": 102,
+        "green": 172,
+        "blue": 196,
+        "alpha": 255,
+        "ignore_gray": false
+    },
+    "banjo_nose": "skip",
+    "kazooie_feathers_primary": {
+        "red": 203,
+        "green": 39,
+        "blue": 188,
+        "alpha": 255,
+        "ignore_gray": false
+    },
+    "kazooie_feathers_secondary": {
+        "red": 242,
+        "green": 250,
+        "blue": 253,
+        "alpha": 255,
+        "ignore_gray": false
+    },
+    "kazooie_head_feather": {
+        "red": 203,
+        "green": 39,
+        "blue": 188,
+        "alpha": 255,
+        "ignore_gray": false
+    },
+    "kazooie_eyes": {
+        "red": 62,
+        "green": 170,
+        "blue": 172,
+        "alpha": 255,
+        "ignore_gray": true
+    },
+    "kazooie_beak_legs": {
+        "red": 254,
+        "green": 231,
+        "blue": 179,
+        "alpha": 255,
+        "ignore_gray": false
+    },
+    "mouths": "skip",
+    "backpack": {
+        "red": 167,
+        "green": 95,
+        "blue": 12,
+        "alpha": 255,
+        "ignore_gray": false
+    },
+    "turbo_talon_trainers": {
+        "red": 167,
+        "green": 95,
+        "blue": 12,
+        "alpha": 255,
+        "ignore_gray": false
+    },
+    "wading_boots": {
+        "red": 167,
+        "green": 95,
+        "blue": 12,
+        "alpha": 255,
+        "ignore_gray": false
+    }
+}

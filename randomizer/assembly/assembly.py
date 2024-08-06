@@ -7,6 +7,9 @@ Purpose:
 ##### IMPORTS #####
 ###################
 
+import pandas as pd
+from IPython.display import display, HTML
+
 from randomizer.assembly.c_libraries.c_libraries_code import C_LIBRARIES_CODE_CLASS
 from randomizer.assembly.c_libraries.c_libraries_data import C_LIBRARIES_DATA_CLASS
 from randomizer.assembly.game_engine.game_engine_code import GAME_ENGINE_CODE_CLASS
@@ -41,13 +44,18 @@ from randomizer.assembly.cutscenes.cutscenes_data import CUTSCENES_DATA_CLASS
 from randomizer.constants.int_values.jiggy_enums import JIGGY_ENUMS
 from randomizer.constants.int_values.empty_honeycomb_enums import EMPTY_HONEYCOMB_ENUMS
 from randomizer.constants.str_values.string_constants import STRING_CONSTANTS as STR_CONST
-from randomizer.constants.dict_values.win_condition_dict import \
-    WIN_CONDITION_FUNCTION_DICT, WIN_CONDITION_COMMANDS_DICT
+# from randomizer.constants.dict_values.win_condition_dict import \
+#     WIN_CONDITION_FUNCTION_DICT, WIN_CONDITION_COMMANDS_DICT
 
 from randomizer.constants.int_values.map_enums import MAP_ENUMS
 from randomizer.constants.dict_values.warp_entry_dict import WARP_ENTRY_DICT
 from randomizer.constants.int_values.furnace_fun_tile_type_enums import FURNACE_FUN_TILE_TYPE_ENUMS as FF_TT_ENUMS
 from randomizer.constants.int_values.furnace_fun_question_type_enums import FURNACE_FUN_QUESTION_TYPE_ENUMS as FF_QT_ENUMS
+
+from randomizer.constants.int_values.marker_enums import \
+    PARAMETERS_ENUM, COLLISION_ENUMS, \
+    MARKER_ID_ENUMS, BK_EFFECT_ENUMS, \
+    ENTITY_NEXT_STATE_ENUM, COLLISION_SFX_ENUM
 
 ####################
 ##### ASSEMBLY #####
@@ -320,6 +328,19 @@ class ASSEMBLY_CLASS():
         '''
         self._game_engine_code_obj.disable_world_reset_on_death()
     
+    def unlimited_time_bottles_bonus(self):
+        '''
+        Makes the bottles bonus not losable.
+        May crash the game if playing too long.
+        '''
+        self._game_engine_code_obj.unlimited_time_bottles_bonus()
+    
+    def bottles_bonus_codes_always_activatable(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.bottles_bonus_codes_always_activatable()
+    
     ######################
     ##### DIFFICULTY #####
     ######################
@@ -391,6 +412,50 @@ class ASSEMBLY_CLASS():
         '''
         pass
 
+    def log_collision_markers(self):
+        '''
+        Pass
+        '''
+        marker_collision_dict:dict = self._game_engine_data_obj.get_marker_collision_table()
+        marker_collision_pandas_dict:dict = {}
+        table_count:int = 0xBB
+        for item_count in range(table_count):
+            for parameter in PARAMETERS_ENUM:
+                if(parameter == PARAMETERS_ENUM.marker_id):
+                    key_value:int = marker_collision_dict[item_count][parameter]
+                    key_hex_str:str = "0x" + str(hex(key_value))[2:].upper()
+                    key_translation:str = MARKER_ID_ENUMS.get_marker_name(key_value)
+                    key:str = f"{key_hex_str}: {key_translation}"
+                    marker_collision_pandas_dict[key] = {}
+                    continue
+                parameter_name:str = PARAMETERS_ENUM.get_marker_name(parameter)
+                collision_str:str = ""
+                for collision in COLLISION_ENUMS:
+                    collision_value:int = marker_collision_dict[item_count][parameter][collision]
+                    if(collision is COLLISION_ENUMS.bk_effect):
+                        bk_effect:str = BK_EFFECT_ENUMS.get_effect_name(collision_value)
+                        collision_value:str = f"{bk_effect}"
+                    elif(collision is COLLISION_ENUMS.entity_next_state):
+                        next_state_name:str = ENTITY_NEXT_STATE_ENUM.get_state_name(collision_value)
+                        collision_value:str = f"{next_state_name}"
+                    elif(collision is COLLISION_ENUMS.collision_sfx):
+                        collision_value:str = COLLISION_SFX_ENUM.get_sfx_name(collision_value)
+                    elif(collision is COLLISION_ENUMS.bk_damage):
+                        collision_value:str = f"BK_Damage:_{collision_value}"
+                    elif(collision is COLLISION_ENUMS.hits_to_trigger):
+                        collision_value:str = f"Trigger_Hits:_{collision_value}"
+                    elif(collision is COLLISION_ENUMS.item_drop_slot):
+                        collision_value:str = f"Item_Drop_Slot:_{collision_value}"
+                    collision_str += f"{collision_value:-^30} "
+                marker_collision_pandas_dict[key][parameter_name] = collision_str[:-2]
+        df = pd.DataFrame(marker_collision_pandas_dict).transpose()
+        for parameter in PARAMETERS_ENUM:
+            if(parameter is PARAMETERS_ENUM.marker_id):
+                continue
+            parameter_name:str = PARAMETERS_ENUM.get_marker_name(parameter)
+            df[parameter_name] = df[parameter_name].str.wrap(30)
+        df.to_excel("C:/Users/Cyrus/Desktop/N64/ROMs/GEDecompressor_Files/Breakdown_Notes/collisions.xlsx")
+
     def gobis_valley_randomize_matching_puzzle(self):
         '''
         Pass
@@ -435,20 +500,57 @@ class ASSEMBLY_CLASS():
         self._gruntildas_lair_data_obj.set_furnace_fun_board_dict(furnace_fun_board_dict)
         print("Geoguesser Furnace Fun Joker, Skull -> Picture Questions")
         self._gruntildas_lair_code_obj._set_rng_tile_to_one_type(FF_QT_ENUMS.picture)
+    
+    def extra_fast_buzzbomb(self, speed_multiplier:float=1):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.extra_fast_buzzbomb(speed_multiplier)
+    
+    def modify_sir_slush_spawn(self, actor_id:int):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.modify_sir_slush_spawn(actor_id)
+    
+    def extra_fast_bigbutt(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.extra_fast_bigbutt()
+    
+    def agro_conga(self):
+        '''
+        Pass
+        '''
+        self._mumbos_mountain_code_obj.agro_conga()
 
     ##############################
     ##### COSMETICS & SOUNDS #####
     ##############################
 
-    def replace_banjo_kazooie_models(self,
-            low_poly_model:int=0x34D,
-            high_poly_model:int=0x34E):
+    def replace_player_models(self, starting_asset_id:int):
+        '''
+        Must go in the order:
+        Termite, Pumpkin, Crocodile, Walrus, Bee, Wishywashy, BK Models
+        '''
+        self._game_engine_code_obj.replace_transformation_models(starting_asset_id)
+        self._game_engine_code_obj.replace_banjo_kazooie_models(starting_asset_id + 5)
+        self._game_engine_code_obj.adjust_player_eye_model_eyes(starting_asset_id)
+        self._game_engine_code_obj.spawn_appendages()
+        self._game_engine_code_obj.adjust_player_model_collisions(starting_asset_id)
+    
+    def level_dynamic_banjo_kazooie_model(self, starting_asset_id:int):
         '''
         Pass
         '''
-        self._game_engine_code_obj.replace_banjo_kazooie_models(
-            low_poly_model,
-            high_poly_model)
+        self._game_engine_code_obj.level_dynamic_banjo_kazooie_model(starting_asset_id)
+    
+    def bk_model_dynamic_coloring(self):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.bk_model_dynamic_coloring()
 
     def replace_game_engine_models_with_assets(self, asset_id_dict:dict):
         '''
@@ -480,7 +582,7 @@ class ASSEMBLY_CLASS():
         '''
         Pass
         '''
-        pass
+        self._c_libraries_code_obj.mute_all_music()
 
     #################
     ##### LOGIC #####
@@ -503,37 +605,37 @@ class ASSEMBLY_CLASS():
             gold_feather_count, mumbo_token_count
         )
 
-    def set_alternate_win_conditions(self,
-            possible_win_condition_list:list):
-        '''
-        Pass
-        '''
-        # random.seed(a=seed_val)
-        # random.shuffle(possible_win_condition_list)
-        win_condition_list:list = []
-        branch_count:int = 4
-        for item_enum, level_enum, item_val in possible_win_condition_list:
-            if(level_enum is not None):
-                command_function = WIN_CONDITION_FUNCTION_DICT[STR_CONST.level_count][item_enum]
-                command_list:list = \
-                    WIN_CONDITION_COMMANDS_DICT[STR_CONST.level_count](command_function, level_enum, item_val, branch_count)
-                branch_count += 5
-            elif((type(item_val) == JIGGY_ENUMS) or
-                 (type(item_val) == EMPTY_HONEYCOMB_ENUMS)):
-                command_function = WIN_CONDITION_FUNCTION_DICT[STR_CONST.item_enum][item_enum]
-                command_list:list = \
-                    WIN_CONDITION_COMMANDS_DICT[STR_CONST.item_enum](command_function, item_val, branch_count)
-                branch_count += 4
-            else:
-                command_function = WIN_CONDITION_FUNCTION_DICT[STR_CONST.total_count][item_enum]
-                command_list:list = \
-                    WIN_CONDITION_COMMANDS_DICT[STR_CONST.total_count](command_function, item_val, branch_count)
-                branch_count += 5
-            if(branch_count > 0x98):
-                break
-            else:
-                win_condition_list.insert(0, command_list)
-        self._game_engine_code_obj.set_alternate_win_conditions(win_condition_list)
+    # def set_alternate_win_conditions(self,
+    #         possible_win_condition_list:list):
+    #     '''
+    #     Pass
+    #     '''
+    #     # random.seed(a=seed_val)
+    #     # random.shuffle(possible_win_condition_list)
+    #     win_condition_list:list = []
+    #     branch_count:int = 4
+    #     for item_enum, level_enum, item_val in possible_win_condition_list:
+    #         if(level_enum is not None):
+    #             command_function = WIN_CONDITION_FUNCTION_DICT[STR_CONST.level_count][item_enum]
+    #             command_list:list = \
+    #                 WIN_CONDITION_COMMANDS_DICT[STR_CONST.level_count](command_function, level_enum, item_val, branch_count)
+    #             branch_count += 5
+    #         elif((type(item_val) == JIGGY_ENUMS) or
+    #              (type(item_val) == EMPTY_HONEYCOMB_ENUMS)):
+    #             command_function = WIN_CONDITION_FUNCTION_DICT[STR_CONST.item_enum][item_enum]
+    #             command_list:list = \
+    #                 WIN_CONDITION_COMMANDS_DICT[STR_CONST.item_enum](command_function, item_val, branch_count)
+    #             branch_count += 4
+    #         else:
+    #             command_function = WIN_CONDITION_FUNCTION_DICT[STR_CONST.total_count][item_enum]
+    #             command_list:list = \
+    #                 WIN_CONDITION_COMMANDS_DICT[STR_CONST.total_count](command_function, item_val, branch_count)
+    #             branch_count += 5
+    #         if(branch_count > 0x98):
+    #             break
+    #         else:
+    #             win_condition_list.insert(0, command_list)
+    #     self._game_engine_code_obj.set_alternate_win_conditions(win_condition_list)
 
     def set_note_door_values(self,
             note_door_list:list=[

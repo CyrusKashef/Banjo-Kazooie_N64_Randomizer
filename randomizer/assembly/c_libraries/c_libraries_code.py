@@ -96,6 +96,12 @@ class C_LIBRARIES_CODE_CLASS(Generic_Bin_File_Class):
     # 0x1cc0 -> 0001 1100 1100 0000
     # Which Is Tracks 7, 8, 11, 12, 13
     
+    def mute_all_music(self):
+        '''
+        Pass
+        '''
+        self._write_bytes_from_int(0x11E88, 0x00000000, byte_count=4)
+
     def convert_track_list_to_hex(self, track_list:list):
         '''
         Pass

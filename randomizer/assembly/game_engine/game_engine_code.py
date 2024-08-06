@@ -282,44 +282,80 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
     # 812986BA 035D
     # 812986BE 035D
     # 8129DD86 035D
+
+    def replace_transformation_models(self, starting_asset_id:int):
+        '''
+        Replaces the transformation models with another asset.
+        '''
+        # core2/code_11660.c#L9
+        wishywashy_model_id:int = starting_asset_id
+        termite_bk_model_id:int = starting_asset_id + 1
+        crocodile_bk_model_id:int = starting_asset_id + 2
+        walrus_bk_model_id:int = starting_asset_id + 3
+        pumpkin_bk_model_id:int = starting_asset_id + 4
+        bee_bk_model_id:int = starting_asset_id + 5
+        self._write_bytes_from_int(0x1169A, termite_bk_model_id, byte_count=2)
+        self._write_bytes_from_int(0x116A2, walrus_bk_model_id, byte_count=2)
+        self._write_bytes_from_int(0x116AA, pumpkin_bk_model_id, byte_count=2)
+        self._write_bytes_from_int(0x116B2, crocodile_bk_model_id, byte_count=2)
+        self._write_bytes_from_int(0x116BA, bee_bk_model_id, byte_count=2)
+        self._write_bytes_from_int(0x116C2, wishywashy_model_id, byte_count=2)
     
-    def replace_banjo_kazooie_models(self,
-            low_poly_model:int=0x34D,
-            high_poly_model:int=0x34E):
+    def replace_banjo_kazooie_models(self, starting_asset_id:int):
         '''
         Replaces the Banjo-Kazooie low and high poly models with
         another asset.
         '''
-        # core2/ba/model.c#L302
-        # self._write_bytes_from_int(0xB336, 0x8000 - low_poly_model, byte_count=2)
-        # core2/code_11660.c#L29
-        self._write_bytes_from_int(0x11722, low_poly_model, byte_count=2)
-        self._write_bytes_from_int(0x1172A, low_poly_model, byte_count=2)
-        self._write_bytes_from_int(0x1172E, high_poly_model, byte_count=2)
-        # core2/code_16C60.c#L30
-        # self._write_bytes_from_int(0x16C72, 0x8000 - low_poly_model, byte_count=2)
-        # core2/code_16C60.c#L65
-        # self._write_bytes_from_int(0x16DF6, low_poly_model, byte_count=2)
-        # self._write_bytes_from_int(0x16E02, high_poly_model, byte_count=2)
-        # core2/code_16C60.c#L140
-        # 8037D234 & 8037D238
-        # self._write_bytes_from_int(0x17074, 0x24040001, byte_count=4)
-        # 8037D236
-        # self._write_bytes_from_int(0x1707C, 0x24040001, byte_count=4)
-        # 8037D235
-        # self._write_bytes_from_int(0x17084, 0x24040001, byte_count=4)
-        # 8037D23C
-        # self._write_bytes_from_int(0x17088, 0x44817000, byte_count=4)
-        # self._write_bytes_from_int(0x17090, 0x3C064100, byte_count=4)
-        # 8037D240
-        # self._write_bytes_from_int(0x17094, 0x44817000, byte_count=4)
-        # self._write_bytes_from_int(0x1709C, 0x3C064100, byte_count=4)
-        # 8037D237
-        # self._write_bytes_from_int(0x170A4, 0x24040001, byte_count=4)
-        # 8037D239
-        # self._write_bytes_from_int(0x170AC, 0x24040001, byte_count=4)
-        # 8037D23A
-        # self._write_bytes_from_int(0x170B4, 0x24040001, byte_count=4)
+        # Decomp: core2/code_11660.c#L27
+        self._write_bytes_from_int(0x116C4, 0x0C0C8640, byte_count=4) # level_get()
+        self._write_bytes_from_int(0x116C8, 0x00000000, byte_count=4) # SLL 0, 0, 0
+        self._write_bytes_from_int(0x116CC, 0x24420000 + starting_asset_id, byte_count=4) # Level Id + Starting Asset Id
+        self._write_bytes_from_int(0x116D0, 0x8FBF0014, byte_count=4) # LW 1F, 14(1D)
+        self._write_bytes_from_int(0x116D4, 0x27BD0018, byte_count=4) # ADDIU 1D, 1D, 18
+        self._write_bytes_from_int(0x116D8, 0x03E00008, byte_count=4) # JR 1F
+        self._write_bytes_from_int(0x116DC, 0x00000000, byte_count=4) # SLL 0, 0, 0
+    
+    def adjust_player_eye_model_eyes(self, starting_asset_id:int):
+        '''
+        Decomp: core2/ba/model.c#L300
+        '''
+        # Decomp: core2/code_16C60.c#L27
+        negative_starting_asset_id:int = 0x10000 - starting_asset_id
+        self._write_bytes_from_int(0x16C70, 0x244E0000 + negative_starting_asset_id, byte_count=4) # ADDIU $t6 $v0 negative_starting_asset_id
+        self._write_bytes_from_int(0x16C74, 0x2DC10006, byte_count=4) # SLTIU $at $t6 0x0006
+        self._write_bytes_from_int(0x16C78, 0x10200006, byte_count=4) # BEQ $at $zero 0x0006 -> BK Model
+        self._write_bytes_from_int(0x16C7C, 0x000E7080, byte_count=4) # SLL $t6 $t6 0x02
+        self._write_bytes_from_int(0x16C80, 0x24010000, byte_count=4) # ADDIU $at $zero 0x0 -> Wishywashy
+        self._write_bytes_from_int(0x16C84, 0x10220045, byte_count=4) # BEQ $at $v0 0x0045
+        self._write_bytes_from_int(0x16C88, 0x00000000, byte_count=4) # SLL 0, 0, 0
+        self._write_bytes_from_int(0x16C8C, 0x1020002A, byte_count=4) # BEQ $zero $zero 0x002A -> Assume Transformation
+        self._write_bytes_from_int(0x16C90, 0x00000000, byte_count=4) # SLL 0, 0, 0
+
+    def spawn_appendages(self):
+        '''
+        Decomp: core2/code_16C60.c#L60
+        '''
+        # Decomp: core2/code_16C60.c#L60
+        self._write_bytes_from_int(0x16DEC, 0x0C0A39F3, byte_count=4) # player_getTransformation()
+        self._write_bytes_from_int(0x16DF4, 0x24010001, byte_count=4) # TRANSFORM_1_BANJO
+        self._write_bytes_from_int(0x16E00, 0x24010001, byte_count=4) # TRANSFORM_1_BANJO
+        self._write_bytes_from_int(0x16E08, 0x24010004, byte_count=4) # TRANSFORM_4_WALRUS
+        self._write_bytes_from_int(0x16E14, 0x24010005, byte_count=4) # TRANSFORM_5_CROC
+
+    def adjust_player_model_collisions(self, starting_asset_id:int):
+        '''
+        Decomp: core2/ba/model.c#L300
+        '''
+        negative_starting_asset_id:int = 0x10000 - starting_asset_id
+        self._write_bytes_from_int(0xB334, 0x24480000 + negative_starting_asset_id, byte_count=4)
+        self._write_bytes_from_int(0xB338, 0x2D010013, byte_count=4) # SLTIU $at $t0 0x0013
+        self._write_bytes_from_int(0xB33C, 0x1020004C, byte_count=4) # BEQ $at $zero 0x004C -> Non-Player Model
+        self._write_bytes_from_int(0xB340, 0x00084080, byte_count=4) # SLL $t0 $t0 0x02
+        self._write_bytes_from_int(0xB344, 0x00000000, byte_count=4) # BEQ $zero $zero 0x004 -> Player Model
+        self._write_bytes_from_int(0xB348, 0x00000000, byte_count=4) # SLL $zero $zero 0x0
+        self._write_bytes_from_int(0xB34C, 0x00000000, byte_count=4) # SLL $zero $zero 0x0
+        self._write_bytes_from_int(0xB350, 0x00000000, byte_count=4) # SLL $zero $zero 0x0
+        self._write_bytes_from_int(0xB354, 0x00000000, byte_count=4) # SLL $zero $zero 0x0
     
     def replace_game_engine_models_with_assets(self, index_list:list, new_asset_id:list):
         '''
@@ -328,7 +364,14 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         '''
         for index_start in index_list:
             self._write_bytes_from_int(index_start, new_asset_id, byte_count=2)
-    
+
+    def transparent_bk(self, alpha_val:int=0xFF):
+        '''
+        Decomp: ba/model.c#L130
+        '''
+        # baModelEnvAlpha = 0xFF;
+        self._write_bytes_from_int(0xADEB, alpha_val, byte_count=1)
+
     ######################
     ##### PAUSE MENU #####
     ######################
@@ -510,7 +553,7 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         self._write_bytes_from_int(0x4A7EE, transformation_costs_dict[STR_CONST.crocodile_transformation_cost], byte_count=2)
         self._write_bytes_from_int(0x4A7F6, transformation_costs_dict[STR_CONST.walrus_transformation_cost], byte_count=2)
         self._write_bytes_from_int(0x4A7FE, transformation_costs_dict[STR_CONST.pumpkin_transformation_cost], byte_count=2)
-        self._write_bytes_from_int(0x4A7F6, transformation_costs_dict[STR_CONST.bee_transformation_cost], byte_count=2)
+        self._write_bytes_from_int(0x4A806, transformation_costs_dict[STR_CONST.bee_transformation_cost], byte_count=2)
 
     ### Termite
 
@@ -707,3 +750,87 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         Removes the transformation check for learning Bottles moves
         '''
         self._write_bytes_from_int(0x53018, 0x24020045, byte_count=4)
+    
+    def unlimited_time_bottles_bonus(self):
+        '''
+        Pass
+        '''
+        self._write_bytes_from_int(0x579EC, 0x10000009, byte_count=4)
+    
+    def bottles_bonus_codes_always_activatable(self):
+        '''
+        Pass
+        '''
+        command_list:list = [
+            0x24040001,
+            0x3C018038,
+            # 0xA020DCC0,
+            0xA024DCC0,
+            0x3C018038,
+            # 0xA020DCC1,
+            0xA024DCC1,
+            0x3C018038,
+            0x3C0E8038,
+            # 0xA020DCC2,
+            0xA024DCC2,
+            0x24020003,
+            0x25CEDCC0,
+            0x004E1821,
+            # 0xA0600001,
+            0xA0640001,
+            # 0xA0600002,
+            0xA0640002,
+            # 0xA0600003,
+            0xA0640003,
+            0xA0600000,
+            0x3C018038,
+            # 0xA020DCC7,
+            0xA024DCC7,
+            0x3C018038,
+            # 0xA020DCC8,
+            0xA024DCC8,
+            0x3C018038,
+            0xA020DCC9,
+            0x3C018038,
+            # 0xA020DCCA,
+            0xA024DCCA,
+            0x3C018038,
+            # 0xA020DCCB,
+            0xA024DCCB,
+            0x3C018038,
+            # 0xA020DCCC,
+            0xA024DCCC,
+            0x3C018038,
+            0x03E00008,
+            # 0xAC20DF68,
+            0xAC24DF68,
+            0x00000000,
+        ]
+        index_start:int = 0x57BF0
+        max_index:int = 0x57C6C
+        self._write_bytes_from_hex_assembly(index_start, command_list, max_index)
+    
+    ###########################
+    ##### ENEMY FUNCTIONS #####
+    ###########################
+
+    def extra_fast_buzzbomb(self, speed_multiplier:float=1):
+        '''
+        Decomp: core2/code_45310.c#L399
+        '''
+        # sp30 = 1 * spB8;
+        # Replacing 1.0f
+        new_speed:int = self._convert_bfloat_to_hex(speed_multiplier)
+        self._write_bytes_from_int(0x4617A, new_speed, byte_count=2)
+    
+    def modify_sir_slush_spawn(self, actor_id:int=0x0125):
+        '''
+        Pass
+        '''
+        self._write_bytes_from_int(0x5ABAE, actor_id, byte_count=2)
+    
+    def extra_fast_bigbutt(self):
+        '''
+        Pass
+        '''
+        self._write_bytes_from_int(0x3FE40, 0x3C014000, byte_count=4)

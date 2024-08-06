@@ -1,25 +1,25 @@
 from constants.int_values.speech_constants import \
     SPEECH_CONSTANTS, GENERAL_SPEECH_SPRITE_ENUMS
 
-DEFAULT_SPEECH_DICT:dict = {
+SPARKLES_SPEECH_DICT:dict = {
     0x0A0B: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "AHOY THERE! I'M CAP'N BLUBBER, AN' I LOST ME TREASURE WHEN ME SHIP CRASHED.",
+            GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "AHOY THERE! I'M YA BOI BLUBBER, AN' I'M TRYING TO AFFORD A GAMING PC.",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "ARRR...BUT I CAN'T SWIM! CAN YE HELP AN OLD SEA HIPPO?",
+            GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "ARRR...BUT I CAN'T AFFORD IT! CAN YE DONATE TO AN OLD SEA HIPPO'S STREAM?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_82: "WELL GO FIND IT THEN, BLUBBER GUTS!",
+            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_82: "THEN BUY ONE, 4HEAD!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "SURE, WE'LL FIND IT FOR YOU.",
+            GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "NO WORRIES, WE GOTCHU.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
     0x0A0C: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "AYE...THAT BE HALF O' ME GOLD!",
+            GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "AYE...THANKS FOR THE BIDDIES!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -28,9 +28,9 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A0D: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "ME TREASURE! THANK YE ME HEARTIES, TAKE THIS REWARD!",
+            GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "ME DONO GOAL! THANK YE ME FOLLOWERS, TAKE THIS REWARD!",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x01?",
-            GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "I'M OFF TER SPEND, SPEND, SPEND!",
+            GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "I'M OFF TER GAME, GAME, GAME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -39,22 +39,22 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A0E: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.nipper_88: "HEY! THIS NIPPER'S BEACH, YOU FIND NOTHING WITHOUT NIPPER'S HELP.",
+            GENERAL_SPEECH_SPRITE_ENUMS.nipper_88: "HEY! THIS NIPPER'S COMP GAME, YOU'LL NEVER CLIMB RANKED WITHOUT NIPPER'S HELP.",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.nipper_88: "GRRR...CHEEKY BIRD NEED FEATHERS CLIPPING!",
+            GENERAL_SPEECH_SPRITE_ENUMS.nipper_88: "GRRR...CHEEKY BIRD, I'M THROWING!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_82: "HELP US THEN CRUSTACEAN BRAIN!",
+            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_82: "CARRY US THEN CRUSTACEAN BRAIN!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_82: "OH YEAH? JUST TRY IT, SHELL HEAD!",
+            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_82: "OH YEAH? REPORTED, SHELL HEAD!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
     0x0A0F: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.nipper_88: "FEEBLE EGGS NO MATCH FOR NIPPER'S SHELL ARMOR!",
+            GENERAL_SPEECH_SPRITE_ENUMS.nipper_88: "LMAO EGGS GOT NERFED LAST PATCH!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -63,7 +63,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A10: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.nipper_88: "RARRRR! YOU HURT NIPPER, MAKES ME MAD!",
+            GENERAL_SPEECH_SPRITE_ENUMS.nipper_88: "RARRRR! YOU'RE HACKING, MAKES ME MAD!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -72,7 +72,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A11: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.nipper_88: "TAKE THAT, BIG-MOUTHED BIRD!",
+            GENERAL_SPEECH_SPRITE_ENUMS.nipper_88: "I HOPE THAT'S PLAY OF THE GAME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -81,8 +81,8 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A12: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.black_snippet_CD: "HEY FURBALL, YOU'RE LOOKING WISE,",
-            GENERAL_SPEECH_SPRITE_ENUMS.black_snippet_CD: "SOLVE MY PUZZLE AND WIN A PRIZE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.black_snippet_CD: "OMG THIS TIKTOK PUZZLE IS IMPOSSIBLE",
+            GENERAL_SPEECH_SPRITE_ENUMS.black_snippet_CD: "NO ONE CAN COMPLETE IT IN TIME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -91,8 +91,8 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A13: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.black_snippet_CD: "THE GATE OPENS TO REVEAL YOUR PRIZE,",
-            GENERAL_SPEECH_SPRITE_ENUMS.black_snippet_CD: "BUT FIRST I'LL CUT YOU DOWN TO SIZE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.black_snippet_CD: "OMG I CAN'T BELIEVE YOU FELL FOR IT",
+            GENERAL_SPEECH_SPRITE_ENUMS.black_snippet_CD: "MY FILTER IS GETTING SO MANY USES!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -101,7 +101,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A14: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.yum_yum_AA: "LOOK...NICE SNACKS FOR YUM-YUM!",
+            GENERAL_SPEECH_SPRITE_ENUMS.yum_yum_AA: "I DESERVE A LITTLE SNACKY SNACK!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -110,7 +110,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A15: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.lockup_DB: "THIS BE GRUNTILDA'S BOOTY! TOUCH IT IF YOU DARE...",
+            GENERAL_SPEECH_SPRITE_ENUMS.lockup_DB: "THIS JIGGY BELONGED TO MY PARENTS...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -119,8 +119,8 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A16: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT GOLDEN TREASURE WAS FOR ME,",
-            GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "NOW HARDER STILL THE GAME WILL BE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.lockup_DB: "MOTHER... FATHER...",
+            GENERAL_SPEECH_SPRITE_ENUMS.lockup_DB: "REMEMBER ME...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -129,7 +129,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A17: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.little_lockup_AB: "YIKES! PLEASE OPEN ME GENTLY...",
+            GENERAL_SPEECH_SPRITE_ENUMS.little_lockup_AB: "IT WAS JUST A PRANK, BRO...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -138,7 +138,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A18: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.little_lockup_AB: "FOLLOW THE CLUES IF YOU'RE LOOKING FOR GOLD!",
+            GENERAL_SPEECH_SPRITE_ENUMS.little_lockup_AB: "FOLLOW THE CLUES IF YOU'RE LOOKING FOR MORE FOLLOWERS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -147,7 +147,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A19: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.little_lockup_AB: "HAH! YOU'LL NEVER FIND ME NOW!",
+            GENERAL_SPEECH_SPRITE_ENUMS.little_lockup_AB: "YOU'D GET MORE FOLLOWERS IF YOU BOUGHT MY ART FIRST!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -156,7 +156,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A1A: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.leaky_AC: "ME LEAKY, NO GOOD FOR WATER. CAN BEAR BLOCK HOLE WITH PEBBLE?",
+            GENERAL_SPEECH_SPRITE_ENUMS.leaky_AC: "LEAKY BROKEN. NO ONE CAN FIX LEAKY...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -165,7 +165,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A1B: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.snacker_AF: "SNACKER SMELLS TASTY DINNER, STAY JUST THERE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.snacker_AF: "SNACKER SMELLS MACCAS, STAY JUST THERE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -174,7 +174,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A1C: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.snacker_AF: "YIPPEE! SNACKER GETS DESSERT TOO!",
+            GENERAL_SPEECH_SPRITE_ENUMS.snacker_AF: "YIPPEE! SNACKER GETS A MCFLURRY TOO!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -183,7 +183,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A1D: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.snacker_AF: "AHH... CHEESE AND CRACKERS - JUST WAIT THERE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.snacker_AF: "AHH... VEGEMITE AND CRACKERS - JUST WAIT THERE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -192,7 +192,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A1E: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.snacker_AF: "COFFEE AND MINTS? I'LL BE RIGHT OVER!",
+            GENERAL_SPEECH_SPRITE_ENUMS.snacker_AF: "TEA AND MINTS? I'LL BE RIGHT OVER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -201,36 +201,36 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A1F: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU'LL REACH NEW HEIGHTS WITH MY SHOCK JUMP SPRING!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "DAMN GIRL, LOOK AT THEM LEGS!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "DON'T WORRY, THE TURKEY DOES ALL THE WORK. SIMPLY STAND ON A SHOCK JUMP DISC, THEN PRESS AND HOLD A.",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "DROP YOUR PHAT ASS ON A SHOCK JUMP DISC, THEN POP IT UP.",
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "DOES KAZOOIE DO IT? MY LEGS ARE TIRED...",
+            GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "I BELIEVE IN 'THICC THIGHS SAVE LIVES'.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
     0x0A20: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THIS IS YOUR BIG CHANCE CHICKEN LEGS, IT'S TIME FOR YOU TO FLY!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "OOO GIRL, LOOK AT THEM BICEPS!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "SIMPLE ENOUGH EVEN FOR YOU, BIRD BRAIN. JUST STAND ON A FLYING DISC, AND PRESS A.",
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HERE'S 25 RED FEATHERS TO HELP YOU INTO THE AIR!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "LET'S GIVE HER A CHANCE TO... 5... 4... 3... 2... 1... OK PUT THEM GUNS AWAY,",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "MAYBE YOU SHOULD MOVE TO TEXAS WITH THOSE GUNS!",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x06?",
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "SEE YOU!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "NO ONE IN CHAT BUG HER ABOUT IT PLEASE...",
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "AT LAST! IT BETTER BE EASY, BOGEYES!",
+            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "I HOPE THE PLAYER IS FLEXING IRL!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
     0x0A21: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.blubbers_gold_9F: "AHOY THERE! I BE BLUBBER'S TREASURE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.blubbers_gold_9F: "YOU'RE THE REAL GOLD IN MY LIFE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -239,7 +239,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A22: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "KAZOOIE CAN TAKE TO THE AIR BY STANDING ON A FLYING DISC, THEN PRESSING A.",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU JUST WANNA FLEX AGAIN, DON'T YOU?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -248,7 +248,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A23: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU CAN LEAP REALLY HIGH WITH THE SHOCK JUMP SPRING. STAND ON A SHOCK JUMP DISC, THEN PRESS AND HOLD A.",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU SHOULD STAND UP AND WIGGLE DAT BOOTY, FOR REAL FOR REAL!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -257,7 +257,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A24: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THIS IS KAZOOIE'S SHOCK JUMP DISC, FIND ME AND I'LL TELL YOU HOW TO USE IT!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU STOOD ON A SHOCK JUMP PAD. YOU'RE OBLIGATED TO SHOW US YOUR FEET.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -266,7 +266,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A25: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THIS IS A FLYING DISC, BUT YOU'LL HAVE TO FIND MY MOLEHILL BEFORE YOU CAN USE IT!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "NO, IT CAN'T BE TRUE. I CAN FLY IF I WANTED TO...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -275,7 +275,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A26: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "TO FLY HIGHER, YOU'LL NEED SOME RED FEATHERS. PRESS A TO USE ONE, BUT REMEMBER THAT BEAKY CAN ONLY CARRY 50 OF THEM!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "PUMP THEM BICEPS TO FLY HIGHER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -284,7 +284,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A27: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "NICE GOING, YOU'VE LEARNED ALL THE COVE'S NEW MOVES!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "CATCH ME IN SEA OF THIEVES, BET YOU WON'T!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -293,7 +293,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A28: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.leaky_AC: "LEAKY PATCHED UP. NOW EMPTY WATER FOR BEAR!",
+            GENERAL_SPEECH_SPRITE_ENUMS.leaky_AC: "LEAKY PATCHED UP. NO TEARS, ONLY DREAMS NOW!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -302,7 +302,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A29: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.snacker_AF: "MMMM...LOVELY!",
+            GENERAL_SPEECH_SPRITE_ENUMS.snacker_AF: "TOO MUCH ASS, CAN'T FINISH, WILL FINISH IT LATER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -311,7 +311,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A2A: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "ME TREASURE! THANK YE ME HEARTIES, I'M OFF TER SPEND, SPEND, SPEND!",
+            GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "ME SUB GOAL! THANK YE ME FOLLOWERS, I'M OFF TER GAME, GAME, GAME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -320,20 +320,20 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A2B: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.rubee_90: "HELLO MY FRIEND! I AM RUBEE, CAN I BE OF SOME HELP, NO?",
+            GENERAL_SPEECH_SPRITE_ENUMS.rubee_90: "BRO LOOK AT MY CUTE BABY!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.rubee_90: "VERY GOOD, I SEE SOME UP THERE. IT'S YOURS IF YOU CAN GET IT, YES?",
+            GENERAL_SPEECH_SPRITE_ENUMS.rubee_90: "AND I AM HIS FATHER. DON'T TALK TO ME OR MY SON EVER AGAIN!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_82: "WE'RE LOOKING FOR TREASURE, PIPE BOY!",
+            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_82: "THAT'S A PET...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
     0x0A2C: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.rubee_90: "AHHH...A THOUSAND THANKS! MY FRIEND HISTUP WILL NOW HELP YOU WITH YOUR QUEST!",
+            GENERAL_SPEECH_SPRITE_ENUMS.rubee_90: "SNAAAKE SNAAAKE OOOOH IT'S A SNAAAAKE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -342,21 +342,21 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A2D: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.trunker_8F: "TRUNKER WANTS RAIN...GASP...I'M SHRIVELING UP!",
+            GENERAL_SPEECH_SPRITE_ENUMS.trunker_8F: "TRUNKER WANTS RAIN...GASP...SOMEONE REDEEM HYDRATE!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.trunker_8F: "NO...COUGH...NEED WATER...HELP!",
+            GENERAL_SPEECH_SPRITE_ENUMS.trunker_8F: "NO...COUGH...CHANNEL REDEMPTION...HELP!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_82: "HOW'S YOUR NUTS, BARK BREATH?",
-            GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "KAZOOIE! WILL EGGS AND FEATHERS HELP?",
+            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_82: "YOU GOT A HEADACHE, BARK BREATH?",
+            GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "KAZOOIE! WILL EMOTING HELP?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
     0x0A2E: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.trunker_8F: "AHHH...LOVELY WATER! TRUNKER FEELS GREAT!",
+            GENERAL_SPEECH_SPRITE_ENUMS.trunker_8F: "AHHH...LOVELY WATER! THANKS FOR THE REDEPTION!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -365,7 +365,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A2F: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "PANT...IT'S TOO HOT FOR GOBI, I NEED SOME SHADE. PLEASE HELP ME!",
+            GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "EVERYONE WANTED ME TO WORK ON THE RANDO. PLEASE HELP ME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -374,7 +374,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A30: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "HERE'S YOUR REWARD BEAR, GOBI'S OFF TO COOL DOWN.",
+            GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "OMG, ANOTHER DEV! I'M FREE! TAKE THESE UNRELEASED FEATURES!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -383,7 +383,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A31: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "THIS TREE LOOKS A BIT THIRSTY, BUT I NEED ALL MY WATER FOR MYSELF...",
+            GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "THIS TREE LOOKS A BIT THIRSTY, BUT I NEED ALL MY CHANNEL POINTS FOR VIP...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -392,7 +392,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A32: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "OI! MY PRECIOUS WATER.",
+            GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "OI! MY CHANNEL POINTS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -401,7 +401,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A33: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "BAH...THAT'S IT! I'M LEAVING THIS DESERT TO FIND SOME PEACE AND QUIET!",
+            GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "BAH...THAT'S IT! I'M GONNA GO WORK ON KIRBY INSTEAD!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -410,7 +410,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A34: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.grabba_92: "GRABBA'S GOT A JIGGY, NER...NER...NER...NER!",
+            GENERAL_SPEECH_SPRITE_ENUMS.grabba_92: "GRABBA'S GOT VIP, NER...NER...NER...NER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -419,7 +419,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A35: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.grabba_92: "NOOOO! I'VE HAD THAT A THOUSAND YEARS, WELL DONE MORTAL!",
+            GENERAL_SPEECH_SPRITE_ENUMS.grabba_92: "NOOOO! I'VE HAD THAT A THOUSAND YEARS, BIG SADGE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -428,7 +428,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A36: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.grabba_92: "BEAR'S TOO SLOW, NER...NER...NER...NER!",
+            GENERAL_SPEECH_SPRITE_ENUMS.grabba_92: "PICK UP YOUR FEET, YOU DRONGO! NER...NER...NER...NER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -437,7 +437,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A37: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.jinxy_B0: "BY DOSE IS ALL BLOCKED UP!",
+            GENERAL_SPEECH_SPRITE_ENUMS.jinxy_B0: "I HAVE A COLD, BUT I'M STILL GOING INTO WORK!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -446,7 +446,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A38: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.jinxy_B0: "HEY! DAT TICKLES!",
+            GENERAL_SPEECH_SPRITE_ENUMS.jinxy_B0: "BLESS ME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -455,7 +455,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A39: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.jinxy_B0: "AHHH...THAT CLEARED JINXY'S NOSE. COME ON IN!",
+            GENERAL_SPEECH_SPRITE_ENUMS.jinxy_B0: "I DIDN'T ACTUALLY HAVE A COLD, I JUST WASN'T FEELING IT.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -464,7 +464,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A3A: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.sand_eel_B1: "ONLY WE SAND EELS CAN SURVIVE IN HERE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.sand_eel_B1: "THE FLOOR IS LAVA!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -473,7 +473,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A3B: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.ancient_one_B3: "SUMMON ALL THE HIDDEN RINGS OF THE ANCIENTS TO BEAT THE WITCH!",
+            GENERAL_SPEECH_SPRITE_ENUMS.ancient_one_B3: "YOU KNOW WHAT THEY SAY ABOUT BIG RINGS?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -482,7 +482,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A3C: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.ancient_one_B3: "ONLY JOKING MORTAL! WE CAN ONLY GIVE YOU THIS...",
+            GENERAL_SPEECH_SPRITE_ENUMS.ancient_one_B3: "BIG RING FINGERS. WILL YOU MARRY ME?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -491,7 +491,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A3D: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mum_mum_BB: "THIS IS KING SANDYBUTT'S TOMB. TURN BACK OR FACE HIS WRATH!",
+            GENERAL_SPEECH_SPRITE_ENUMS.mum_mum_BB: "WELCOME TO HOLLISTER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -500,7 +500,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A3E: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mum_mum_BB: "YOU CHOSE NOT TO HEED OUR WARNING, PREPARE TO RUN!",
+            GENERAL_SPEECH_SPRITE_ENUMS.mum_mum_BB: "LMAO GET LOST IN A CLOTHING STORE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -509,7 +509,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A3F: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mum_mum_BB: "NOOO...THE BEAR SURVIVED! HE'S AFTER THE KING'S ANCIENT RELIC!",
+            GENERAL_SPEECH_SPRITE_ENUMS.mum_mum_BB: "WAIT, THERE'S A WAY OUT? HELP! HEEEELP!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -518,9 +518,9 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A40: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THESE ARE THE RUNNING SHOES.",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ARE YOU TIRED?",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x03?",
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "BEAKY WEARS THEM ON HER SCRAWNY FEET TO MAKE HER RUN REALLY FAST FOR A LIMITED TIME!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "BECAUSE YOU'VE BEEN RUNNING THROUGH MY MIND ALL DAY!",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x04?",
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
         },
@@ -530,7 +530,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A41: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "USE THE RUNNING SHOES TO MAKE KAZOOIE RUN REALLY FAST FOR A LIMITED TIME!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YUM! CHILLI DOGS! GOTTA GO FAST!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -539,7 +539,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A42: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WELL, I'M AFRAID THAT'S IT FOR NEW MOVES IN GOBI'S VALLEY.",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOUR BOYFRIEND IS MIDDLE EASTERN, RIGHT? DOES IT MAKE YOU LIKE THIS LEVEL?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -548,7 +548,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A43: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WELL PLAYED, BANJO! YOU'VE NOW LEARNED ALL THE MOVES IN THE GAME!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU LEARNED EVERY MOVE IN THE GAME! WHEN WILL YOU LEARN TO HAVE ACTUAL GAME?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -557,8 +557,8 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A44: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GRUNTY'S RACE YOU CANNOT BEAT,",
-            GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "UNTIL YOU FIND SOME FASTER FEET!",
+            GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I CAN'T BELIEVE YOU FAILED THIS RUN,",
+            GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I GUESS YOU JUST 'PLAY FOR FUN'!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -567,8 +567,8 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A45: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "MOTZAND PLAYS HIS ORGAN WITH EASE,",
-            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "BUT CAN YOU FOLLOW HIM ON THE KEYS?",
+            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "I'M PLAYING SUPER MARIO 64 WITH A KEYBOARD,",
+            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "IT'S EASY TO LEARN, JUST PLAY AFTER ME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -577,8 +577,8 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A46: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "NOT BAD BEAR, BUT NOW WATCH ME,",
-            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "COPY THIS TUNE AND AMAZED I'LL BE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "YOU GOT 'BEHIND THE CHAIN CHOMP',",
+            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "NOW LET'S GO FOR 'CANNONLESS'!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -587,8 +587,8 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A47: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "YOUR MUSIC SKILLS ARE MIGHTY FINE,",
-            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "SO TAKE THIS GOLDEN PIECE OF MINE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "I FORGOT HOW TRASH SUPER MARIO 64 IS,",
+            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "I'M GOING TO RUN ODYSSEY INSTEAD!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -597,8 +597,8 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A48: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "ONCE AGAIN I'LL PLAY MY TUNE,",
-            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "KEEP ON TRYING, YOU'LL GET IT SOON!",
+            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "DON'T GET MAD, YOU GOT THIS,",
+            GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "NO ONE GETS IT THE FIRST TRY...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -607,8 +607,8 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A49: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "WHO WOKE NAPPER WHILE HE'S SLEEPING,",
-            GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "I CAN HEAR SOMEONE DOWN THERE CREEPING!",
+            GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "IS THAT MY FREAKIN' CAT?",
+            GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "LITTLE SHIT KEEPS BRINGING LIZARDS IN!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -617,8 +617,8 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A4A: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "MY GOLDEN PRIZE YOU MAY NOT TAKE,",
-            GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "NOT WHILE OLD NAPPER'S AWAKE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "NO KITTY, THIS IS MY FOOD!",
+            GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "GO EAT YOUR OWN FOOD!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -627,10 +627,10 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A4B: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "GRUNTY'S GOLD, HOW IT SHONE,",
-            GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "SHE'LL BE MAD, NOW IT'S GONE!",
-            GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YES I'M MAD, MY BOOT I'LL PUT,",
-            GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "UP YOUR USELESS SPOOKY BUTT!",
+            GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "LITTLE KITTY TOOK MY FOOD!",
+            GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "GOING TO CHECK IF IT'S POISONOUS FOR KITTIES!",
+            GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WE BETTER RUN BEFORE HE COMES BACK!",
+            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "AWWW, I WANTED UPPIES!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -639,7 +639,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A4C: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.tumblar_BA: "GREETINGS, O SOLID ONE! I'M TUMBLAR THE MIGHTY! SOLVE THE PUZZLE AND YOU CAN TAKE THIS INFERNAL THING THAT'S STUCK UNDER ME!",
+            GENERAL_SPEECH_SPRITE_ENUMS.tumblar_BA: "TUMBLR WILL NEVER DIE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -648,14 +648,14 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A4D: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.tumblar_BA: "AT LAST, THE PUZZLE IS SOLVED! TAKE THIS THING, I'M LEAVING THIS GLOOMY SHED!",
+            GENERAL_SPEECH_SPRITE_ENUMS.tumblar_BA: "VINE?... IS THAT YOU?...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0A4E: {
+    0x0A4E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THESE TWO GUESTS ARE RATHER DUMB,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "LET'S MAKE SURE THEY'RE UNWELCOME!",
@@ -665,7 +665,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0A4F: {
+    0x0A4F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "I CAN'T BELIEVE YOU'RE SO SLOW,",
             GENERAL_SPEECH_SPRITE_ENUMS.motzand_B9: "BACK TO THE START WE MUST GO!",
@@ -677,7 +677,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A50: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.loggo_CE: "GURGLE...BEAR IS MUCH TOO FAT TO FIT IN LOGGO'S MOUTH!",
+            GENERAL_SPEECH_SPRITE_ENUMS.loggo_CE: "GURGLE...YOU'RE MELONS ARE TOO JUICY TO FIT IN LOGGO'S MOUTH!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -686,7 +686,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A51: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.loggo_CE: "HAPPY LANDINGS, LITTLE ONE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.loggo_CE: "YOU MUST FEEL AT HOME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -695,15 +695,15 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A52: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I CAN'T BELIEVE YOU WENT IN THERE,",
-            GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "NOW WASH YOUR HANDS, FILTHY BEAR!",
+            GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU WENT DOWN THERE WITH A SWIRL,",
+            GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "DID YOU EVEN GO PISS GIRL?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0A53: {
+    0x0A53: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THOSE LOVELY THORNS, HOW THEY'VE GROWN,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MUSIC TO MY EARS AS YOU MOAN!",
@@ -713,7 +713,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0A54: {
+    0x0A54: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BIG OAK DOOR IS VERY TOUGH,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "STUPID BEAR'S NOT FAST ENOUGH!",
@@ -725,7 +725,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A55: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "ME SAFE HERE...BEAR CAN'T HIT CONGA!",
+            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "ME SAFE HERE...GIRL DUMBER THAN ALPHA MALE CONGA!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -734,7 +734,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A56: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "URGGG! BEAR BEAT CONGA. ME GIVE PRIZE TO BEAR...",
+            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "URGGG! GIRL BEAT CONGA. GIRL GO AWAY...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -743,7 +743,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A57: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "YARRRR! EGG HURT CONGA!",
+            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "YARRRR! GIRL ABUSE CONGA!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -752,7 +752,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A58: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "YURR...CONGA GOOD SHOT!",
+            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "YURR...CONGA DIFF!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -761,7 +761,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A59: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "GRRR...CLEVER BEAR FIND CONGA'S GOLD!",
+            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "GRRR...CLEVER GIRL FIND CONGA'S GOLD!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -770,7 +770,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A5A: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "GRRAAR...THIS CONGA'S TREE! ME HIT BEAR WITH ORANGES!",
+            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "GRRAAR...THIS CONGA'S TREE! ME HIT GIRL WITH ORANGES!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -779,7 +779,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A5B: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "DON'T TOUCH CONGA'S BLOCKS!",
+            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "CONGA'S BLOCKS TOO COMPLICATED FOR GIRL!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -788,7 +788,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A5C: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "GRRAAR...THIS CONGO'S TREE! ME HIT TERMITE WITH ORANGES!",
+            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "GRRAAR...AUSSIE FILLED WITH TERMITES!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -797,7 +797,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A5D: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.chimpy_85: "CHIMPY HUNGRY, WANTS ORANGE NOW. FEED CHIMPY!",
+            GENERAL_SPEECH_SPRITE_ENUMS.chimpy_85: "GIRLFRIEND TEST! CHIMPY FEEL LIKE AN ORANGE.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -806,7 +806,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A5E: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.chimpy_85: "OH...CHIMPY LIKE CONGA'S ORANGE, CHIMPY HELP FAT BEAR AND BIRD!",
+            GENERAL_SPEECH_SPRITE_ENUMS.chimpy_85: "BEST GIRLFRIEND EVER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -815,7 +815,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A5F: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.ticker_A8: "HEY! WHERE DID YOU GET THOSE SHORTS? I WANT THEM!",
+            GENERAL_SPEECH_SPRITE_ENUMS.ticker_A8: "YAS QUEEN! YOUR BOOTY LOOKS SO GOOD IN THOSE PANTS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -824,7 +824,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A60: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.ticker_A8: "GIVE ME THAT COOL BACKPACK OR ELSE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.ticker_A8: "OH EM GEE WHERE DID YOU GET THAT TOP!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -833,7 +833,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A61: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.ticker_A8: "HEY UGLY! NO BEARS ALLOWED IN TICKER'S TOWER!",
+            GENERAL_SPEECH_SPRITE_ENUMS.ticker_A8: "EW! YOU'RE NOT EVEN WEARING PRADA!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -842,7 +842,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A62: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.juju_A9: "WE JUJU, MUMBO'S TOTEM POLE. FEED US WITH NICE BLUE STONES.",
+            GENERAL_SPEECH_SPRITE_ENUMS.juju_A9: "YOU DUM DUM! GIVE US GUM GUM!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -851,7 +851,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A63: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.jiggy_A3: "YOU MUST SEARCH FOR 10 OF US ON EACH WORLD. WE'LL HELP YOU PROGRESS THROUGH THE WITCH'S LAIR!",
+            GENERAL_SPEECH_SPRITE_ENUMS.jiggy_A3: "I'M A CHOKING HAZZARD!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -860,8 +860,8 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A64: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "HEY...THAT CONGA'S ORANGE! PUT IT BACK!",
-            GENERAL_SPEECH_SPRITE_ENUMS.orange_9E: "YUM...ORANGES ARE NICE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "HEY...THAT RALPH WIGGUM! PUT RALPH BACK!",
+            GENERAL_SPEECH_SPRITE_ENUMS.orange_9E: "I'M IN DANGER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -870,22 +870,22 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A65: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "TIME FOR THE BUZZARD TO LEARN THE 'ANCIENT WAYS OF THE EGG'",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU EVER SAY SOMETHING SO TOXIC, IT FEELS LIKE YOU'RE PELTING STONES AT PEOPLE?",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HOLD Z, THEN PRESS THE TOP C BUTTON TO SHOOT AN EGG OUT OF YOUR MOUTH!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "SURE...PRESS THE BOTTOM C BUTTON INSTEAD AND YOU CAN SHOOT THEM OUT FROM BEHIND!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "SURE...PRESS THE BOTTOM C BUTTON INSTEAD AND YOU CAN SHIT YOURSELF!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "BIRD BRAIN CAN CARRY 100 EGGS IN HER BACKPACK. OH...AND YOU CAN ALSO USE THE CONTROL STICK TO AIM WHILE YOU ARE CROUCHING. EGGS-CITING, HUH?",
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "NOW THAT YOU'VE LEARNED TO USE THE EGGS, HERE'S 50 TO PRACTICE WITH!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "JUST EAT SOME FIBER, YOU'LL BE FINE.",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HERE'S 50, FUCK SOMEONE UP!",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x05?",
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "I'M LISTENING BEETLE BREATH...",
+            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "MY DISSES DO BE HITTIN HARD",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "HEY...SOUNDS COOL! ANYTHING ELSE?",
+            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "FUCK YEAH! ANYTHING ELSE?",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "SHEESH...SOUNDS PAINFUL, I WISH I'D NEVER ASKED...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -893,9 +893,9 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A66: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "I CALL THIS THE BEAK BUSTER. JUMP INTO THE AIR, THEN PRESS Z TO SEND KAZOOIE SLAMMING HARD DOWN TO THE FLOOR!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HAVE YOU EVER SAT ON SOMEONE'S FACE TO KILL THEM?",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "GET USED TO IT NEST GIRL, YOU'LL BE USING IT A LOT!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "DON'T WORRY, WITH THAT ASS, THAT'S HOW THEY'LL WANNA GO!",
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -906,20 +906,20 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A67: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THE TALON TROT WILL LET KAZOOIE TACKLE STEEP SLOPES WITH EASE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ROO ROO ROO ROO!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HOLD Z, THEN PRESS THE LEFT C BUTTON. CONTINUE TO HOLD Z WHILE MOVING KAZOOIE AROUND WITH THE CONTROL STICK. GO PRACTICE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ROO ROO ROO ROO!",
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THAT SOUNDS USEFUL, HOW DOES SHE DO IT?",
+            GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ROO ROO ROO ROO!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
     0x0A68: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "TACKLE STEEP SLOPES WITH THE TALON TROT. HOLD Z, THEN PRESS THE LEFT C BUTTON. CONTINUE TO HOLD Z WHILE MOVING KAZOOIE AROUND WITH THE CONTROL STICK.",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ROO ROO ROO OKAY I'M DONE.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -928,7 +928,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A69: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "TO FIRE AN EGG OUT OF KAZOOIE'S MOUTH, HOLD Z, THEN PRESS THE TOP C BUTTON. TO FIRE ONE FROM BEHIND, HOLD Z AND PRESS THE BOTTOM C BUTTON INSTEAD. YOU CAN USE THE CONTROL STICK TO AIM WHILE YOU ARE CROUCHING.",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "MAYBE THAT'S SHIT COMING OUT OF YOUR MOUTH...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -937,7 +937,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A6A: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "SLAM DOWN HARD WITH THE BEAK BUSTER BY JUMPING INTO THE AIR, THEN PRESSING Z!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "SIT, DON'T HOVER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -946,7 +946,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A6B: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THINGS A BIT SLIPPY, HUH? FIND ME AND I'LL TEACH YOU HOW TO GET UP STEEP SLOPES!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "IMAGINE BEATING JIGGLY IN TROTLESS. COULDN'T BE YOU!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -955,7 +955,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A6C: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WOAAA, BANJO! THERE'S NOTHING MORE I CAN TEACH YOU ON THIS WORLD!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "EEKUM BOOKUM!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -964,7 +964,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A6D: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "KAZOOIE CAN CARRY 100 OF THESE IN HER BACKPACK, SO GET COLLECTING!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "I DON'T THINK THIS TEXT IS USED. IF IT IS, TELL JIGGLY YOU SAW A6D PLEASE.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -973,7 +973,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A6E: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "IF THE ITEM YOU PICKED UP ISN'T NEEDED JUST YET, BEAKY WILL STORE IT IN YOUR BACKPACK.",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "I DON'T THINK THIS TEXT IS USED. IF IT IS, TELL JIGGLY YOU SAW A6E PLEASE.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -982,7 +982,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A6F: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WHEN YOU'RE READY TO LEAVE THIS WORLD, RETURN TO THE START AREA AND STAND ON THE EXIT PAD.",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WHENEVER YOU GET SICK OF MUMBO'S MOUNTAIN, GTFO, IDK DUDE.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -991,7 +991,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A70: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.snorkel_B2: "I'M TRAPPED, HELP! GET THIS THING OFF SNORKEL!",
+            GENERAL_SPEECH_SPRITE_ENUMS.snorkel_B2: "HOW DID I GET TRAPPED HERE? WHAT ARE THE ODDS?!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1000,14 +1000,14 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A71: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.snorkel_B2: "THANKS GUYS! I FOUND THIS EARLIER, IT'S YOURS!",
+            GENERAL_SPEECH_SPRITE_ENUMS.snorkel_B2: "THANKS GUYS! I'M GONNA GO DO... DOLPHIN THINGS...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0A72: {
+    0x0A72: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "A SIMPLE TASK YOU WERE SURE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT GRUNTY'S ENGINES START ONCE MORE!",
@@ -1019,9 +1019,9 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A73: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boss_boom_box_C2: "WHO DARES ENTER BOSS BOOM BOX'S HOLD?",
+            GENERAL_SPEECH_SPRITE_ENUMS.boss_boom_box_C2: "YOU NEED A BOX TO MOVE TO TEXAS?",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x01?",
-            GENERAL_SPEECH_SPRITE_ENUMS.boss_boom_box_C2: "I'VE HIDDEN MY JIGSAW, YOU'LL NEVER GET IT!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boss_boom_box_C2: "YOU'RE NOT MOVING? THEN DIE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1030,14 +1030,14 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A74: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boss_boom_box_C2: "ARRG...YOU'VE SPLINTERED ME! TAKE THIS, I DIDN'T WANT IT REALLY...",
+            GENERAL_SPEECH_SPRITE_ENUMS.boss_boom_box_C2: "FIIINE, I'LL CONVINCE HIM TO MOVE HERE...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0A75: {
+    0x0A75: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "STUPID BEAR, YOU'LL HAVE TO LEARN,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT RED HOT OVENS TEND TO BURN!",
@@ -1047,7 +1047,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0A76: {
+    0x0A76: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MY OILY WATER, IN YOU PLUNGE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU'LL LOSE AIR WHILE IN THAT GUNGE!",
@@ -1057,7 +1057,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0A77: {
+    0x0A77: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "UNDER THE SCUM YOU'LL BREATHE YOUR LAST,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "'CUZ AIR IS USED TWICE AS FAST!",
@@ -1067,7 +1067,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0A78: {
+    0x0A78: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MY OILY SCUM WILL MAKE YOU GASP",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "AND CHOKE WHEN YOU'RE IN GRUNTY'S GRASP!",
@@ -1079,7 +1079,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A79: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "GROAN...MY STOMACH ACHES, I SHOULDN'T HAVE EATEN THAT SHINY THING. SOMEONE HELP POOR BOGGY...",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "GROAN...MY STOMACH ACHES, I SHOULDN'T HAVE DRANK LAST NIGHT. SOMEONE HELP POOR BOGGY...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1098,20 +1098,20 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A7B: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "HELLO AGAIN BUDDY, I'M WAITING FOR SOMEONE TO RACE ME!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "WELCOME TO TONY HAWK'S PRO SKATER!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "SORRY, YOU'RE TOO BIG FOR MY SLED, I CAN ONLY RACE SOMEONE SMALLER.",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "SORRY, YOU'RE TOO BIG FOR MY PENNY BOARD, I CAN ONLY RACE SOMEONE SMALLER.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "WE'LL RACE YOU, NUMB BUTT!",
+            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "WE WANNA RACE, OLD MAN!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
     0x0A7C: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "HEY, MR. WALRUS! FANCY A RACE? HOP ON THE SLED IF YOU DO!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "WHAT'S UP, SQUIRT? WANNA RACE? HOP ON THE BOARD IF YOU DO!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1120,7 +1120,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A7D: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "GREAT! NOW ALL YOU NEED TO DO IS STEER YOUR SLED THROUGH THE RED SLALOM GATES AND BEAT ME TO THE END. GOT IT?",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "READY?",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "3...",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "2...",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "1...",
@@ -1133,7 +1133,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A7E: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "NOT BAD KID, BUT YOU'RE NOT AS FAST AS OLD BOGGY YET!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "NOT BAD KID, BUT YOU'RE NOT AS FAST AS ME, TONY HAWK, PRO SKATER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1142,7 +1142,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A7F: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "C'MON, MR. WALRUS, JUMP ON THE SLED AND TRY AGAIN!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "C'MON, SQUIRT, TRY AGAIN! I NEED THE PUBLICITY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1151,7 +1151,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A80: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "GOOD LUCK KID!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "HELL YEAH! LET'S GO!",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "3...",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "2...",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "1...",
@@ -1164,8 +1164,8 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A81: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "PHEW...YOU'RE TOO QUICK FOR ME, MR. WALRUS!",
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "HERE'S YOUR MEDAL, I RECKON I NEED TO RACE SOMEONE MY OWN SIZE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "SHIT KID, YOU GOT MOVES!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "HERE'S YOUR MEDAL, I'M GONNA FIND A GEEZER LIKE ME TO RACE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1174,7 +1174,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A82: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "I FANCY ANOTHER RACE, BUT YOU'RE TOO GOOD FOR ME. WHERE'S THAT FAT BEAR GONE?",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "YOU WANT AN AUTOGRAPH, KID?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1183,7 +1183,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A83: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "HEY BUDDY! FANCY A RACE AGAINST BOGGY?",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "HEY YOU! WANNA RACE AGAINST ME, TONY HAWK, PRO SKATER?",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "PRESS A TO ACCEPT OR B TO CHICKEN OUT!",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_cheats_a_or_b_3: "",
         },
@@ -1193,7 +1193,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A84: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "C'MON, BUDDY...TRY AGAIN!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "C'MON, TRY AGAIN!",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "PRESS A TO RACE OR B TO BACK OUT.",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_cheats_a_or_b_3: "",
         },
@@ -1203,7 +1203,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A85: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "HARD LUCK BUDDY, BUT OLD BOGGY WINS THIS TIME!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "HARD LUCK, BUT OLD TONY WINS THIS TIME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1212,7 +1212,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A86: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "C'MON, BUDDY...TRY AGAIN!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "C'MON, TRY AGAIN!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1221,7 +1221,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A87: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "DOH...I'VE LOST AGAIN! TAKE MY OTHER MEDAL, I'M OFF TO LOOK FOR MY KIDS' PRESENTS!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "DARN...I'VE LOST AGAIN! TAKE MY OTHER MEDAL, I FORGOT I HAD KIDS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1239,7 +1239,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A89: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "C'MON KID, I COULD WALK QUICKER!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "C'MON KID, YOU'RE NOT LOSING TO AN OLD MAN, ARE YOU?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1248,7 +1248,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A8A: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "THIS IS TOO EASY, I'M GIVING UP!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "THIS IS TOO EASY, MAYBE WATCH A YOUTUBE TUTORIAL FIRST!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1257,7 +1257,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A8B: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.icy_water_BE: "IS THE WATER TOO COLD FOR YOU, BANJO? WELL STAY OUT THEN!",
+            GENERAL_SPEECH_SPRITE_ENUMS.icy_water_BE: "IMAGINE THINKING SWIMMING IN WINTER IS A GOOD IDEA!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1266,7 +1266,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A8C: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.twinklie_BF: "WE'RE THE TWINKLIES! PROTECT US FROM THE TWINKLY MUNCHERS AS WE HOP ACROSS TO OUR TREE. IF ENOUGH OF US GET THERE, WE CAN LIGHT THE TREE FOR YOU!",
+            GENERAL_SPEECH_SPRITE_ENUMS.twinklie_BF: "WE ARE TWINKS! LEAD US TO THE GAY BAR WHILE PROTECTING US FROM OUR INNER DEMONS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1275,7 +1275,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A8D: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.twinklie_BF: "PHEW...THAT WAS CLOSE, BUT WE MADE IT. NOW SWITCH US ON!",
+            GENERAL_SPEECH_SPRITE_ENUMS.twinklie_BF: "WE MADE IT! YAAASSS!!!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1284,16 +1284,16 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A8E: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.twinklie_BF: "YIPPEE! BE A STAR AND YOU'LL FIND YOUR REWARD! HURRY!",
+            GENERAL_SPEECH_SPRITE_ENUMS.twinklie_BF: "NOW GO UP THERE, YOU STAR!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0A8F: {
+    0x0A8F: { 
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.twinklie_muncher_C0: "HURRR...NICE TASTY LIGHTS THOSE! TRY AGAIN BEAR, WE'RE STILL HUNGRY!",
+            GENERAL_SPEECH_SPRITE_ENUMS.twinklie_muncher_C0: "NOM NOM NOM! SELF ESTEEM TASTES SO GOOD!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1302,7 +1302,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A90: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.twinklie_muncher_C0: "MMMM...CRUNCHY AND TASTY!",
+            GENERAL_SPEECH_SPRITE_ENUMS.twinklie_muncher_C0: "WE SHOULD DRAW A SONIC OC!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1311,7 +1311,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A91: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggys_kids_C5: "WOW! THANK YOU BROWN BEAR!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggys_kids_C5: "YO, IT'S MR. BEAST!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1320,7 +1320,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A92: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggys_kids_C5: "COOL, ANOTHER PRESENT! WE NEED JUST ONE MORE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggys_kids_C5: "THANK YOU, MR. BEAST!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1329,7 +1329,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A93: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggys_kids_C5: "YIPPEE! NOW WE'VE ALL GOT PRESENTS! HERE'S SOMETHING FOR YOU!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggys_kids_C5: "PLOT TWIST, WE GOT YOU SOMETHING!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1338,7 +1338,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A94: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggys_kids_C5: "WAAAH...WHERE'S OUR PRESENTS! OUR DAD BOGGY SAID HE WAS FETCHING THEM! HE'S BEEN GONE AGES... WAAAAAAAAH!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggys_kids_C5: "-SOME SOB STORY THAT WOULD BE OFFENSIVE IF I WROTE OUT-",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1347,7 +1347,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A95: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "YIKES! A NASTY FIERCE BEAR!",
+            GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "EW, IS THAT JIGGLY & SPARKLES?!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1356,9 +1356,9 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A96: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "WOW, ANOTHER WALRUS! TAKE THIS...",
+            GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "WOW, LITERALLY ANYONE ELSE! TAKE THIS...",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x01?",
-            GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "BUT WATCH OUT FOR A SMELLY BROWN BEAR AND HIS UGLY BIRD PARTNER.",
+            GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "BUT WATCH OUT FOR A SMELLY GAMER BOY AND HIS SMELLIER PARTNER.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1367,7 +1367,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A97: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "PHEW...IT'S SAFE FOR WOZZA TO COME OUT NOW!",
+            GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "FINALLY, I CAN BREATHE AGAIN!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1376,7 +1376,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A98: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "ALL THAT RACING HAS MADE ME TIRED. WILL YOU LOOK FOR MY KIDS' PRESENTS?",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "I THOUGHT I'D GET SOME PRIVACY FROM FANS IN MY OWN HOME...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1385,7 +1385,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A99: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "I WISH THOSE KIDS WOULD BE QUIET, OLD BOGGY NEEDS SOME SLEEP!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "NO PICTURES, PLEASE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1395,9 +1395,9 @@ DEFAULT_SPEECH_DICT:dict = {
     0x0A9A: {
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.present_BC: "~",
-            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "I'M A PRESENT, GIVE ME TO SOMEONE SAD.",
-            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "BRRR...IT'S COLD! NICE WARM BACKPACK FOR ME TOO!",
-            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "TAKE ME TO THE KIDS, I'M THE LAST ONE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "I'M A GIFT SUB, GIVE ME TO SOMEONE BROKE.",
+            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "BRRR...IT'S COLD! I WISH I WAS IN A PAIR OF BIG OL WARM TIDDIES!",
+            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "YOU KNOW WHAT I HATE? KIDS! I HOPE I NEVER SEE ANY.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1407,9 +1407,9 @@ DEFAULT_SPEECH_DICT:dict = {
     0x0A9B: {
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.present_D0: "~",
-            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "I'M A PRESENT, GIVE ME TO SOMEONE SAD.",
-            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "BRRR...IT'S COLD! NICE WARM BACKPACK FOR ME TOO!",
-            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "TAKE ME TO THE KIDS, I'M THE LAST ONE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "I'M A GIFT SUB, GIVE ME TO SOMEONE BROKE.",
+            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "BRRR...IT'S COLD! I WISH I WAS IN A PAIR OF BIG OL WARM TIDDIES!",
+            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "YOU KNOW WHAT I HATE? KIDS! I HOPE I NEVER SEE ANY.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1419,9 +1419,9 @@ DEFAULT_SPEECH_DICT:dict = {
     0x0A9C: {
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.present_D1: "~",
-            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "I'M A PRESENT, GIVE ME TO SOMEONE SAD.",
-            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "BRRR...IT'S COLD! NICE WARM BACKPACK FOR ME TOO!",
-            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "TAKE ME TO THE KIDS, I'M THE LAST ONE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "I'M A GIFT SUB, GIVE ME TO SOMEONE BROKE.",
+            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "BRRR...IT'S COLD! I WISH I WAS IN A PAIR OF BIG OL WARM TIDDIES!",
+            GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "YOU KNOW WHAT I HATE? KIDS! I HOPE I NEVER SEE ANY.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1430,20 +1430,20 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A9D: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "TIME FOR SOME AERIAL ACTION WITH MY DEVASTATING BEAK BOMB ATTACK!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "GET READY, I NAMED THIS MOVE AFTER YOUR BOYFRIEND!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WHEN YOU'RE FLYING, PRESS B TO LAUNCH KAZOOIE AT A TARGET LIKE A MISSILE! CHOOSE YOUR TARGETS CAREFULLY THOUGH, AS IT COSTS A RED FEATHER EACH TIME YOU USE IT.",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ERM... MAYBE I SHOULDN'T CALL IT BEAK BOMB THEN...",
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
-            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "NICE ONE GOGGLES, TELL ME MORE!",
+            GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "WHY DOES THIS SOUND LIKE IT'S GOING TO BE RACIST?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
     0x0A9E: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "USE THE DEVASTATING BEAK BOMB AERIAL ATTACK BY PRESSING B WHILE KAZOOIE IS FLYING.",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YA OH, BRRRRR GUH HUH!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1452,7 +1452,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0A9F: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.twinklie_BF: "PLEASE TRY HARDER THIS TIME...HERE WE COME!",
+            GENERAL_SPEECH_SPRITE_ENUMS.twinklie_BF: "DON'T WORRY, THERE'S LITERALLY UNLIMITED OF US!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1461,7 +1461,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AA0: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "EEEK...THE BEAR AGAIN! TAKE THAT NOISY ORANGE THING WITH YOU AND LEAVE POOR WOZZA ALONE...",
+            GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "SNIFF SNIFF... WHAT'S THAT SMELL?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1470,7 +1470,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AA1: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "WHY...HELLO AGAIN MR. WALRUS. FEEL FREE TO HAVE A LOOK AROUND WOZZA'S CAVE.",
+            GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "FINALLY, SOMEONE WHO BATHES!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1479,7 +1479,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AA2: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "O.K. BUDDY, HERE'S THE RULES. RUN THROUGH THE RED SLALOM GATES AND TRY TO BEAT ME TO THE END. LET'S DO IT!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "LET'S DO IT!",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "3...",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "2...",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "1...",
@@ -1492,7 +1492,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AA3: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "I'LL TRY TO MAKE IT CLOSE THIS TIME!",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "I'LL UNBIND THE W KEY THIS TIME!",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "3...",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "2...",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "1...",
@@ -1505,7 +1505,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AA4: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU'VE LEARNED ALL THE MOVES I CAN TEACH YOU ON THIS WORLD NOW!",
+            GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "I KNOW IT'S WINTER, BUT I COULD USE AN ICED COFFEE RIGHT NOW...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1514,7 +1514,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AA5: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "THAT'S BETTER! HEY, YOU FOUND MY SLED! I'LL GO AND PRACTICE FOR THE BIG RACE NOW, SEE YOU BUDDY.",
+            GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "THAT'S BETTER! HEY, YOU FOUND MY SKATEBOARD! I'LL GO AND PRACTICE MY OLLIE, SEE YOU BUDDY.",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x02?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -1524,8 +1524,8 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AA6: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "HUR...HUR...HUR! I'M MR. VILE, GREEDIEST CROC OF ALL! PLAY MY GAME TO WIN A PRIZE!",
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "PRESS A TO ACCEPT OR B TO CHICKEN OUT!",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "OI! I'M MISTA VILE, GREEDIEST CROC DOWN UNDAH! WOULD YOU LIKE TO PLAY A GAME?",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "PRESS A TO ACCEPT OR B TO CRY TO YOUR MUM!",
             GENERAL_SPEECH_SPRITE_ENUMS.vile_a_or_b_1: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1534,7 +1534,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AA7: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "GAME IS SIMPLE, EAT MORE RED YUMBLIES THAN ME! READY?",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "GAME IS SIMPLE, YEAH? EAT MORE RED CAPSICUM THAN ME! READY?",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "3...",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "2...",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "1...",
@@ -1547,7 +1547,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AA8: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "LOOK, PUNY GREEN CROC IS SCARED!",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "WUH? YOU CHUCKIN' A SICKIE?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1556,7 +1556,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AA9: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "WEEDY CROC LOSES! ME BITE GREENY TO MAKE HIM LEARN!",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "LIL ANKLE BITER LOSES! WRAP YOUR LAUGHING GEAR 'ROUND THAT!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1565,7 +1565,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AAA: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "GRRR...YOU ONLY WIN EASY GAME. NOW WE PLAY HARDER GAME. EAT REDS, AVOID YELLOW GRUMBLIES, THEY NOT RIPE. READY?",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "GRRR...I LET YOU HAVE THAT ONE, MATE. NOW WE PLAY HARDAH GAME. EAT REDS, AVOID YELLOWS. READY?",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "3...",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "2...",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "1...",
@@ -1578,7 +1578,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AAB: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "HAH! MR. VILE WINS EASY! HERE I COME, GREENY!",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "HAH! STILL GOT IT! GET OVER HERE, GREENIE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1587,7 +1587,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AAC: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "BAH! LUCKY GREENY WINS. MUST PLAY LAST GAME. ONLY EAT WHAT IS SHOWN AT TOP OF SCREEN. READY?",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "BAH! FUCK IT, LAST ROUND. ONLY EAT WHAT IS SHOWN AT TOP OF SCREEN, AY?",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "3...",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "2...",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "1...",
@@ -1600,7 +1600,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AAD: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "MIGHTY MR. VILE WINS, NOW GREENY GETS CHEWED!",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "WHAT'S WRONG, MATE? THOUGHT I WAS A SOFTIE?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1609,7 +1609,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AAE: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "MR. VILE NEVER LOST BEFORE! GREENY CAN HAVE PRIZE...",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "FAIR DINKUM! GREENIE CAN HAVE PRIZE...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1618,7 +1618,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AAF: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "WANT TO TRY AGAIN GREENY? PRESS A TO PLAY OR B TO RUN.",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "WANNA TRY AGAIN GREENIE? PRESS A TO PLAY OR B TO RUN.",
             GENERAL_SPEECH_SPRITE_ENUMS.vile_a_or_b_1: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1627,7 +1627,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AB0: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "WE PLAY EASY GAME AGAIN FIRST.",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "REMEMBER, EAT THE RED CAPSICUM.",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "READY......GO!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -1635,9 +1635,9 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AB1: {
+    0x0AB1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "I WASN'T TRYING! LET'S PLAY NEXT GAME AGAIN.",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "WARMED UP NOW? ROUND TWO, LET'S DO IT!",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "READY......GO!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -1647,7 +1647,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AB2: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "GRRR...WE PLAY HARDEST GAME AGAIN NOW.",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "GRRR...NO WORRIES, MATE, SHE'LL BE APPLES. ROUND THREE!",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "READY......GO!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -1657,7 +1657,7 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AB3: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "URR...WE PLAY GAME 2 AGAIN. REMEMBER...REDS ARE NICE, YELLOWS NASTY!",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "URR...WE PLAY GAME 2 AGAIN. REMEMBAH...REDS ARE NICE, YELLOWS NASTY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
@@ -1666,14 +1666,14 @@ DEFAULT_SPEECH_DICT:dict = {
     },
     0x0AB4: {
         SPEECH_CONSTANTS.bottom_section: {
-            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "LET'S TRY LAST GAME AGAIN. ONLY EAT WHAT IS SHOWN ON TOP OF SCREEN!",
+            GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "AIGHT, LAST GAME AGAIN. ONLY EAT WHAT IS SHOWN ON TOP OF SCREEN!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
         SPEECH_CONSTANTS.top_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AB5: {
+    0x0AB5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.choir_member_8C: "QUIET PLEASE. THE FAMOUS 'TIPTUP CHOIR' WILL NOW PERFORM MY LATEST WORK.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1682,7 +1682,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AB6: {
+    0x0AB6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.choir_member_8C: "WE'LL SEE, COPY WHAT YOU JUST HEARD FOR LESSON 1.",
@@ -1693,7 +1693,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AB7: {
+    0x0AB7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.choir_member_8C: "WHAT LESSON WERE WE ON? AH YES, I REMEMBER...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1702,7 +1702,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AB8: {
+    0x0AB8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.choir_member_8C: "NO, THAT'S NOT RIGHT. TRY AGAIN OR ASK ME TO REPEAT THE LESSON.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1711,7 +1711,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AB9: {
+    0x0AB9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.tiptup_AE: "HEY! WATCH IT WILL YA, FATTY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1720,7 +1720,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ABA: {
+    0x0ABA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.choir_member_8C: "MMMM...NOT TOO BAD, TRY LESSON 2.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1729,7 +1729,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ABB: {
+    0x0ABB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.choir_member_8C: "OH DEAR, FORGOTTEN ALREADY? HERE IT IS AGAIN.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1738,7 +1738,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ABC: {
+    0x0ABC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.choir_member_8C: "AHHH...SPLENDID! YOU JUST NEED ONE MORE LESSON.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1747,7 +1747,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ABD: {
+    0x0ABD: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.choir_member_8C: "MMM...WATCH MORE CAREFULLY THIS TIME.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1756,7 +1756,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ABE: {
+    0x0ABE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.choir_member_8C: "MAGNIFICENT! A TRUE MASTERPIECE! HERE, TAKE THIS TRINKET I FOUND EARLIER.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1765,7 +1765,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ABF: {
+    0x0ABF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.choir_member_8C: "I KNEW YOU'D NEED TO SEE THIS ONE AGAIN!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1774,7 +1774,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AC0: {
+    0x0AC0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.choir_member_8C: "SORRY...THERE IS NOTHING MORE I CAN TEACH YOU.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1783,7 +1783,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AC1: {
+    0x0AC1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.tanktup_8D: "OOOO...MY FEET ARE SO NUMB AND COLD!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1792,7 +1792,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AC2: {
+    0x0AC2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.tanktup_8D: "MMMM... TANKTUP'S WARM AT LAST! PERHAPS YOU'D LIKE THIS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1801,7 +1801,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AC3: {
+    0x0AC3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.tanktup_8D: "AHHH...THAT'S A BIT BETTER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1810,7 +1810,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AC4: {
+    0x0AC4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.yellow_flibbit_8E: "URRR...AN UGLY HAIRY TRESPASSER! HE'S AFTER OUR GOLD, BUT HE'LL NEVER BEAT US ALL!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1819,7 +1819,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AC5: {
+    0x0AC5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.yellow_flibbit_8E: "BLUB...YOU'RE TOO TOUGH FOR US FLIBBITS, TAKE OUR GOLD!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1828,7 +1828,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AC6: {
+    0x0AC6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.yellow_flibbit_8E: "HE'S BACK! GET HIM FLIBBITS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1837,7 +1837,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AC7: {
+    0x0AC7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.yellow_flibbit_8E: "URRR...AN UGLY SCALY TRESPASSER! HE'S AFTER OUR GOLD, BUT HE'LL NEVER BEAT US ALL!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1846,7 +1846,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AC8: {
+    0x0AC8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.piranha_A7: "THIS IS PIRANHA WATER, KEEP YOUR SMELLY FEET OUT!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1855,7 +1855,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AC9: {
+    0x0AC9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.croctus_B4: "YUMMY! CROCTUS LIKED THAT!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1864,7 +1864,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ACA: {
+    0x0ACA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.croctus_B4: "ME WANT YUMMY EGG TOO!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1873,7 +1873,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ACB: {
+    0x0ACB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THESE ARE THE WADING BOOTS.",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x01?",
@@ -1887,7 +1887,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ACC: {
+    0x0ACC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "KAZOOIE USES THE WADING BOOTS TO SAFELY WADE THROUGH DANGEROUS AREAS LIKE THE SWAMP FOR A LIMITED TIME.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1896,7 +1896,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ACD: {
+    0x0ACD: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "GREAT, NOW YOU KNOW ALL THE SWAMP'S NEW MOVES!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1905,7 +1905,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ACE: {
+    0x0ACE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'LL BE YOUNG AND TOOTY OLD,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BEFORE YOU GET GRUNTILDA'S GOLD!",
@@ -1915,7 +1915,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ACF: {
+    0x0ACF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "FIRST YOU SEE IT, NOW YOU DON'T,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THE FAST ONE WINS, THE SLOW ONE WON'T!",
@@ -1925,7 +1925,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AD0: {
+    0x0AD0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "MR. VILE NOW HAS TOUGHER CHALLENGE IF GREENY NOT SCARED! YOU MUST WIN NEXT 3 GAMES TO WIN 3 EXTRA LIVES, BUT EACH TIME GREENY LOSES, MR. VILE CHOMPS YOU FOR 1 LIFE!",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "PRESS A TO ACCEPT OR B TO SLIDE OFF LIKE A SLUG!",
@@ -1935,7 +1935,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AD1: {
+    0x0AD1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "HURR...GREENY BRAVE, BUT MR. VILE SOON CHEW GREENY'S SHORTS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1944,7 +1944,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AD2: {
+    0x0AD2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "MR. VILE IS BADDEST CROC OF ALL! LOOK EVERYONE, GREENY IS SCURRYING OFF!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1953,7 +1953,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AD3: {
+    0x0AD3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "HURR...GREENY GOT MORE TASTY LIVES FOR MR. VILE? PRESS A TO TRY AGAIN OR B TO HOP AWAY LIKE FROG!",
             GENERAL_SPEECH_SPRITE_ENUMS.vile_a_or_b_1: "",
@@ -1962,7 +1962,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AD4: {
+    0x0AD4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "GREENY FANCY CHANCES AGAIN, HUH? SAME DEAL, WIN 3 GAMES TO WIN 3 EXTRA LIVES! PRESS A TO ACCEPT OR B TO SLITHER OFF LIKE SNAKE!",
             GENERAL_SPEECH_SPRITE_ENUMS.vile_a_or_b_1: "",
@@ -1971,7 +1971,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AD5: {
+    0x0AD5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "YURR...MR. VILE WINS! ME HUNGRY NOW!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1980,7 +1980,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AD6: {
+    0x0AD6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "GREENY SLOW LEARNER! GIMME THAT LIFE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1989,7 +1989,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AD7: {
+    0x0AD7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "MR. VILE ALWAYS SAY 'FOOL AND LIVES EASY PARTED!'",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -1998,7 +1998,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AD8: {
+    0x0AD8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "GRRR...GREENY WON GAME, BUT MR. VILE KEEP PRIZES UNTIL GREENY WINS ALL GAMES!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2007,7 +2007,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AD9: {
+    0x0AD9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "ERR...GREENY WON THAT ONE AS WELL, BUT MR. VILE STILL KEEP HOLD OF PRIZE UNTIL NEXT GAME WON!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2016,7 +2016,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ADA: {
+    0x0ADA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "GRRR...GREENY MUST HAVE CHEATED, MR. VILE NOT GIVING YOU PRIZE!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -2029,7 +2029,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ADB: {
+    0x0ADB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "YOWWW! GREENY WINS, HERE IS PRIZE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2038,7 +2038,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ADC: {
+    0x0ADC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.caterpillar_BD: "EEK! HUNGRY ANIMALS LIKE CATERPILLARS...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2047,7 +2047,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ADD: {
+    0x0ADD: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.nabnut_C4: "CHOMP...CHEW...NABNUT LIKES ACORNS! I'LL JUST EAT A FEW MORE...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2056,7 +2056,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ADE: {
+    0x0ADE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.nabnut_C4: "GROAN...NABNUT'S EATEN TOO MANY ACORNS. I'VE GOT NONE LEFT FOR NEXT WINTER NOW...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2065,7 +2065,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0ADF: {
+    0x0ADF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.nabnut_C4: "HI THERE BEAR BUDDY! I NEED 6 MORE ACORNS BEFORE WINTER COMES, HAVE YOU SEEN ANY?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2074,7 +2074,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AE0: {
+    0x0AE0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.nabnut_C4: "MMM...NABNUT HASN'T GOT ENOUGH ACORNS YET, KEEP LOOKING!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2083,7 +2083,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AE1: {
+    0x0AE1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.nabnut_C4: "YIPPEE, THAT'S ALL THE ACORNS I NEED! HERE, TAKE THIS, I'LL SEE YOU IN SPRING!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2092,7 +2092,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AE2: {
+    0x0AE2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.nabnut_C4: "ZZZZZZ...MMM, ACORNS...ZZZZZZ...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2101,7 +2101,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AE3: {
+    0x0AE3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gnawty_C1: "SOMEBODY MOVE THIS BOULDER, GNAWTY CAN'T GET IN HIS HOUSE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2110,7 +2110,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AE4: {
+    0x0AE4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gnawty_C1: "YOU LOOK PRETTY STRONG, CAN YOU MOVE THIS BOULDER FOR ME?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2119,7 +2119,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AE5: {
+    0x0AE5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gnawty_C1: "WOW...WHAT STRENGTH! COME INSIDE AND I'LL GIVE YOU A REWARD!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2128,7 +2128,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AE6: {
+    0x0AE6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gnawty_C1: "IT'S GETTING A BIT CHILLY OUT HERE, I WISH I WAS INSIDE...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2137,7 +2137,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AE7: {
+    0x0AE7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gnawty_C1: "OH, HERE YOU ARE AT LAST! I'VE BEEN WAITING MONTHS TO GIVE YOU THIS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2146,7 +2146,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AE8: {
+    0x0AE8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gnawty_C1: "BRRR...THIS WATER'S FREEZING, AND I'M STILL STUCK OUTSIDE THANKS TO YOU!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2155,7 +2155,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AE9: {
+    0x0AE9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gnawty_C1: "WOW...YOU MUST REALLY WANT THIS IF YOU SWAM IN THAT FREEZING WATER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2164,7 +2164,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AEA: {
+    0x0AEA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gnawty_C1: "COR...I DON'T USUALLY GET VISITORS IN WINTER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2173,7 +2173,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AEB: {
+    0x0AEB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.baby_eyrie_C6: "BWARRR! ME EYRIE...MIGHTY EAGLE! NEED SLEEP NOW...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2182,7 +2182,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AEC: {
+    0x0AEC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.baby_eyrie_C7: "EYRIE HUNGRY NOW, NEED 5 CATERPILLARS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2191,7 +2191,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AED: {
+    0x0AED: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.baby_eyrie_C7: "YUMMY...JUICY CATERPILLAR NICE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2200,7 +2200,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AEE: {
+    0x0AEE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.baby_eyrie_C7: "BURP! EYRIE FULL NOW, NEEDS MORE SLEEP...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2209,7 +2209,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AEF: {
+    0x0AEF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.baby_eyrie_C8: "BEAR GET EYRIE MORE CATERPILLARS! NEED 10 THIS TIME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2218,7 +2218,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AF0: {
+    0x0AF0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.baby_eyrie_C8: "THANK YOU BEAR, EYRIE SOON BE BIG BIRD! MUST HAVE SLEEP FIRST...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2227,7 +2227,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AF1: {
+    0x0AF1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.adult_eyrie_C9: "EYRIE MIGHTY EAGLE AT LAST! WATCH ME AS I FLY INTO THE SKY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2236,7 +2236,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AF2: {
+    0x0AF2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.adult_eyrie_C9: "I HAVE REWARD FOR BEAR FRIEND, HERE IT COMES...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2245,7 +2245,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AF3: {
+    0x0AF3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "OH NO, IT'S YOU TWO AGAIN, GOBI THOUGHT HE WAS SAFE HERE...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2254,7 +2254,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AF4: {
+    0x0AF4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "WILL YOU STOP DOING THAT! IT TOOK ME AGES TO FIND MORE WATER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2263,7 +2263,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AF5: {
+    0x0AF5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "RIGHT, THAT'S IT! I'M OFF TO THE LAVA WORLD, YOU'LL NEVER FIND ME THERE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2272,7 +2272,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AF6: {
+    0x0AF6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.zubba_C3: "BZZZ...HELLO FAT LITTLE BEE! WE ZUBBAS ARE GUARDING GRUNTY'S GOLDEN HONEY PIECE, WE'VE BEEN TOLD THERE'S A HONEY BEAR OUT THERE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2281,7 +2281,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AF7: {
+    0x0AF7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.zubba_C3: "BZZZ...THE HONEY BEAR! HE'S AFTER GRUNTY'S GOLDEN HONEY PIECE, STING HIM ZUBBAS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2290,7 +2290,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AF8: {
+    0x0AF8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.zubba_C3: "BZZZ...HE'S BACK, STING HIM!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2299,7 +2299,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AF9: {
+    0x0AF9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.zubba_C3: "BZZARRG...HE'S BEATEN US! OH WELL, WE WERE GETTING BORED OF GUARDING IT ANYWAY...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2308,7 +2308,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AFA: {
+    0x0AFA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.zubba_C3: "BZZZ...NOTHING IN HERE FOR YOU NOW BEAR, WE'VE ALL MOVED OUT!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2317,7 +2317,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AFB: {
+    0x0AFB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MY BRAMBLE FIELD MAKES YOU YELP,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "AND LOSS OF LIFE IT SURE DOES HELP!",
@@ -2327,7 +2327,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AFC: {
+    0x0AFC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YES THAT'S RIGHT, SWIM UNDER THERE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ICY WATER TAKES DOUBLE AIR!",
@@ -2337,7 +2337,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AFD: {
+    0x0AFD: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU'LL USE YOUR AIR UP DOUBLE FOLD",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'VE MADE THE WATER ICY COLD",
@@ -2347,7 +2347,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AFE: {
+    0x0AFE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.clanker_89: "BZZZ...I AM CLANKER, WITCH'S GARBAGE GRINDER. CLANKER NOT LIKE DIRTY WATER, WANT FRESH AIR.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2356,7 +2356,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0AFF: {
+    0x0AFF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.clanker_89: "CLANKER HAS FRESH AIR, YOU FIND REWARD ON CLANKER'S BACK.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2365,7 +2365,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B00: {
+    0x0B00: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.clanker_89: "BZZZZ...CLANKER'S TEETH HURT NOW, EAT TOO MUCH GARBAGE. HELP CLANKER...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2374,7 +2374,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B01: {
+    0x0B01: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.clanker_89: "TOOTHACHE THIS SIDE GONE, CLANKER SWALLOWED REWARD.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2383,7 +2383,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B02: {
+    0x0B02: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.clanker_89: "TOOTHACHE THIS SIDE GONE, CLANKER SWALLOWED REWARD.",
             GENERAL_SPEECH_SPRITE_ENUMS.clanker_89: "TEETH ALL BETTER NOW, THANK YOU BEAR.",
@@ -2393,7 +2393,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B03: {
+    0x0B03: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.clanker_89: "AHH...THIS TOOTH NOT HURT NOW.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2402,7 +2402,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B04: {
+    0x0B04: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.clanker_89: "AHH...THIS TOOTH NOT HURT NOW.",
             GENERAL_SPEECH_SPRITE_ENUMS.clanker_89: "TEETH ALL BETTER NOW, THANK YOU BEAR.",
@@ -2412,7 +2412,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B05: {
+    0x0B05: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mutie_snippet_8A: "SSSNIPPET MUTANTSSS ARE WE! JIGSSSAW ISSS OURSSS, FIGHT USSS YOU MUSSST!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2421,7 +2421,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B06: {
+    0x0B06: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mutie_snippet_8A: "HSSS...BEATEN SSSNIPPET MUTANTSSS ARE WE, YOURSSS IS PRIZZZE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2430,7 +2430,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B07: {
+    0x0B07: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gloop_AD: "HI, I'M GLOOP! GRAB MY BUBBLES IF YOU'RE LOW ON AIR!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2439,7 +2439,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B08: {
+    0x0B08: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THIS MOVE USES BEAKO'S WINGS AS A SHIELD AGAINST THE BAD GUYS!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -2454,7 +2454,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B09: {
+    0x0B09: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "MAKE YOURSELF INVULNERABLE WITH THE WONDERWING BY HOLDING Z AND PRESSING THE RIGHT C BUTTON. KEEP Z HELD AND USE THE CONTROL STICK TO MOVE AROUND.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2463,7 +2463,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B0A: {
+    0x0B0A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU'VE LEARNED ALL MY NEW MOVES FOR THIS WORLD, THE REST IS UP TO YOU!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2472,7 +2472,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B0B: {
+    0x0B0B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -2480,7 +2480,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B0C: {
+    0x0B0C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HMMM...YOUR ENERGY IS A LITTLE LOW, I'LL FILL IT UP FOR YOU!",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x08?",
@@ -2490,7 +2490,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B0D: {
+    0x0B0D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "ME MUMBO, BEST SHAMAN IN ALL GAME. CAN HELP BANJO AND FILTHY FEATHERED ONE.",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -2503,7 +2503,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B0E: {
+    0x0B0E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "MUMBO'S MAGIC FREE TO CHANGE BACK, YOU COME WHEN READY.",
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
@@ -2512,7 +2512,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B0F: {
+    0x0B0F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "TERMITE BIT SMALL, BUT NOT BAD FOR FIRST SPELL. MUMBO PRACTICE NEEDED!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2521,7 +2521,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B10: {
+    0x0B10: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "AHH...MUMBO PROUD OF PUMPKIN SPELL, MAKE GOOD SOUP!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2530,7 +2530,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B11: {
+    0x0B11: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "BANJO GONE ALL FAT, GOT BIG TEETH...HUR...HUR!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2539,7 +2539,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B12: {
+    0x0B12: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "WAIT, MUMBO NEED NEW BOOTS! ONLY KIDDING...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2548,7 +2548,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B13: {
+    0x0B13: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "MUMBO MAGIC MUCH GOOD! BEE IS BEST YET!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2557,7 +2557,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B14: {
+    0x0B14: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.beehive_A4: "GO AWAY! LEAVE MY HONEYCOMBS ALONE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2566,7 +2566,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B15: {
+    0x0B15: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.yellow_jinjo_94: "YIPPEE, YOU SAVED ME! GRUNTILDA HAS IMPRISONED FIVE OF US JINJOS ON EACH WORLD, FREE US ALL TO GET A JIGGY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2575,7 +2575,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B16: {
+    0x0B16: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.blue_jinjo_96: "YIPPEE, YOU SAVED ME! GRUNTILDA HAS IMPRISONED FIVE OF US JINJOS ON EACH WORLD, FREE US ALL TO GET A JIGGY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2584,7 +2584,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B17: {
+    0x0B17: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.green_jinjo_95: "YIPPEE, YOU SAVED ME! GRUNTILDA HAS IMPRISONED FIVE OF US JINJOS ON EACH WORLD, FREE US ALL TO GET A JIGGY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2593,7 +2593,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B18: {
+    0x0B18: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.pink_jinjo_97: "YIPPEE, YOU SAVED ME! GRUNTILDA HAS IMPRISONED FIVE OF US JINJOS ON EACH WORLD, FREE US ALL TO GET A JIGGY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2602,7 +2602,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B19: {
+    0x0B19: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.orange_jinjo_98: "YIPPEE, YOU SAVED ME! GRUNTILDA HAS IMPRISONED FIVE OF US JINJOS ON EACH WORLD, FREE US ALL TO GET A JIGGY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2611,7 +2611,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B1A: {
+    0x0B1A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.musical_note_99: "I'M A NOTE, ONE OF A HUNDRED ON EACH WORLD. COLLECT US TO OPEN THE NOTE DOORS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2620,7 +2620,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B1B: {
+    0x0B1B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_token_9A: "ME MUMBO'S TOKEN. USED FOR MUMBO MAGIC.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2629,7 +2629,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B1C: {
+    0x0B1C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.blue_egg_9B: "WE'RE THE EGGS! KAZOOIE CAN LEARN TO USE US AS AMMO!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2638,7 +2638,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B1D: {
+    0x0B1D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.red_feather_9C: "WHEEE...I'M A RED FEATHER! I HELP KAZOOIE FLY, WHEN SHE KNOWS HOW!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2647,7 +2647,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B1E: {
+    0x0B1E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gold_feather_9D: "LUCKY YOU! I'M AN INVULNERABILITY FEATHER! BOTTLES WILL TELL YOU MORE...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2656,7 +2656,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B1F: {
+    0x0B1F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.beehive_A0: "MMMM...I'M STICKY TASTY HONEY ENERGY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2665,7 +2665,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B20: {
+    0x0B20: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.empty_honeycomb_A1: "I'M AN EXTRA HONEYCOMB PIECE! COLLECT SIX OF US TO INCREASE YOUR ENERGY BAR!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2674,7 +2674,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B21: {
+    0x0B21: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.extra_life_A2: "LOOK OUT FOR ME, I'M AN EXTRA LIFE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2683,7 +2683,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B22: {
+    0x0B22: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.wading_boots_A5: "HA! DON'T THINK YOU CAN USE THESE UNTIL YOU'VE FOUND OUT HOW!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2692,7 +2692,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B23: {
+    0x0B23: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.turbo_trainers_A6: "HEY! KEEP YOUR FEET OUT! YOU CAN'T USE US UNTIL YOU'VE SPOKEN TO BOTTLES...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2701,7 +2701,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B24: {
+    0x0B24: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.beehive_A4: "TOUCH MY HONEY THIS TIME AND YOU'LL BE SORRY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2710,7 +2710,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B25: {
+    0x0B25: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "TOO HOT FOR MAGIC. MUMBO WANT SUN TAN.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2719,7 +2719,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B26: {
+    0x0B26: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "MUMBO BUSY, SWEEP MANY LEAVES. NO MAGIC TODAY.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2728,7 +2728,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B27: {
+    0x0B27: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.beehive_A4: "MUMBO'S ON VACATION, YOU HAIRY FOOL! COME BACK IN SPRING...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2737,7 +2737,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B28: {
+    0x0B28: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "AHH...BANJO HAS PLENTY TOKENS. STAND ON SKULL AND PRESS B TO SEE MIGHTY MUMBO MAGIC!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2746,7 +2746,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B29: {
+    0x0B29: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "BANJO NOT GOT ENOUGH TOKENS FOR MUMBO MAGIC. LOOK AT SIGN, BRING MORE.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2755,7 +2755,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B2A: {
+    0x0B2A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "CAN'T HAVE MAGIC. LOOK AT SIGN, GO AWAY, BRING MORE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2764,7 +2764,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B2B: {
+    0x0B2B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "PUMPKIN MAKING MUMBO HUNGRY. ME GET POT READY...!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2773,7 +2773,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B2C: {
+    0x0B2C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "AHH...YOU FIND BIG HIDDEN FEATURE SPELL! MUMBO TURN BANJO INTO T-REX, CRUSH WITCH EASY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2782,7 +2782,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B2D: {
+    0x0B2D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "CHANGED MIND, T-REX SPELL TOO GOOD FOR THIS GAME. MUMBO KEEP FOR NEXT GAME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2791,7 +2791,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B2E: {
+    0x0B2E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "UMM...SPELL WENT WRONG. MUMBO'S LOINCLOTH ALL DIRTY, YOU WASH? HUR...HUR!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2800,7 +2800,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B2F: {
+    0x0B2F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "BANJO MUST STAND STILL OR SPELL GO ALL FUNNY...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2809,7 +2809,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B30: {
+    0x0B30: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "MUMBO GET NEW STICK, THIS ONE NOT WORK WELL...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2818,7 +2818,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B31: {
+    0x0B31: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -2827,7 +2827,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B32: {
+    0x0B32: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -2836,7 +2836,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B33: {
+    0x0B33: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -2845,7 +2845,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B34: {
+    0x0B34: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "HEY, THAT MUCH BAD MAGIC! WASHER NOT AS GOOD AS BEAR, DON'T COME BAWLING TO MUMBO IF CAN'T GET THROUGH ALL WORLDS...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2854,7 +2854,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B35: {
+    0x0B35: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "LISTEN UP! I'M BOTTLES, THE SHORT-SIGHTED MOLE.",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -2879,7 +2879,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
         },
     },
-    0x0B36: {
+    0x0B36: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HELLO AGAIN! LET'S START WITH THE CAMERA CONTROLS, THEY'RE ON THE YELLOW C BUTTONS.",
@@ -2898,7 +2898,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B37: {
+    0x0B37: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU CAN MOVE THE CAMERA VIEW WITH THE YELLOW C BUTTONS. TAP R TO MOVE THE CAMERA BEHIND YOU, AND HOLD R TO KEEP THE CAMERA THERE.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2907,7 +2907,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B38: {
+    0x0B38: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HMMM...YOUR JUMP COULD DO WITH SOME HELP.",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -2920,7 +2920,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B39: {
+    0x0B39: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "C'MON FEATHERS...YOU CAN GIVE HIM A HAND!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -2933,7 +2933,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B3A: {
+    0x0B3A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "NOT UNTIL YOU LEARN THIS ONE. FIRST, YOU MUST STAND LIKE THIS...",
@@ -2948,7 +2948,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B3B: {
+    0x0B3B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THAT'S ALL THE JUMPS, KEEP PRACTICING!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2957,7 +2957,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B3C: {
+    0x0B3C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "PRESS A TO JUMP. PRESS A AGAIN WHILE YOU ARE JUMPING FOR A DOUBLE JUMP. HOLD Z AND PRESS A FOR THE FLAPFLIP JUMP.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2966,7 +2966,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B3D: {
+    0x0B3D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "FANCY LEARNING TO SWIM UNDERWATER?",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -2980,7 +2980,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B3E: {
+    0x0B3E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WHILE UNDERWATER, BANJO CAN PRESS A TO KICK HIS LEGS AND THE WINGED WONDER CAN PRESS B TO USE HER WINGS.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2989,7 +2989,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B3F: {
+    0x0B3F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "USE THE CONTROL STICK TO SWIM ON THE SURFACE, THEN PRESS B TO DIVE UNDERWATER.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -2998,7 +2998,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B40: {
+    0x0B40: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "PRESS B WHEN SWIMMING ON THE SURFACE TO DIVE. WHILE UNDERWATER, PRESS A TO SWIM SLOWLY OR B TO SWIM QUICKLY.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3007,7 +3007,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B41: {
+    0x0B41: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "BANJO, IT'S TIME FOR YOU TO LEARN THE CLAW SWIPE ATTACK.",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3030,7 +3030,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B42: {
+    0x0B42: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "PRESS B WHILE STANDING STILL FOR A CLAW SWIPE. RUN AND PRESS B TO USE THE ROLLING ATTACK. JUMP AND PRESS B FOR YOUR JUMPING PECK MOVE.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3039,7 +3039,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B43: {
+    0x0B43: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HEY BANJO, I HOPE YOU'RE NOT AFRAID OF HEIGHTS...",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3052,7 +3052,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B44: {
+    0x0B44: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU'LL FIND PLENTY OF OTHER THINGS TO CLIMB!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3061,7 +3061,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B45: {
+    0x0B45: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "JUMP ONTO A TREE AND USE THE CONTROL STICK TO CLIMB UP AND DOWN.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3070,7 +3070,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B46: {
+    0x0B46: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "MY BEAK BARGE ATTACK NEEDS THE HELP OF OLD CHICKEN LEGS.",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3083,7 +3083,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B47: {
+    0x0B47: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "SEE BANJO, SHE IS USEFUL FOR SOMETHING!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3094,7 +3094,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B48: {
+    0x0B48: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HOLD Z, THEN PRESS B TO USE THE BEAK BARGE.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3103,7 +3103,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B49: {
+    0x0B49: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "EXPLORE THIS AREA AND LOOK OUT FOR MY MOLEHILLS. STAND NEXT TO THEM AND PRESS B TO CALL ME. SEE YOU SOON!",
@@ -3114,7 +3114,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B4A: {
+    0x0B4A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "FIND ANOTHER MOLEHILL AND PRESS B, I'LL SPEAK TO YOU THERE.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3123,7 +3123,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B4B: {
+    0x0B4B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "MMM...VERY WELL. I'LL GIVE YOU YOUR BASIC MOVES,",
@@ -3136,7 +3136,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B4C: {
+    0x0B4C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU SAID YOU DIDN'T NEED MY HELP, SO YOU'RE ON YOUR OWN UNTIL YOU GET INSIDE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3145,7 +3145,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B4D: {
+    0x0B4D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "I'M STILL NOT HELPING YOU, SO GO AWAY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3154,7 +3154,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B4E: {
+    0x0B4E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THIS ISN'T FUNNY NOW, STOP CALLING ME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3163,7 +3163,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B4F: {
+    0x0B4F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THIS IS YOUR LAST WARNING, DON'T DO IT AGAIN!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3172,7 +3172,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B50: {
+    0x0B50: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU'VE ASKED FOR THIS...I'M ERASING YOUR GAME PAK!",
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "3.....",
@@ -3188,7 +3188,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B51: {
+    0x0B51: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "STOP WASTING TIME, BANJO! TOOTY NEEDS RESCUING!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3197,7 +3197,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B52: {
+    0x0B52: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HEY! WHERE ARE YOU GUYS GOING?",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3216,7 +3216,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B53: {
+    0x0B53: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "I'M NOT FIXING THE BRIDGE YET, YOU'VE STILL GOT MOVES TO LEARN BEFORE YOU CAN GO AFTER TOOTY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3225,7 +3225,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B54: {
+    0x0B54: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THAT'S IT, YOU'VE LEARNED ALL THE BASIC MOVES! MEET ME AT THE TOP OF THE SPIRAL MOUNTAIN AND I'LL TELL YOU WHAT TO DO NEXT.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3234,7 +3234,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B55: {
+    0x0B55: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WELL DONE GUYS, YOU'RE READY TO TACKLE THE WITCH NOW!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3251,7 +3251,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B56: {
+    0x0B56: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WOW...NICE ONE! TRY ANOTHER!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3262,7 +3262,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B57: {
+    0x0B57: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "NOW TRY MY FEARSOME FORWARD ROLL.",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3275,7 +3275,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B58: {
+    0x0B58: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "BULLS-EYE! ONE MORE...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3286,7 +3286,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B59: {
+    0x0B59: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "IT'S TIME FOR THE BUZZARD TO LEARN A TRICK.",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3299,7 +3299,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B5A: {
+    0x0B5A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "MMMM...NOT BAD, FEATHER FACE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3310,7 +3310,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B5B: {
+    0x0B5B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU'VE LEARNED ALL OF THE BASIC ATTACKS NOW. SEE YOU AROUND!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3319,7 +3319,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B5C: {
+    0x0B5C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "PRESS A TO JUMP, IT'S REAL EASY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3328,7 +3328,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B5D: {
+    0x0B5D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "COME ON BANJO! JUMP, THEN PRESS A AGAIN IN THE AIR!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3337,7 +3337,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B5E: {
+    0x0B5E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HOLD Z THEN PRESS A. GO FOR IT!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3346,7 +3346,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B5F: {
+    0x0B5F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "PRESS A TO LEARN MY MOVES OR B TO START RIGHT AWAY!",
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
@@ -3355,7 +3355,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
         },
     },
-    0x0B60: {
+    0x0B60: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "SO YOU'RE READY TO TACKLE THE WITCH NOW?",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3368,7 +3368,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B61: {
+    0x0B61: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "PRESS A IF YOU WANT ME TO TEACH YOU SOME BASIC MOVES, OR PRESS B IF YOU THINK YOU'RE ALREADY GOOD ENOUGH!",
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
@@ -3377,7 +3377,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
         },
     },
-    0x0B62: {
+    0x0B62: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "OH...I'M AFRAID I CAN'T TELL YOU ANYMORE ABOUT THIS HIDDEN FEATURE UNTIL YOU COLLECT THE JIGSAW FROM THE SANDCASTLE GAME IN TREASURE TROVE COVE.",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3392,7 +3392,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B63: {
+    0x0B63: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WAHAY! YOU'VE FOUND MY SECRET 'MOVING PICTURE' GAME! COMPLETE THIS PUZZLE AND YOU CAN WIN A MYSTERY PRIZE!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3405,7 +3405,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B64: {
+    0x0B64: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU CAN USE THE CONTROL STICK TO MOVE BANJO'S HAND, THEN PRESS A WHEN IT IS OVER A PIECE TO PICK IT UP.",
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WHILE A PIECE IS HELD, YOU CAN PRESS A TO PLACE IT DOWN, B TO RETURN IT TO THE SIDE OR THE LEFT AND RIGHT C BUTTONS TO ROTATE IT.",
@@ -3416,7 +3416,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B65: {
+    0x0B65: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "PRESS THE Z TO READ THE INSTRUCTIONS AGAIN, OR START TO QUIT OUT OF THE GAME AT ANY TIME.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3425,7 +3425,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B66: {
+    0x0B66: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "USE THE CONTROL STICK TO MOVE BANJO'S HAND. PRESS A TO PICK UP AND PUT DOWN PIECES, B TO RETURN THEM TO THE SIDE OR THE LEFT AND RIGHT C BUTTONS TO ROTATE THEM.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3434,7 +3434,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B67: {
+    0x0B67: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WHAT'S WRONG BEAKY, IS MY GAME TOO HARD FOR YOU?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3443,7 +3443,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B68: {
+    0x0B68: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "TOUGH LUCK GUYS, YOU'RE OUT OF TIME. WHY NOT TRY AGAIN?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3452,7 +3452,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B69: {
+    0x0B69: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HEY, YOU DID IT!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3467,7 +3467,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B6A: {
+    0x0B6A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU CAN ALSO TRY LEVEL 2 OF MY GAME IF YOU LIKE. JUST LOOK AT THE PICTURE AGAIN!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3476,7 +3476,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B6B: {
+    0x0B6B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YIPPEE, THAT'S IT! NOW GO AND ENTER THE WORD 'BOTTLESBONUSTWO' ON THE SANDCASTLE FLOOR!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3485,7 +3485,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B6C: {
+    0x0B6C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WHY NOT TRY LEVEL 3 NOW?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3494,7 +3494,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B6D: {
+    0x0B6D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WOW, NICE GOING! TRY THE WORD 'BOTTLESBONUSTHREE' THIS TIME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3503,7 +3503,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B6E: {
+    0x0B6E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "GO ON, GIVE LEVEL 4 A GO!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3512,7 +3512,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B6F: {
+    0x0B6F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "EASY, HUH? YOU CAN NOW GO AND SEE WHAT THE WORD 'BOTTLESBONUSFOUR' DOES!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3521,7 +3521,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B70: {
+    0x0B70: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HEY, LEVEL 5 IS WAITING FOR YOU!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3530,7 +3530,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B71: {
+    0x0B71: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "COR, I'M IMPRESSED! GO AND TRY 'BOTTLESBONUSFIVE'!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3539,7 +3539,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B72: {
+    0x0B72: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "JUST ONE MORE LEVEL LEFT GUYS...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3548,7 +3548,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B73: {
+    0x0B73: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WELL, I DIDN'T THINK ANYONE WOULD DO THAT ONE, WELL DONE! HERE'S YOUR LAST PRIZE, IT'S 'BIGBOTTLESBONUS!'",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3557,7 +3557,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B74: {
+    0x0B74: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ERR...I'VE GOT NO MORE GAMES LEFT FOR YOU TO PLAY NOW...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3566,7 +3566,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B75: {
+    0x0B75: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HA...FOOLED YOU! I'VE GOT ONE REALLY SPECIAL PRIZE LEFT. LET'S SEE YOU DO THIS ONE, FEATHER FACE!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3579,7 +3579,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B76: {
+    0x0B76: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HEY, YOU MUST HAVE CHEATED TO DO THAT!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3592,7 +3592,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B77: {
+    0x0B77: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HERE'S A REMINDER OF MY SECRET CODES - BOTTLESBONUSONE, BOTTLESBONUSTWO, BOTTLESBONUSTHREE, BOTTLESBONUSFOUR, BOTTLESBONUSFIVE, BIGBOTTLESBONUS AND WISHYWASHYBANJO!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3601,7 +3601,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B78: {
+    0x0B78: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HA...HA...HA...LOOK AT YOU!",
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "TO CHANGE BACK, JUST TYPE 'NOBONUS'.",
@@ -3611,7 +3611,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B79: {
+    0x0B79: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "STOP WASTING TIME, BANJO! GRUNTILDA NEEDS DEFEATING!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3620,7 +3620,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B7A: {
+    0x0B7A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "BANJO! IF YOU USE A THIRD CHEAT CODE YOUR GAME PAK WILL BE ERASED! ARE YOU SURE YOU WANT TO DO THIS? PRESS A FOR YES OR B FOR NO...",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_cheats_a_or_b_3: "",
@@ -3629,7 +3629,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B7B: {
+    0x0B7B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "FIND FIRST SECRET ON THE BEACH!",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3642,7 +3642,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B7C: {
+    0x0B7C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "BEAR AND BIRD MUST CLIMB TO TOP...",
@@ -3660,7 +3660,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B7D: {
+    0x0B7D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "NEXT SECRET FOUND IN SNOW!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3671,7 +3671,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B7E: {
+    0x0B7E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "BIRD BE QUIET, WATCH PICTURE...",
@@ -3688,7 +3688,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B7F: {
+    0x0B7F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "ANOTHER SECRET CAN GET IN DESERT!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3697,7 +3697,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B80: {
+    0x0B80: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "NO, BIRD RUDE TO MUMBO, NOT TELL!",
@@ -3711,7 +3711,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B81: {
+    0x0B81: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "DINGPOT, DINGPOT BY THE BENCH,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHO IS THE NICEST LOOKING WENCH?",
@@ -3725,7 +3725,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B82: {
+    0x0B82: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "ERR...BUT THERE IS THIS GIRL...",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHAT D'YOU MEAN, THIS CANNOT BE,",
@@ -3742,7 +3742,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B83: {
+    0x0B83: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WELL...WE'LL SEE ABOUT THAT!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3751,7 +3751,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B84: {
+    0x0B84: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HI THERE TOOTY, WHAT ARE YOU GOING TO DO TODAY?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3762,7 +3762,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B85: {
+    0x0B85: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -3771,7 +3771,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B86: {
+    0x0B86: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IF TOOTY THINKS SHE'S FAIRER THAN ME,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'LL STEAL HER LOOKS AND UGLY SHE'LL BE!",
@@ -3781,7 +3781,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B87: {
+    0x0B87: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "IS THAT YOUR BROTHER?",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -3794,7 +3794,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B88: {
+    0x0B88: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -3803,7 +3803,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B89: {
+    0x0B89: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "COME TO ME, MY LITTLE PRETTY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU'LL SOON BE UGLY, WHAT A PITY!",
@@ -3813,7 +3813,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B8A: {
+    0x0B8A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -3822,7 +3822,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B8B: {
+    0x0B8B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "DON'T SCRATCH AND BITE, MY LITTLE BEAR,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU'LL SOON NEED BIGGER UNDERWEAR!",
@@ -3832,7 +3832,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B8C: {
+    0x0B8C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "OH NO, SHE'S GOT HER! SOMEBODY......HELP!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3841,7 +3841,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B8D: {
+    0x0B8D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -3850,7 +3850,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B8E: {
+    0x0B8E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -3859,7 +3859,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B8F: {
+    0x0B8F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -3868,7 +3868,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B90: {
+    0x0B90: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THIS FINE CONTRAPTION SO I'M TOLD,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WILL MAKE ME YOUNG AND TOOTY OLD!",
@@ -3889,7 +3889,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B91: {
+    0x0B91: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BANJO'S GAME ENDS IN MY TOWER,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TURN IT UP I NEED FULL POWER!",
@@ -3899,7 +3899,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B92: {
+    0x0B92: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.klungo_D2: "YESSS YOUR GRUNTYSSSHIP, TRANSSSFORMATION SSSOON BE COMPLETE...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3908,7 +3908,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B93: {
+    0x0B93: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.klungo_D2: "BEAR AND BIRD FINISSSHED, GRUNTY WINSSS!",
@@ -3919,7 +3919,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B94: {
+    0x0B94: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.sexy_grunty_D3: "LOOK AT GRUNTY SHE'S A BEAUTY,",
             GENERAL_SPEECH_SPRITE_ENUMS.sexy_grunty_D3: "I'M MUCH PRETTIER THAN TOOTY!",
@@ -3930,7 +3930,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B95: {
+    0x0B95: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -3939,7 +3939,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B96: {
+    0x0B96: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -3948,7 +3948,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B97: {
+    0x0B97: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.ugly_tooty_D4: "BANJO! YOUR SISTER WANTS A WORD WITH YOU.........",
             GENERAL_SPEECH_SPRITE_ENUMS.ugly_tooty_D4: "NOW!",
@@ -3958,7 +3958,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B98: {
+    0x0B98: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "BEAR AND BIRD DID GOOD, HELPED MUMBO BEAT WITCH!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3967,7 +3967,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B99: {
+    0x0B99: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YEAH, BUT THEY NEEDED MY AMAZING MOVES TO DO IT!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -3976,7 +3976,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B9A: {
+    0x0B9A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -3985,7 +3985,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B9B: {
+    0x0B9B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -3994,7 +3994,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B9C: {
+    0x0B9C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4004,7 +4004,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B9D: {
+    0x0B9D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "GRUNTY NICE, COME BACK TO MUMBO'S SKULL, YES?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4013,7 +4013,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B9E: {
+    0x0B9E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4022,7 +4022,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0B9F: {
+    0x0B9F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4031,7 +4031,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BA0: {
+    0x0BA0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4040,7 +4040,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BA1: {
+    0x0BA1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "MMM...YES, I SUPPOSE YOU ARE. WELL DONE KAZOOIE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4049,7 +4049,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BA2: {
+    0x0BA2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4059,7 +4059,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BA3: {
+    0x0BA3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "HEY...MUMBO GOT SECRET PICTURES!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4068,7 +4068,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BA4: {
+    0x0BA4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4077,7 +4077,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BA5: {
+    0x0BA5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "GOT PICTURES OF THINGS YOU MISSED. SECRETS USED IN NEXT GAME!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4086,7 +4086,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BA6: {
+    0x0BA6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4096,7 +4096,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BA7: {
+    0x0BA7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "DID YOU GET ALL 100 JIGSAW PIECES?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4105,7 +4105,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BA8: {
+    0x0BA8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4115,7 +4115,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BA9: {
+    0x0BA9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "SORRY, ONLY BEST PLAYERS SEE PICTURES. GET 100 PIECES AND MUMBO SHOW YOU!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4124,7 +4124,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BAA: {
+    0x0BAA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4133,7 +4133,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BAB: {
+    0x0BAB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "NO! MUMBO GO NOW, GOT HOT DATE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4142,7 +4142,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BAC: {
+    0x0BAC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4151,7 +4151,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BAD: {
+    0x0BAD: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4160,7 +4160,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BAE: {
+    0x0BAE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_DA: "STUPID BEAR AND DUMB KAZOOIE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_DA: "I'LL BE BACK FOR",
@@ -4171,7 +4171,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BAF: {
+    0x0BAF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4181,7 +4181,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BB0: {
+    0x0BB0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "PICTURES SHOW THINGS YOU MISSED. SECRETS THAT ARE FOR NEW GAME",
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "BANJO-TOOIE!",
@@ -4191,7 +4191,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BB1: {
+    0x0BB1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4200,7 +4200,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BB2: {
+    0x0BB2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "MUMBO'S JAW DROPPED IN AWE...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4209,7 +4209,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BB3: {
+    0x0BB3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -4218,7 +4218,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BB4: {
+    0x0BB4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "BANJO-TOOIE MAKE BANJO-KAZOOIE LOOK LIKE JOKE. MUMBO SHOW YOU PICTURES OF STUFF CAN USE IN NEW GAME! HERE, TAKE LOOK...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4227,7 +4227,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BB5: {
+    0x0BB5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "MUMBO NOT TELLING. FIND OUT IN",
@@ -4239,7 +4239,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BB6: {
+    0x0BB6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_DA: "ALL THE JIGGIES YOU DID SNATCH,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_DA: "BUT I'LL BE BACK FOR MY REMATCH!",
@@ -4249,7 +4249,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BB7: {
+    0x0BB7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.klungo_D2: "HRNN...KLUNGO PUSSSH NASSTY ROCK! DON'T WORRY MISSSTRESSS, I'LL SSSAVE YOU!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4258,7 +4258,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BB8: {
+    0x0BB8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.klungo_D2: "GRNN...ROCK SSSO HEAVY, BUT KLUNGO MUSSST RESSSCUE MISSSTRESSS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4267,7 +4267,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BB9: {
+    0x0BB9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_DA: "GRNN...",
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
@@ -4276,7 +4276,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BBA: {
+    0x0BBA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_DA: "GRRRNNNN!!!",
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
@@ -4285,7 +4285,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BBB: {
+    0x0BBB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_DA: "GASP...TOO HEAVY...",
             GENERAL_SPEECH_SPRITE_ENUMS.health_tutorial_a_or_b_2: "",
@@ -4294,7 +4294,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BBC: {
+    0x0BBC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_DA: "GRUNTY'S FATE THIS SHOULD NOT BE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_DA: "SO HURRY KLUNGO RESCUE ME!",
@@ -4304,7 +4304,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BBD: {
+    0x0BBD: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.jiggy_A3: "HEY...IT'S ME, MR. JIGGY! NOW GO AND FIND A PICTURE WITH A PIECE MISSING.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4313,7 +4313,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BBE: {
+    0x0BBE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "TO ENTER THE WORLD SHOWN ON THE PICTURE, YOU MUST FILL IN THE MISSING SPACES WITH THE JIGSAW PIECES.",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -4326,7 +4326,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BBF: {
+    0x0BBF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "TO ENTER THE WORLD SHOWN ON THE PICTURE, YOU MUST FILL IN THE MISSING SPACES WITH THE JIGSAW PIECES.",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -4339,7 +4339,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BC0: {
+    0x0BC0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "GREAT! TO FILL IN THE MISSING SPACES ON A PICTURE, PRESS A. IF YOU DON'T WANT TO USE ANY JIGSAW PIECES, PRESS B TO LEAVE.",
@@ -4350,7 +4350,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BC1: {
+    0x0BC1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "MUMBO MAGIC GET WEAK. ANIMAL TURN BACK OR MAGIC GO...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4359,7 +4359,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BC2: {
+    0x0BC2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "MUMBO MAGIC GET WEAK...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4368,7 +4368,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BC3: {
+    0x0BC3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "MAGIC ALL GONE, MUST GO BACK TO BEAR AND BIRD NOW...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4377,7 +4377,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BC4: {
+    0x0BC4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "MAGIC RUN OUT...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4386,7 +4386,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BC5: {
+    0x0BC5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THIS IS A NOTE DOOR, SEALED BY GRUNTY WITH ONE OF HER POWERFUL MUSICAL SPELLS.",
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
@@ -4403,7 +4403,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BC6: {
+    0x0BC6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "TO OPEN A NOTE DOOR, THE COMBINED TOTAL OF ALL YOUR BEST NOTE SCORES FROM THE WORLDS MUST BE AT LEAST THE NUMBER ON THE DOOR.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4412,7 +4412,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BC7: {
+    0x0BC7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THERE HE IS, THE FUN BEGINS,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MY TRICKS AND TRAPS WILL SEE WHO WINS!",
@@ -4422,7 +4422,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BC8: {
+    0x0BC8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT DOOR WAS EASY YOU GOT PAST,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "UNFORTUNATELY YOUR FIRST AND LAST!",
@@ -4432,7 +4432,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BC9: {
+    0x0BC9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THERE ARE THREE NEW MOVES TO LEARN IN THIS WORLD. FIND MY MOLEHILLS AND I'LL EXPLAIN.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4441,7 +4441,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BCA: {
+    0x0BCA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "AHOY THERE! THIS BE TREASURE TROVE COVE. THAR BE TWO NEW MOVES FOR YE TO FIND.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4450,7 +4450,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BCB: {
+    0x0BCB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "JUST THE ONE NEW MOVE TO FIND THIS TIME, BUT IT'S HIDDEN WELL!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4459,7 +4459,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BCC: {
+    0x0BCC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "KEEP YOUR EYES OPEN FOR YOUR NEW MOVE, BEAK FACE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4468,7 +4468,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BCD: {
+    0x0BCD: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THE PEAK'S GOT ANOTHER NEW MOVE WAITING FOR YOU IF YOU CAN FIND IT!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4477,7 +4477,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BCE: {
+    0x0BCE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU'LL FIND ONE MORE MOVE IN HERE, BANJO.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4486,7 +4486,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BCF: {
+    0x0BCF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WAIT! YOU DIDN'T LEARN ALL THE NEW MOVES IN MUMBO'S MOUNTAIN! YOU WON'T GET FAR WITHOUT THEM...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4495,7 +4495,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BD0: {
+    0x0BD0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HEY! THERE'S AT LEAST ONE NEW MOVE YOU MISSED. THAT'S THE REAL TREASURE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4504,7 +4504,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BD1: {
+    0x0BD1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU DIDN'T SPLASH AROUND ENOUGH TO FIND THE NEW MOVE IN THERE, DID YOU?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4513,7 +4513,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BD2: {
+    0x0BD2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WADE BACK IN THERE AND FIND THAT NEW MOVE YOU JUST MISSED IF YOU WANT TO BEAT GRUNTY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4522,7 +4522,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BD3: {
+    0x0BD3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HOLD IT, BANJO, HADN'T YOU BETTER SLIDE BACK IN AND FIND THAT NEW MOVE?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4531,7 +4531,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BD4: {
+    0x0BD4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "DON'T DESERT THE VALLEY WITHOUT FINDING THE NEW MOVE! I'M SURE YOU'LL BE NEEDING IT LATER...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4540,7 +4540,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BD5: {
+    0x0BD5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YIPPEE! YOU'VE COLLECTED ENOUGH NOTES TO BREAK THE FIRST NOTE DOOR SPELL!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4549,7 +4549,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BD6: {
+    0x0BD6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "GRUNTY'S MAGIC STOPS YOU TAKING THE NOTES OFF THE WORLD, BUT THE ~ YOU JUST COLLECTED COUNTS AS YOUR BEST NOTE SCORE. TRY TO GET 100 ON EACH WORLD, AS THEY ARE NEEDED TO OPEN THE NOTE DOORS!",
             GENERAL_SPEECH_SPRITE_ENUMS.counts_9: "",
@@ -4559,7 +4559,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BD7: {
+    0x0BD7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WAHAY! YOU JUST PASSED YOUR BEST NOTE SCORE FOR THIS WORLD!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4568,7 +4568,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BD8: {
+    0x0BD8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "WOW! YOUR BEST NOTE SCORE FOR THIS WORLD IS NOW ~!",
             GENERAL_SPEECH_SPRITE_ENUMS.counts_9: "",
@@ -4578,7 +4578,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BD9: {
+    0x0BD9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU'VE FOUND ALL 100 NOTES ON THIS WORLD, WELL DONE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4587,7 +4587,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BDA: {
+    0x0BDA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.cauldron_CA: "YOU'VE ACTIVATED A MAGIC CAULDRON! FIND TWO THE SAME COLOR TO CREATE A SHORT CUT!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4596,7 +4596,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BDB: {
+    0x0BDB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.cauldron_CA: "THAT'S IT, YOU'VE CREATED A SHORT CUT! HOP IN AND SEE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4605,7 +4605,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BDC: {
+    0x0BDC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "YOU'VE FOUND A JIGSAW PICTURE! STAND ON THE JIGSAW SHAPED PODIUM AND I'LL EXPLAIN WHAT YOU HAVE TO DO.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4614,7 +4614,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BDD: {
+    0x0BDD: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "TO REMOVE PIECES THAT YOU HAVE ALREADY PUT DOWN, PRESS THE DOWN C BUTTON. BUT ONCE THE PICTURE IS COMPLETE, ALL THE PIECES ARE STUCK THERE PERMANENTLY!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4623,7 +4623,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BDE: {
+    0x0BDE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "IF YOU WANT TO PLACE ALL YOUR PIECES INTO THE PICTURE, JUST PRESS Z!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4632,7 +4632,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BDF: {
+    0x0BDF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THAT'S IT! THE PICTURE'S COMPLETE AND THE DOOR TO MUMBO'S MOUNTAIN IS OPEN!",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT WAS SUCH AN EASY FIT,",
@@ -4643,7 +4643,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BE0: {
+    0x0BE0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THIS IS THE FIRST WORLD, MUMBO'S MOUNTAIN. TO OPEN THE DOOR YOU'LL NEED TO FIND THE JIGSAW PICTURE WITH AN IMAGE OF THIS AREA ON IT. HAVE A LOOK AROUND, IT CAN'T BE FAR AWAY.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4652,7 +4652,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BE1: {
+    0x0BE1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "THIS IS THE FIRST WORLD, MUMBO'S MOUNTAIN. COMPLETE THE JIGSAW PICTURE TO OPEN THE DOOR.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4661,7 +4661,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BE2: {
+    0x0BE2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHAT'S WRONG BANJO, IS IT TOUGH?",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "LET ME KNOW WHEN YOU'VE HAD ENOUGH!",
@@ -4671,7 +4671,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BE3: {
+    0x0BE3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHEN YOU OPEN A WORLD DOOR,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BADDIES ESCAPE AND ROAM ONCE MORE!",
@@ -4681,7 +4681,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BE4: {
+    0x0BE4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.cheato_CF: "CODE IS 'BLUEEGGS'. ENTER CODE ON SANDCASTLE FLOOR IN TREASURE TROVE COVE. EGGCITING SURPRISE AWAITS!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4690,7 +4690,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BE5: {
+    0x0BE5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.cheato_CF: "ENTER 'REDFEATHERS' CODE ON SANDCASTLE FLOOR IN TREASURE TROVE COVE. BIRD LIKE THIS ONE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4699,7 +4699,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BE6: {
+    0x0BE6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.cheato_CF: "BEAT WITCH BEAR WILL IF ENTER 'GOLDFEATHERS' CODE ON SANDCASTLE FLOOR IN TREASURE TROVE COVE.",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -4708,7 +4708,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BE7: {
+    0x0BE7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOUR FEATHERED BUDDY, THAT YOU'VE BRUNG,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "USELESS LIKE A PILE OF DUNG!",
@@ -4718,7 +4718,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BE8: {
+    0x0BE8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HEY BANJO, YOU'RE LOOKING GLUM,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT MUST BE HARD, BEING SO DUMB!",
@@ -4728,7 +4728,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BE9: {
+    0x0BE9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MANY TRICKS ARE UP MY SLEEVE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TO SAVE YOURSELF YOU'D BETTER LEAVE!",
@@ -4738,7 +4738,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BEA: {
+    0x0BEA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I CAN SEE IT'S QUITE HARD WORK,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TO LUMP AROUND THAT SQUAWKING JERK!",
@@ -4748,7 +4748,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BEB: {
+    0x0BEB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HOW BRIGHT THEY ARE, YOUR STUPID SHORTS,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "A TARGET FOR MY DUMB COHORTS!",
@@ -4758,7 +4758,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BEC: {
+    0x0BEC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "JOIN ME NOW AND DUMP THE BEAR,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT LITTLE BACKPACK THEN I'LL WEAR!",
@@ -4768,7 +4768,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BED: {
+    0x0BED: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT UGLY BEAR YOU FEATHERED FREAK,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IS NOTHING BUT A STUPID GEEK!",
@@ -4778,7 +4778,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BEE: {
+    0x0BEE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT REALLY DOES SOUND QUITE ABSURD,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ADVENTURE OF A BEAR AND BIRD!",
@@ -4788,7 +4788,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BEF: {
+    0x0BEF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU SIDE WITH BANJO BUT CHANGE TACK,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IMAGINE YOU ON GRUNTY'S BACK!",
@@ -4798,7 +4798,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BF0: {
+    0x0BF0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'M STILL HERE, I WATCH YOU PLAY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT I CAN'T THINK OF MUCH TO SAY!",
@@ -4808,7 +4808,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BF1: {
+    0x0BF1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHEN THE BACK OF GRUNTY'S HAND,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHUPS YOUR BUTT YOU'LL HARDLY STAND!",
@@ -4818,7 +4818,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BF2: {
+    0x0BF2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOUR BUTT WILL TELL YOU, AND YOU'LL KNOW,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHEN MY BOOT SWINGS TO AND FRO!",
@@ -4828,7 +4828,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BF3: {
+    0x0BF3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MONSTERS CHASE YOU, THEY'RE A HOUNDING,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THEN YOU'LL GET A GRUNTY POUNDING!",
@@ -4838,7 +4838,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BF4: {
+    0x0BF4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "LONG OF TOOTH AND STRONG OF ARM,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GRUNTY'S GOT THE LASTING CHARM!",
@@ -4848,7 +4848,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BF5: {
+    0x0BF5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IF YOU THINK I'M RATHER SOFT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'LL BE WAITING IN THE LOFT!",
@@ -4858,7 +4858,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BF6: {
+    0x0BF6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "CAN'T YOU GET HERE ANY FASTER?",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "COME AND FIGHT ME I'M THE MASTER!",
@@ -4868,7 +4868,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BF7: {
+    0x0BF7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHY DO I TALK ALL THE TIME,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT'S REALLY HARD TO MAKE THESE RHYME!",
@@ -4878,7 +4878,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BF8: {
+    0x0BF8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I DON'T LIKE STAIRS MUCH IN MY LAIR,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THEY ALWAYS MAKE ME GASP FOR AIR!",
@@ -4888,7 +4888,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BF9: {
+    0x0BF9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MY FILTHY BED GIVES ME A RASH,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I NEVER WASH, I SAVE MY CASH!",
@@ -4898,7 +4898,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BFA: {
+    0x0BFA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MY BELLY'S BIG, IT'S RATHER NEAT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT'S YEARS SINCE I HAVE SEEN MY FEET!",
@@ -4908,7 +4908,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BFB: {
+    0x0BFB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'VE LEARNED THIS SPELL, IT'S REALLY NEAT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'LL KEEP IT LATER FOR YOUR TREAT!",
@@ -4918,7 +4918,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BFC: {
+    0x0BFC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GRUNTY ADMITS SHE'S A HOG,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I REALLY NEED A BIG HOT DOG!",
@@ -4928,7 +4928,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BFD: {
+    0x0BFD: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THIS STUPID QUEST YOU SHOULD STOP,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU WON'T GET TO ME AT THE TOP!",
@@ -4938,7 +4938,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BFE: {
+    0x0BFE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MY NEXT WORLD IS THE HARDEST YET,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "AND YOU WILL FAIL, ON THAT I'LL BET!",
@@ -4948,7 +4948,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0BFF: {
+    0x0BFF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TOOTY'S FATE IS LOOKING GRIM,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT'S BECAUSE HER BROTHER'S DIM!",
@@ -4958,7 +4958,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C00: {
+    0x0C00: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'VE GOT THIS SKIRT SO WHEN I'M THINNER,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT REALLY MAKES ME LOOK A WINNER!",
@@ -4968,7 +4968,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C01: {
+    0x0C01: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHEN TOOTY IS A BIG OLE LUMP,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'VE JUST THE FROCK TO HIDE HER RUMP!",
@@ -4978,7 +4978,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C02: {
+    0x0C02: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GRUNTY'S LEGS AND STOMACH THINS,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GOODBYE TO ALL THOSE DOUBLE CHINS!",
@@ -4988,7 +4988,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C03: {
+    0x0C03: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHEN I'M NICE AND SLIM ONCE MORE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BURGERS, FRIES AND CHIPS GALORE!",
@@ -4998,7 +4998,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C04: {
+    0x0C04: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TOOTY SAYS SHE'S FINE WITH ME,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IF YOU GO HOME I'LL SET HER FREE!",
@@ -5008,7 +5008,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C05: {
+    0x0C05: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GRUNTY'S PLAN IS RATHER CUNNING,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHEN I'M THIN GUYS WILL COME RUNNING!",
@@ -5018,7 +5018,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C06: {
+    0x0C06: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.cheato_CF: "CHEATO THE SPELL BOOK YOU HAVE FOUND, MAGIC CHEATS I HAVE FOR YOU!",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HEY BOOK BRAIN, WHAT DID YOU SAY?",
@@ -5041,7 +5041,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C07: {
+    0x0C07: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.cheato_CF: "CHEATO BEAR AND BIRD HAVE FOUND ONCE MORE, ANOTHER SPELL THEY GET!",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IF ONE MORE PAGE I SEE YOU TURN,",
@@ -5056,7 +5056,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C08: {
+    0x0C08: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.cheato_CF: "BEAR AND BIRD GETTING GOOD AT FINDING CHEATO, SO ANOTHER SPELL THEY SHALL HAVE!",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT TRAITOR BOOK HAS PUSHED ITS LUCK,",
@@ -5071,7 +5071,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C09: {
+    0x0C09: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.cheato_CF: "200 EGGS ARE NOW YOURS! NOW 200 IS MAXIMUM TOO!",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT LOUSY CHEAT FOR EXTRA EGGS,",
@@ -5082,7 +5082,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C0A: {
+    0x0C0A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.cheato_CF: "BEAR AND BIRD GET 100 RED FEATHERS. 100 MAXIMUM NOW IS!",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ALL MY FEATHERS, IT MAKES ME SICK,",
@@ -5093,7 +5093,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C0B: {
+    0x0C0B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.cheato_CF: "20 GOLD FEATHERS YOU GET! NEW MAXIMUM 20 IS!",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GOLD FEATHERS YOU MAY HAVE TWENTY,",
@@ -5104,7 +5104,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C0C: {
+    0x0C0C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT'S NOT OVER STUPID BEAR,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SEE MY PICTURE OVER THERE!",
@@ -5116,7 +5116,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C0D: {
+    0x0C0D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'M SAD TO SAY DOWN THERE YOU'LL STOP,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "'CUZ I'M SAFE HERE AT THE TOP!",
@@ -5126,7 +5126,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C0E: {
+    0x0C0E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.transition_top_bottom_6: "",
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "OOOH! VISITORS FOR DINGPOT...I LIKE VISITORS!",
@@ -5156,7 +5156,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C0F: {
+    0x0C0F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "DID I TELL YOU SHE PUKED IN ME, IT WAS AWFUL...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5165,7 +5165,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C10: {
+    0x0C10: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "CAN YOU SEE A TOILET IN HERE, HUH? SO GUESS WHERE GRUNTY GOES...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5174,7 +5174,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C11: {
+    0x0C11: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "ALL HER TRASH, WELL THAT ENDS UP IN ME AS WELL...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5183,7 +5183,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C12: {
+    0x0C12: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "LOOK AT ME, I'M FULL OF POTATO PEELINGS AND MOULDY VEGETABLES...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5192,7 +5192,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C13: {
+    0x0C13: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "YOU WOULDN'T BELIEVE GRUNTY'S DANDRUFF WHEN SHE LEANS OVER ME...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5201,7 +5201,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C14: {
+    0x0C14: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "I NEED MY TEETH CLEANING, WILL YOU DO IT?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5210,7 +5210,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C15: {
+    0x0C15: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "SNIFF...I HAD A SAUCEPAN GIRLFRIEND ONCE, BUT GRUNTY BROKE HER HANDLE...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5219,7 +5219,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C16: {
+    0x0C16: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "AND ALL THOSE AWFUL BLOOMERS SHE MAKES ME WASH...YURRGH!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5228,7 +5228,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C17: {
+    0x0C17: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "SHE COOKS UP SOME REALLY SPICY DINNERS IN ME, IT'S MELTING MY LADLE...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5237,7 +5237,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C18: {
+    0x0C18: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "OOOH...BIT TOUGH LAST TIME, HUH?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5246,7 +5246,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C19: {
+    0x0C19: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "READY FOR ANOTHER TRIP, MR. BEAR?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5255,7 +5255,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C1A: {
+    0x0C1A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "SPLASH IN AND I'LL FIRE YOU BACK UP THERE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5264,7 +5264,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C1B: {
+    0x0C1B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "ARE YOU READY THIS TIME, BIRDY THING?",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5273,7 +5273,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C1C: {
+    0x0C1C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.dingpot_D8: "PLEASE BEAT GRUNTY THIS TIME, I DON'T WANT TO DO HER WASHING ANYMORE...",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5282,7 +5282,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C1D: {
+    0x0C1D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "OH...YOU HAVEN'T GOT ANY JIGSAW PIECES LEFT, YOU'LL HAVE TO GO AND FIND SOME MORE!",
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
@@ -5291,7 +5291,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C1E: {
+    0x0C1E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU'VE FOUND SOME NOTES, BUT YOU NEED MORE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TO BREAK MY SPELL AND PASS THIS DOOR!",
@@ -5301,7 +5301,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C1F: {
+    0x0C1F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "STOP THIS CHEATING GRUNTY SAYS,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OR YOUR GAME PAK I'LL ERASE!",
@@ -5311,7 +5311,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C20: {
+    0x0C20: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU DIDN'T LISTEN, I'M AMAZED,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SO NOW YOUR GAME PAK IS ERASED!",
@@ -5321,7 +5321,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C21: {
+    0x0C21: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT'S NOT OVER STUPID BEAR,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SEE MY PICTURE OVER THERE!",
@@ -5333,7 +5333,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C22: {
+    0x0C22: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "A LITTLE ANSWER'S ALL I SEEK,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ABOUT THIS GAME, YOU FURRY GEEK!",
@@ -5343,7 +5343,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C23: {
+    0x0C23: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "A VISUAL CHALLENGE, STUPID BEAR,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TO TELL ME WHO IT IS OR WHERE!",
@@ -5353,7 +5353,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C24: {
+    0x0C24: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "A QUESTION ON THE SOUNDS I PLAY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GET IT WRONG TO MAKE MY DAY!",
@@ -5363,7 +5363,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C25: {
+    0x0C25: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "PREPARE YOURSELF TO TAKE A WHACK,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "PICK THIS TEST, YOU WON'T COME BACK!",
@@ -5373,7 +5373,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C26: {
+    0x0C26: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I THINK IT'S TIME, SO LET ME SEE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HOW MUCH YOU KNOW OF LITTLE OLD ME!",
@@ -5383,7 +5383,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C27: {
+    0x0C27: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GET THIS WRONG FOR GRUNTY'S SAKE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THEN A LAVA BATH YOU WILL TAKE!",
@@ -5393,7 +5393,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C28: {
+    0x0C28: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "JUST ONE CHANCE TO GET THIS RIGHT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WIN A JOKER AND HELP IT MIGHT!",
@@ -5403,7 +5403,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C29: {
+    0x0C29: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MIGHTY BIG BOX YOU MUST NOW FIGHT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT BE QUICK AS TIME IS TIGHT!",
@@ -5413,7 +5413,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C2A: {
+    0x0C2A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "MUMBO MAGIC HELP BEAR WIN NASTY WITCH GAME.",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x01?",
@@ -5425,7 +5425,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C2B: {
+    0x0C2B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THE TILES AWAIT FOR YOU TO MATCH,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TIME IS TIGHT, BUT THAT'S THE CATCH!",
@@ -5435,7 +5435,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C2C: {
+    0x0C2C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "LITTLE STINGS THAT MAKE A BEAR SHOUT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHACK THEM ALL BEFORE TIME'S OUT!",
@@ -5445,7 +5445,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C2D: {
+    0x0C2D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WATCH AS THE TURTLES SING THEIR SONG,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "REPEAT IT QUICK, YOU WON'T GET LONG!",
@@ -5455,7 +5455,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C2E: {
+    0x0C2E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THE NAME OF YOUR GAME YOU MUST SPELL,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BACKWARDS THOUGH, BE QUICK AS WELL!",
@@ -5465,7 +5465,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C2F: {
+    0x0C2F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x1F?",
@@ -5506,7 +5506,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C30: {
+    0x0C30: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SO I SEE YOU'RE BACK TO TRY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ONE MORE TIME BUT YOU WILL FRY!",
@@ -5516,7 +5516,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C31: {
+    0x0C31: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "A LUCKY GUESS, YOU GOT IT RIGHT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THE NEXT SQUARE'S YOURS WITHOUT A FIGHT!",
@@ -5526,7 +5526,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C32: {
+    0x0C32: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HEAR THE CROWD, THEY BOO AND HISS,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TO SEE YOU FAIL THEY WOULD NOT MISS!",
@@ -5536,7 +5536,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C33: {
+    0x0C33: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT'S A SECRET, HOW DID Y'KNOW?",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "DID MY SISTER TELL YOU SO!",
@@ -5546,7 +5546,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C34: {
+    0x0C34: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "FAIL A SQUARE AND YOU'LL FEEL PAIN,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "PLEASE PRESS A TO TRY AGAIN!",
@@ -5556,7 +5556,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C35: {
+    0x0C35: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GET MORE WRONG, YES THAT'S THE WAY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THE CROWDS ARE HAPPIER TODAY!",
@@ -5566,7 +5566,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C36: {
+    0x0C36: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THE CHOICE IS YOURS TO PICK THE WAY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT YOU ARE GOING TO LOSE TODAY!",
@@ -5576,7 +5576,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C37: {
+    0x0C37: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THE ENERGY THAT YOU HAVE FOUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WON'T STOP ME MAKING TOOTY ROUND!",
@@ -5586,7 +5586,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C38: {
+    0x0C38: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "AN EXTRA LIFE, I DO NOT CARE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT WILL NOT HELP YOU SCRUFFY BEAR!",
@@ -5596,7 +5596,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C39: {
+    0x0C39: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "EACH JOKER CARD THAT YOU HAVE GOT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WILL SKIP ONE QUESTION, THAT'S YOUR LOT!",
@@ -5608,7 +5608,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C3A: {
+    0x0C3A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOUR JOKER MISSES OUT A SQUARE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ACCEPT THE TEST YOU DID NOT DARE!",
@@ -5618,7 +5618,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C3B: {
+    0x0C3B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "AN EASY CHALLENGE, YOU ASSUMED,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ONE MORE WRONG AND YOU ARE DOOMED!",
@@ -5628,7 +5628,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C3C: {
+    0x0C3C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TRY THIS ONE, BUT DON'T BE LAME,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU'LL LOSE A LIFE AND LOSE THE GAME!",
@@ -5638,7 +5638,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C3D: {
+    0x0C3D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "NO LIVES ARE LEFT, HE BURNS AND CHOKES,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'M PLEASED TO SAY THAT'S ALL FOLKS!",
@@ -5648,7 +5648,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C3E: {
+    0x0C3E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x09?",
@@ -5673,7 +5673,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C3F: {
+    0x0C3F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
@@ -5695,7 +5695,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C40: {
+    0x0C40: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "GRUNTY BRUSHES HER ROTTEN TEETH WITH ~ FLAVORED TOOTHPASTE!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "TUNA ICE CREAM",
@@ -5707,7 +5707,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C41: {
+    0x0C41: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "SHE ALSO WASHES HER HAIR WITH ~. YUK!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "BAKED BEANS",
@@ -5719,7 +5719,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C42: {
+    0x0C42: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "AND SHE GETS HER CLOTHES FROM ~!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "THE TRASHCAN",
@@ -5731,7 +5731,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C43: {
+    0x0C43: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "UGLY GRUNTY'S NICKNAME WAS ~ AT WITCH SCHOOL!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "HOG BREATH",
@@ -5743,7 +5743,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C44: {
+    0x0C44: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "I ALSO KNOW THAT ~ IS HER FAVORITE SMELL!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "PUTRID PARROT PUKE",
@@ -5755,7 +5755,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C45: {
+    0x0C45: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "AND THE OLD HAG'S FAVORITE COLOR IS ~!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "GHASTLY GREY",
@@ -5767,7 +5767,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C46: {
+    0x0C46: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "MY FAT OLD SISTER'S FAVORITE SPORT IS ~!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "LOOGIE FLICKING",
@@ -5779,7 +5779,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C47: {
+    0x0C47: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "ALTHOUGH SHE'S DIM, SHE ATTENDED ~!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "CAULDRON COLLEGE",
@@ -5791,7 +5791,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C48: {
+    0x0C48: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "YOU WON'T BELIEVE THAT GRUNTILDA'S PARTY TRICK IS ~!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "BLOWING BALLOONS UP WITH HER BUTT",
@@ -5803,7 +5803,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C49: {
+    0x0C49: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "THE DISGUSTING GRUNTILDA HAS ~ FOR BREAKFAST!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "RAT BAGELS",
@@ -5815,7 +5815,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C4A: {
+    0x0C4A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "THEN SHE USUALLY HAS ~ FOR DINNER. YUK!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "DOG DUNG BURGERS",
@@ -5827,7 +5827,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C4B: {
+    0x0C4B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "WARTBAGS THEN FINISHES WITH ~ FOR DESSERT. HOW HORRID!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "EYEBALL ICE CREAM",
@@ -5839,7 +5839,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C4C: {
+    0x0C4C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "REVOLTING GRUNTILDA'S BEDROOM HAS ~ HANGING FROM THE CEILING!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "ROTTING FISH",
@@ -5851,7 +5851,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C4D: {
+    0x0C4D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "SHE ALSO HAS ~ GROWING IN A POT BESIDE HER BED! FILTHY OLD BAG!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "AN EYEBALL FLOWER",
@@ -5863,7 +5863,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C4E: {
+    0x0C4E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "AND YOU'D BE SICK IF YOU SAW HER ENORMOUS ~ UNDIES!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "STREAKY BROWN",
@@ -5875,7 +5875,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C4F: {
+    0x0C4F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "GRUNTY'S BEST FRIEND AT WITCH SCHOOL WAS THE AWFUL ~!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "SAGGY MAGGY",
@@ -5887,7 +5887,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C50: {
+    0x0C50: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "WHEN RELAXING, SHE USUALLY READS ~ MAGAZINE!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "FAT HAG MONTHLY",
@@ -5899,7 +5899,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C51: {
+    0x0C51: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "WHILE SIPPING A GLASS OF HER FAVORITE ~!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "CAMEL SPIT MILKSHAKE",
@@ -5911,7 +5911,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C52: {
+    0x0C52: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "MY LAZY SISTER OFTEN SLEEPS ~, THE DIRTY HAG!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "IN A DUMPSTER",
@@ -5923,7 +5923,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C53: {
+    0x0C53: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "THE ONLY THING SHE'S EVER WON WAS THE ~ COMPETITION AT WITCH SCHOOL!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "BIGGEST BUTT",
@@ -5935,7 +5935,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C54: {
+    0x0C54: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "SHE OFTEN BOASTS OF APPEARING ON THE COVER OF FAT HAG MONTHLY, ~!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "SITTING ON HER BROOMSTICK",
@@ -5947,7 +5947,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C55: {
+    0x0C55: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "GRUESOME GRUNTILDA'S FAVORITE PASTIME IS ~!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "COLLECTING DRAGON TEETH",
@@ -5959,7 +5959,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C56: {
+    0x0C56: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "THIS POOR GUY CALLED ~, WAS HER FIRST AND ONLY BOYFRIEND!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "GREASY GRANT",
@@ -5971,7 +5971,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C57: {
+    0x0C57: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "WHEN SHE WAS YOUNGER, GRUNTY USED TO HAVE ~ AS A PET!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "A BABY DRAGON",
@@ -5983,7 +5983,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C58: {
+    0x0C58: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "DID YOU KNOW WARTBAGS KEEPS ~ IN HER POCKET FOR LUCK?",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "A SHRUNKEN HEAD",
@@ -5995,7 +5995,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C59: {
+    0x0C59: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "I'VE ALSO SEEN MY SISTER CUDDLING ~ IN BED AT NIGHT!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "A SCARY TEDDY BEAR",
@@ -6007,7 +6007,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C5A: {
+    0x0C5A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "SHE'S REALLY PROUD OF HER BROOMSTICK. IT'S A TOP OF THE RANGE ~!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "LARDMASTER 2000",
@@ -6019,7 +6019,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C5B: {
+    0x0C5B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "GRUNTY WEARS ~ UNDER THAT REPULSIVE DRESS OF HERS!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "MASSIVE BLOOMERS",
@@ -6031,7 +6031,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C5C: {
+    0x0C5C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "SHE'S ALSO GOT THIS NASTY PET DOG WHOSE NAME IS ~!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "LEGCHOMPER",
@@ -6043,7 +6043,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C5D: {
+    0x0C5D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "MY SISTER SINGS IN HER OWN BAND, ~. THEY'RE AWFUL!",
             GENERAL_SPEECH_SPRITE_ENUMS.selections_8: "GRUNTY AND THE MONSTER MOB",
@@ -6055,7 +6055,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C5E: {
+    0x0C5E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "HELLO THERE, YOUNG ONES! I'M BRENTILDA, GRUNTILDA'S NICER SISTER. I'VE CREPT DOWN HERE TO HELP YOU DEFEAT THE OLD HAG, IT'S ABOUT TIME SHE WAS TAUGHT A LESSON!",
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "I KNOW ALL OF GRUNTY'S DISGUSTING SECRETS, AND I'LL TELL YOU THREE OF THEM EVERY TIME YOU FIND ME.",
@@ -6067,7 +6067,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C5F: {
+    0x0C5F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "OOOH YOU POOR DEARS, YOUR ENERGY IS LOW. LET ME FILL IT UP FOR YOU...",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x01?",
@@ -6078,7 +6078,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C60: {
+    0x0C60: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I CAN'T BELIEVE THAT FURRY PAIR,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GOT RIGHT UP HERE, IT'S SO UNFAIR!",
@@ -6090,7 +6090,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C61: {
+    0x0C61: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SO YOU'RE BACK, YOU MUST BE THICK,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "AGAIN YOU'LL LOSE, I'LL MAKE IT QUICK!",
@@ -6100,7 +6100,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C62: {
+    0x0C62: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I CAN'T BELIEVE YOU'RE BACK AGAIN,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "STUPID BEAR AND DIM BIRD BRAIN!",
@@ -6110,7 +6110,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C63: {
+    0x0C63: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BACK ONCE MORE, YOU NEVER LEARN,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT SUITS ME FINE, YOUR BUTTS I'LL BURN!",
@@ -6120,7 +6120,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C64: {
+    0x0C64: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'M NOT ONE TO BRAG OR BOAST,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT AFTER THIS YOU'LL BOTH BE TOAST!",
@@ -6130,7 +6130,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C65: {
+    0x0C65: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHO'S BACK UP HERE, OH MY WORD,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT'S BEAKY FOOL AND HAIRY NERD!",
@@ -6140,7 +6140,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C66: {
+    0x0C66: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "DID YOU HEAR THAT LOVELY CLACK,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MY BROOMSTICK GAVE YOU SUCH A WHACK!",
@@ -6150,7 +6150,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C67: {
+    0x0C67: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SEE THE SWOOP AND HOW I FLEW,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MY BROOMSTICK MADE A MEAL OF YOU!",
@@ -6160,7 +6160,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C68: {
+    0x0C68: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MMM I SEE YOU TOOK THAT ONE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "A FEW MORE AND YOUR LIFE IS GONE!",
@@ -6170,7 +6170,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C69: {
+    0x0C69: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "AH, I SEE IT MAKES YOU SAD,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TO KNOW YOUR SKILLS ARE REALLY BAD!",
@@ -6180,7 +6180,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C6A: {
+    0x0C6A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HOPELESS BEAR RUNS TO AND FRO,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT TAKES A WHACK FOR BEING SO SLOW!",
@@ -6190,7 +6190,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C6B: {
+    0x0C6B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MY FIERY BLAST YOU JUST TASTED,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GRUNTY'S SPELLS ON YOU ARE WASTED!",
@@ -6200,7 +6200,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C6C: {
+    0x0C6C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THESE BOLTS FLY WITH SUCH A WHIZZ",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I LOVE THE WAY THEY SCREECH AND FIZZ!",
@@ -6210,7 +6210,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C6D: {
+    0x0C6D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I HIT THE BIRD RIGHT ON HER BEAK,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "LET THAT BE THE END OF HER CHEEK!",
@@ -6220,7 +6220,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C6E: {
+    0x0C6E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GRUNTY'S FIREBALL YOU DID KISS,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU'RE SO SLOW I CAN HARDLY MISS!",
@@ -6230,7 +6230,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C6F: {
+    0x0C6F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SIMPLY PUT I'M RATHER PROUD,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOUR YELPS AND SCREAMS I HEARD QUITE LOUD!",
@@ -6240,7 +6240,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C70: {
+    0x0C70: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OUCH MY BUTT, IT'S NOW QUITE SORE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'LL MAKE YOU SUFFER, THAT'S FOR SURE!",
@@ -6250,7 +6250,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C71: {
+    0x0C71: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "A GLANCING BLOW, NOTHING MORE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "NOW I'LL KNOCK YOU THROUGH THE FLOOR!",
@@ -6260,7 +6260,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C72: {
+    0x0C72: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "NOW YOU'VE GOT ME IN A FLUSTER,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "FASTER SPELLS I'LL HAVE TO MUSTER!",
@@ -6270,7 +6270,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C73: {
+    0x0C73: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHAT WAS THAT, YOU GOT ME NOW,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU'VE REALLY ANGERED THIS OLD COW!",
@@ -6280,7 +6280,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C74: {
+    0x0C74: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OUCH MY GUT YOU NEARLY HIT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IF YOUR SHOT WAS DOWN A BIT!",
@@ -6290,7 +6290,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C75: {
+    0x0C75: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU GOT ME NOW STOP THAT LAUGHTER,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "LEAVE MY THINGS I'LL GET THEM AFTER!",
@@ -6300,7 +6300,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C76: {
+    0x0C76: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HEY THAT WHACK JUST JOSTLED ME,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT'S MY HONEY, SO LEAVE 'EM BE!",
@@ -6310,7 +6310,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C77: {
+    0x0C77: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OUCH YOU GOT ME WITH SUCH A BASH,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "AND NOW I'VE GONE AND DROPPED MY STASH!",
@@ -6320,7 +6320,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C78: {
+    0x0C78: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT WHACK MADE ME FEEL QUITE FUNNY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OOOPS I'VE GONE AND DROPPED MY HONEY!",
@@ -6330,7 +6330,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C79: {
+    0x0C79: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU JOGGED MY ARM, I'M IN A HUFF,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "''COSCUZ NOW I'VE GONE AND DROPPED MY STUFF!",
@@ -6340,7 +6340,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C7A: {
+    0x0C7A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT'S NOW TIME TO END YOUR FUN,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HERE COMES A SPELL YOU CAN'T OUTRUN!",
@@ -6350,7 +6350,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C7B: {
+    0x0C7B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MAGIC SPELL OF BANJO HOMING,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GET HIM NOW TO STOP HIS ROAMING!",
@@ -6360,7 +6360,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C7C: {
+    0x0C7C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HERE'S MY MAGNET SPELL AT LAST,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "RUN AND HIDE YOU WON'T GET PAST!",
@@ -6370,7 +6370,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C7D: {
+    0x0C7D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SEE THIS SPELL, I'LL THINK YOU'LL FIND,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ITS TARGET WILL BE YOUR BEHIND!",
@@ -6380,7 +6380,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C7E: {
+    0x0C7E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MAGIC SPELL, SEEK OUT YOUR PREY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT'S SURE TO HIT, O HAPPY DAY!",
@@ -6390,7 +6390,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C7F: {
+    0x0C7F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "AHH IT'S TIME FOR ME TO CHANGE",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MY SPOT TO PUT ME OUT OF RANGE!",
@@ -6400,7 +6400,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C80: {
+    0x0C80: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THIS SPOT'S PROVING RATHER ROUGH,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'LL HAVE TO MOVE TO MAKE IT TOUGH!",
@@ -6410,7 +6410,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C81: {
+    0x0C81: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT'S TOO EASY, SO I FEAR,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "NOW WATCH ME STEP THINGS UP A GEAR!",
@@ -6420,7 +6420,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C82: {
+    0x0C82: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT LAST WHACK DID CLIP MY EAR,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT YOU CAN'T GET ME OVER HERE!",
@@ -6430,7 +6430,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C83: {
+    0x0C83: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "DON'T HIT ME, THAT'S QUITE ENOUGH,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I THINK YOU'LL FIND THE NEXT BIT TOUGH!",
@@ -6440,7 +6440,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C84: {
+    0x0C84: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HAH YOU TOOK ANOTHER ZAP,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I GOT YOU THROUGH THAT LITTLE GAP!",
@@ -6450,7 +6450,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C85: {
+    0x0C85: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SO I GOT YOU THERE ONCE MORE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I KNEW YOUR SKILL WAS VERY POOR!",
@@ -6460,7 +6460,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C86: {
+    0x0C86: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OH I GOT YOU ONCE AGAIN,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT'S NICE TO SEE A BEAR IN PAIN!",
@@ -6470,7 +6470,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C87: {
+    0x0C87: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT LAST BLAST YOU FORGOT TO DUCK,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SO BANJO'S USELESS HEAD IT STRUCK!",
@@ -6480,7 +6480,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C88: {
+    0x0C88: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HEAR THAT FIREBALL FIZZ AND BANG,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOUR HAIRY BUTT TOOK QUITE A CLANG!",
@@ -6490,7 +6490,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C89: {
+    0x0C89: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ARGH I'M SLOW WITH ALL THIS LARD,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT EGG OF YOURS CAUGHT ME OFF GUARD!",
@@ -6500,7 +6500,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C8A: {
+    0x0C8A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I CAN'T DODGE WITH ALL THIS WEIGHT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THOSE NASTY EGGS I SURE DO HATE!",
@@ -6510,7 +6510,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C8B: {
+    0x0C8B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OOOF I TOOK ANOTHER WHACK,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT WATCH ME GIVE YOU DOUBLE BACK!",
@@ -6520,7 +6520,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C8C: {
+    0x0C8C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT'S NOT FAIR I WASN'T READY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I FEEL FAINT AND ALL UNSTEADY!",
@@ -6530,7 +6530,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C8D: {
+    0x0C8D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT DIDN'T HURT, I FEEL NO PAIN,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GRUNTY'S READY TO FIGHT AGAIN!",
@@ -6540,7 +6540,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C8E: {
+    0x0C8E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OFF I FLY 'CUZ THEN WE'LL SEE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IF YOU CAN GET THE BEST OF ME!",
@@ -6550,7 +6550,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C8F: {
+    0x0C8F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "NOW I'M OFF INTO THE AIR,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "LEAVING BANJO STUCK WAY DOWN THERE!",
@@ -6560,7 +6560,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C90: {
+    0x0C90: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SEE MY BROOMSTICK, WATCH ME FLY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'LL BEAT YOUR BUTT, DON'T EVEN TRY!",
@@ -6570,7 +6570,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C91: {
+    0x0C91: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "A BIG OLD GAL I MAY JUST BE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT WHEN I FLY YOU WON'T GET ME!",
@@ -6580,7 +6580,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C92: {
+    0x0C92: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "UP IN THE AIR I'LL BE SAFE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "AT MY LEISURE YOUR BUTT I'LL STRAFE!",
@@ -6590,7 +6590,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C93: {
+    0x0C93: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "HEY BANJO, THE OLD HAG'S TAKEN TO THE AIR!",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x01?",
@@ -6601,7 +6601,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C94: {
+    0x0C94: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "NOT BAD SO FAR, BANJO!",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x01?",
@@ -6612,7 +6612,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C95: {
+    0x0C95: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "",
             GENERAL_SPEECH_SPRITE_ENUMS.action_7: "Unknown Action/Use Camera 0x01?",
@@ -6623,7 +6623,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C96: {
+    0x0C96: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OLD BOTTLE BRAIN HAS TAUGHT YOU WELL,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT BEARS DON'T FLY AND I CAN TELL!",
@@ -6633,7 +6633,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C97: {
+    0x0C97: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "DID YOU KNOW I LEARNED TO FLY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "AT WITCHES SCHOOL, YOU CAN SEE WHY!",
@@ -6643,7 +6643,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C98: {
+    0x0C98: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SEE ME SWOOP AND WATCH ME DIVE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU'VE NOT LONG LEFT TO STAY ALIVE!",
@@ -6653,7 +6653,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C99: {
+    0x0C99: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ANOTHER WHACK THAT'S HOW IT GOES,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WATCH ME FLY AND PICK MY NOSE!",
@@ -6663,7 +6663,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C9A: {
+    0x0C9A: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SOON YOU'LL LOSE AND WHEN YOU'VE GONE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I HAVE TO GO AND USE THE JOHN!",
@@ -6673,7 +6673,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C9B: {
+    0x0C9B: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "FIREBALL FIZZ AND FIREBALL FLY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BLAST THAT BEAR OUT OF MY SKY!",
@@ -6683,7 +6683,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C9C: {
+    0x0C9C: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GRUNTY'S SPELL YOUR BODY NUMBS,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "AN EASY TASK TO HIT THOSE BUMS!",
@@ -6693,7 +6693,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C9D: {
+    0x0C9D: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THIS BROOM IS HARD AND AS IT STREAKS,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ACROSS THE SKY IT CHAFES MY CHEEKS!",
@@ -6703,7 +6703,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C9E: {
+    0x0C9E: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ANOTHER HIT YOU TOOK ONCE MORE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "PLEASE LOSE SOON, I'M SADDLE SORE!",
@@ -6713,7 +6713,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0C9F: {
+    0x0C9F: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I HOLD ON HARD AND GRIT MY TEETH,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TO STOP ME DANGLING UNDERNEATH!",
@@ -6723,7 +6723,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CA0: {
+    0x0CA0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOWW THAT BEAK GAVE ME A JOLT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SO YOU CAN HAVE THIS LIGHTNING BOLT!",
@@ -6733,7 +6733,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CA1: {
+    0x0CA1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OOOH YOU SNIVELLING LITTLE PUP,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HAVE THIS BOLT, I'M SPEEDING UP!",
@@ -6743,7 +6743,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CA2: {
+    0x0CA2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ARRGH YOU GOT ME ONCE AGAIN",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "PREPARE TO TAKE THIS SIZZLE BRAIN!",
@@ -6753,7 +6753,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CA3: {
+    0x0CA3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OUCH NOW THAT ONE REALLY STUNG,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TAKE THIS NASTY SPELL I'VE BRUNG!",
@@ -6763,7 +6763,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CA4: {
+    0x0CA4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ANOTHER HIT, I'M GETTING WEAK,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I REALLY NEED TO TAKE A LEAK!",
@@ -6773,7 +6773,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CA5: {
+    0x0CA5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT POINTY BEAK DID NOT MISS,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT NOW LET'S SEE IT GET THROUGH THIS!",
@@ -6783,7 +6783,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CA6: {
+    0x0CA6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "A SPECIAL SHIELD I NEED TO CALL,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TO STOP YOUR HITS ONCE AND FOR ALL!",
@@ -6793,7 +6793,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CA7: {
+    0x0CA7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SO GRUNTY DOESN'T COME TO GRIEF,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HERE'S A SPELL I CAN HIDE BENEATH!",
@@ -6803,7 +6803,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CA8: {
+    0x0CA8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "LOOK AT ME, I'M QUITE A MESS,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I NEED A SHIELD TO HIDE MY DRESS!",
@@ -6813,7 +6813,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CA9: {
+    0x0CA9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I MAY BE OLD AND RATHER WIDE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT UNDERNEATH THIS SPELL I'LL HIDE!",
@@ -6823,7 +6823,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CAA: {
+    0x0CAA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
@@ -6833,7 +6833,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CAB: {
+    0x0CAB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
@@ -6843,7 +6843,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CAC: {
+    0x0CAC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
@@ -6853,7 +6853,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CAD: {
+    0x0CAD: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
@@ -6863,7 +6863,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CAE: {
+    0x0CAE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
@@ -6873,7 +6873,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CAF: {
+    0x0CAF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.pink_jinjo_97: "FOR SETTING US FREE, WE JINJOS COME TO HELP OUR FRIEND BANJO!",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I HID YOU WELL FOR BEING BAD,",
@@ -6884,7 +6884,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CB0: {
+    0x0CB0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.pink_jinjo_97: "NICE BEAR AND BIRD SAVED JINJOS FROM THE WITCH, NOW WE HELP!",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SO YOUR LITTLE FURRY FRIENDS,",
@@ -6895,7 +6895,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CB1: {
+    0x0CB1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.pink_jinjo_97: "NASTY WITCH SPEAK TOO SOON, JINJOS COME TO HELP BEAR AND BIRD!",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "COME ON THEN YOU LITTLE PUNKS,",
@@ -6906,7 +6906,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CB2: {
+    0x0CB2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.pink_jinjo_97: "GRUNTY CAPTURED US JINJOS, NOW WE COME FOR OUR REVENGE!",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "USELESS JINJOS SNEER AND HOOT,",
@@ -6917,7 +6917,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CB3: {
+    0x0CB3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.pink_jinjo_97: "OUR NEW FRIENDS ARE IN TROUBLE! WE JINJOS WILL HELP YOU!",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I HID THOSE JINJOS REALLY WELL,",
@@ -6928,7 +6928,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CB4: {
+    0x0CB4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOUR STUPID FRIENDS AREN'T MUCH HELP,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "STANDING THERE AS I MAKE YOU YELP!",
@@ -6938,7 +6938,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CB5: {
+    0x0CB5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOUR JINJOS REALLY ARE A JOKE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "NOW WATCH YOUR LIVES GO UP IN SMOKE!",
@@ -6948,7 +6948,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CB6: {
+    0x0CB6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOUR SILLY FRIENDS UPON THEIR BLOCKS,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ARE GOING TO TAKE A COUPLE OF KNOCKS!",
@@ -6958,7 +6958,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CB7: {
+    0x0CB7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GET USED TO THAT, THERE'S PLENTY MORE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OF OTHER NASTY SPELLS IN STORE!",
@@ -6968,7 +6968,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CB8: {
+    0x0CB8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ANOTHER HIT, I CAN'T BELIEVE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU DIDN'T DODGE, WHY DON'T YOU WEAVE!",
@@ -6978,7 +6978,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CB9: {
+    0x0CB9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HEY THAT JINJO REALLY HURT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'LL NOW RUB YOU IN THE DIRT!",
@@ -6988,7 +6988,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CBA: {
+    0x0CBA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OOOH THOSE NASTY POINTY BEAKS,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ARE CAUSING SWELLING IN MY CHEEKS!",
@@ -6998,7 +6998,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CBB: {
+    0x0CBB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "DON'T HIT ME YOU FLYING PIG,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MY ANGER NOW IS GROWING BIG!",
@@ -7008,7 +7008,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CBC: {
+    0x0CBC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HOW THAT JINJO STUNG AND BURNED,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HE GOT ME WHEN MY BACK WAS TURNED!",
@@ -7018,7 +7018,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CBD: {
+    0x0CBD: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT'S NOT FAIR, I WASN'T READY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "JINJOS MAKE ME SO UNSTEADY!",
@@ -7028,7 +7028,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CBE: {
+    0x0CBE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "OOOF YOU'VE WINDED ME ALL ROUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "TO CATCH MY BREATH I'M ON THE GROUND!",
@@ -7038,7 +7038,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CBF: {
+    0x0CBF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT LAST SHOT I FAILED TO STOP,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SO DOWN ONTO THE GROUND I'LL DROP!",
@@ -7048,7 +7048,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CC0: {
+    0x0CC0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "MY BROOMSTICK FAILED WITH THAT LAST BLOW,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "NOW ON MY LEGS I HAVE TO GO!",
@@ -7058,7 +7058,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CC1: {
+    0x0CC1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I BET YOU THOUGHT YOU'D GOT ME BEAT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT LOOK I'VE LANDED ON MY FEET!",
@@ -7068,7 +7068,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CC2: {
+    0x0CC2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "USELESS BROOMSTICKS I CAN'T STAND,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT'S LEFT ME STRANDED BACK ON LAND!",
@@ -7078,7 +7078,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CC3: {
+    0x0CC3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SO YELLOW SHORTS AND BACKPACK BLUE",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "ONLY WILL BE LEFT OF YOU!",
@@ -7088,7 +7088,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CC4: {
+    0x0CC4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
@@ -7098,7 +7098,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CC5: {
+    0x0CC5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
@@ -7108,7 +7108,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CC6: {
+    0x0CC6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
@@ -7118,7 +7118,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CC7: {
+    0x0CC7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "",
@@ -7128,7 +7128,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CC8: {
+    0x0CC8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.blue_jinjo_96: "I AM THE MIGHTY JINJONATOR, ACTIVATE ME...",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "EVEN WITH YOUR EXTRA FRIEND,",
@@ -7139,7 +7139,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CC9: {
+    0x0CC9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.blue_jinjo_96: "I AM THE MIGHTY JINJONATOR, ACTIVATE ME...",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT ROCKY MORON CAN'T HURT ME,",
@@ -7150,7 +7150,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CCA: {
+    0x0CCA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.blue_jinjo_96: "I AM THE MIGHTY JINJONATOR, ACTIVATE ME...",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHAT'S ALL THIS, HOW DARE YOU CHEAT,",
@@ -7161,7 +7161,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CCB: {
+    0x0CCB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.blue_jinjo_96: "I AM THE MIGHTY JINJONATOR, ACTIVATE ME...",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT'S NO GOOD YOU STUPID JERK,",
@@ -7172,7 +7172,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CCC: {
+    0x0CCC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.blue_jinjo_96: "I AM THE MIGHTY JINJONATOR, ACTIVATE ME...",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I REALLY THINK YOU OUGHT TO RUN,",
@@ -7183,7 +7183,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CCD: {
+    0x0CCD: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GRUNTY'S AIM IS RATHER GOOD,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IF YOU COULD RUN, I KNOW YOU WOULD!",
@@ -7193,7 +7193,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CCE: {
+    0x0CCE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HEAR THE FIZZLE AND FEEL THE PAIN,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU'RE GOING TO LOSE A LIFE AGAIN!",
@@ -7203,7 +7203,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CCF: {
+    0x0CCF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'M JUST WARMING UP RIGHT NOW,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SUCH FINE SHOTS FROM THIS OLD COW!",
@@ -7213,7 +7213,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CD0: {
+    0x0CD0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SPELLS RAIN DOWN UPON YOUR HEAD,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOU STAND NO CHANCE WHEN I SEE RED!",
@@ -7223,7 +7223,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CD1: {
+    0x0CD1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THE BEAR IS DUMB, THE BIRD'S A TWIT,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "'CUZ I JUST GOT ANOTHER HIT!",
@@ -7233,7 +7233,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CD2: {
+    0x0CD2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "YOUR CRAFTY PLAN STANDS NO CHANCE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'M FIRMLY ROOTED IN THIS STANCE!",
@@ -7243,7 +7243,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CD3: {
+    0x0CD3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I COULD TAKE THESE SHOTS ALL DAY,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THERE'S NO WAY I'M GOING TO SWAY!",
@@ -7253,7 +7253,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CD4: {
+    0x0CD4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "SEE YOUR JINJO FAIL TO WORK,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "HE'S NOTHING BUT A FEEBLE JERK!",
@@ -7263,7 +7263,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CD5: {
+    0x0CD5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GRUNTY'S STRENGTH WILL SEE ME THROUGH,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "WHEN JINJO'S GONE I'LL BATTER YOU!",
@@ -7273,7 +7273,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CD6: {
+    0x0CD6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THERE'S NO WAY HE'LL SHIFT MY BULK,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I WATCH YOU CRY AND HAVE A SULK!",
@@ -7283,7 +7283,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CD7: {
+    0x0CD7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "I'M DONE FOR NOW HEAR ME CHOKE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT LOOK WHAT'S HIDDEN IN MY CLOAK!",
@@ -7293,7 +7293,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CD8: {
+    0x0CD8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "THAT LAST JINJO HAS FINISHED ME,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT WHO LAUGHS LAST WE SHALL SOON SEE!",
@@ -7303,7 +7303,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CD9: {
+    0x0CD9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "AARGH I'M BEATEN FAIR AND SQUARE,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BEFORE I GO I'VE THIS TO SHARE!",
@@ -7313,7 +7313,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CDA: {
+    0x0CDA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "IT'S ALL OVER I CAN TELL,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "BUT GRUNTY'S GOT JUST ONE MORE SPELL!",
@@ -7323,7 +7323,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CDB: {
+    0x0CDB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "POOR OLD GRUNTY, SET TO FALL,",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "UPON THIS SPELL I'LL NOW CALL!",
@@ -7333,7 +7333,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CDC: {
+    0x0CDC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "CHIEF OF IDEAS",
             GENERAL_SPEECH_SPRITE_ENUMS.gruntilda_B5: "GREGG 'GRUNTY' MAYLES",
@@ -7343,7 +7343,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CDD: {
+    0x0CDD: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.tooty_D7: "MORE IDEAS",
             GENERAL_SPEECH_SPRITE_ENUMS.tooty_D7: "GEORGE 'BLUBBER' ANDREAS",
@@ -7353,7 +7353,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CDE: {
+    0x0CDE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "CHIEF KEYBOARD TAPPER",
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "CHRIS 'SNACKER' SUTHERLAND",
@@ -7363,7 +7363,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CDF: {
+    0x0CDF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.pink_jinjo_97: "DEPUTY KEYBOARD TAPPER",
             GENERAL_SPEECH_SPRITE_ENUMS.pink_jinjo_97: "MORTEN 'BUZZBOMB' BRODERSEN",
@@ -7373,7 +7373,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CE0: {
+    0x0CE0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "DEPUTY KEYBOARD TAPPER",
             GENERAL_SPEECH_SPRITE_ENUMS.mumbo_84: "PAUL 'BIG-CLUCKER' MACHACEK",
@@ -7383,7 +7383,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CE1: {
+    0x0CE1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.juju_A9: "DEPUTY KEYBOARD TAPPER",
             GENERAL_SPEECH_SPRITE_ENUMS.juju_A9: "GRAHAM 'SNIPPET' SMITH",
@@ -7393,7 +7393,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CE2: {
+    0x0CE2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "KEYBOARD TAPPER",
             GENERAL_SPEECH_SPRITE_ENUMS.conga_86: "KIERAN 'CONGA' CONNELL",
@@ -7403,7 +7403,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CE3: {
+    0x0CE3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.chimpy_85: "KEYBOARD TAPPER",
             GENERAL_SPEECH_SPRITE_ENUMS.chimpy_85: "RHYS 'LOCKUP' LEWIS",
@@ -7413,7 +7413,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CE4: {
+    0x0CE4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "OTHER KEYBOARD TAPPING",
             GENERAL_SPEECH_SPRITE_ENUMS.brentilda_CB: "MARK 'MOTZAND' WILSON",
@@ -7423,7 +7423,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CE5: {
+    0x0CE5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "CHIEF SCRIBBLER",
             GENERAL_SPEECH_SPRITE_ENUMS.blubber_87: "STEVE 'DINGPOT' MAYLES",
@@ -7433,7 +7433,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CE6: {
+    0x0CE6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.nipper_88: "CARTOONY BITS AND MORE SCRIBBLING",
             GENERAL_SPEECH_SPRITE_ENUMS.nipper_88: "ED 'JINJO' BRYAN",
@@ -7443,7 +7443,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CE7: {
+    0x0CE7: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.clanker_89: "SCENE CRAYONER",
             GENERAL_SPEECH_SPRITE_ENUMS.clanker_89: "STEVEN 'SANDYBUTT' HURST",
@@ -7453,7 +7453,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CE8: {
+    0x0CE8: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.tanktup_8D: "MORE SKETCHING",
             GENERAL_SPEECH_SPRITE_ENUMS.tanktup_8D: "JOHN 'NAPPER' NASH",
@@ -7463,7 +7463,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CE9: {
+    0x0CE9: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "OTHER DOODLING",
             GENERAL_SPEECH_SPRITE_ENUMS.mr_vile_8B: "CHRIS 'CHOMPA' PEIL",
@@ -7473,7 +7473,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CEA: {
+    0x0CEA: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.choir_member_8C: "BIG NOISE MAKER",
             GENERAL_SPEECH_SPRITE_ENUMS.choir_member_8C: "GRANT 'CLANKER' KIRKHOPE",
@@ -7483,7 +7483,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CEB: {
+    0x0CEB: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "CHIEF FREE PLAYER",
             GENERAL_SPEECH_SPRITE_ENUMS.boggy_B7: "HUW 'WOZZA' WARD",
@@ -7493,7 +7493,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CEC: {
+    0x0CEC: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "RARE FREE PLAYERS",
             GENERAL_SPEECH_SPRITE_ENUMS.wozza_B8: "STEVEN 'SHRAPNEL' BRAND",
@@ -7511,7 +7511,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CED: {
+    0x0CED: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.trunker_8F: "NOA FREE PLAYERS",
             GENERAL_SPEECH_SPRITE_ENUMS.trunker_8F: "TODD 'BIGBUTT' BUECHELE",
@@ -7530,7 +7530,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CEE: {
+    0x0CEE: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "PAPER PUSHERS",
             GENERAL_SPEECH_SPRITE_ENUMS.gobi_91: "SIMON 'LOGGO' FARMER",
@@ -7541,7 +7541,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CEF: {
+    0x0CEF: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.rubee_90: "SPELL BOOK",
             GENERAL_SPEECH_SPRITE_ENUMS.rubee_90: "LEIGH 'LEAKY' LOVEDAY",
@@ -7551,7 +7551,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CF0: {
+    0x0CF0: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "STRANGE NOISE MAKERS",
             GENERAL_SPEECH_SPRITE_ENUMS.napper_93: "EVELINE 'TWINKLIES' FISCHER",
@@ -7563,7 +7563,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CF1: {
+    0x0CF1: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.loggo_CE: "NOA BIG THANKS",
             GENERAL_SPEECH_SPRITE_ENUMS.loggo_CE: "KEN 'FLIBBIT' LOBB",
@@ -7573,7 +7573,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CF2: {
+    0x0CF2: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.snorkel_B2: "BIG CHEESE THANKS",
             GENERAL_SPEECH_SPRITE_ENUMS.snorkel_B2: "MR. YAMAUCHI",
@@ -7587,7 +7587,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CF3: {
+    0x0CF3: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.gnawty_C1: "BEAN COUNTING",
             GENERAL_SPEECH_SPRITE_ENUMS.gnawty_C1: "JOEL 'GRABBA' HOCHBERG",
@@ -7597,7 +7597,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CF4: {
+    0x0CF4: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.adult_eyrie_C9: "MOVING 'N' SHAKING",
             GENERAL_SPEECH_SPRITE_ENUMS.adult_eyrie_C9: "TIM 'TANKTUP' STAMPER",
@@ -7607,7 +7607,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CF5: {
+    0x0CF5: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.nabnut_C4: "COPYRIGHT 1998",
             GENERAL_SPEECH_SPRITE_ENUMS.nabnut_C4: "NINTENDO-RARE LTD.",
@@ -7620,7 +7620,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CF6: {
+    0x0CF6: { # Vanilla
         SPEECH_CONSTANTS.bottom_section: {
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_D6: "HURRY UP AND GET US HOME BANJO!",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_D5: "PUFF...PANT...I'M GOING AS FAST AS I CAN!",
@@ -7634,7 +7634,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.end_top_bottom_4: "",
         },
     },
-    0x0CF7: {
+    0x0CF7: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU FOUND ENOUGH, YOU KNOW THE SCORE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY NOTES FOR THE FIRST NOTE DOOR?",
@@ -7643,7 +7643,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl75",
         },
     },
-    0x0CF8: {
+    0x0CF8: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOUR MOVES ARE SLOW, STYLE THEY LACK,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S THE NAME OF YOUR JUMP ATTACK?",
@@ -7652,7 +7652,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBILL-A-BONG BEAK",
         },
     },
-    0x0CF9: {
+    0x0CF9: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ME AND HER LOOK JUST THE SAME,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "GRUNTY'S SISTER WHAT'S HER NAME?",
@@ -7661,7 +7661,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBOGHANDLE",
         },
     },
-    0x0CFA: {
+    0x0CFA: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "AT MUMBO'S SKULL YOU MADE A STOP,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY FEATHERS WERE ON TOP?",
@@ -7670,7 +7670,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl4",
         },
     },
-    0x0CFB: {
+    0x0CFB: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "GET THIS WRONG, MAKE A MISTAKE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH COLOR JINJO IS A FAKE?",
@@ -7679,7 +7679,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlYELLOW",
         },
     },
-    0x0CFC: {
+    0x0CFC: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHEN YOUR AIR METER'S ON THE SCREEN,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY SEGMENTS CAN BE SEEN?",
@@ -7688,7 +7688,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl7",
         },
     },
-    0x0CFD: {
+    0x0CFD: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "SHE WILL SOON BE FAT AND LAME,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT IS YOUR LITTLE SISTER'S NAME?",
@@ -7697,7 +7697,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBOOTY",
         },
     },
-    0x0CFE: {
+    0x0CFE: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN SPIRAL MOUNTAIN FIELDS ARE GREEN,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH VEGGIE BADDY ISN'T SEEN?",
@@ -7706,7 +7706,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCOLLYWOBBLE THE CAULIFLOWER",
         },
     },
-    0x0CFF: {
+    0x0CFF: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "SPIRAL MOUNTAIN'S GOT MY FACE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY MOLEHILLS IN THIS PLACE?",
@@ -7715,7 +7715,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl9",
         },
     },
-    0x0D00: {
+    0x0D00: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU CAN'T WIN, I'VE BEEN ASSURED,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY SQUARES ARE ON THIS BOARD?",
@@ -7724,7 +7724,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl113",
         },
     },
-    0x0D01: {
+    0x0D01: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "MUMBO'S MOUNTAIN IS EASY FOR SURE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY JIGSAWS OPEN ITS DOOR?",
@@ -7733,7 +7733,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl3",
         },
     },
-    0x0D02: {
+    0x0D02: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN MUMBO'S VILLAGE IN THE MIDDLE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH TALL OBJECT SOLVES THIS RIDDLE?",
@@ -7742,7 +7742,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTOJO THE TOTEM POLE",
         },
     },
-    0x0D03: {
+    0x0D03: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN MUMBO'S MOUNTAIN YOU DON'T KNOW,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT DOES THAT BIG GORILLA THROW?",
@@ -7751,7 +7751,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCHOCOLATES",
         },
     },
-    0x0D04: {
+    0x0D04: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THEY'VE A TOWER IN WHICH THEY HIDE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ON MUMBO'S MOUNTAIN WHAT'S INSIDE?",
@@ -7760,7 +7760,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlFATTY THE BAT",
         },
     },
-    0x0D05: {
+    0x0D05: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ON MUMBO'S MOUNTAIN IT'S NOT DULL,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S IN THE EYE OF MUMBO'S SKULL?",
@@ -7769,7 +7769,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlMUSICAL NOTES",
         },
     },
-    0x0D06: {
+    0x0D06: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ON MUMBO'S MOUNTAIN, SURROUNDED BY SEA,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THERE'S A JINJO, WHAT COLOR IS HE?",
@@ -7778,7 +7778,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlGREEN",
         },
     },
-    0x0D07: {
+    0x0D07: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ON MUMBO'S MOUNTAIN IN THE LAKE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S IN THERE MAKE NO MISTAKE!",
@@ -7787,7 +7787,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA DIRTY HIPPO",
         },
     },
-    0x0D08: {
+    0x0D08: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ON MUMBO'S MOUNTAIN, THEY LOOK FLASH,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY HUTS WERE THERE TO SMASH?",
@@ -7796,7 +7796,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl8",
         },
     },
-    0x0D09: {
+    0x0D09: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "MUMBO'S MOUNTAIN IS A THRILLER,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S THE NAME OF THE GORILLA?",
@@ -7805,7 +7805,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlWONGA",
         },
     },
-    0x0D0A: {
+    0x0D0A: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "MUMBO'S MOUNTAIN, BOTTLES IS THERE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH MOVE WAS LEARNED, YOU STUPID PAIR?",
@@ -7814,7 +7814,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlSHOCK JUMP",
         },
     },
-    0x0D0B: {
+    0x0D0B: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "TREASURE TROVE COVE HAD A FEATURE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT WAS THE GIANT ARMORED CREATURE?",
@@ -7823,7 +7823,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA MIGHTY TANK",
         },
     },
-    0x0D0C: {
+    0x0D0C: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "JINJOS ARE A CRAFTY LOT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ON TREASURE COVE WHERE ARE THEY NOT?",
@@ -7832,7 +7832,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlON TOP OF A TREE",
         },
     },
-    0x0D0D: {
+    0x0D0D: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "TREASURE TROVE'S GOT CAP'N BLUBBER,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S WRONG WITH THAT SOBBING LUBBER?",
@@ -7841,7 +7841,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlHE COULDN'T REMEMBER HIS NAME",
         },
     },
-    0x0D0E: {
+    0x0D0E: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN TREASURE TROVE YOU NEED QUICK LEGS,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH OF MY NASTIES ATE YOUR EGGS?",
@@ -7850,7 +7850,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlSNIPPET THE CRAB",
         },
     },
-    0x0D0F: {
+    0x0D0F: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN TREASURE TROVE WITHIN THIS GAME,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT IS THE LEAKING BUCKET'S NAME?",
@@ -7859,7 +7859,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlHOLEY",
         },
     },
-    0x0D10: {
+    0x0D10: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "OF THESE ITEMS ON THE GROUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ON TREASURE TROVE COVE WAS FIRST FOUND?",
@@ -7868,7 +7868,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlFEATHER DUSTERS",
         },
     },
-    0x0D11: {
+    0x0D11: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ON TREASURE TROVE THERE IS A BOAT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S ITS NAME, IT DOESN'T FLOAT?",
@@ -7877,7 +7877,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTHE WOBBLY WHALE",
         },
     },
-    0x0D12: {
+    0x0D12: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "MY HUNGRY SHARK WILL END YOUR GAME,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ON TREASURE TROVE WHAT'S HIS NAME?",
@@ -7886,7 +7886,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlSTACKER",
         },
     },
-    0x0D13: {
+    0x0D13: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "TREASURE TROVE'S GOT A TREASURE HUNT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY X'S YOU LITTLE RUNT?",
@@ -7895,7 +7895,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlMORE",
         },
     },
-    0x0D14: {
+    0x0D14: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "TREASURE TROVE'S SANDCASTLE FLOOR,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IS MISSING A LETTER, GUESS ONCE MORE?",
@@ -7904,7 +7904,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlX",
         },
     },
-    0x0D15: {
+    0x0D15: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "CLANKER'S CAVERN REALLY STINKS,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HIS MASSIVE CHAIN, HOW MANY LINKS?",
@@ -7913,7 +7913,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl10",
         },
     },
-    0x0D16: {
+    0x0D16: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "CLANKER THE WHALE'S STUCK DOWN IN THE GOO,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN CLANKER'S CAVERN WHAT DOES HE DO?",
@@ -7922,7 +7922,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTOUR GUIDE",
         },
     },
-    0x0D17: {
+    0x0D17: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN CLANKER'S CAVERN IT'S A PAIN,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S ATTACHED TO CLANKER'S CHAIN?",
@@ -7931,7 +7931,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA COLOSSAL CAULDRON",
         },
     },
-    0x0D18: {
+    0x0D18: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "A BUBBLE FISH WHO'S REALLY TAME,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN CLANKER'S CAVERN WHAT'S HIS NAME?",
@@ -7940,7 +7940,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlSLOOP",
         },
     },
-    0x0D19: {
+    0x0D19: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "CLANKER'S CAVERN WHALE NEEDED AIR,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT DID YOU SWIM THROUGH WAY DOWN THERE?",
@@ -7949,7 +7949,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTHE SOUND BARRIER",
         },
     },
-    0x0D1A: {
+    0x0D1A: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE WHALE'S BLOWHOLE AN OBJECT SAT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN CLANKER'S CAVERN WHAT WAS THAT?",
@@ -7958,7 +7958,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA BIG BUBBLE",
         },
     },
-    0x0D1B: {
+    0x0D1B: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IF YOU KNOW THIS PLEASE DON'T SHOUT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN CLANKER'S CAVERN THE ODD ONE OUT?",
@@ -7967,7 +7967,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlANVIL",
         },
     },
-    0x0D1C: {
+    0x0D1C: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "CLANKER'S CAVERN SMELLS REALLY STALE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY WAYS TO GET IN THE WHALE?",
@@ -7976,7 +7976,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl6",
         },
     },
-    0x0D1D: {
+    0x0D1D: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "INSIDE CLANKER SPINNING FAST,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT WAS TOUGH FOR YOU TO GET PAST?",
@@ -7985,7 +7985,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlROTATING BONES",
         },
     },
-    0x0D1E: {
+    0x0D1E: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE WHALE'S STOMACH IS PRETTY GRIM,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THROUGH HOW MANY HOOPS DID YOU SWIM?",
@@ -7994,7 +7994,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlLESS THAN 7",
         },
     },
-    0x0D1F: {
+    0x0D1F: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN BUBBLEGLOOP SWAMP'S GIANT EGG,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S NOT INSIDE YOU NEEDN'T BEG?",
@@ -8003,7 +8003,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA SMALLER EGG",
         },
     },
-    0x0D20: {
+    0x0D20: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN BUBBLEGLOOP SWAMP'S MARSHY MOUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT THING'S HIGHEST ABOVE THE GROUND?",
@@ -8012,7 +8012,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA MUDDY TURTLE",
         },
     },
-    0x0D21: {
+    0x0D21: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BUBBLEGLOOP'S TURTLE OPENS WIDE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT DID YOU HIT TO GET INSIDE?",
@@ -8021,7 +8021,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlHIS BUTT",
         },
     },
-    0x0D22: {
+    0x0D22: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BUBBLEGLOOP SWAMP WILL TEST YOUR MIND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY TURTLES DID YOU FIND?",
@@ -8030,7 +8030,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl7",
         },
     },
-    0x0D23: {
+    0x0D23: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BUBBLEGLOOP SWAMP HIDES A TREAT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT IN THE WATER CHOMPS YOUR FEET?",
@@ -8039,7 +8039,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlELECTRIC TOASTERS",
         },
     },
-    0x0D24: {
+    0x0D24: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN BUBBLEGLOOP SWAMP TELL ME NOW,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH FACT'S MADE UP BY THIS OLD COW?",
@@ -8048,7 +8048,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTHERE ARE TWO DIFFERENT COLORED FROGS",
         },
     },
-    0x0D25: {
+    0x0D25: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN BUBBLEGLOOP SWAMP, THERE'S NO DOUBT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH OF THESE IS THE ODD ONE OUT?",
@@ -8057,7 +8057,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlYELLOW FROG",
         },
     },
-    0x0D26: {
+    0x0D26: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "TELL ME NOW OR YOUR LIFE I'LL CHOMP,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE FROGS' NAME IN BUBBLEGLOOP SWAMP?",
@@ -8066,7 +8066,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlSTICKUPS",
         },
     },
-    0x0D27: {
+    0x0D27: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE CROCODILES IN BUBBLEGLOOP SWAMP,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "GIVE ME THE NAMES OF WHAT THEY CHOMP?",
@@ -8075,7 +8075,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBUMBLIES AND DUMBLIES",
         },
     },
-    0x0D28: {
+    0x0D28: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BUBBLEGLOOP TURTLE CHOIR IS SWELL,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BUT WHAT'S ON THE BACK OF EACH SHELL?",
@@ -8084,7 +8084,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA BIGGER TURTLE",
         },
     },
-    0x0D29: {
+    0x0D29: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "FREEZEEZY PEAK IS FULL OF SNOW,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BUT WHICH OF THESE ISN'T ON SHOW?",
@@ -8093,7 +8093,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA PATHETIC POLAR BEAR",
         },
     },
-    0x0D2A: {
+    0x0D2A: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ON FREEZEEZY PEAK YOU HAVE BEEN,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BUT WHICH OF THESE CAN'T BE SEEN?",
@@ -8102,7 +8102,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCHRISTMAS TREE",
         },
     },
-    0x0D2B: {
+    0x0D2B: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HERE'S THREE FACTS ON FREEZEEZY PEAK,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE ONE THAT'S TRUE IS WHAT YOU SEEK!",
@@ -8111,7 +8111,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTHERE ARE FIVE SNOWMEN",
         },
     },
-    0x0D2C: {
+    0x0D2C: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "FREEZEEZY BEARS ARE RATHER SAD,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT CAN YOU FIND TO MAKE THEM GLAD?",
@@ -8120,7 +8120,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlWOOLY MAMMOTHS",
         },
     },
-    0x0D2D: {
+    0x0D2D: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "FREEZEEZY SNOWMAN'S GIANT SCARF,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT ARE ITS COLORS THAT MAKE ME BARF?",
@@ -8129,7 +8129,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlGREEN AND GREY",
         },
     },
-    0x0D2E: {
+    0x0D2E: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "FREEZEEZY PEAK IS RATHER COLD,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BUT WHAT DOES THE HUGE SNOWMAN HOLD?",
@@ -8138,7 +8138,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA SHOVEL",
         },
     },
-    0x0D2F: {
+    0x0D2F: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BOGGY BEAR IS FREEZEEZY'S CLOT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY JIGSAWS HAS HE GOT?",
@@ -8147,7 +8147,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlFOUR",
         },
     },
-    0x0D30: {
+    0x0D30: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "FREEZEEZY'S SLALOM COURSE IS CRASS,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THROUGH HOW MANY GATES DO YOU PASS?",
@@ -8156,7 +8156,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl48",
         },
     },
-    0x0D31: {
+    0x0D31: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "FREEZEEZY'S IGLOO ISN'T SQUARE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY BEARS CAN FIT IN THERE?",
@@ -8165,7 +8165,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlFOUR",
         },
     },
-    0x0D32: {
+    0x0D32: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE WALRUS ON FREEZEEZY PEAK,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S HIS NAME THAT I NOW SEEK?",
@@ -8174,7 +8174,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlGAZZA",
         },
     },
-    0x0D33: {
+    0x0D33: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "GOBI'S VALLEY HAD MANY A TRICK,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY PYRAMIDS, TAKE YOUR PICK?",
@@ -8183,7 +8183,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl5",
         },
     },
-    0x0D34: {
+    0x0D34: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "FROM GOBI'S PYRAMID IT SPILLS,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT EMPTIES OUT, THE MOAT IT FILLS?",
@@ -8192,7 +8192,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA HOARD OF MUMMIES",
         },
     },
-    0x0D35: {
+    0x0D35: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN GOBI'S VALLEY LURKS A HAND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHO HIDES A JIGSAW IN THE SAND?",
@@ -8201,7 +8201,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlDABBA THE DADDY HAND",
         },
     },
-    0x0D36: {
+    0x0D36: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "GOBI'S CAMEL'S ON VACATION,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S HE GOT AT HIS THIRD LOCATION?",
@@ -8210,7 +8210,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlNOTHING",
         },
     },
-    0x0D37: {
+    0x0D37: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "AN EASY ONE OR MAYBE A JINX,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY CARPETS IN GOBI'S SPHINX?",
@@ -8219,7 +8219,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl6",
         },
     },
-    0x0D38: {
+    0x0D38: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ABOVE THE SAND YOU SEE IT GLIDE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN GOBI'S VALLEY WHAT'S THE RIDE?",
@@ -8228,7 +8228,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA MAGIC TAXI CAB",
         },
     },
-    0x0D39: {
+    0x0D39: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "GOBI'S CACTUS CONCEALS A PRIZE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "TELL ME WHAT IF YOU THINK YOU'RE WISE!",
@@ -8237,7 +8237,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA PIECE OF SPONGE CAKE",
         },
     },
-    0x0D3A: {
+    0x0D3A: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN A PYRAMID SOME TILES YOU MATCH,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHO'S NOT INCLUDED IN THIS BATCH?",
@@ -8246,7 +8246,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlJINJO",
         },
     },
-    0x0D3B: {
+    0x0D3B: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN GOBI'S VALLEY THERE'S A TREE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ON ITS HEAD WHAT CAN YOU SEE?",
@@ -8255,7 +8255,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA PAIR OF SUNGLASSES",
         },
     },
-    0x0D3C: {
+    0x0D3C: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE CHARMER HELPS YOU ON YOUR WAY,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN HIS PYRAMID WHAT DID YOU PAY?",
@@ -8264,7 +8264,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlSOME GOLD BULLION",
         },
     },
-    0x0D3D: {
+    0x0D3D: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "A GHOSTLY HAND WHO HAS A SWAY,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN THE CHURCH WHAT DID HE PLAY?",
@@ -8273,7 +8273,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlAN ELECTRIC GUITAR",
         },
     },
-    0x0D3E: {
+    0x0D3E: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE HAUNTED MANSION IN MY GROUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY WAYS IN COULD BE FOUND?",
@@ -8282,7 +8282,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl8",
         },
     },
-    0x0D3F: {
+    0x0D3F: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "MAD MONSTER MANSION IS REAL HARD,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BUT WHAT'S NOT FOUND IN THE GRAVEYARD?",
@@ -8291,7 +8291,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlGRAVESTONES",
         },
     },
-    0x0D40: {
+    0x0D40: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "MAD MONSTER MANSION'S GRAVEYARD POTS,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT APPEARED FROM THEM, THERE WERE LOTS?",
@@ -8300,7 +8300,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA BUNCH OF FEATHERS",
         },
     },
-    0x0D41: {
+    0x0D41: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "MANSION CELLAR BARRELS ARE ROUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT ON THE FRONT OF THEM WAS FOUND?",
@@ -8309,7 +8309,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTHE WORDS 'GET LOST BANJO'",
         },
     },
-    0x0D42: {
+    0x0D42: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "MONSTER MANSION GIVES YOU A SCARE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT IN THE CELLAR ISN'T THERE?",
@@ -8318,7 +8318,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlJIGSAW PIECE",
         },
     },
-    0x0D43: {
+    0x0D43: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ONE DOESN'T EXIST, FURRY TWIT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN MONSTER MANSION WHICH IS IT?",
@@ -8327,7 +8327,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCELLAR",
         },
     },
-    0x0D44: {
+    0x0D44: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "PLAYING MY MUSIC IS HIS GAME,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S THE CHURCH GHOST HAND'S NAME?",
@@ -8336,7 +8336,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBACHAND",
         },
     },
-    0x0D45: {
+    0x0D45: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "PART OF MONSTER MANSION'S RACE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S THE TIME ON THE CHURCH CLOCK FACE?",
@@ -8345,7 +8345,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlMIDDAY",
         },
     },
-    0x0D46: {
+    0x0D46: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN MONSTER MANSION YOU CAN CREEP,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BUT WHAT WAKES THE GHOST FROM HIS SLEEP?",
@@ -8354,7 +8354,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBANJO HITS HIM WITH A PLANK OF WOOD",
         },
     },
-    0x0D47: {
+    0x0D47: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "RUSTY BAY'S CRANE HANGS OVER THE SIDE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IT HOLDS A BOX BUT WHAT'S INSIDE?",
@@ -8363,7 +8363,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlGRUNTY'S EXPENSIVE NEW HI-FI",
         },
     },
-    0x0D48: {
+    0x0D48: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE BOX IN THE HOLD OF RUSTY BAY,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY TO BREAK WOULD YOU SAY?",
@@ -8372,7 +8372,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl9",
         },
     },
-    0x0D49: {
+    0x0D49: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE GALLEY FRIDGE IN RUSTY BAY,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "TELL ME WHAT ON THE SHELVES LAY?",
@@ -8381,7 +8381,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlRED FEATHERS",
         },
     },
-    0x0D4A: {
+    0x0D4A: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE RUSTY BUCKET IS A TANKER,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S STUCK UNDERNEATH ITS ANCHOR?",
@@ -8390,7 +8390,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA SILLY SEAHORSE",
         },
     },
-    0x0D4B: {
+    0x0D4B: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN RUSTY BAY YOU ACT THE CLOWN,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH OF THESE CAN'T YOU SLOW DOWN?",
@@ -8399,7 +8399,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTHE ROTATING PROPELLERS",
         },
     },
-    0x0D4C: {
+    0x0D4C: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HERE'S THREE FACTS ABOUT RUSTY BAY,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "PICK THE ONE THAT'S TRUE TODAY?",
@@ -8408,7 +8408,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTHE ENGINE ROOM HAS FOUR COGS",
         },
     },
-    0x0D4D: {
+    0x0D4D: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN RUSTY BAY YOU MAY HAVE BEEN,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BUT WHAT ON THE WALLS ISN'T SEEN?",
@@ -8417,7 +8417,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTOLL 8",
         },
     },
-    0x0D4E: {
+    0x0D4E: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "GET THIS WRONG YOU LITTLE TOAD,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "RUSTY BAY'S WHISTLES, WHAT'S THE CODE?",
@@ -8426,7 +8426,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl321-123",
         },
     },
-    0x0D4F: {
+    0x0D4F: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "CAPTAIN'S CABIN IN RUSTY BAY,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S ON THE BED DUVET I SAY?",
@@ -8435,7 +8435,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlFLOWERS",
         },
     },
-    0x0D50: {
+    0x0D50: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THIS RUN OF LUCK WILL HAVE TO STOP,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BIG SHIP'S THIRD FUNNEL, WHAT'S ON TOP?",
@@ -8444,7 +8444,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA MUMBO TOKEN",
         },
     },
-    0x0D51: {
+    0x0D51: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN CLICK CLOCK WOOD HE'S THE KING,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S THE SQUIRREL DOING IN SPRING?",
@@ -8453,7 +8453,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlLOOKING FOR THE BEAVER",
         },
     },
-    0x0D52: {
+    0x0D52: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN THE WOOD FOR THE PLANT TO GROW,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT IN THE GROUND MUST YOU SOW?",
@@ -8462,7 +8462,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA BOMB",
         },
     },
-    0x0D53: {
+    0x0D53: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN CLICK CLOCK WOOD THE EAGLE'S LAME,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "CAN YOU RECALL THE STUPID BIRD'S NAME?",
@@ -8471,7 +8471,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBEERIE",
         },
     },
-    0x0D54: {
+    0x0D54: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN CLICK CLOCK WOOD THE SHAMAN'S DUMB,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT USELESS CREATURE DO YOU BECOME?",
@@ -8480,7 +8480,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA SNAIL",
         },
     },
-    0x0D55: {
+    0x0D55: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE GIANT PLANT IN CLICK CLOCK WOOD,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW'S IT GET WATER TO MAKE IT BUD?",
@@ -8489,7 +8489,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlFROM KAZOOIE'S SPECIAL WATER EGGS",
         },
     },
-    0x0D56: {
+    0x0D56: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN CLICK CLOCK WOOD I'VE NO DOUBT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN WHICH SEASON IS THERE A DROUGHT?",
@@ -8498,7 +8498,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlAUTUMN",
         },
     },
-    0x0D57: {
+    0x0D57: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "CLICK CLOCK WOOD'S WINTER IS DULL,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S MUMBO DOING IN HIS SKULL?",
@@ -8507,7 +8507,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlWARMING HIMSELF BY THE FIRE",
         },
     },
-    0x0D58: {
+    0x0D58: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE CLICK CLOCK EAGLE THAT YOU MEET,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW MANY AUTUMN WORMS WILL HE EAT?",
@@ -8516,7 +8516,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýl25",
         },
     },
-    0x0D59: {
+    0x0D59: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN CLICK CLOCK WOOD A BIG OAK GREW,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH OF THESE IS THE ONE THAT'S TRUE?",
@@ -8525,7 +8525,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTHE SQUIRREL IS OUTSIDE IN WINTER",
         },
     },
-    0x0D5A: {
+    0x0D5A: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "CLICK CLOCK'S BEAVER IS REALLY DUMB,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S THE PROBLEM THAT MAKES HIM GLUM?",
@@ -8534,7 +8534,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlHIS HEAD HAS FALLEN OFF",
         },
     },
-    0x0D5B: {
+    0x0D5B: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "SEE THE PICTURE ON MY SCREEN, DO YOU KNOW WHERE YOU HAVE BEEN?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlMUMBO'S MOUNTAIN",
@@ -8542,7 +8542,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCLICK CLOCK WOOD",
         },
     },
-    0x0D5C: {
+    0x0D5C: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "SEE THE PICTURE ON MY SCREEN, DO YOU KNOW WHERE YOU HAVE BEEN?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlTREASURE TROVE COVE",
@@ -8550,7 +8550,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCLICK CLOCK WOOD",
         },
     },
-    0x0D5D: {
+    0x0D5D: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "SEE THE PICTURE ON MY SCREEN, DO YOU KNOW WHERE YOU HAVE BEEN?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlCLANKER'S CAVERN",
@@ -8558,7 +8558,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlGRUNTY'S LAIR",
         },
     },
-    0x0D5E: {
+    0x0D5E: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "SEE THE PICTURE ON MY SCREEN, DO YOU KNOW WHERE YOU HAVE BEEN?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlBUBBLEGLOOP SWAMP",
@@ -8566,7 +8566,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCLICK CLOCK WOOD",
         },
     },
-    0x0D5F: {
+    0x0D5F: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "SEE THE PICTURE ON MY SCREEN, DO YOU KNOW WHERE YOU HAVE BEEN?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlFREEZEEZY PEAK",
@@ -8574,7 +8574,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlGRUNTY'S LAIR",
         },
     },
-    0x0D60: {
+    0x0D60: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "SEE THE PICTURE ON MY SCREEN, DO YOU KNOW WHERE YOU HAVE BEEN?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlGOBI'S VALLEY",
@@ -8582,7 +8582,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlMUMBO'S MOUNTAIN",
         },
     },
-    0x0D61: {
+    0x0D61: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "SEE THE PICTURE ON MY SCREEN, DO YOU KNOW WHERE YOU HAVE BEEN?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlMAD MONSTER MANSION",
@@ -8590,7 +8590,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCLANKER'S CAVERN",
         },
     },
-    0x0D62: {
+    0x0D62: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "SEE THE PICTURE ON MY SCREEN, DO YOU KNOW WHERE YOU HAVE BEEN?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlRUSTY BUCKET BAY",
@@ -8598,7 +8598,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCLANKER'S CAVERN",
         },
     },
-    0x0D63: {
+    0x0D63: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "SEE THE PICTURE ON MY SCREEN, DO YOU KNOW WHERE YOU HAVE BEEN?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlCLICK CLOCK WOOD",
@@ -8606,7 +8606,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBUBBLEGLOOP SWAMP",
         },
     },
-    0x0D64: {
+    0x0D64: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HERE'S A CHARACTER FROM THE GAME, DO YOU KNOW THE DUMB THING'S NAME?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlGOBI",
@@ -8614,7 +8614,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlDIMBO",
         },
     },
-    0x0D65: {
+    0x0D65: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HERE'S A CHARACTER FROM THE GAME, DO YOU KNOW THE DUMB THING'S NAME?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlMUMBO JUMBO",
@@ -8622,7 +8622,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlNAMBY PAMBY",
         },
     },
-    0x0D66: {
+    0x0D66: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HERE'S A CHARACTER FROM THE GAME, DO YOU KNOW THE DUMB THING'S NAME?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlNABNUT",
@@ -8630,7 +8630,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlROBNUT",
         },
     },
-    0x0D67: {
+    0x0D67: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HERE'S A CHARACTER FROM THE GAME, DO YOU KNOW THE DUMB THING'S NAME?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlJINJO",
@@ -8638,7 +8638,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlWINJO",
         },
     },
-    0x0D68: {
+    0x0D68: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HERE'S A CHARACTER FROM THE GAME, DO YOU KNOW THE DUMB THING'S NAME?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlCLANKER",
@@ -8646,7 +8646,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCLUNKER",
         },
     },
-    0x0D69: {
+    0x0D69: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HERE'S A CHARACTER FROM THE GAME, TELL ME NOW THE DUMB THING'S NAME?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlMR. VILE",
@@ -8654,7 +8654,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlMADAM BILE",
         },
     },
-    0x0D6A: {
+    0x0D6A: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HERE'S A CHARACTER FROM THE GAME, DO YOU KNOW THE DUMB THING'S NAME?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlTRUNKER",
@@ -8662,7 +8662,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlSTINKER",
         },
     },
-    0x0D6B: {
+    0x0D6B: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HERE'S A CHARACTER FROM THE GAME, DO YOU KNOW THE DUMB THING'S NAME?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlCAPTAIN BLUBBER",
@@ -8670,7 +8670,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCAPTAIN BLADDER",
         },
     },
-    0x0D6C: {
+    0x0D6C: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HERE'S A CHARACTER FROM THE GAME, DO YOU KNOW THE DUMB THING'S NAME?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlBOGGY",
@@ -8678,7 +8678,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlPEGGY",
         },
     },
-    0x0D6D: {
+    0x0D6D: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HERE'S A CHARACTER FROM THE GAME, DO YOU KNOW THE DUMB THING'S NAME?",
             GENERAL_SPEECH_SPRITE_ENUMS.kazooie_81: "ýlBOTTLES",
@@ -8686,7 +8686,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlPIDDLES",
         },
     },
-    0x0D6E: {
+    0x0D6E: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU PICK UP ITEMS ON THE GROUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH ONE MAKES THIS SILLY SOUND?",
@@ -8695,7 +8695,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlSHAMAN'S WIFE",
         },
     },
-    0x0D6F: {
+    0x0D6F: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU PICK UP ITEMS ON THE GROUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH ONE MAKES THIS SILLY SOUND?",
@@ -8704,7 +8704,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlMUSICAL GOATS",
         },
     },
-    0x0D70: {
+    0x0D70: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU PICK UP ITEMS ON THE GROUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH ONE MAKES THIS SILLY SOUND?",
@@ -8713,7 +8713,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlFEATHER PILLOW",
         },
     },
-    0x0D71: {
+    0x0D71: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU PICK UP ITEMS ON THE GROUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH ONE MAKES THIS SILLY SOUND?",
@@ -8722,7 +8722,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlEXTRA HONEYCOMB PIECE",
         },
     },
-    0x0D72: {
+    0x0D72: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU PICK UP ITEMS ON THE GROUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH ONE MAKES THIS SILLY SOUND?",
@@ -8731,7 +8731,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlHAIR COMB",
         },
     },
-    0x0D73: {
+    0x0D73: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU PICK UP ITEMS ON THE GROUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH ONE MAKES THIS SILLY SOUND?",
@@ -8740,7 +8740,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBLUE WHALE",
         },
     },
-    0x0D74: {
+    0x0D74: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU PICK UP ITEMS ON THE GROUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH ONE MAKES THIS SILLY SOUND?",
@@ -8749,7 +8749,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlGOLD NECKLACE",
         },
     },
-    0x0D75: {
+    0x0D75: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU PICK UP ITEMS ON THE GROUND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH ONE MAKES THIS SILLY SOUND?",
@@ -8758,7 +8758,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlEXTRA MONEY",
         },
     },
-    0x0D76: {
+    0x0D76: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8767,7 +8767,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlHOBO THE CAMEL",
         },
     },
-    0x0D77: {
+    0x0D77: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8776,7 +8776,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCRANKY KONG",
         },
     },
-    0x0D78: {
+    0x0D78: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8785,7 +8785,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTRUNKER THE ELEPHANT",
         },
     },
-    0x0D79: {
+    0x0D79: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8794,7 +8794,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlMRS. BILE THE CROCODILE",
         },
     },
-    0x0D7A: {
+    0x0D7A: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8803,7 +8803,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlADMIRAL BROWNEYE THE DIRTY PIRATE",
         },
     },
-    0x0D7B: {
+    0x0D7B: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8812,7 +8812,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlJIMBO JAMBO THE SHAMAN",
         },
     },
-    0x0D7C: {
+    0x0D7C: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8821,7 +8821,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCHIMPY THE CHIMP",
         },
     },
-    0x0D7D: {
+    0x0D7D: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8830,7 +8830,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBEAKERS THE MOLE",
         },
     },
-    0x0D7E: {
+    0x0D7E: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8839,7 +8839,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBUMPY THE BABOON",
         },
     },
-    0x0D7F: {
+    0x0D7F: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8848,7 +8848,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBOTTLES THE MOLE",
         },
     },
-    0x0D80: {
+    0x0D80: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8857,7 +8857,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlHISTUP THE SNAKE",
         },
     },
-    0x0D81: {
+    0x0D81: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8866,7 +8866,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlNAKKER THE INJURED GHOST",
         },
     },
-    0x0D82: {
+    0x0D82: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8875,7 +8875,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBUBBLES THE FISH",
         },
     },
-    0x0D83: {
+    0x0D83: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS COOL VOICE?",
@@ -8884,7 +8884,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTOOTY THE BEAR",
         },
     },
-    0x0D84: {
+    0x0D84: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8893,7 +8893,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBOZZO THE SEAL",
         },
     },
-    0x0D85: {
+    0x0D85: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8902,7 +8902,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlROBNUT THE SQUIRREL",
         },
     },
-    0x0D86: {
+    0x0D86: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8911,7 +8911,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCONKER THE SQUIRREL",
         },
     },
-    0x0D87: {
+    0x0D87: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTERS HAVE THIS DUMB VOICE?",
@@ -8920,7 +8920,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTHE MUMMY ORCHESTRA",
         },
     },
-    0x0D88: {
+    0x0D88: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8929,7 +8929,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlKAZOOIE THE BREEGULL",
         },
     },
-    0x0D89: {
+    0x0D89: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8938,7 +8938,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTOOTY THE NASTY BEAR",
         },
     },
-    0x0D8A: {
+    0x0D8A: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8947,7 +8947,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBOTTLES THE MOLE",
         },
     },
-    0x0D8B: {
+    0x0D8B: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8956,7 +8956,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlWIZZO THE WASHBASIN",
         },
     },
-    0x0D8C: {
+    0x0D8C: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8965,7 +8965,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlNIBBLES THE CROCODILE",
         },
     },
-    0x0D8D: {
+    0x0D8D: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8974,7 +8974,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlSLAPPER THE MASSIVE WHALE",
         },
     },
-    0x0D8E: {
+    0x0D8E: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN UP NOW THEN MAKE YOUR CHOICE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH CHARACTER HAS THIS DUMB VOICE?",
@@ -8983,7 +8983,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBOTTLES",
         },
     },
-    0x0D8F: {
+    0x0D8F: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHEN THIS PIECE OF MUSIC'S HEARD,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH MOVE'S DONE BY YOUR STUPID BIRD?",
@@ -8992,7 +8992,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlWONDER TURBO WING TROT",
         },
     },
-    0x0D90: {
+    0x0D90: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHEN THIS PIECE OF MUSIC IS HEARD,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH MOVE'S DONE BY YOUR STUPID BIRD?",
@@ -9001,7 +9001,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTURBO STILT TALON STRIDE",
         },
     },
-    0x0D91: {
+    0x0D91: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHEN THIS PIECE OF MUSIC IS HEARD,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH MOVE'S DONE BY YOUR STUPID BIRD?",
@@ -9010,7 +9010,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlWONDER STRIDE STILT WING",
         },
     },
-    0x0D92: {
+    0x0D92: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU SHOULD REMEMBER BUT WE'LL SEE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IF THIS IS HEARD WHERE WOULD YOU BE?",
@@ -9019,7 +9019,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlINSIDE THE HAUNTED BEAR'S CHURCH",
         },
     },
-    0x0D93: {
+    0x0D93: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU SHOULD REMEMBER BUT WE'LL SEE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IF THIS IS HEARD WHERE WOULD YOU BE?",
@@ -9028,7 +9028,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlINSIDE BANJO THE SQUIRREL'S HOUSE",
         },
     },
-    0x0D94: {
+    0x0D94: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU SHOULD REMEMBER BUT WE'LL SEE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IF THIS IS HEARD WHERE WOULD YOU BE?",
@@ -9037,7 +9037,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlINSIDE THE SHAMAN'S HEAD",
         },
     },
-    0x0D95: {
+    0x0D95: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN CAREFULLY TO THIS TUNE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH WORLD'S IT FROM, YOU FURRY GOON?",
@@ -9046,7 +9046,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlMAD MUMBO'S MANSION",
         },
     },
-    0x0D96: {
+    0x0D96: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN CAREFULLY TO THIS TUNE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH WORLD'S IT FROM, YOU FURRY GOON?",
@@ -9055,7 +9055,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTREASURE BUCKET BAY",
         },
     },
-    0x0D97: {
+    0x0D97: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN CAREFULLY TO THIS TUNE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH WORLD'S IT FROM, YOU FURRY GOON?",
@@ -9064,7 +9064,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCLANKER'S CLOCK",
         },
     },
-    0x0D98: {
+    0x0D98: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN CAREFULLY TO THIS TUNE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH WORLD'S IT FROM, YOU FURRY GOON?",
@@ -9073,7 +9073,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBUBBLE GUM MOUNTAIN",
         },
     },
-    0x0D99: {
+    0x0D99: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN CAREFULLY TO THIS TUNE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH WORLD'S IT FROM, YOU FURRY GOON?",
@@ -9082,7 +9082,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlGOBI'S PEAK",
         },
     },
-    0x0D9A: {
+    0x0D9A: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN CAREFULLY TO THIS TUNE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH WORLD'S IT FROM, YOU FURRY GOON?",
@@ -9091,7 +9091,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlRUSTY MONSTER BAY",
         },
     },
-    0x0D9B: {
+    0x0D9B: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN CAREFULLY TO THIS TUNE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH WORLD'S IT FROM, YOU FURRY GOON?",
@@ -9100,7 +9100,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlFREEZEEZY COVE",
         },
     },
-    0x0D9C: {
+    0x0D9C: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN CAREFULLY TO THIS TUNE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH WORLD'S IT FROM, YOU FURRY GOON?",
@@ -9109,7 +9109,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBUBBLECLOCK WOOD",
         },
     },
-    0x0D9D: {
+    0x0D9D: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LISTEN CAREFULLY TO THIS TUNE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHICH WORLD'S IT FROM, YOU FURRY GOON?",
@@ -9118,7 +9118,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlRUSTY CLOCK WOOD",
         },
     },
-    0x0D9E: {
+    0x0D9E: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU SHOULD REMEMBER BUT WE'LL SEE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IF THIS IS HEARD WHERE WOULD YOU BE?",
@@ -9127,7 +9127,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlINSIDE THE CRAB SHELL",
         },
     },
-    0x0D9F: {
+    0x0D9F: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU SHOULD REMEMBER BUT WE'LL SEE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IF THIS IS HEARD WHERE WOULD YOU BE?",
@@ -9136,7 +9136,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlINSIDE THE SHAMAN'S SKULL",
         },
     },
-    0x0DA0: {
+    0x0DA0: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU SHOULD REMEMBER BUT WE'LL SEE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IF THIS IS HEARD WHERE WOULD YOU BE?",
@@ -9145,7 +9145,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlINSIDE THE SPHINX",
         },
     },
-    0x0DA1: {
+    0x0DA1: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "REMEMBER NOW BEFORE YOU LOSE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT TYPE TOOTHPASTE DO I USE?",
@@ -9154,7 +9154,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlMOULDY CHEESE",
         },
     },
-    0x0DA2: {
+    0x0DA2: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LOOK AT MY HAIR, SEE IT FLOW,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S IT WASHED WITH, DO YOU KNOW?",
@@ -9163,7 +9163,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlRANCID MILK",
         },
     },
-    0x0DA3: {
+    0x0DA3: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "GRUNTY'S GOT A BEAUTIFUL POSE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHERE DO I GET MY DELIGHTFUL CLOTHES?",
@@ -9172,7 +9172,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTHE WITCHES WAREHOUSE",
         },
     },
-    0x0DA4: {
+    0x0DA4: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "BANJO'S STUPID, GRUNTY'S COOL,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT WAS MY NAME AT WITCHES SCHOOL?",
@@ -9181,7 +9181,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlJELLY BELLY",
         },
     },
-    0x0DA5: {
+    0x0DA5: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "DO YOU KNOW, AND CAN YOU TELL,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT ON EARTH'S MY FAVORITE SMELL?",
@@ -9190,7 +9190,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlFRESHLY BURST BOILS",
         },
     },
-    0x0DA6: {
+    0x0DA6: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "GUESS THIS RIGHT OR YOU MAY LOSE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S THE ONLY COLOR I'D CHOOSE?",
@@ -9199,7 +9199,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlGRUESOME GREEN",
         },
     },
-    0x0DA7: {
+    0x0DA7: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LOOK AT MY BUILD, MUSCLES TAUT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S MY MOST ENJOYABLE SPORT?",
@@ -9208,7 +9208,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBROOMSTICK RACING",
         },
     },
-    0x0DA8: {
+    0x0DA8: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WE DIDN'T WASH, THERE WAS NO POOL,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHERE DID I GO TO WITCH SCHOOL?",
@@ -9217,7 +9217,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlST. DUNGBALL'S",
         },
     },
-    0x0DA9: {
+    0x0DA9: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HERE'S THREE ANSWERS, ONE YOU'LL PICK,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S MY AMAZING PARTY TRICK?",
@@ -9226,7 +9226,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTO EAT A BUCKET OF BEANS!",
         },
     },
-    0x0DAA: {
+    0x0DAA: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "I LIKE 'EM FRIED, THEY'RE QUITE A TREAT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT FOR BREAKFAST DO I EAT?",
@@ -9235,7 +9235,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlTADPOLES ON TOAST",
         },
     },
-    0x0DAB: {
+    0x0DAB: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "I REALLY WISH I WAS THINNER,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT DOES GRUNTY LIKE FOR DINNER?",
@@ -9244,7 +9244,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlMAGGOT PIE",
         },
     },
-    0x0DAC: {
+    0x0DAC: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "A LITTLE MORE, IT WOULDN'T HURT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT WOULD I HAVE FOR DESSERT?",
@@ -9253,7 +9253,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlRAT SORBET",
         },
     },
-    0x0DAD: {
+    0x0DAD: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "I CANNOT LIE, I TELL THE TRUTH,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S HANGING FROM MY BEDROOM ROOF?",
@@ -9262,7 +9262,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlDIRTY UNDIES",
         },
     },
-    0x0DAE: {
+    0x0DAE: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "A LOVELY SPECIMEN IN ITS POT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IT'S BY MY BED, WHAT HAVE I GOT?",
@@ -9271,7 +9271,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA LOOGIE BUSH",
         },
     },
-    0x0DAF: {
+    0x0DAF: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "HOW DARE YOU LOOK, STOP THAT STARE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT COLOR UNDIES DO I WEAR?",
@@ -9280,7 +9280,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlSWEATY YELLOW",
         },
     },
-    0x0DB0: {
+    0x0DB0: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "'CUZ OF ALL THOSE SPELLS I LEND,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHOM AT SCHOOL WAS MY BEST FRIEND?",
@@ -9289,7 +9289,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlFATTY HATTY",
         },
     },
-    0x0DB1: {
+    0x0DB1: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "THE NEWS STAND IS WHERE I'VE BEEN,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S MY FAVORITE MAGAZINE?",
@@ -9298,7 +9298,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBIG BUTTS AND GUTS",
         },
     },
-    0x0DB2: {
+    0x0DB2: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IS IT THIS, NOW LET ME THINK,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT IS GRUNTY'S FAVORITE DRINK?",
@@ -9307,7 +9307,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlCOLD WORM JUICE",
         },
     },
-    0x0DB3: {
+    0x0DB3: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "I USUALLY CURL UP IN A HEAP,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHERE DOES GRUNTY LIKE TO SLEEP?",
@@ -9316,7 +9316,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlIN A PIG STY",
         },
     },
-    0x0DB4: {
+    0x0DB4: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "MY LOOKS AT SCHOOL WERE NEVER THIN,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT AWARD DID I ALWAYS WIN?",
@@ -9325,7 +9325,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlSWEATIEST SOCKS",
         },
     },
-    0x0DB5: {
+    0x0DB5: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "FAT HAG MONTHLY THINKS I'M HOT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT DID I DO ON THE COVER SHOT?",
@@ -9334,7 +9334,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlPOLISHED MY CRYSTAL BALL",
         },
     },
-    0x0DB6: {
+    0x0DB6: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "APART FROM DOING STUPID RHYMES,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S ANOTHER OF MY PASTIMES?",
@@ -9343,7 +9343,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlFLYING RADIO CONTROLLED BATS",
         },
     },
-    0x0DB7: {
+    0x0DB7: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "GRUNTY'S CUTE, SHE'S QUITE A DAME,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT WAS MY FIRST BOYFRIEND'S NAME?",
@@ -9352,7 +9352,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlUNDEAD ED",
         },
     },
-    0x0DB8: {
+    0x0DB8: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "DON'T BE SMART, YOU'VE NOT WON YET,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHEN I WAS SMALL WHAT WAS MY PET?",
@@ -9361,7 +9361,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA MAD VULTURE",
         },
     },
-    0x0DB9: {
+    0x0DB9: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IT KEEPS ME SAFE AND FREE FROM HARM,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT HAVE I AS A LUCKY CHARM?",
@@ -9370,7 +9370,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA DRAGON'S FOOT",
         },
     },
-    0x0DBA: {
+    0x0DBA: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "I LIKE A CUDDLE AND A FIGHT,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT DO I TAKE TO BED AT NIGHT?",
@@ -9379,7 +9379,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlMY DIRTY UNDIES",
         },
     },
-    0x0DBB: {
+    0x0DBB: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "ACROSS THE SKY I LOVE TO GLIDE,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT TYPE OF BROOMSTICK DO I RIDE?",
@@ -9388,7 +9388,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlSUPER GUTLIFTER PRO",
         },
     },
-    0x0DBC: {
+    0x0DBC: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "I'M NOT PRETTY, I'M QUITE A MESS,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT DO I HIDE UNDER MY DRESS?",
@@ -9397,7 +9397,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlA REINFORCED GIRDLE",
         },
     },
-    0x0DBD: {
+    0x0DBD: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "LET'S SEE IF YOUR MEMORY'S FOGGY,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "WHAT'S THE NAME OF MY PET DOGGY?",
@@ -9406,7 +9406,7 @@ DEFAULT_SPEECH_DICT:dict = {
             GENERAL_SPEECH_SPRITE_ENUMS.bottles_83: "ýlBIGNACKA",
         },
     },
-    0x0DBE: {
+    0x0DBE: { # Vanilla
         SPEECH_CONSTANTS.full_screen: {
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "YOU WANT TO HEAR US, I CAN TELL,",
             GENERAL_SPEECH_SPRITE_ENUMS.banjo_80: "IN WHICH BAND DO I SING SO WELL?",
