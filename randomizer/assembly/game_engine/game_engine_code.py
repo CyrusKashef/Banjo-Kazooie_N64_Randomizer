@@ -834,3 +834,71 @@ class GAME_ENGINE_CODE_CLASS(Generic_Bin_File_Class):
         Pass
         '''
         self._write_bytes_from_int(0x3FE40, 0x3C014000, byte_count=4)
+    
+    ############################
+    ##### OTHER DIFFICULTY #####
+    ############################
+
+    # def the_floor_is_lava(self, time_to_take_damage:int=4):
+    #     '''
+    #     Pass
+    #     '''
+    #     # No Map Limit
+    #     # BEQ $zero $zero 0x001E
+    #     self._write_bytes_from_int(0x16840, 0x1000001E, byte_count=4)
+    #     # Being In The Room Kills You
+    #     # Ignore Branch For func_8029D66C()
+    #     self._write_bytes_from_int(0x168C8, 0x00000000, byte_count=4)
+    #     # Don't Damage Player In Water
+    #     # func_8028B470() is snacker's check for player in water
+    #     self._write_bytes_from_int(0x16954, 0x0C0A2D1C, byte_count=4) # 
+    #     self._write_bytes_from_int(0x16958, 0x00000000, byte_count=4)
+    #     self._write_bytes_from_int(0x1695C, 0x5040001B, byte_count=4) # BEQL $v0 $zero 0x001B
+    #     self._write_bytes_from_int(0x16960, 0x00000000, byte_count=4)
+    #     self._write_bytes_from_int(0x16964, 0x00000000, byte_count=4)
+    #     # Timer To Get Hit
+    #     new_timer:int = self._convert_bfloat_to_hex(time_to_take_damage)
+    #     self._write_bytes_from_int(0x16AF2, new_timer, byte_count=2)
+    #     # Don't Set Player In Mud
+    #     # Remove miscflag_set()
+    #     self._write_bytes_from_int(0x16C30, 0x00000000, byte_count=4)
+
+    def the_floor_is_lava(self, time_to_take_damage:int=4):
+        '''
+        Pass
+        '''
+        # No Map Limit
+        # BEQ $zero $zero 0x001E
+        self._write_bytes_from_int(0x16840, 0x1000001E, byte_count=4)
+        # Being In The Room Kills You
+        # Ignore Branch For func_8029D66C()
+        self._write_bytes_from_int(0x168C8, 0x00000000, byte_count=4)
+            # self._write_bytes_from_int(0x168BC, 0x0C0A3B2B, byte_count=4) # func_8028ECAC()
+            # self._write_bytes_from_int(0x168C0, 0x00000000, byte_count=4)
+            # self._write_bytes_from_int(0x168C4, 0x24010005, byte_count=4) # BSGROUP_5_CLIMB
+            # self._write_bytes_from_int(0x168C8, 0x1041003F, byte_count=4) # BEQ $v0 $at 0x003F
+        # Don't Damage Player In Water
+        # func_8028B470() is snacker's check for player in water
+            # self._write_bytes_from_int(0x16954, 0x0C0A2D1C, byte_count=4) # func_8028B470()
+            # self._write_bytes_from_int(0x16958, 0x00000000, byte_count=4)
+            # self._write_bytes_from_int(0x1695C, 0x5040001B, byte_count=4) # BEQL $v0 $zero 0x001B
+            # self._write_bytes_from_int(0x16960, 0x00000000, byte_count=4)
+            # self._write_bytes_from_int(0x16964, 0x00000000, byte_count=4)
+        # Always Play Burning Sound
+        # 0C0A7436 // func_8029D0D8() -> Hot, But Never Stops Sizzling
+        # 0C0A7414 // func_8029D050() -> Cold
+        # 0C0A7465 // func_8029D194() -> Biting, But Like Half A Chomp
+            # self._write_bytes_from_int(0x16B04, 0x0C0A7465, byte_count=4)
+        # Timer To Get Hit
+        new_timer:int = self._convert_bfloat_to_hex(time_to_take_damage)
+        self._write_bytes_from_int(0x16AF2, new_timer, byte_count=2)
+        # Remove All Texts
+        self._write_bytes_from_int(0x16BC8, 0x00000000, byte_count=4)
+        self._write_bytes_from_int(0x16BD8, 0x00000000, byte_count=4)
+        self._write_bytes_from_int(0x16BE8, 0x00000000, byte_count=4)
+        self._write_bytes_from_int(0x16BF8, 0x00000000, byte_count=4)
+        self._write_bytes_from_int(0x16C08, 0x00000000, byte_count=4)
+        self._write_bytes_from_int(0x16C28, 0x00000000, byte_count=4)
+        # Don't Set Player In Mud
+        # Remove miscflag_set()
+        self._write_bytes_from_int(0x16C30, 0x00000000, byte_count=4)

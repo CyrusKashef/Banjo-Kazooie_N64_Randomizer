@@ -403,24 +403,24 @@ class SETTINGS_FUNCTIONS():
         '''
         Pass
         '''
-        starting_asset_id:int = 0x0581
-        self._asm_obj.replace_player_models(0x0581)
-        # Wishywashy
-        self._game_asset_obj.copy_asset_to_different_id(0x0356, 0x0581)
-        # Termite
-        self._game_asset_obj.copy_asset_to_different_id(0x034F, 0x0582)
-        # Crocodile
-        self._game_asset_obj.copy_asset_to_different_id(0x0374, 0x0583)
-        # Walrus
-        self._game_asset_obj.copy_asset_to_different_id(0x0359, 0x0584)
-        # Pumpkin
-        self._game_asset_obj.copy_asset_to_different_id(0x036F, 0x0585)
-        # Bee
-        self._game_asset_obj.copy_asset_to_different_id(0x0362, 0x0586)
-        # BK
-        starting_asset_id:int = 0x0587
-        bk_model_count:int = 0xD
-        bk_model_name_list:list = (
+        ##### GENERAL #####
+        current_asset_id:int = 0x0581
+        self._asm_obj.replace_player_models(current_asset_id)
+        ##### TRANSFORMATIONS #####
+        transformation_model_asset_ids:list = (
+            0x0356, # Wishywashy
+            0x034F, # Termite
+            0x0374, # Crocodile
+            0x0359, # Walrus
+            0x036F, # Pumpkin
+            0x0362, # Bee
+        )
+        for asset_id in transformation_model_asset_ids:
+            self._bk_rom.add_asset_to_offset_table(current_asset_id, compression_flag=0x0001, unk_flag=0x0000)
+            self._game_asset_obj.copy_asset_to_different_id(asset_id, current_asset_id)
+            current_asset_id += 1
+        ##### BANJO-KAZOOIE #####
+        bk_model_name_list:tuple = (
             "donkey_and_diddy_kong", # Mumbo's Mountain
             "wario_and_waluigi", # Treasure Trove Cove
             "link_and_zelda", # Clankers Cavern
@@ -435,13 +435,10 @@ class SETTINGS_FUNCTIONS():
             "donkey_and_diddy_kong", # Final Battle
             "sonic_and_tails", # Cutscene
         )
-        self._bk_rom.add_asset_to_offset_table(starting_asset_id, compression_flag=0x0001, unk_flag=0x0000)
-        self._game_asset_obj.banjo_kazooie_model_by_json("mario_and_luigi", save_as_id=0x0587)
-        for asset_id in range(
-                starting_asset_id + 1,
-                starting_asset_id + bk_model_count - 1):
-            self._bk_rom.add_asset_to_offset_table(asset_id, compression_flag=0x0001, unk_flag=0x0000)
-            self._game_asset_obj.banjo_kazooie_model_by_json("link_and_zelda", save_as_id=asset_id)
+        for json_name in bk_model_name_list:
+            self._bk_rom.add_asset_to_offset_table(current_asset_id, compression_flag=0x0001, unk_flag=0x0000)
+            self._game_asset_obj.banjo_kazooie_model_by_json(json_name, save_as_id=current_asset_id)
+            current_asset_id += 1
 
     def _level_dynamic_banjo_kazooie_model(self):
         '''

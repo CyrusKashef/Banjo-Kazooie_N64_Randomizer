@@ -525,6 +525,12 @@ class ASSEMBLY_CLASS():
         '''
         self._mumbos_mountain_code_obj.agro_conga()
 
+    def the_floor_is_lava(self, time_to_take_damage:int=4):
+        '''
+        Pass
+        '''
+        self._game_engine_code_obj.the_floor_is_lava(time_to_take_damage)
+
     ##############################
     ##### COSMETICS & SOUNDS #####
     ##############################

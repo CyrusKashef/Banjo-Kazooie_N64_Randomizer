@@ -91,11 +91,14 @@ class MODIFICATION_PROCESS_CLASS(SETTINGS_FUNCTIONS):
         self._all_transformations_can_learn_moves()
         self._music_options()
         # Testing
+        # These seem to work
         # self._color_shift()
-        self._banjo_kazooie_model_by_json()
+        # self._asm_obj.the_floor_is_lava(20)
+        # self._banjo_kazooie_model_by_json()
         # self._level_dynamic_banjo_kazooie_model()
         # self._asm_obj.bottles_bonus_codes_always_activatable()
         #
+        # These are WIP
         # self._super_baddie()
         # self._asm_obj.agro_conga()
         # self._asm_obj.bk_model_dynamic_coloring()
